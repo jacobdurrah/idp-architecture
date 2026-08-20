@@ -1,0 +1,63 @@
+<rect x="56" y="1076" width="8" height="148" rx="4" fill="#185FA5"/>
+<g class="badge"><circle cx="96" cy="1150" r="16" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="96" y="1155" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">6</text></g>
+<text x="128" y="1116" font-size="17" font-weight="700" fill="#185FA5" text-anchor="start">Admission</text>
+<text x="128" y="1146" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">manifest  →  admitted Kubernetes object</text>
+<text x="128" y="1174" font-size="12" font-weight="600" fill="#185FA5" text-anchor="start">v2 · admission</text>
+<text x="1320" y="1116" font-size="11" font-weight="600" fill="#854F0B" text-anchor="end">admitted Kubernetes object</text>
+<path d="M 96 1224 L 96 1238" fill="none" stroke="#185FA5" stroke-width="1.8" marker-end="url(#arrC)"/>
+<rect x="56" y="1240" width="1288" height="148" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56" y="1240" width="8" height="148" rx="4" fill="#185FA5"/>
+<g class="badge"><circle cx="96" cy="1314" r="16" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="96" y="1319" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">7</text></g>
+<text x="128" y="1280" font-size="17" font-weight="700" fill="#185FA5" text-anchor="start">Reconcile</text>
+<text x="128" y="1310" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">desired  →  live (Argo)</text>
+<text x="128" y="1338" font-size="12" font-weight="600" fill="#185FA5" text-anchor="start">v2 · argocd  ·  Agents · argo-board</text>
+<text x="1320" y="1280" font-size="11" font-weight="600" fill="#854F0B" text-anchor="end">live cluster state</text>
+<path d="M 96 1388 L 96 1402" fill="none" stroke="#185FA5" stroke-width="1.8" marker-end="url(#arrC)"/>
+<rect x="56" y="1404" width="1288" height="148" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56" y="1404" width="8" height="148" rx="4" fill="#185FA5"/>
+<g class="badge"><circle cx="96" cy="1478" r="16" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="96" y="1483" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">8</text></g>
+<text x="128" y="1444" font-size="17" font-weight="700" fill="#185FA5" text-anchor="start">Node</text>
+<text x="128" y="1474" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">object  →  VM that is a kube node on a slat</text>
+<text x="128" y="1502" font-size="12" font-weight="600" fill="#185FA5" text-anchor="start">Metal · vm-node  ·  hypervisor</text>
+<text x="1320" y="1444" font-size="11" font-weight="600" fill="#854F0B" text-anchor="end">kube node VM</text>
+<path d="M 96 1552 L 96 1566" fill="none" stroke="#185FA5" stroke-width="1.8" marker-end="url(#arrC)"/>
+<rect x="56" y="1568" width="1288" height="148" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56" y="1568" width="8" height="148" rx="4" fill="#185FA5"/>
+<g class="badge"><circle cx="96" cy="1642" r="16" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="96" y="1647" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">9</text></g>
+<text x="128" y="1608" font-size="17" font-weight="700" fill="#185FA5" text-anchor="start">Pod on metal</text>
+<text x="128" y="1638" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">node  →  cgroups + newsfeed-service:v1827 on a CPU slat</text>
+<text x="128" y="1666" font-size="12" font-weight="600" fill="#185FA5" text-anchor="start">Metal · newsfeed-pod  ·  cpu-slat  ·  rack-cpu</text>
+<text x="1320" y="1608" font-size="11" font-weight="600" fill="#854F0B" text-anchor="end">process on a slat</text>
+</g>
+<g data-band="serve">
+<rect x="36" y="1772" width="1328" height="1240" rx="12" fill="#F3FAF6" stroke="#A5D6C3" stroke-width="1.4"/>
+<text x="56" y="1804" font-size="18" font-weight="750" fill="#0F6E56" text-anchor="start">Serve</text>
+<text x="140" y="1804" font-size="13" font-weight="500" fill="#5F5E5A" text-anchor="start">A thumb uses the service. The request walks the data plane to the same pod.</text>
+<text x="56" y="1826" font-size="12" font-weight="500" fill="#5F5E5A" text-anchor="start">7 frames. Same through-line.</text>
+<rect x="56" y="1860" width="1288" height="148" rx="10" fill="#E8F5F0" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56" y="1860" width="8" height="148" rx="4" fill="#0F6E56"/>
+<g class="badge"><circle cx="96" cy="1934" r="16" fill="#085041" stroke="#fff" stroke-width="2"/><text x="96" y="1939" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">1</text></g>
+<text x="128" y="1900" font-size="17" font-weight="700" fill="#0F6E56" text-anchor="start">Thumb</text>
+<text x="128" y="1930" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">thumb  →  RF in air</text>
+<text x="128" y="1958" font-size="12" font-weight="600" fill="#0F6E56" text-anchor="start">Metal · user-phone  ·  e-rf</text>
+<text x="1320" y="1900" font-size="11" font-weight="600" fill="#854F0B" text-anchor="end">RF in air</text>
+<path d="M 96 2008 L 96 2022" fill="none" stroke="#0F6E56" stroke-width="1.8" marker-end="url(#arrD)"/>
+<rect x="56" y="2024" width="1288" height="148" rx="10" fill="#E8F5F0" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56" y="2024" width="8" height="148" rx="4" fill="#0F6E56"/>
+<g class="badge"><circle cx="96" cy="2098" r="16" fill="#085041" stroke="#fff" stroke-width="2"/><text x="96" y="2103" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">2</text></g>
+<text x="128" y="2064" font-size="17" font-weight="700" fill="#0F6E56" text-anchor="start">Tower</text>
+<text x="128" y="2094" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">bytes  →  light</text>
+<text x="128" y="2122" font-size="12" font-weight="600" fill="#0F6E56" text-anchor="start">Metal · tower  ·  bbu</text>
+<text x="1320" y="2064" font-size="11" font-weight="600" fill="#854F0B" text-anchor="end">light on fiber</text>
+<path d="M 96 2172 L 96 2186" fill="none" stroke="#0F6E56" stroke-width="1.8" marker-end="url(#arrD)"/>
+<rect x="56" y="2188" width="1288" height="148" rx="10" fill="#E8F5F0" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56" y="2188" width="8" height="148" rx="4" fill="#0F6E56"/>
+<g class="badge"><circle cx="96" cy="2262" r="16" fill="#085041" stroke="#fff" stroke-width="2"/><text x="96" y="2267" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">3</text></g>
+<text x="128" y="2228" font-size="17" font-weight="700" fill="#0F6E56" text-anchor="start">Glass to the hotel</text>
+<text x="128" y="2258" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">glass  →  hotel</text>
+<text x="128" y="2286" font-size="12" font-weight="600" fill="#0F6E56" text-anchor="start">Metal · metro-ring  ·  hotel  ·  xconnect</text>
+<text x="1320" y="2228" font-size="11" font-weight="600" fill="#854F0B" text-anchor="end">photons to a meet-me</text>
+<path d="M 96 2336 L 96 2350" fill="none" stroke="#0F6E56" stroke-width="1.8" marker-end="url(#arrD)"/>
+<rect x="56" y="2352" width="1288" height="148" rx="10" fill="#E8F5F0" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56" y="2352" width="8" height="148" rx="4" fill="#0F6E56"/>
+<g class="badge"><circle cx="96" cy="2426" r="16" fill="#085041" stroke="#fff" stroke-width="2"/><text x="96" y="2431" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">4</text></g>
