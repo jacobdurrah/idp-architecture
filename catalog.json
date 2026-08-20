@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "ed7f8f12c7d0",
+  "version": "d5c87479d242",
   "records": [
     {
       "id": "admission",
@@ -4415,6 +4415,21 @@
       "href": "/idp-architecture/p.html#overview"
     },
     {
+      "id": "p-ca",
+      "tab": "p",
+      "name": "Cluster autoscaler",
+      "plane": "ctrl",
+      "what": "Node loop. If pods are unschedulable, CA adds nodes. If traffic falls and HPA removes pods, CA drains idle nodes. Same telemetry plane as HPA. The rare moment control plane touches plane B without a Terraform run is CA calling the cloud API to mint or retire a VM.",
+      "why": "A fixed node pool is either waste or a pending incident. CA makes the node group elastic within the bounds Terraform already created. Bigger bounds are a plane-B change.",
+      "notes": [
+        "Triggered by unschedulable pods and underused nodes.",
+        "Max size is desired infra, owned by Terraform. Drains respect PDBs.",
+        "When observability is dark, do not treat silence as permission to drain.",
+        "GPU node groups are a different pool. The newsfeed worker is CPU."
+      ],
+      "href": "/idp-architecture/p.html#p-ca"
+    },
+    {
       "id": "p-cni",
       "tab": "p",
       "name": "CNI (pod network)",
@@ -4443,6 +4458,21 @@
         "headless Services return pod IPs. The feed uses a normal ClusterIP."
       ],
       "href": "/idp-architecture/p.html#p-dns"
+    },
+    {
+      "id": "p-hpa",
+      "tab": "p",
+      "name": "Horizontal pod autoscaler",
+      "plane": "ctrl",
+      "what": "Pod replica loop. HPA reads metrics (CPU, RPS, custom) and writes replica counts onto Deployments. It is a Kubernetes object, desired in Git, acting continuously. News feed is the example: four replicas is a floor, not a personality.",
+      "why": "Humans guessing replica counts will be wrong twice a day. HPA turns SLIs into the only guess that matters. It also makes a bad deploy visible: replicas climb while error rate climbs.",
+      "notes": [
+        "Triggered by metrics APIs, continuously. Not a Terraform apply.",
+        "Same Prometheus the dashboards and the canary use.",
+        "When observability is dark, do not treat missing metrics as all quiet and scale to one.",
+        "Node count is the cluster autoscaler. HPA does not mint VMs."
+      ],
+      "href": "/idp-architecture/p.html#p-hpa"
     },
     {
       "id": "p-ingress",
@@ -4520,6 +4550,21 @@
       "href": "/idp-architecture/p.html#p-mesh"
     },
     {
+      "id": "p-nvlink",
+      "tab": "p",
+      "name": "NVLink / GPU fabric",
+      "plane": "metal",
+      "what": "Inside the tray, GPU to GPU. Hundreds of nanoseconds at about 900 GB/s. This is not Ethernet and it is not a CNI plugin. IB or RoCE is the hop between trays. The newsfeed worker does not live here.",
+      "why": "If the train is waiting on AllReduce, this hop and the IB hop next to it are the floor. Citing Metal keeps Plane honest: the request path BOM and the train path BOM are different racks.",
+      "notes": [
+        "NVLink is inside the tray. IB or RoCE is between trays.",
+        "You cannot peer this with a ToR and a hope.",
+        "Cite Metal e-nvlink and rack-gpu. Liquid tray, H100-class, quick-disconnects.",
+        "newsfeed-service:v1827 is a CPU slat in the general row. Do not schedule it here."
+      ],
+      "href": "/idp-architecture/p.html#p-nvlink"
+    },
+    {
       "id": "p-obj",
       "tab": "p",
       "name": "Object store",
@@ -4535,6 +4580,21 @@
       "href": "/idp-architecture/p.html#p-obj"
     },
     {
+      "id": "p-otel",
+      "tab": "p",
+      "name": "OpenTelemetry on the request",
+      "plane": "obs",
+      "what": "Every hop on this poster should emit. The process SDK plus a node agent. One vendor-neutral API. Traces, metrics, and logs on the same request that hit newsfeed-service:v1827. The collector fans out. This is not a CI step.",
+      "why": "If each utility invents a dialect, you cannot ask a path-wide question. OTel is the contract: apps speak one API, the collector decides where bytes go. Agents that improve code later will read those joins. Cite Agents otel-sdk.",
+      "notes": [
+        "In-process plus node daemon. Both are required. Shipped in the golden template.",
+        "Context propagation is how a user request becomes one trace across ingress, service, Redis, SQL.",
+        "A dead collector is a blank board. Do not invent a story. Freeze promotions.",
+        "Same Prometheus the HPA and the canary consume."
+      ],
+      "href": "/idp-architecture/p.html#p-otel"
+    },
+    {
       "id": "p-redis",
       "tab": "p",
       "name": "Redis (cache)",
@@ -4548,6 +4608,21 @@
         "newsfeed-service:v1827 reads here. It does not persist here."
       ],
       "href": "/idp-architecture/p.html#p-redis"
+    },
+    {
+      "id": "p-search",
+      "tab": "p",
+      "name": "Search index",
+      "plane": "data",
+      "what": "Index of posts and people. Fed asynchronously from Kafka, not from the request path that renders a feed. Query path comes from news feed or a dedicated search API.",
+      "why": "Search is a derived view. Building it on the write path of a post is how you miss SLOs. Feeding it from the log keeps the system of record thin and lets you rebuild the index.",
+      "notes": [
+        "Triggered by indexers consuming Kafka. Stores search documents.",
+        "Not the source of posts. Rebuild is allowed and expected.",
+        "Managed service, provisioned by Terraform.",
+        "A search outage degrades find. It does not blank the feed."
+      ],
+      "href": "/idp-architecture/p.html#p-search"
     },
     {
       "id": "p-sql",
