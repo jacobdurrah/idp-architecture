@@ -47,6 +47,7 @@ function render(id) {
   if (item.job) extra += "<h3>The job</h3><p>" + escapeHtml(item.job) + "</p>";
   if (item.whyShape) extra += "<h3>Why this shape</h3><p>" + escapeHtml(item.whyShape) + "</p>";
   extra += window.IDP_productLinks ? window.IDP_productLinks(item, escapeHtml) : "";
+  extra += window.IDP_renderLocations ? window.IDP_renderLocations(item, escapeHtml) : "";
   panelBody.innerHTML =
     '<span class="chip ' + item.p + '">' + escapeHtml(plane.label) + "</span>" +
     "<h2>" + escapeHtml(item.n) + "</h2>" +
