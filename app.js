@@ -278,6 +278,12 @@
       (c.extra || "");
   }
 
+  function realId(id) {
+    if (!id) return false;
+    return !!(CONTENT[id] || HITS.find(function (h) { return h.id === id; }) ||
+      REGIONS[id] || STEPS.find(function (s) { return s.id === id; }));
+  }
+
   function openDrawer(id) {
     renderDrawer(id);
     el.drawer.classList.add("is-open");
@@ -285,6 +291,7 @@
     el.scrim.hidden = false;
     el.scrim.classList.add("is-on");
     setActive(id);
+    window.dispatchEvent(new CustomEvent("idp:render", { detail: { id: id, tab: "map" } }));
   }
 
   function closeDrawer() {
@@ -546,6 +553,13 @@
     applyTransform();
     hintTimer = setTimeout(hideHint, 9000);
     el.canvas.focus({ preventScroll: true });
+    const hashId = location.hash.slice(1);
+    if (realId(hashId)) {
+      const box = HITS.find(function (h) { return h.id === hashId; }) ||
+        REGIONS[hashId] || STEPS.find(function (s) { return s.id === hashId; });
+      if (box) jumpTo(box, hashId);
+      else openDrawer(hashId);
+    }
   }
 
   window.IDP_MAP = { REGIONS: REGIONS, STEPS: STEPS, HITS: HITS, jumpTo: jumpTo, openDrawer: openDrawer };

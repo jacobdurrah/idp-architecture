@@ -1,4 +1,5 @@
 const DATA = window.IDP_DATA;
+const TAB = "agents";
 const PLANES = {
   ctrl:  { label: "Control plane", color: "#185FA5" },
   data:  { label: "Data plane", color: "#0F6E56" },
@@ -41,6 +42,9 @@ function render(id) {
     (notes ? "<h3>Design notes</h3><ul>" + notes + "</ul>" : "") +
     extra;
   highlight(current);
+  if (DATA[id]) history.replaceState(null, "", "#" + current);
+  else history.replaceState(null, "", location.pathname);
+  window.dispatchEvent(new CustomEvent("idp:render", { detail: { id: current, tab: TAB } }));
   if (mq.matches) panel.classList.add("is-open");
 }
 
@@ -123,6 +127,8 @@ function bind() {
 Promise.all([fetch("a-svg-0.txt").then(function(r){return r.text();}), fetch("a-svg-1.txt").then(function(r){return r.text();}), fetch("a-svg-2.txt").then(function(r){return r.text();}), fetch("a-svg-3.txt").then(function(r){return r.text();}), fetch("a-svg-4.txt").then(function(r){return r.text();}), fetch("a-svg-5.txt").then(function(r){return r.text();}), fetch("a-svg-6.txt").then(function(r){return r.text();}), fetch("a-svg-7.txt").then(function(r){return r.text();})])
   .then(function (parts) {
     document.getElementById("stage").insertAdjacentHTML("afterbegin", parts.join(""));
+    const hashId = location.hash.slice(1);
     bind();
+    if (hashId && DATA[hashId]) render(hashId);
   });
 
