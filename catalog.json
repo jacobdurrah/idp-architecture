@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "13d0f8473d57",
+  "version": "a61fe50c03c4",
   "records": [
     {
       "id": "admission",
@@ -6250,6 +6250,34 @@
       "href": "/idp-architecture/y.html#st-event"
     },
     {
+      "id": "st-kernel",
+      "tab": "y",
+      "name": "Microkernel / plugin",
+      "plane": "data",
+      "what": "The IDP itself (admission plugins, Argo, policy). Browser, IDE, and kube extension points.",
+      "why": "Stable core, features as plugins, blast radius isolated.",
+      "notes": [
+        "The core stays small. A plugin carries a feature.",
+        "Admission, Argo, and policy are the IDP shape.",
+        "This is a platform team style, not a feed QPS style."
+      ],
+      "href": "/idp-architecture/y.html#st-kernel"
+    },
+    {
+      "id": "st-lambda",
+      "tab": "y",
+      "name": "Serverless / FaaS",
+      "plane": "data",
+      "what": "Image resize, webhook, a cron that is not always-on. Not the hot GET /feed path.",
+      "why": "Idle-to-spike. Pay per invoke. Downstream SQL still caps writes.",
+      "notes": [
+        "Good for burst work that is not the feed SLO.",
+        "Concurrency is a platform knob. The store you call is the real cap.",
+        "Do not put the hot GET /feed path here."
+      ],
+      "href": "/idp-architecture/y.html#st-lambda"
+    },
+    {
       "id": "st-layer",
       "tab": "y",
       "name": "Layered / n-tier",
@@ -6304,6 +6332,90 @@
         "Object store holds the heavy intermediates."
       ],
       "href": "/idp-architecture/y.html#st-pipe"
+    },
+    {
+      "id": "ys-cni",
+      "tab": "y",
+      "name": "CNI (pod network)",
+      "plane": "infra",
+      "what": "Scale band for the CNI (pod network) hop. Same utility as Plane p-cni.",
+      "why": "Styles and Plane agree on the band. Open Plane for when to pick the hop.",
+      "notes": [
+        "A pod IP and a route. QPS belongs to the app and the NIC."
+      ],
+      "href": "/idp-architecture/y.html#ys-cni"
+    },
+    {
+      "id": "ys-dns",
+      "tab": "y",
+      "name": "Cluster DNS",
+      "plane": "data",
+      "what": "Scale band for the Cluster DNS hop. Same utility as Plane p-dns.",
+      "why": "Styles and Plane agree on the band. Open Plane for when to pick the hop.",
+      "notes": [
+        "cluster.local, not the public CDN."
+      ],
+      "href": "/idp-architecture/y.html#ys-dns"
+    },
+    {
+      "id": "ys-ingress",
+      "tab": "y",
+      "name": "L7 Ingress / Gateway",
+      "plane": "data",
+      "what": "Scale band for the L7 Ingress / Gateway hop. Same utility as Plane p-ingress.",
+      "why": "Styles and Plane agree on the band. Open Plane for when to pick the hop.",
+      "notes": [
+        "Envoy / nginx class. CPU and TLS dominate before raw packet PPS."
+      ],
+      "href": "/idp-architecture/y.html#ys-ingress"
+    },
+    {
+      "id": "ys-kubeproxy",
+      "tab": "y",
+      "name": "kube-proxy / eBPF",
+      "plane": "data",
+      "what": "Scale band for the kube-proxy / eBPF hop. Same utility as Plane p-kubeproxy.",
+      "why": "Styles and Plane agree on the band. Open Plane for when to pick the hop.",
+      "notes": [
+        "Pick one mode. Do not mix iptables and eBPF on the same node."
+      ],
+      "href": "/idp-architecture/y.html#ys-kubeproxy"
+    },
+    {
+      "id": "ys-lb",
+      "tab": "y",
+      "name": "L4 load balancer",
+      "plane": "data",
+      "what": "Scale band for the L4 load balancer hop. Same utility as Plane p-lb.",
+      "why": "Styles and Plane agree on the band. Open Plane for when to pick the hop.",
+      "notes": [
+        "An NLB pair is a packet device. Host and path do not live here."
+      ],
+      "href": "/idp-architecture/y.html#ys-lb"
+    },
+    {
+      "id": "ys-mesh",
+      "tab": "y",
+      "name": "Service mesh",
+      "plane": "data",
+      "what": "Scale band for the Service mesh hop. Same utility as Plane p-mesh.",
+      "why": "Styles and Plane agree on the band. Open Plane for when to pick the hop.",
+      "notes": [
+        "Sidecar or ambient. Tax is real. A three-service app may not need it."
+      ],
+      "href": "/idp-architecture/y.html#ys-mesh"
+    },
+    {
+      "id": "ys-svc",
+      "tab": "y",
+      "name": "Kubernetes Service",
+      "plane": "data",
+      "what": "Scale band for the Kubernetes Service hop. Same utility as Plane p-svc.",
+      "why": "Styles and Plane agree on the band. Open Plane for when to pick the hop.",
+      "notes": [
+        "Endpoints move. The Service name does not."
+      ],
+      "href": "/idp-architecture/y.html#ys-svc"
     }
   ]
 }
