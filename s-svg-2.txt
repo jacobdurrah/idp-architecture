@@ -13,7 +13,7 @@
 <path d="M 96 2664 L 96 2678" fill="none" stroke="#0F6E56" stroke-width="1.8" marker-end="url(#arrD)"/>
 <rect x="56" y="2680" width="1288" height="148" rx="10" fill="#E8F5F0" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
 <rect x="56" y="2680" width="8" height="148" rx="4" fill="#0F6E56"/>
-<g class="badge"><circle cx="96" cy="2754" r="16" fill="#085041" stroke="#fff" stroke-width="2"/><text x="96" y="2759" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">7</text></g>
+<g class="badge"><circle cx="96" cy="2754" r="16" fill="#085041" stroke="#fff" stroke-width="2"/><text x="96" y="2759" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">6</text></g>
 <text x="128" y="2720" font-size="17" font-weight="700" fill="#0F6E56" text-anchor="start">Ingress + Service</text>
 <text x="128" y="2750" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">packet  →  in-cluster request</text>
 <text x="128" y="2778" font-size="12" font-weight="600" fill="#0F6E56" text-anchor="start">v2 · ingress  ·  lb</text>
