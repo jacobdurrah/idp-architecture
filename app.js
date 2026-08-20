@@ -110,13 +110,14 @@
     { id: "telemetry-behavior", x: 88, y: 2712, w: 5440, h: 280 },
   ];
 
+  const HITS_BY_AREA = HITS.slice().sort(function (a, b) { return a.w * a.h - b.w * b.h; });
+
   const CONTENT = window.IDP_CONTENT || {};
 
   const el = {
     canvas: document.getElementById("canvas"),
     world: document.getElementById("world"),
     host: document.getElementById("svg-host"),
-    hits: document.getElementById("hits"),
     highlight: document.getElementById("highlight"),
     chips: document.getElementById("chips"),
     rail: document.getElementById("rail"),
@@ -128,25 +129,51 @@
     drawerClose: document.getElementById("drawer-close"),
     scrim: document.getElementById("scrim"),
     zoomReadout: document.getElementById("zoom-readout"),
+    svg: null,
   };
 
   const view = { x: 0, y: 0, scale: 1, fitScale: 1 };
   let anim = null;
   let activeId = null;
+  let activeBox = null;
   let hintTimer = null;
 
   function clamp(n, a, b) { return Math.max(a, Math.min(b, n)); }
 
-  function applyTransform() {
-    el.world.style.transform = "translate(" + view.x + "px, " + view.y + "px) scale(" + view.scale + ")";
-    const pct = Math.round(view.scale * 100);
-    const nearFit = Math.abs(view.scale - view.fitScale) < 0.012;
-    el.zoomReadout.textContent = nearFit ? "Fit" : pct + "%";
-  }
-
   function canvasSize() {
     const r = el.canvas.getBoundingClientRect();
     return { w: r.width, h: r.height, left: r.left, top: r.top };
+  }
+
+  function updateHighlight() {
+    if (!el.highlight) return;
+    if (!activeBox || drag.on || pinch.on) {
+      el.highlight.hidden = true;
+      return;
+    }
+    el.highlight.hidden = false;
+    el.highlight.style.left = (activeBox.x * view.scale + view.x) + "px";
+    el.highlight.style.top = (activeBox.y * view.scale + view.y) + "px";
+    el.highlight.style.width = (activeBox.w * view.scale) + "px";
+    el.highlight.style.height = (activeBox.h * view.scale) + "px";
+  }
+
+  function applyTransform() {
+    const svg = el.svg || (el.host && el.host.querySelector("svg"));
+    if (svg) {
+      el.svg = svg;
+      const size = canvasSize();
+      const scale = view.scale || 1;
+      const vbW = size.w / scale;
+      const vbH = size.h / scale;
+      const vbX = -view.x / scale;
+      const vbY = -view.y / scale;
+      svg.setAttribute("viewBox", vbX + " " + vbY + " " + vbW + " " + vbH);
+    }
+    updateHighlight();
+    const pct = Math.round(view.scale * 100);
+    const nearFit = Math.abs(view.scale - view.fitScale) < 0.012;
+    el.zoomReadout.textContent = nearFit ? "Fit" : pct + "%";
   }
 
   function computeFit() {
@@ -204,27 +231,24 @@
     if (hintTimer) clearTimeout(hintTimer);
   }
 
+  function hitAt(wx, wy) {
+    for (let i = 0; i < HITS_BY_AREA.length; i++) {
+      const h = HITS_BY_AREA[i];
+      if (wx >= h.x && wy >= h.y && wx <= h.x + h.w && wy <= h.y + h.h) return h;
+    }
+    return null;
+  }
+
   function setActive(id) {
     activeId = id;
-    el.hits.querySelectorAll(".hit").forEach(function (n) {
-      n.classList.toggle("is-active", n.dataset.id === id);
-    });
     el.chips.querySelectorAll(".chip").forEach(function (n) {
       n.classList.toggle("is-active", n.dataset.id === id);
     });
     el.rail.querySelectorAll(".rail-btn").forEach(function (n) {
       n.classList.toggle("is-active", n.dataset.id === id);
     });
-    const box = HITS.find(function (h) { return h.id === id; }) || REGIONS[id] || STEPS.find(function (s) { return s.id === id; });
-    if (box) {
-      el.highlight.hidden = false;
-      el.highlight.style.left = box.x + "px";
-      el.highlight.style.top = box.y + "px";
-      el.highlight.style.width = box.w + "px";
-      el.highlight.style.height = box.h + "px";
-    } else {
-      el.highlight.hidden = true;
-    }
+    activeBox = HITS.find(function (h) { return h.id === id; }) || REGIONS[id] || STEPS.find(function (s) { return s.id === id; }) || null;
+    updateHighlight();
   }
 
   function planeLabel(plane) {
@@ -268,9 +292,9 @@
     el.drawer.setAttribute("aria-hidden", "true");
     el.scrim.classList.remove("is-on");
     el.scrim.hidden = true;
-    el.highlight.hidden = true;
     activeId = null;
-    el.hits.querySelectorAll(".hit").forEach(function (n) { n.classList.remove("is-active"); });
+    activeBox = null;
+    if (el.highlight) el.highlight.hidden = true;
     el.chips.querySelectorAll(".chip").forEach(function (n) { n.classList.remove("is-active"); });
     el.rail.querySelectorAll(".rail-btn").forEach(function (n) { n.classList.remove("is-active"); });
   }
@@ -310,24 +334,13 @@
     });
   }
 
-  function buildHits() {
-    HITS.forEach(function (h) {
-      const b = document.createElement("button");
-      b.type = "button";
-      b.className = "hit";
-      b.dataset.id = h.id;
-      b.style.left = h.x + "px";
-      b.style.top = h.y + "px";
-      b.style.width = h.w + "px";
-      b.style.height = h.h + "px";
-      b.title = (CONTENT[h.id] && CONTENT[h.id].name) || h.id;
-      b.addEventListener("click", function (e) {
-        e.stopPropagation();
-        if (drag.moved) return;
-        jumpTo(h, h.id, 140);
-      });
-      el.hits.appendChild(b);
-    });
+  function onCanvasClick(e) {
+    if (drag.moved || pinch.on) return;
+    const size = canvasSize();
+    const wx = (e.clientX - size.left - view.x) / view.scale;
+    const wy = (e.clientY - size.top - view.y) / view.scale;
+    const hit = hitAt(wx, wy);
+    if (hit) jumpTo(hit, hit.id, 140);
   }
 
   const drag = { on: false, moved: false, px: 0, py: 0, ox: 0, oy: 0 };
@@ -349,6 +362,7 @@
       pinch.d0 = dist(pts[0], pts[1]) || 1;
       pinch.s0 = view.scale;
       drag.on = false;
+      updateHighlight();
       return;
     }
     drag.on = true;
@@ -358,6 +372,7 @@
     drag.ox = view.x;
     drag.oy = view.y;
     el.canvas.classList.add("is-panning");
+    updateHighlight();
     if (el.canvas.setPointerCapture && e.pointerId != null) {
       try { el.canvas.setPointerCapture(e.pointerId); } catch (err) {}
     }
@@ -395,6 +410,7 @@
     drag.on = false;
     pinch.on = false;
     el.canvas.classList.remove("is-panning");
+    updateHighlight();
   }
 
   function onWheel(e) {
@@ -412,6 +428,7 @@
     el.canvas.addEventListener("pointerup", onPointerUp);
     el.canvas.addEventListener("pointercancel", onPointerUp);
     el.canvas.addEventListener("lostpointercapture", onPointerUp);
+    el.canvas.addEventListener("click", onCanvasClick);
     el.canvas.addEventListener("touchstart", onPointerDown, { passive: true });
     el.canvas.addEventListener("touchmove", function (e) { e.preventDefault(); onPointerMove(e); }, { passive: false });
     el.canvas.addEventListener("touchend", onPointerUp);
@@ -471,42 +488,53 @@
       brand.title = "Overview";
       brand.addEventListener("click", function () {
         openDrawer("overview");
-        el.highlight.hidden = true;
+        activeBox = null;
+        if (el.highlight) el.highlight.hidden = true;
       });
     }
   }
 
+  function decorateSvg(svg) {
+    if (!svg) return;
+    svg.setAttribute("width", "100%");
+    svg.setAttribute("height", "100%");
+    svg.setAttribute("preserveAspectRatio", "none");
+    svg.style.display = "block";
+    svg.style.width = "100%";
+    svg.style.height = "100%";
+    svg.querySelectorAll("[filter]").forEach(function (n) { n.removeAttribute("filter"); });
+    el.svg = svg;
+  }
+
+  async function loadFragments() {
+    const names = ["svg-head.svg", "svg-frag0.svg", "svg-frag1.svg", "svg-frag2.svg", "svg-frag3.svg", "svg-tail.svg"];
+    const chunks = await Promise.all(names.map(function (n) {
+      return fetch(n).then(function (r) {
+        if (!r.ok) throw new Error(n + " " + r.status);
+        return r.text();
+      });
+    }));
+    el.host.innerHTML = chunks.join("");
+  }
+
   async function loadSvg() {
     try {
-      const names = ["svg-head.svg", "svg-frag0.svg", "svg-frag1.svg", "svg-frag2.svg", "svg-frag3.svg", "svg-tail.svg"];
-      const chunks = await Promise.all(names.map(function (n) {
-        return fetch(n).then(function (r) {
-          if (!r.ok) throw new Error(n + " " + r.status);
-          return r.text();
-        });
-      }));
-      el.host.innerHTML = chunks.join("");
+      const res = await fetch("diagram.svg");
+      if (!res.ok) throw new Error(String(res.status));
+      el.host.innerHTML = await res.text();
     } catch (err) {
       try {
-        const res = await fetch("diagram.svg");
-        if (!res.ok) throw new Error(String(res.status));
-        el.host.innerHTML = await res.text();
+        await loadFragments();
       } catch (err2) {
-        el.host.innerHTML = '<object data="diagram.svg" type="image/svg+xml" width="5600" height="3360" aria-label="IDP architecture diagram"></object>';
+        el.host.innerHTML = '<object data="diagram.svg" type="image/svg+xml" width="100%" height="100%" aria-label="IDP architecture diagram"></object>';
       }
     }
-    const svg = el.host.querySelector("svg");
-    if (svg) {
-      svg.setAttribute("width", "5600");
-      svg.setAttribute("height", "3360");
-      svg.style.display = "block";
-    }
+    decorateSvg(el.host.querySelector("svg"));
   }
 
   async function init() {
     buildChips();
     buildRail();
-    buildHits();
     bindViewport();
     renderDrawer("overview");
     await loadSvg();
