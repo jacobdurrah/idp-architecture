@@ -1,0 +1,58 @@
+<text x="72.0" y="1506.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">writes replica counts</text>
+<text x="72.0" y="1546.0" font-size="11" font-weight="600" fill="#185FA5" text-anchor="start">Open Plane</text>
+<rect x="382.0" y="1364.0" width="310.0" height="200.0" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="382.0" y="1364.0" width="7.0" height="200.0" rx="4" fill="#185FA5" stroke="#185FA5" stroke-width="0"/>
+<text x="404.0" y="1394.0" font-size="15" font-weight="750" fill="#185FA5" text-anchor="start">Cluster autoscaler</text>
+<text x="404.0" y="1412.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">ys-ca</text>
+<text x="398.0" y="1444.0" font-size="11" font-weight="700" fill="#185FA5" text-anchor="start">Reads</text>
+<text x="398.0" y="1462.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">minutes, not RPS</text>
+<text x="398.0" y="1488.0" font-size="11" font-weight="700" fill="#185FA5" text-anchor="start">Writes</text>
+<text x="398.0" y="1506.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">mint or drain VMs</text>
+<text x="398.0" y="1546.0" font-size="11" font-weight="600" fill="#185FA5" text-anchor="start">Open Plane</text>
+<rect x="708.0" y="1364.0" width="310.0" height="200.0" rx="10" fill="#F1F0EB" stroke="#8A8984" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="708.0" y="1364.0" width="7.0" height="200.0" rx="4" fill="#3D3C38" stroke="#3D3C38" stroke-width="0"/>
+<text x="730.0" y="1394.0" font-size="15" font-weight="750" fill="#3D3C38" text-anchor="start">NVLink / GPU fabric</text>
+<text x="730.0" y="1412.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">ys-nvlink</text>
+<text x="724.0" y="1444.0" font-size="11" font-weight="700" fill="#3D3C38" text-anchor="start">Reads</text>
+<text x="724.0" y="1462.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">hundreds of GB/s</text>
+<text x="724.0" y="1488.0" font-size="11" font-weight="700" fill="#3D3C38" text-anchor="start">Writes</text>
+<text x="724.0" y="1506.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">AllReduce, not HTTP</text>
+<text x="724.0" y="1546.0" font-size="11" font-weight="600" fill="#185FA5" text-anchor="start">Open Plane</text>
+<rect x="1034.0" y="1364.0" width="310.0" height="200.0" rx="10" fill="#F3F1FC" stroke="#AFA9EC" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="1034.0" y="1364.0" width="7.0" height="200.0" rx="4" fill="#534AB7" stroke="#534AB7" stroke-width="0"/>
+<text x="1056.0" y="1394.0" font-size="15" font-weight="750" fill="#534AB7" text-anchor="start">OpenTelemetry</text>
+<text x="1056.0" y="1412.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">ys-otel</text>
+<text x="1050.0" y="1444.0" font-size="11" font-weight="700" fill="#534AB7" text-anchor="start">Reads</text>
+<text x="1050.0" y="1462.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">10k–100k spans/s</text>
+<text x="1050.0" y="1488.0" font-size="11" font-weight="700" fill="#534AB7" text-anchor="start">Writes</text>
+<text x="1050.0" y="1506.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">1–5% app overhead</text>
+<text x="1050.0" y="1546.0" font-size="11" font-weight="600" fill="#185FA5" text-anchor="start">Open Plane</text>
+<text x="700.0" y="1740.0" font-size="12" font-weight="500" fill="#5F5E5A" text-anchor="middle">Styles wire the hop. Plane is the BOM. Numbers are typical bands, not a capacity plan.</text>
+<g id="hits">
+<rect class="hit" data-id="st-mono" x="56.0" y="184.0" width="310.0" height="210.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="st-layer" x="382.0" y="184.0" width="310.0" height="210.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="st-micro" x="708.0" y="184.0" width="310.0" height="210.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="st-event" x="1034.0" y="184.0" width="310.0" height="210.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="st-cqrs" x="56.0" y="414.0" width="310.0" height="210.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="st-pipe" x="382.0" y="414.0" width="310.0" height="210.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="st-lambda" x="708.0" y="414.0" width="310.0" height="210.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="st-kernel" x="1034.0" y="414.0" width="310.0" height="210.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="ys-lb" x="56.0" y="716.0" width="310.0" height="200.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="ys-ingress" x="382.0" y="716.0" width="310.0" height="200.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="ys-kubeproxy" x="708.0" y="716.0" width="310.0" height="200.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="ys-cni" x="1034.0" y="716.0" width="310.0" height="200.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="ys-svc" x="56.0" y="932.0" width="310.0" height="200.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="ys-mesh" x="382.0" y="932.0" width="310.0" height="200.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="ys-dns" x="708.0" y="932.0" width="310.0" height="200.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="ys-redis" x="1034.0" y="932.0" width="310.0" height="200.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="ys-kafka" x="56.0" y="1148.0" width="310.0" height="200.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="ys-obj" x="382.0" y="1148.0" width="310.0" height="200.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="ys-sql" x="708.0" y="1148.0" width="310.0" height="200.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="ys-search" x="1034.0" y="1148.0" width="310.0" height="200.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="ys-hpa" x="56.0" y="1364.0" width="310.0" height="200.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="ys-ca" x="382.0" y="1364.0" width="310.0" height="200.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="ys-nvlink" x="708.0" y="1364.0" width="310.0" height="200.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="ys-otel" x="1034.0" y="1364.0" width="310.0" height="200.0" rx="8" fill="transparent"/>
+<rect id="selbox" visibility="hidden" rx="10"/>
+</g>
+</svg>
