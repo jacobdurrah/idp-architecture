@@ -1,6 +1,6 @@
 # IDP Architecture Map
 
-A living map of a mature internal developer platform, source to production. Three views share a top tab bar.
+A living map of a mature internal developer platform, source to production. Four views share a top tab bar.
 
 ## Views
 
@@ -9,6 +9,7 @@ A living map of a mature internal developer platform, source to production. Thre
 | **Map** | `index.html` | [Map](index.html) · https://jacobdurrah.github.io/idp-architecture/ | Dark, zoomable 5600×3360 staff-review canvas. Scroll to zoom, drag to pan, click a box. |
 | **Golden path** | `golden.html` | [Golden path](golden.html) · https://jacobdurrah.github.io/idp-architecture/golden.html | Light vertical poster. One change: commit → build → test → deploy → run → observe, with a sticky detail panel. |
 | **v2** | `v2.html` | [v2](v2.html) · https://jacobdurrah.github.io/idp-architecture/v2.html | Same light poster, enriched from the original map: five Git repos, PR #4821, 12-step path, admission, merged Triggers / Stores / Talks to. This is the presentation view. |
+| **Agents** | `agents.html` | [Agents](agents.html) · https://jacobdurrah.github.io/idp-architecture/agents.html | Light vertical poster. Where agentic agents sit from developer to observability, and which spaces are stigmergic (the environment holds the trace). |
 
 Open a tab, tap a box, read the panel. More pages can land here later as sibling HTML files linked from `tabs.css` / `.site-tabs`.
 
@@ -41,6 +42,6 @@ Two files, two jobs on the dark map:
    - `HITS` — invisible click targets over boxes.
    - `window.IDP_CONTENT` (top of the file) — drawer prose (`name`, `plane`, `does`, `triggers`, `stores`, `talksTo`).
 
-The light posters (`golden.html`, `v2.html`) keep CSS, SVG, and `DATA` inline. Edit a box by changing the SVG and the matching `DATA` key. Shared chrome is `tabs.css`.
+The light posters (`golden.html`, `v2.html`, `agents.html`) keep CSS, SVG, and `DATA` in sibling shards. Edit a box by changing the SVG and the matching `DATA` key. Shared chrome is `tabs.css`.
 
 The PNG at `og.png` is only the social/OG preview. The live Map view is always the SVG — do not swap it for a bitmap.
