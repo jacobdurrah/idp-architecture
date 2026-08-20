@@ -1,6 +1,6 @@
 # Build Ledger — v1 (idp-guide: on-site study agent for the IDP posters, 2026-08-20)
 
-_Completing these tasks produces **v1** of the on-site guide: a grounded Q&A dock that rides on top of the existing posters and can jump the page to the matching box. Source of truth for scope is the pasted build brief (`idp-guide-build-prompt.md`); this file is the human-readable sequence and the living design. **WIP limit = 1 within a task, but streams A/B/C/D run in parallel** (see Execution Order). A task is DONE when every `*Accept:*` box passes on a real page (local static server or Pages preview), not just in theory._
+_Completing these tasks produces **v1** of the on-site guide: a grounded Q&A dock that rides on top of the existing posters and can jump the page to the matching box. Source of truth for scope is the pasted build brief (`idp-guide-build-prompt.md`); this file is the human-readable sequence and the living design. **WIP limit = 1 within a task, but streams A/B/C/D run in parallel** (see Execution Order). Every task carries an **Impact (plain terms)** line (what it does for a person, no jargon) and an explicit **Tests (done when these pass)** list; the nested `*Enables:*` notes are builder-facing detail. A task is DONE only when all its Tests pass on a real page (local static server or Pages preview), not just in theory._
 
 _**The thesis in one line:** three jobs, three tools on the agent. v1 ships the first job (Questions) and its two tools (`lookup`, `open_box`). v2 adds Feedback (`flag_clarity`). v3 adds Deeper understanding (tutor). Everything is grounded in `catalog.json`, generated from the same shards the pages load — the agent never invents a hop._
 
@@ -160,36 +160,81 @@ _Four build streams, then one join. **A/B/C land in `idp-architecture` and share
 ## PHASE v1 — Dock + grounded Q&A + highlight
 _Goal: a visitor asks a question on any tab, gets a grounded answer citing a data-id, and the poster jumps to that box. v2 (clarity issues) and v3 (tutor/quiz) are out of scope — design the protocol and catalog so they land later without a rewrite._
 
-- ⬜ **IG-01 — Catalog generator (Stream A).** 🤖 A one-shot Node script `tools/build-catalog.js` that loads every `*-data-*.js` (g/v/a/m) plus Map's `content-*.js` in a shim capturing `window.IDP_DATA` / `window.IDP_CONTENT`, dedups by `(tab, id)`, and emits the §5 record for every key. Commit generated `catalog.json` at repo root so Pages serves it with no auth. *Accept: `catalog.json` lists ids from all four light tabs plus Map where clean; `e-subsea` carries Metal's latency copy; re-running the script reproduces the file byte-for-byte from unchanged shards.*
+- ⬜ **IG-01 — Catalog generator (Stream A).** 🤖 A one-shot Node script `tools/build-catalog.js` that loads every `*-data-*.js` (g/v/a/m) plus Map's `content-*.js` in a shim capturing `window.IDP_DATA` / `window.IDP_CONTENT`, dedups by `(tab, id)`, and emits the §5 record for every key. Commit generated `catalog.json` at repo root so Pages serves it with no auth. **Impact (plain terms):** turns the words already on the posters into one machine-readable list the guide can read, so the guide only ever talks about things that are actually on the site.
+
+  **Tests (done when these pass):**
+  1. `catalog.json` has at least one record for each of the four light tabs (golden, v2, agents, metal), plus Map entries where clean.
+  2. The `e-subsea` record's latency text matches the copy shown in the Metal panel.
+  3. Running the generator twice on unchanged shards produces an identical file (stable ordering, no diff).
+  4. Every record has `id`, `tab`, `name`, `what`, `why`, and an `href` that opens the right page + box.
+  5. Adding a throwaway box to a shard and re-running makes it appear in `catalog.json` with no change to the generator.
   - [ ] **Shim loader** captures `IDP_DATA`/`IDP_CONTENT` without a browser. *Enables: regenerating the catalog after any shard edit.*
   - [ ] **Field map + Metal extras** (`n/p/w/y/d` + medium/speed/latency/bandwidth/owner). *Enables: the agent can answer Metal's medium/speed/latency questions.*
   - [ ] **Dedup by `(tab, id)` + `href` per §5.** *Enables: `open_box`/hash-open target a unique, real box.*
   - [ ] **Tab-agnostic discovery** (glob `*-data-*.js`, no hardcoded tab list) + top-level `version`/`generatedAt`. *Enables: NFR-8 — a new tab/technology/shard flows in with no generator edit; NFR-9 cache-busting.*
   - [ ] **Split-if-large fallback** (`catalog-0.json…` + manifest) only if one file truncates on push. *Enables: NFR-3 safe publish on a repo that has truncated large files.*
-- ⬜ **IG-02 — Hash-open + `idp:render` seam (Stream B).** 🤖 In `golden-ui.js`, `v2-ui.js`, `agents-ui.js`, `metal-ui.js`: after `bind()`, if `location.hash` (minus `#`) is a real `IDP_DATA` key, call `render(id)`; on every successful `render(id)` (taps included) `history.replaceState` the hash (no new history entry per tap) **and** dispatch the `idp:render` seam event (§7.3). Map (`app.js`) opens its drawer only if the hash maps to a real id, else ignores. *Accept: `metal.html#e-subsea` opens the Subsea panel with no click; tapping a box updates the hash without stacking history; clearing to overview may clear the hash; Map ignores an unknown hash.*
+- ⬜ **IG-02 — Hash-open + `idp:render` seam (Stream B).** 🤖 In `golden-ui.js`, `v2-ui.js`, `agents-ui.js`, `metal-ui.js`: after `bind()`, if `location.hash` (minus `#`) is a real `IDP_DATA` key, call `render(id)`; on every successful `render(id)` (taps included) `history.replaceState` the hash (no new history entry per tap) **and** dispatch the `idp:render` seam event (§7.3). Map (`app.js`) opens its drawer only if the hash maps to a real id, else ignores. **Impact (plain terms):** lets any box be opened straight from a web link, so the guide can send you to the exact box that answers your question.
+
+  **Tests (done when these pass):**
+  1. Opening `metal.html#e-subsea` shows the Subsea panel with no click.
+  2. Clicking a box updates the address bar to that box's link.
+  3. Pressing browser Back after several clicks does not step through every box one by one (no history spam).
+  4. A made-up hash like `#not-real` opens nothing and throws no error.
+  5. Each `render` fires exactly one `idp:render` event carrying the id and tab (visible in the console).
   - [ ] **Hash-on-load** for the four light tabs. *Enables: deep links + the agent's cross-tab `idp.open` navigate target.*
   - [ ] **`replaceState` on render** (no per-tap history entry). *Enables: shareable URL that reflects the open box.*
   - [ ] **Dispatch `idp:render` CustomEvent** on every render. *Enables: Stream C learns a box opened without touching UI internals.*
   - [ ] **Map cautious hash-open** in `app.js`. *Enables: deep links on the dark canvas without inventing a second hash scheme.*
-- ⬜ **IG-03 — Dock + postMessage (Stream C).** 🤖 New `guide-dock.js` (< 8KB) included before `</body>` on all five HTML pages: a fixed iframe/chip above the 36px tab bar (does not cover `.site-tabs`), 380px column or bottom-right chip on desktop, bottom-sheet chip on mobile, dark variant on `body.idp-map`. Collapse state in `localStorage['idp-guide-dock']`. iframe `src` = `IDP_GUIDE_ORIGIN` constant (default `http://localhost:3000` on localhost), sandbox `allow-scripts allow-same-origin allow-forms`, title "Architecture guide". Send `idp.context` on load, on each `idp:render` event, and on tab identity at startup; handle inbound `idp.open` (same tab → `render`, else navigate to `<file>#id`). Strict origin allowlist. Fails silent if the iframe won't load. *Accept: every tab shows a collapsible dock; the tab bar still works; collapse persists across reloads; blocking the iframe leaves the posters fully usable; an `idp.open` from a hello-world embed navigates Golden→`metal.html#e-subsea`.*
+- ⬜ **IG-03 — Dock + postMessage (Stream C).** 🤖 New `guide-dock.js` (< 8KB) included before `</body>` on all five HTML pages: a fixed iframe/chip above the 36px tab bar (does not cover `.site-tabs`), 380px column or bottom-right chip on desktop, bottom-sheet chip on mobile, dark variant on `body.idp-map`. Collapse state in `localStorage['idp-guide-dock']`. iframe `src` = `IDP_GUIDE_ORIGIN` constant (default `http://localhost:3000` on localhost), sandbox `allow-scripts allow-same-origin allow-forms`, title "Architecture guide". Send `idp.context` on load, on each `idp:render` event, and on tab identity at startup; handle inbound `idp.open` (same tab → `render`, else navigate to `<file>#id`). Strict origin allowlist. Fails silent if the iframe won't load. **Impact (plain terms):** puts a small chat panel on every page that can talk to the guide and highlight boxes, and can be collapsed or ignored without breaking the posters.
+
+  **Tests (done when these pass):**
+  1. All five tabs show the dock; it collapses and stays collapsed after a reload.
+  2. The dock never covers the tab bar; switching tabs still works.
+  3. With the guide URL blocked or offline, the posters still work fully (the dock is just absent).
+  4. A test `idp.open` from the embed opens the right box on the same tab, or navigates to the right page + box on another tab.
+  5. A message from an origin that is not on the allowlist is ignored.
   - [ ] **Dock shell + collapse persistence** (light + `idp-map` dark). *Enables: the visible chat surface on every tab.*
   - [ ] **Outbound `idp.context`** on load + on `idp:render`. *Enables: answers know which box the user is looking at.*
   - [ ] **Inbound `idp.open`** → render or navigate. *Enables: the agent jumps the poster to the box it cites.*
   - [ ] **Origin allowlist + sandbox + fail-silent.** *Enables: NFR-2 posters-first and NFR-4 origin safety.*
-- ⬜ **IG-04 — eve app: tools, embed, prompt (Stream D).** 🤖 `npx eve@latest init idp-guide`, then implement against the bundled eve docs. Agent instructions: guide for the five tabs, answer only from `catalog.json`, cite ≥1 data-id, prefer calling `open_box`, never invent hops/latencies/vendors/boxes, never claim to have edited the site, no em dashes. Tools `lookup` + `open_box` (§6). Skills `ask` + `tutor` stub. `/embed` chat: listen for `idp.context` from the parent on mount, keep latest `{tab,id}` in session, stream replies, post `idp.open` when `open_box` fires, "Open on poster" affordance. CORS/frame-ancestors allow `jacobdurrah.github.io` + `localhost:*`. Simple rate limit if easy. *Accept: against a 3-record fixture catalog, asking a known question cites the right data-id and calls `open_box`; asking something not in the catalog refuses and offers the closest ids; no auth wall; a per-IP/session limit exists.*
+- ⬜ **IG-04 — eve app: tools, embed, prompt (Stream D).** 🤖 `npx eve@latest init idp-guide`, then implement against the bundled eve docs. Agent instructions: guide for the five tabs, answer only from `catalog.json`, cite ≥1 data-id, prefer calling `open_box`, never invent hops/latencies/vendors/boxes, never claim to have edited the site, no em dashes. Tools `lookup` + `open_box` (§6). Skills `ask` + `tutor` stub. `/embed` chat: listen for `idp.context` from the parent on mount, keep latest `{tab,id}` in session, stream replies, post `idp.open` when `open_box` fires, "Open on poster" affordance. CORS/frame-ancestors allow `jacobdurrah.github.io` + `localhost:*`. Simple rate limit if easy. **Impact (plain terms):** the actual guide — it answers using only the site's own words, points you to the box it is citing, and admits when the site does not cover something.
+
+  **Tests (done when these pass):**
+  1. A question with a matching box cites that box's id and calls `open_box`.
+  2. A question with no matching box is refused with the closest ids offered, not a made-up answer.
+  3. Across a few adversarial prompts, the agent never returns a latency, vendor, or hop that is not in the catalog.
+  4. The embed opens with no login wall; hammering it quickly trips the rate limit.
+  5. The agent's answers contain no em dashes.
   - [ ] **eve init + read bundled docs** (not from memory). *Enables: correct eve APIs for tools/skills/embed.*
   - [ ] **Instructions (grounding + voice).** *Enables: NFR-1 grounding, NFR-5 voice.*
   - [ ] **`lookup` tool** (fetch + cache catalog, cap ~8). *Enables: grounded retrieval; NFR-7 freshness.*
   - [ ] **`open_box` tool** (validate tab + id, post `idp.open`). *Enables: the poster jump.*
   - [ ] **`/embed` chat speaks the protocol.** *Enables: FR-4/FR-6 end-to-end.*
   - [ ] **`ask` skill + `tutor` stub.** *Enables: v1 Q&A now, v3 tutor later with no rewrite.*
-- ⬜ **IG-05 — Integration + e2e + deploy (join).** 🤖👤 Merge A+B+C in `idp-architecture` (one PR: "Add guide dock, hash-open, and catalog.json"). Deploy `idp-guide` to Vercel; flip the dock's default origin to the production URL. Deploy the dock + hash + catalog to Pages (or a PR for Jacob to merge). *Accept: on the live (or preview/local) Golden path, asking "why is transatlantic 65–75 ms?" cites Metal `e-subsea` and navigates to `metal.html#e-subsea`; asking something not in the catalog does not invent a box; posters work with the dock collapsed or blocked; README on both repos explains local run + what v1 is + the postMessage protocol + env vars.*
+- ⬜ **IG-05 — Integration + e2e + deploy (join).** 🤖👤 Merge A+B+C in `idp-architecture` (one PR: "Add guide dock, hash-open, and catalog.json"). Deploy `idp-guide` to Vercel; flip the dock's default origin to the production URL. Deploy the dock + hash + catalog to Pages (or a PR for Jacob to merge). **Impact (plain terms):** proves the whole thing works end to end on the real site — ask a question on one page, land on the right box on another.
 
-- ⬜ **IG-08 — Catalog auto-regeneration (CI).** 🤖 *(v1 — foundational; depends on IG-01.)* Wrap IG-01's generator as an npm script + a GitHub Action that regenerates `catalog.json` on any change to `*-data-*.js`/`content-*.js` and commits/publishes it to Pages, stamping a fresh `version`/`generatedAt`. Without this, grounding drifts the first time a shard is edited, so it is in v1 scope. *Accept: editing a shard's copy and pushing produces an updated `catalog.json` on Pages within the same CI run, with a new `version`; the agent picks up the new copy on its next session with no redeploy; a shard edit that forgets to regenerate fails the check.*
+  **Tests (done when these pass):**
+  1. On Golden path, "why is transatlantic 65-75 ms?" cites Metal `e-subsea` and navigates to `metal.html#e-subsea`.
+  2. A question outside the catalog does not invent a box.
+  3. The posters work with the dock collapsed or blocked.
+  4. Both READMEs explain local run, what v1 is, the postMessage protocol, and the env vars.
+
+- ⬜ **IG-08 — Catalog auto-regeneration (CI).** 🤖 *(v1 — foundational; depends on IG-01.)* Wrap IG-01's generator as an npm script + a GitHub Action that regenerates `catalog.json` on any change to `*-data-*.js`/`content-*.js` and commits/publishes it to Pages, stamping a fresh `version`/`generatedAt`. Without this, grounding drifts the first time a shard is edited, so it is in v1 scope. **Impact (plain terms):** keeps the guide's knowledge automatically in step with the posters, so editing a diagram is all you ever have to do.
+
+  **Tests (done when these pass):**
+  1. Editing a shard's copy and pushing produces an updated `catalog.json` on Pages in the same CI run, with a bumped `version`.
+  2. The guide teaches the new copy on its next session with no redeploy.
+  3. A push that changes a shard but not `catalog.json` fails the drift check.
   - [ ] **`npm run build:catalog`** wrapping `tools/build-catalog.js`. *Enables: one command to regenerate.*
   - [ ] **GitHub Action on shard/content change** → regenerate + publish + version bump. *Enables: FR-8 no-drift grounding.*
   - [ ] **Drift check** (CI fails if `catalog.json` is stale vs shards). *Enables: catches a hand-edit that skipped regeneration.*
-- ⬜ **IG-12 — Catalog contract test (both repos).** 🤖 *(v1 — the guardrail for rapid change; §9.)* Author `catalog.schema.json` (published on Pages next to `catalog.json`) + a `schemaVersion`. idp-architecture CI: the generated catalog validates against the schema, and an additive-only assertion checks every field v1 `lookup` reads (`id`, `tab`, `name`, `what`, `why`) is still present. idp-guide CI: its fixture **and** a fetch of the live catalog both validate against the same schema. *Accept: adding an optional field passes both CIs; renaming/removing `id`/`tab`/`name`/`what`/`why` fails idp-architecture CI before publish; a catalog whose `schemaVersion` the agent does not support is flagged, not silently mis-read.*
+- ⬜ **IG-12 — Catalog contract test (both repos).** 🤖 *(v1 — the guardrail for rapid change; §9.)* Author `catalog.schema.json` (published on Pages next to `catalog.json`) + a `schemaVersion`. idp-architecture CI: the generated catalog validates against the schema, and an additive-only assertion checks every field v1 `lookup` reads (`id`, `tab`, `name`, `what`, `why`) is still present. idp-guide CI: its fixture **and** a fetch of the live catalog both validate against the same schema. **Impact (plain terms):** a safety net so a bad edit cannot silently make the guide say wrong things — it fails loudly in CI first.
+
+  **Tests (done when these pass):**
+  1. Adding a new optional field to the catalog passes CI in both repos.
+  2. Renaming or removing `id`/`tab`/`name`/`what`/`why` fails idp-architecture CI before anything publishes.
+  3. A catalog with a `schemaVersion` the agent does not support is flagged, not silently misread.
+  4. The live catalog on Pages validates against the published schema.
   - [ ] **`catalog.schema.json` + `schemaVersion`**, published on Pages. *Enables: one machine-checkable definition of the data contract (§7.1).*
   - [ ] **Producer-side validation + additive-only assertion** in IG-08's CI. *Enables: a breaking regen turns red before it reaches Pages.*
   - [ ] **Consumer-side validation** (fixture + live fetch) in idp-guide CI. *Enables: drift surfaces on the agent side the day it happens.*
@@ -222,3 +267,4 @@ _These keep the agent in sync as the diagrams grow and turn questions into clear
 - 2026-08-20 — Added the **living-site** design (§8): the posters keep growing, so the catalog schema now carries `kind`/`seq`/`badge`/`tech` and a `version`, evolution is additive-only (§7), and two loops are specced — auto-regeneration for freshness (IG-08) and question-telemetry → clarity backlog for continuous diagram improvement (IG-09). New content kinds (workflow/sequence IG-10, code-lifecycle journey IG-11) ride the same pipeline. FR-8/9/10, NFR-8/9 added.
 - 2026-08-20 — **Folded IG-08 (catalog auto-regeneration) into v1 scope** so grounding never drifts once shards start changing. It sits in PHASE v1 after IG-01; the living-site phase now starts at IG-09.
 - 2026-08-20 — Added **§9 Repo integration & change management**: the two repos integrate through the catalog (a versioned public API), not through code. Content churn flows through the data seam with zero idp-guide changes; capability changes are rare and additive; guardrails = schema + contract test in both CIs (IG-12, v1), config-not-code origins, independent deploys, expand-only order. FR-11 added.
+- 2026-08-20 — Every v1 task (IG-01/02/03/04/05/08/12) now carries a jargon-free **Impact (plain terms)** line and an explicit numbered **Tests (done when these pass)** list; DONE = all Tests green on a real page. Convention noted in the intro so later tasks follow it.
