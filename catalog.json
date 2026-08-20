@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "a812c58b319f",
+  "version": "5f7fdf8db3db",
   "records": [
     {
       "id": "admission",
@@ -4483,7 +4483,8 @@
       "why": "Services should not each invent a front door. Ingress is the platform edge inside the cluster. Changing it is a GitOps change, which means it is reviewed and reversible.",
       "notes": [
         "HTTP and HTTPS. Host, path, headers. Not a second L4.",
-        "Gateway API is the successor shape. Same job.",
+        "Gateway API is the successor shape. Same job. Most used in-cluster: ingress-nginx. Often Envoy.",
+        "Also common: Traefik, Kong Gateway, AWS Load Balancer Controller / ALB, Istio, Contour.",
         "Routes to newsfeed-service, then the fan-out.",
         "Cite Scenarios Serve: the packet becomes an in-cluster request here."
       ],
