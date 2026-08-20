@@ -1,0 +1,66 @@
+<text x="398.0" y="1012.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Reads</text>
+<text x="398.0" y="1030.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">10k–50k RPS/pod</text>
+<text x="398.0" y="1056.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Writes</text>
+<text x="398.0" y="1074.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">+1–2 ms, 5–20% CPU</text>
+<text x="398.0" y="1114.0" font-size="11" font-weight="600" fill="#185FA5" text-anchor="start">Open Plane</text>
+<rect x="708.0" y="932.0" width="310.0" height="200.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="708.0" y="932.0" width="7.0" height="200.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<text x="730.0" y="962.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">Cluster DNS</text>
+<text x="730.0" y="980.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">ys-dns</text>
+<text x="724.0" y="1012.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Reads</text>
+<text x="724.0" y="1030.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">10k–100k q/s / replica</text>
+<text x="724.0" y="1056.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Writes</text>
+<text x="724.0" y="1074.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">apps should cache</text>
+<text x="724.0" y="1114.0" font-size="11" font-weight="600" fill="#185FA5" text-anchor="start">Open Plane</text>
+<rect x="1034.0" y="932.0" width="310.0" height="200.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="1034.0" y="932.0" width="7.0" height="200.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<text x="1056.0" y="962.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">Redis (cache)</text>
+<text x="1056.0" y="980.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">ys-redis</text>
+<text x="1050.0" y="1012.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Reads</text>
+<text x="1050.0" y="1030.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">100k–1M ops/s / shard</text>
+<text x="1050.0" y="1056.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Writes</text>
+<text x="1050.0" y="1074.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">in memory either way</text>
+<text x="1050.0" y="1114.0" font-size="11" font-weight="600" fill="#185FA5" text-anchor="start">Open Plane</text>
+<rect x="56.0" y="1148.0" width="310.0" height="200.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56.0" y="1148.0" width="7.0" height="200.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<text x="78.0" y="1178.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">Kafka (queue / log)</text>
+<text x="78.0" y="1196.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">ys-kafka</text>
+<text x="72.0" y="1228.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Reads</text>
+<text x="72.0" y="1246.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">10k–100k msgs/s / part.</text>
+<text x="72.0" y="1272.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Writes</text>
+<text x="72.0" y="1290.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">10–50 MB/s / partition</text>
+<text x="72.0" y="1330.0" font-size="11" font-weight="600" fill="#185FA5" text-anchor="start">Open Plane</text>
+<rect x="382.0" y="1148.0" width="310.0" height="200.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="382.0" y="1148.0" width="7.0" height="200.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<text x="404.0" y="1178.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">Object store</text>
+<text x="404.0" y="1196.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">ys-obj</text>
+<text x="398.0" y="1228.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Reads</text>
+<text x="398.0" y="1246.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">CDN, millions of GETs</text>
+<text x="398.0" y="1272.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Writes</text>
+<text x="398.0" y="1290.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">PUT 1k–10k/s / prefix</text>
+<text x="398.0" y="1330.0" font-size="11" font-weight="600" fill="#185FA5" text-anchor="start">Open Plane</text>
+<rect x="708.0" y="1148.0" width="310.0" height="200.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="708.0" y="1148.0" width="7.0" height="200.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<text x="730.0" y="1178.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">Postgres</text>
+<text x="730.0" y="1196.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">ys-sql</text>
+<text x="724.0" y="1228.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Reads</text>
+<text x="724.0" y="1246.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">10–50k reads/s primary</text>
+<text x="724.0" y="1272.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Writes</text>
+<text x="724.0" y="1290.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">5–15k writes/s primary</text>
+<text x="724.0" y="1330.0" font-size="11" font-weight="600" fill="#185FA5" text-anchor="start">Open Plane</text>
+<rect x="1034.0" y="1148.0" width="310.0" height="200.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="1034.0" y="1148.0" width="7.0" height="200.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<text x="1056.0" y="1178.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">Search index</text>
+<text x="1056.0" y="1196.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">ys-search</text>
+<text x="1050.0" y="1228.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Reads</text>
+<text x="1050.0" y="1246.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">1k–10k q/s / node</text>
+<text x="1050.0" y="1272.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Writes</text>
+<text x="1050.0" y="1290.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">index 10k–50k docs/s</text>
+<text x="1050.0" y="1330.0" font-size="11" font-weight="600" fill="#185FA5" text-anchor="start">Open Plane</text>
+<rect x="56.0" y="1364.0" width="310.0" height="200.0" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56.0" y="1364.0" width="7.0" height="200.0" rx="4" fill="#185FA5" stroke="#185FA5" stroke-width="0"/>
+<text x="78.0" y="1394.0" font-size="15" font-weight="750" fill="#185FA5" text-anchor="start">Horizontal pod autoscaler</text>
+<text x="78.0" y="1412.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">ys-hpa</text>
+<text x="72.0" y="1444.0" font-size="11" font-weight="700" fill="#185FA5" text-anchor="start">Reads</text>
+<text x="72.0" y="1462.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">not a QPS device</text>
+<text x="72.0" y="1488.0" font-size="11" font-weight="700" fill="#185FA5" text-anchor="start">Writes</text>
