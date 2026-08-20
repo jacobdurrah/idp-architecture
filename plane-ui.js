@@ -31,6 +31,7 @@ function render(id) {
     extra += "<h3>Open in " + escapeHtml(pretty) + "</h3><p><a href=\"" + href + "\">" +
       escapeHtml(pretty + (item.seeId ? " · " + item.seeId : "")) + "</a></p>";
   }
+  extra += window.IDP_productLinks ? window.IDP_productLinks(item, escapeHtml) : "";
   panelBody.innerHTML =
     '<span class="chip ' + item.p + '">' + escapeHtml(plane.label) + "</span>" +
     "<h2>" + escapeHtml(item.n) + "</h2>" +
