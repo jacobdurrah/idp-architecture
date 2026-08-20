@@ -1,0 +1,81 @@
+<rect x="942" y="3274" width="176" height="14" rx="2" fill="#E6E2F2" stroke="#3D3C38" stroke-width="0.8"/>
+<rect x="936" y="3278" width="5" height="5" fill="#C45B2D"/>
+<rect x="1119" y="3278" width="5" height="5" fill="#185FA5"/>
+<rect x="942" y="3289" width="176" height="14" rx="2" fill="#E6E2F2" stroke="#3D3C38" stroke-width="0.8"/>
+<rect x="936" y="3293" width="5" height="5" fill="#C45B2D"/>
+<rect x="1119" y="3293" width="5" height="5" fill="#185FA5"/>
+<text x="946" y="3318" font-size="10" font-weight="600" fill="#C45B2D" text-anchor="start">A whip</text>
+<text x="1114" y="3318" font-size="10" font-weight="600" fill="#185FA5" text-anchor="end">B whip</text>
+<text x="1030.0" y="3334" font-size="10" font-weight="600" fill="#5F5E5A" text-anchor="middle">dedicated optical mesh</text>
+<rect x="1150" y="3088" width="200" height="254" rx="8" fill="#F1F0EB" stroke="#3D3C38" stroke-width="1.8"/>
+<text x="1250.0" y="3080" font-size="13" font-weight="700" fill="#185FA5" text-anchor="middle">Control-plane cell</text>
+<rect x="1158" y="3096" width="184" height="22" rx="3" fill="#D8EFE6" stroke="#1D9E75" stroke-width="1.2"/>
+<text x="1250.0" y="3112" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="middle">ToR  100/400G</text>
+<rect x="1162" y="3124" width="176" height="14" rx="2" fill="#D6E6F5" stroke="#3D3C38" stroke-width="0.8"/>
+<rect x="1156" y="3128" width="5" height="5" fill="#C45B2D"/>
+<rect x="1339" y="3128" width="5" height="5" fill="#185FA5"/>
+<rect x="1162" y="3139" width="176" height="14" rx="2" fill="#D6E6F5" stroke="#3D3C38" stroke-width="0.8"/>
+<rect x="1156" y="3143" width="5" height="5" fill="#C45B2D"/>
+<rect x="1339" y="3143" width="5" height="5" fill="#185FA5"/>
+<rect x="1162" y="3154" width="176" height="14" rx="2" fill="#D6E6F5" stroke="#3D3C38" stroke-width="0.8"/>
+<rect x="1156" y="3158" width="5" height="5" fill="#C45B2D"/>
+<rect x="1339" y="3158" width="5" height="5" fill="#185FA5"/>
+<rect x="1162" y="3169" width="176" height="14" rx="2" fill="#D6E6F5" stroke="#3D3C38" stroke-width="0.8"/>
+<rect x="1156" y="3173" width="5" height="5" fill="#C45B2D"/>
+<rect x="1339" y="3173" width="5" height="5" fill="#185FA5"/>
+<rect x="1162" y="3184" width="176" height="14" rx="2" fill="#D6E6F5" stroke="#3D3C38" stroke-width="0.8"/>
+<rect x="1156" y="3188" width="5" height="5" fill="#C45B2D"/>
+<rect x="1339" y="3188" width="5" height="5" fill="#185FA5"/>
+<rect x="1162" y="3199" width="176" height="14" rx="2" fill="#D6E6F5" stroke="#3D3C38" stroke-width="0.8"/>
+<rect x="1156" y="3203" width="5" height="5" fill="#C45B2D"/>
+<rect x="1339" y="3203" width="5" height="5" fill="#185FA5"/>
+<rect x="1162" y="3214" width="176" height="14" rx="2" fill="#D6E6F5" stroke="#3D3C38" stroke-width="0.8"/>
+<rect x="1156" y="3218" width="5" height="5" fill="#C45B2D"/>
+<rect x="1339" y="3218" width="5" height="5" fill="#185FA5"/>
+<rect x="1162" y="3229" width="176" height="14" rx="2" fill="#D6E6F5" stroke="#3D3C38" stroke-width="0.8"/>
+<rect x="1156" y="3233" width="5" height="5" fill="#C45B2D"/>
+<rect x="1339" y="3233" width="5" height="5" fill="#185FA5"/>
+<rect x="1162" y="3244" width="176" height="14" rx="2" fill="#D6E6F5" stroke="#3D3C38" stroke-width="0.8"/>
+<rect x="1156" y="3248" width="5" height="5" fill="#C45B2D"/>
+<rect x="1339" y="3248" width="5" height="5" fill="#185FA5"/>
+<rect x="1162" y="3259" width="176" height="14" rx="2" fill="#D6E6F5" stroke="#3D3C38" stroke-width="0.8"/>
+<rect x="1156" y="3263" width="5" height="5" fill="#C45B2D"/>
+<rect x="1339" y="3263" width="5" height="5" fill="#185FA5"/>
+<rect x="1162" y="3274" width="176" height="14" rx="2" fill="#D6E6F5" stroke="#3D3C38" stroke-width="0.8"/>
+<rect x="1156" y="3278" width="5" height="5" fill="#C45B2D"/>
+<rect x="1339" y="3278" width="5" height="5" fill="#185FA5"/>
+<rect x="1162" y="3289" width="176" height="14" rx="2" fill="#D6E6F5" stroke="#3D3C38" stroke-width="0.8"/>
+<rect x="1156" y="3293" width="5" height="5" fill="#C45B2D"/>
+<rect x="1339" y="3293" width="5" height="5" fill="#185FA5"/>
+<text x="1166" y="3318" font-size="10" font-weight="600" fill="#C45B2D" text-anchor="start">A whip</text>
+<text x="1334" y="3318" font-size="10" font-weight="600" fill="#185FA5" text-anchor="end">B whip</text>
+<text x="1250.0" y="3334" font-size="10" font-weight="600" fill="#5F5E5A" text-anchor="middle">API / etcd  ·  own FD</text>
+<rect x="1162" y="3090" width="132" height="22" rx="4" fill="#185FA5"/>
+<text x="1228.0" y="3106" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">CONTROL PLANE</text>
+<path d="M 150 3118 L 150 3199" fill="none" stroke="#2A7AB0" stroke-width="2.0"/>
+<path d="M 730 3176 L 890 3176" fill="none" stroke="#9B3D6A" stroke-width="2.4"/>
+<text x="50" y="3488" font-size="15" font-weight="750" fill="#2C2C2A" text-anchor="start">Server  ·  slat → VM → pod</text>
+<g class="badge"><circle cx="340" cy="3484" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="340" y="3489" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">13</text></g>
+<text x="370" y="3488" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">The golden-path worker node pool is these VMs on these slats.</text>
+<rect x="50" y="3500" width="250" height="130" rx="8" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<text x="66" y="3526" font-size="13" font-weight="700" fill="#185FA5" text-anchor="start">Hypervisor (KVM)</text>
+<text x="66" y="3548" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Carves VMs = nodes</text>
+<text x="66" y="3564" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">vswitch vs SR-IOV</text>
+<text x="66" y="3580" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">DPU can offload</text>
+<rect x="320" y="3500" width="250" height="130" rx="8" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<text x="336" y="3526" font-size="13" font-weight="700" fill="#185FA5" text-anchor="start">VM = K8s node</text>
+<text x="336" y="3548" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">kubelet + runtime + CNI</text>
+<text x="336" y="3564" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">What CA bargains for</text>
+<text x="336" y="3580" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Taints keep GPU on GPU</text>
+<rect x="590" y="3500" width="250" height="130" rx="8" fill="#E8F5F0" stroke="#1D9E75" stroke-width="1.6"/>
+<text x="606" y="3526" font-size="13" font-weight="700" fill="#0F6E56" text-anchor="start">Pod</text>
+<text x="606" y="3548" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">namespaces + cgroups</text>
+<text x="606" y="3564" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">A slice of a VM</text>
+<text x="606" y="3580" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">CNI address on the vswitch</text>
+<rect x="860" y="3500" width="510" height="130" rx="8" fill="#E8F5F0" stroke="#1D9E75" stroke-width="1.8"/>
+<text x="876" y="3526" font-size="13" font-weight="700" fill="#0F6E56" text-anchor="start">newsfeed-service:v1827</text>
+<text x="876" y="3548" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Same artifact Golden path ships.</text>
+<text x="876" y="3564" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Stateless worker on a CPU slat.</text>
+<text x="876" y="3580" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">p99 is every hop above, plus this process.</text>
+<line x1="300" y1="3565" x2="320" y2="3565" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<line x1="570" y1="3565" x2="590" y2="3565" stroke="#0F6E56" stroke-width="1.6" marker-end="url(#arrD)"/>
