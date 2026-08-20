@@ -21,3 +21,11 @@
 <text x="700.0" y="48.0" font-size="26" font-weight="750" fill="#2C2C2A" text-anchor="middle">Internal developer platform — the golden path</text>
 <text x="700.0" y="72.0" font-size="13" font-weight="500" fill="#5F5E5A" text-anchor="middle">One code change: commit → build → test → deploy → run → observe · with the infrastructure plane that makes it possible</text>
 <text x="700.0" y="92.0" font-size="12" font-weight="500" fill="#534AB7" text-anchor="middle">Dotted purple is telemetry coming home. A page, a canary, a revert. Not a dashboard graveyard.</text>
+<rect x="430.0" y="104.0" width="16.0" height="10.0" rx="2" fill="#378ADD" stroke="#378ADD" stroke-width="0"/>
+<text x="452.0" y="113.0" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Control plane</text>
+<rect x="590.0" y="104.0" width="16.0" height="10.0" rx="2" fill="#1D9E75" stroke="#1D9E75" stroke-width="0"/>
+<text x="612.0" y="113.0" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Data plane</text>
+<rect x="740.0" y="104.0" width="16.0" height="10.0" rx="2" fill="#EF9F27" stroke="#EF9F27" stroke-width="0"/>
+<text x="762.0" y="113.0" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Infrastructure</text>
+<rect x="920.0" y="104.0" width="16.0" height="10.0" rx="2" fill="#AFA9EC" stroke="#AFA9EC" stroke-width="0"/>
+<text x="942.0" y="113.0" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Observability</text>
