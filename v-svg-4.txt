@@ -1,0 +1,63 @@
+#5F5E5A" text-anchor="start">Binds pods · start of 11</text>
+<rect x="640.0" y="1626.0" width="250.0" height="54.0" rx="5" fill="#D6E8F7" stroke="#378ADD" stroke-width="1.4"/>
+<text x="650.0" y="1646.0" font-size="12" font-weight="700" fill="#0C447C" text-anchor="start">Controller manager</text>
+<text x="650.0" y="1664.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">ReplicaSets become pods</text>
+<g class="badge"><circle cx="340.0" cy="1610.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="340.0" y="1614.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">10</text></g>
+<rect x="86.0" y="1710.0" width="254.0" height="70.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="98.0" y="1732.0" font-size="13" font-weight="700" fill="#085041" text-anchor="start">DNS + CDN</text>
+<text x="98.0" y="1752.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Name and edge cache</text>
+<rect x="356.0" y="1710.0" width="254.0" height="70.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="368.0" y="1732.0" font-size="13" font-weight="700" fill="#085041" text-anchor="start">Cloud LB</text>
+<text x="368.0" y="1752.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Health checks shift traffic</text>
+<rect x="626.0" y="1710.0" width="254.0" height="70.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="638.0" y="1732.0" font-size="13" font-weight="700" fill="#085041" text-anchor="start">Ingress / gateway</text>
+<text x="638.0" y="1752.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Host + path → News Feed</text>
+<rect x="86.0" y="1796.0" width="818.0" height="400.0" rx="8" fill="#EAF7F1" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="100.0" y="1818.0" font-size="12" font-weight="700" fill="#0F6E56" text-anchor="start">Worker node pool   ·   kubelet pull   ·   kube-proxy   ·   PDBs   ·   topology spread</text>
+<g class="badge"><circle cx="888.0" cy="1810.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="888.0" y="1814.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">11</text></g>
+<rect x="100.0" y="1836.0" width="390.0" height="92.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.8"/>
+<text x="114.0" y="1858.0" font-size="14" font-weight="750" fill="#085041" text-anchor="start">News feed service  ×4</text>
+<text x="114.0" y="1878.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">v1827  ·  sha256:9f3a…c21  ·  HPA</text>
+<rect x="508.0" y="1836.0" width="184.0" height="70.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="518.0" y="1860.0" font-size="12" font-weight="700" fill="#085041" text-anchor="start">User  ×3</text>
+<text x="518.0" y="1880.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Profile, graph, authn</text>
+<rect x="704.0" y="1836.0" width="184.0" height="70.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="714.0" y="1860.0" font-size="12" font-weight="700" fill="#085041" text-anchor="start">Post  ×3</text>
+<text x="714.0" y="1880.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Create / read posts</text>
+<rect x="100.0" y="1944.0" width="184.0" height="70.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="110.0" y="1968.0" font-size="12" font-weight="700" fill="#085041" text-anchor="start">Ranking  ×3</text>
+<text x="110.0" y="1988.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Candidates + rank</text>
+<rect x="300.0" y="1944.0" width="184.0" height="70.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="310.0" y="1968.0" font-size="12" font-weight="700" fill="#085041" text-anchor="start">Media  ×2</text>
+<text x="310.0" y="1988.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Metadata + authz</text>
+<rect x="508.0" y="1944.0" width="184.0" height="70.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="518.0" y="1968.0" font-size="12" font-weight="700" fill="#085041" text-anchor="start">Notifications  ×2</text>
+<text x="518.0" y="1988.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Fan-out, push, email</text>
+<rect x="100.0" y="2032.0" width="788.0" height="146.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="114.0" y="2054.0" font-size="13" font-weight="700" fill="#185FA5" text-anchor="start">Autoscaling  ·  same Prometheus metrics as the dashboards</text>
+<rect x="114.0" y="2070.0" width="360.0" height="90.0" rx="5" fill="#D6E8F7" stroke="#378ADD" stroke-width="1.4"/>
+<text x="128.0" y="2094.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">Horizontal pod autoscaler</text>
+<text x="128.0" y="2114.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Replicas follow CPU / RPS</text>
+<rect x="496.0" y="2070.0" width="376.0" height="90.0" rx="5" fill="#D6E8F7" stroke="#378ADD" stroke-width="1.4"/>
+<text x="510.0" y="2094.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">Cluster autoscaler</text>
+<text x="510.0" y="2114.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Nodes follow unschedulable pods</text>
+<text x="100.0" y="2360.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Admission allow-list · rolling deploy · LB shifts traffic onto v1827</text>
+<text x="948.0" y="1580.0" font-size="13" font-weight="700" fill="#854F0B" text-anchor="start">Managed data services</text>
+<rect x="940.0" y="1596.0" width="390.0" height="108.0" rx="7" fill="#F8E8C4" stroke="#EF9F27" stroke-width="1.4"/>
+<text x="954.0" y="1628.0" font-size="14" font-weight="750" fill="#633806" text-anchor="start">Cloud SQL</text>
+<text x="954.0" y="1652.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Users, posts, relational truth</text>
+<rect x="940.0" y="1716.0" width="390.0" height="108.0" rx="7" fill="#F8E8C4" stroke="#EF9F27" stroke-width="1.4"/>
+<text x="954.0" y="1748.0" font-size="14" font-weight="750" fill="#633806" text-anchor="start">Redis</text>
+<text x="954.0" y="1772.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Cache, not the source of truth</text>
+<rect x="940.0" y="1836.0" width="390.0" height="108.0" rx="7" fill="#F8E8C4" stroke="#EF9F27" stroke-width="1.4"/>
+<text x="954.0" y="1868.0" font-size="14" font-weight="750" fill="#633806" text-anchor="start">Kafka</text>
+<text x="954.0" y="1892.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Async fan-out, replay</text>
+<rect x="940.0" y="1956.0" width="390.0" height="108.0" rx="7" fill="#F8E8C4" stroke="#EF9F27" stroke-width="1.4"/>
+<text x="954.0" y="1988.0" font-size="14" font-weight="750" fill="#633806" text-anchor="start">Object storage</text>
+<text x="954.0" y="2012.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Media bytes, signed CDN URLs</text>
+<rect x="940.0" y="2076.0" width="390.0" height="108.0" rx="7" fill="#F8E8C4" stroke="#EF9F27" stroke-width="1.4"/>
+<text x="954.0" y="2108.0" font-size="14" font-weight="750" fill="#633806" text-anchor="start">Search</text>
+<text x="954.0" y="2132.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Derived index, fed from Kafka</text>
+<rect x="40.0" y="2440.0" width="1320.0" height="460.0" rx="12" fill="#F6F5FB" stroke="#AFA9EC" stroke-width="1.8"/>
+<text x="56.0" y="2466.0" font-size="14" font-weight="750" fill="#534AB7" text-anchor="start">Observability   ·   HPA/CA consume these metrics   ·   canary + git revert = rollback through Argo</text>
+<g class="badge"><circle cx="1338.0" cy="2460.0" r=
