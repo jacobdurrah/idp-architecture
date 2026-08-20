@@ -32,6 +32,7 @@ function render(id) {
   if (item.triggers) extra += "<h3>Triggers</h3><p>" + escapeHtml(item.triggers) + "</p>";
   if (item.stores) extra += "<h3>Stores</h3><p>" + escapeHtml(item.stores) + "</p>";
   if (item.talksTo) extra += "<h3>Talks to</h3><p>" + escapeHtml(item.talksTo) + "</p>";
+  extra += window.IDP_productLinks ? window.IDP_productLinks(item, escapeHtml) : "";
   panelBody.innerHTML =
     '<span class="chip ' + item.p + '">' + escapeHtml(plane.label) + "</span>" +
     "<h2>" + escapeHtml(item.n) + "</h2>" +
