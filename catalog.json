@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "489dd46183af",
+  "version": "f92dd34991b7",
   "records": [
     {
       "id": "admission",
@@ -4415,6 +4415,36 @@
       "href": "/idp-architecture/p.html#overview"
     },
     {
+      "id": "p-cni",
+      "tab": "p",
+      "name": "CNI (pod network)",
+      "plane": "infra",
+      "what": "The Container Network Interface gives each pod an IP and a route. Calico, Cilium, or the cloud CNI. kubelet asks CNI at pod start. This is the network, not the mesh.",
+      "why": "Without a pod network there is no east-west and no Service. The CNI is how newsfeed-service:v1827 has an address on the node fabric Metal already drew.",
+      "notes": [
+        "One CNI per cluster. Overlay or routed. Policy may live here (NetworkPolicy).",
+        "A mesh is policy and mTLS on top. It is not a second CNI.",
+        "eBPF CNIs can also implement Services. See the kube-proxy card.",
+        "IPAM, routes, and the pod veth (or equivalent) are this hop."
+      ],
+      "href": "/idp-architecture/p.html#p-cni"
+    },
+    {
+      "id": "p-dns",
+      "tab": "p",
+      "name": "Cluster DNS",
+      "plane": "data",
+      "what": "CoreDNS (or equivalent) in kube-system. Pods resolve newsfeed.default.svc.cluster.local to the ClusterIP. This is not the public DNS and CDN on v2.",
+      "why": "A Service you cannot name is a VIP you will hardcode. Cluster DNS is how the request path stays a name, not an IP in a ConfigMap.",
+      "notes": [
+        "cluster.local is the in-cluster zone. Stub domains and upstreams are platform policy.",
+        "v2 dns is the public name and edge cache. Different hop. Cite it so the split stays honest.",
+        "A DNS outage inside the cluster looks like a mesh outage. Check CoreDNS first.",
+        "headless Services return pod IPs. The feed uses a normal ClusterIP."
+      ],
+      "href": "/idp-architecture/p.html#p-dns"
+    },
+    {
       "id": "p-ingress",
       "tab": "p",
       "name": "L7 Ingress / Gateway API",
@@ -4458,6 +4488,36 @@
         "A feature ship does not recreate the balancer."
       ],
       "href": "/idp-architecture/p.html#p-lb"
+    },
+    {
+      "id": "p-mesh",
+      "tab": "p",
+      "name": "Service mesh",
+      "plane": "data",
+      "what": "mTLS, retries, timeouts, and L7 policy that is not in the app binary. Two shapes: sidecar (a proxy next to each pod) or ambient (a node proxy shared by pods). Same policy either way.",
+      "why": "When the fleet is large enough that every binary inventing retries is a tax, the mesh is the platform opinion. It is not a replacement for CNI, and it is not free.",
+      "notes": [
+        "Sidecar: a proxy container in the pod. Strong isolation. Memory and init cost per pod.",
+        "Ambient: a node-level proxy (and optional waypoint). Cheaper at fleet scale. Weaker per-pod isolation.",
+        "NetworkPolicy plus DNS is enough for a three-service app. Mesh tax is real.",
+        "The newsfeed path can run without a mesh. Add one for mTLS and policy, not for fashion."
+      ],
+      "href": "/idp-architecture/p.html#p-mesh"
+    },
+    {
+      "id": "p-svc",
+      "tab": "p",
+      "name": "Kubernetes Service",
+      "plane": "data",
+      "what": "A stable in-cluster name and a set of endpoints. ClusterIP for east-west. NodePort or LoadBalancer when you must expose a port. newsfeed-service is a ClusterIP in front of the four replicas.",
+      "why": "Pods die. Endpoints move. A Service is the contract other hops (ingress, mesh, DNS) can name. It is not a mesh and not a store.",
+      "notes": [
+        "ClusterIP is the default. NodePort and LoadBalancer are exposure modes, not different products.",
+        "Endpoints (or EndpointSlice) track ready pods. kube-proxy or eBPF consume them.",
+        "headless Services exist for stateful sets that need pod DNS. The feed is not that.",
+        "Cite v2 ingress and Scenarios serve-6: the L7 hop lands on this object."
+      ],
+      "href": "/idp-architecture/p.html#p-svc"
     },
     {
       "id": "break",
