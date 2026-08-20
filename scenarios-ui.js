@@ -105,7 +105,8 @@ function render(id) {
   panelBody.innerHTML = chips + "<h2>" + escapeHtml(item.n) + "</h2>" +
     "<h3>What it does</h3><p>" + escapeHtml(item.w) + "</p>" +
     "<h3>Why it's needed</h3><p>" + escapeHtml(item.y) + "</p>" +
-    (notes ? "<h3>Design notes</h3><ul>" + notes + "</ul>" : "") + extra;
+    (notes ? "<h3>Design notes</h3><ul>" + notes + "</ul>" : "") + extra +
+    (window.IDP_productLinks ? window.IDP_productLinks(item, escapeHtml) : "");
   highlight(current);
   paintStepn();
   const want = "#" + current;
