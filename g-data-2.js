@@ -38,7 +38,7 @@ window.IDP_DATA = Object.assign(window.IDP_DATA || {}, {
   "build": {
     "n": "Build service",
     "p": "ctrl",
-    "w": "The build service produces immutable OCI images from a green CI SHA. There is no latest tag in production. There is no latest tag in production. The build is a function of the commit. It is not a snowflake run on an engineer's laptop. Argo CD never builds images.",
+    "w": "The build service produces immutable OCI images from a green CI SHA. There is no latest tag in production. The build is a function of the commit. It is not a snowflake run on an engineer's laptop. Argo CD never builds images.",
     "y": "If images are built by hand, or rebuilt per environment, you cannot say what is running. A central build service plus a digest is how the rest of the path stays honest. Promotion becomes a pointer change, not a second compilation.",
     "d": [
       "Triggered by a green validation graph on the PR or main SHA.",
