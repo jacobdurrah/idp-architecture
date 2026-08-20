@@ -130,7 +130,7 @@ _Four build streams, then one join. **A/B/C land in `idp-architecture` and share
 
 **Not parallel (integration, not building):** the dock's production origin is a one-line constant flip once D deploys; the e2e test needs everything merged. Both live in IG-05.
 
-**Foundational for the living site (§8):** IG-08 (catalog auto-regeneration in CI) depends only on IG-01 existing and should land with v1 — without it, grounding drifts the first time a shard is edited. IG-09 (question telemetry → clarity backlog), IG-10 (workflow/sequence kind), and IG-11 (code-lifecycle journey) are later phases but are pre-designed here so they land additively (§7).
+**Foundational for the living site (§8):** IG-08 (catalog auto-regeneration in CI) is **in v1 scope** — it depends only on IG-01 (wraps the generator in a GitHub Action), and without it grounding drifts the first time a shard is edited. It follows IG-01, not in parallel. IG-09 (question telemetry → clarity backlog), IG-10 (workflow/sequence kind), and IG-11 (code-lifecycle journey) are later phases but are pre-designed here so they land additively (§7).
 
 ---
 
@@ -162,6 +162,11 @@ _Goal: a visitor asks a question on any tab, gets a grounded answer citing a dat
   - [ ] **`ask` skill + `tutor` stub.** *Enables: v1 Q&A now, v3 tutor later with no rewrite.*
 - ⬜ **IG-05 — Integration + e2e + deploy (join).** 🤖👤 Merge A+B+C in `idp-architecture` (one PR: "Add guide dock, hash-open, and catalog.json"). Deploy `idp-guide` to Vercel; flip the dock's default origin to the production URL. Deploy the dock + hash + catalog to Pages (or a PR for Jacob to merge). *Accept: on the live (or preview/local) Golden path, asking "why is transatlantic 65–75 ms?" cites Metal `e-subsea` and navigates to `metal.html#e-subsea`; asking something not in the catalog does not invent a box; posters work with the dock collapsed or blocked; README on both repos explains local run + what v1 is + the postMessage protocol + env vars.*
 
+- ⬜ **IG-08 — Catalog auto-regeneration (CI).** 🤖 *(v1 — foundational; depends on IG-01.)* Wrap IG-01's generator as an npm script + a GitHub Action that regenerates `catalog.json` on any change to `*-data-*.js`/`content-*.js` and commits/publishes it to Pages, stamping a fresh `version`/`generatedAt`. Without this, grounding drifts the first time a shard is edited, so it is in v1 scope. *Accept: editing a shard's copy and pushing produces an updated `catalog.json` on Pages within the same CI run, with a new `version`; the agent picks up the new copy on its next session with no redeploy; a shard edit that forgets to regenerate fails the check.*
+  - [ ] **`npm run build:catalog`** wrapping `tools/build-catalog.js`. *Enables: one command to regenerate.*
+  - [ ] **GitHub Action on shard/content change** → regenerate + publish + version bump. *Enables: FR-8 no-drift grounding.*
+  - [ ] **Drift check** (CI fails if `catalog.json` is stale vs shards). *Enables: catches a hand-edit that skipped regeneration.*
+
 ## PHASE v2 — Feedback (out of scope for v1; design so it lands without a rewrite)
 - ⬜ **IG-06 — `flag_clarity` tool.** 🤖👤 Takes the open data-id + the visitor's note, files a GitHub issue on `jacobdurrah/idp-architecture` labeled `clarity` via Vercel Connect (no pasted token). The on-site agent does not push; Jacob or a cloud agent applies the edit from the issue. Feeds the **same diagram-clarity backlog** as IG-09. *(Not implemented in v1. The `idp.context` protocol already carries the open id it needs.)*
 
@@ -169,11 +174,7 @@ _Goal: a visitor asks a question on any tab, gets a grounded answer citing a dat
 - ⬜ **IG-07 — Tutor mode for real.** 🤖 Socratic follow-ups, "trace this request", "what dies if this box fails", quiz from the numbered badges (Golden 1–12, Metal 1–13). Durable eve sessions so a study thread survives a refresh. Leans on the code-lifecycle sequence (IG-11) for "trace this build". *(v1 ships only the `tutor` stub.)*
 
 ## PHASE — Living site & new content types (the site grows over time; §8)
-_These keep the agent in sync as the diagrams grow and turn questions into clearer diagrams. All land additively on the §7 contracts — no rewrite of v1._
-- ⬜ **IG-08 — Catalog auto-regeneration (CI).** 🤖 *(v1.5, foundational — land with v1.)* Wrap IG-01's generator as an npm script + a GitHub Action that regenerates `catalog.json` on any change to `*-data-*.js`/`content-*.js` and commits/publishes it to Pages, stamping a fresh `version`/`generatedAt`. *Accept: editing a shard's copy and pushing produces an updated `catalog.json` on Pages within the same CI run, with a new `version`; the agent picks up the new copy on its next session with no redeploy; a shard edit that forgets to regenerate fails the check.*
-  - [ ] **`npm run build:catalog`** wrapping `tools/build-catalog.js`. *Enables: one command to regenerate.*
-  - [ ] **GitHub Action on shard/content change** → regenerate + publish + version bump. *Enables: FR-8 no-drift grounding.*
-  - [ ] **Drift check** (CI fails if `catalog.json` is stale vs shards). *Enables: catches a hand-edit that skipped regeneration.*
+_These keep the agent in sync as the diagrams grow and turn questions into clearer diagrams. All land additively on the §7 contracts — no rewrite of v1. (IG-08, the freshness loop, is folded into v1 above.)_
 - ⬜ **IG-09 — Question telemetry + diagram-clarity backlog.** 🤖👤 *(v2.)* Log every question with the box it resolved to (if any) and the agent's confidence; roll misses, low-confidence answers, and "closest box" offers into a ranked backlog of where a diagram is unclear. Merges with IG-06's explicit flags. *Accept: a week of questions produces a ranked list of unclear/uncovered ids; a repeated miss on a topic with no box surfaces as a "needs a new box" item; PII/rate limits respected.*
   - [ ] **Per-question log** (question, resolved id, confidence, tab). *Enables: the raw signal.*
   - [ ] **Backlog rollup** (rank by frequency × miss/low-confidence). *Enables: "the questions are the spec for the next diagram".*
@@ -192,3 +193,4 @@ _These keep the agent in sync as the diagrams grow and turn questions into clear
 ## Log
 - 2026-08-20 — Ledger opened in the shared `ledger/tasks.md` format. v1 brief locked; design + four parallel streams (A/B/C/D) drafted; three contracts frozen (catalog schema, postMessage protocol, `idp:render` seam). Next concrete action: IG-01.
 - 2026-08-20 — Added the **living-site** design (§8): the posters keep growing, so the catalog schema now carries `kind`/`seq`/`badge`/`tech` and a `version`, evolution is additive-only (§7), and two loops are specced — auto-regeneration for freshness (IG-08) and question-telemetry → clarity backlog for continuous diagram improvement (IG-09). New content kinds (workflow/sequence IG-10, code-lifecycle journey IG-11) ride the same pipeline. FR-8/9/10, NFR-8/9 added.
+- 2026-08-20 — **Folded IG-08 (catalog auto-regeneration) into v1 scope** so grounding never drifts once shards start changing. It sits in PHASE v1 after IG-01; the living-site phase now starts at IG-09.
