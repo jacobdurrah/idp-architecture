@@ -1,0 +1,67 @@
+<text x="854.4" y="760.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">transactions, not a cache.</text>
+<rect x="1099.2" y="664.0" width="244.8" height="156.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="1099.2" y="664.0" width="7.0" height="156.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<circle cx="1128.2" cy="697.0" r="8" fill="none" stroke="#0F6E56" stroke-width="1.8"/>
+<line x1="1134.2" y1="703.0" x2="1143.2" y2="712.0" stroke="#0F6E56" stroke-width="2.2" stroke-linecap="round"/>
+<text x="1153.2" y="694.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">Search index</text>
+<text x="1153.2" y="712.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">p-search</text>
+<text x="1115.2" y="742.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Derived. Fed from Kafka. When:</text>
+<text x="1115.2" y="760.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">find, not the write path.</text>
+<rect x="36.0" y="860.0" width="1328.0" height="224.0" rx="12" fill="#FBF6EC" stroke="#E8C98A" stroke-width="1.4"/>
+<text x="56.0" y="888.0" font-size="18" font-weight="750" fill="#854F0B" text-anchor="start">Scale and GPU</text>
+<text x="183.6" y="888.0" font-size="13" font-weight="500" fill="#5F5E5A" text-anchor="start">Replicas, nodes, and the tray the feed does not use.</text>
+<rect x="56.0" y="904.0" width="418.7" height="156.0" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56.0" y="904.0" width="7.0" height="156.0" rx="4" fill="#185FA5" stroke="#185FA5" stroke-width="0"/>
+<rect x="76.0" y="940.0" width="6" height="8.0" rx="1.2" fill="#185FA5"/>
+<rect x="85.0" y="934.0" width="6" height="14.0" rx="1.2" fill="#185FA5"/>
+<rect x="94.0" y="928.0" width="6" height="20.0" rx="1.2" fill="#185FA5"/>
+<path d="M 98.0 936.0 L 98.0 928.0 L 102.0 932.0" fill="none" stroke="#185FA5" stroke-width="1.6"/>
+<text x="110.0" y="934.0" font-size="15" font-weight="750" fill="#185FA5" text-anchor="start">HPA</text>
+<text x="110.0" y="952.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">p-hpa</text>
+<text x="72.0" y="982.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Replica loop from SLIs. Four is a floor. When: count</text>
+<text x="72.0" y="1000.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">follows RPS.</text>
+<rect x="490.7" y="904.0" width="418.7" height="156.0" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="490.7" y="904.0" width="7.0" height="156.0" rx="4" fill="#185FA5" stroke="#185FA5" stroke-width="0"/>
+<rect x="508.7" y="932.0" width="12" height="16" rx="2" fill="none" stroke="#185FA5" stroke-width="1.5"/>
+<rect x="524.7" y="932.0" width="12" height="16" rx="2" fill="none" stroke="#185FA5" stroke-width="1.5"/>
+<line x1="530.7" y1="938.0" x2="530.7" y2="946.0" stroke="#185FA5" stroke-width="1.6"/>
+<line x1="526.7" y1="942.0" x2="534.7" y2="942.0" stroke="#185FA5" stroke-width="1.6"/>
+<text x="544.7" y="934.0" font-size="15" font-weight="750" fill="#185FA5" text-anchor="start">Cluster autoscaler</text>
+<text x="544.7" y="952.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">p-ca</text>
+<text x="506.7" y="982.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Node loop. Mint and drain inside the Terraform max.</text>
+<rect x="925.3" y="904.0" width="418.7" height="156.0" rx="10" fill="#F1F0EB" stroke="#8A8984" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="925.3" y="904.0" width="7.0" height="156.0" rx="4" fill="#3D3C38" stroke="#3D3C38" stroke-width="0"/>
+<rect x="943.3" y="930.0" width="10" height="20" rx="2" fill="none" stroke="#3D3C38" stroke-width="1.5"/>
+<rect x="961.3" y="930.0" width="10" height="20" rx="2" fill="none" stroke="#3D3C38" stroke-width="1.5"/>
+<line x1="953.3" y1="936.0" x2="961.3" y2="936.0" stroke="#3D3C38" stroke-width="1.6"/>
+<line x1="953.3" y1="940.0" x2="961.3" y2="940.0" stroke="#3D3C38" stroke-width="1.6"/>
+<line x1="953.3" y1="944.0" x2="961.3" y2="944.0" stroke="#3D3C38" stroke-width="1.6"/>
+<text x="979.3" y="934.0" font-size="15" font-weight="750" fill="#3D3C38" text-anchor="start">NVLink / GPU fabric</text>
+<text x="979.3" y="952.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">p-nvlink</text>
+<text x="941.3" y="982.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">GPU to GPU in the tray. Not the newsfeed worker. Cite Metal</text>
+<text x="941.3" y="1000.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">e-nvlink.</text>
+<rect x="36.0" y="1100.0" width="1328.0" height="176.0" rx="12" fill="#F6F4FC" stroke="#C9C4EE" stroke-width="1.4"/>
+<text x="56.0" y="1128.0" font-size="18" font-weight="750" fill="#534AB7" text-anchor="start">Observe the path</text>
+<text x="211.2" y="1128.0" font-size="13" font-weight="500" fill="#5F5E5A" text-anchor="start">Traces, metrics, logs on the same request.</text>
+<rect x="56.0" y="1144.0" width="1288.0" height="116.0" rx="10" fill="#F3F1FC" stroke="#AFA9EC" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56.0" y="1144.0" width="7.0" height="116.0" rx="4" fill="#534AB7" stroke="#534AB7" stroke-width="0"/>
+<path d="M 76.0 1174.0 C 84.0 1166.0, 92.0 1182.0, 100.0 1174.0" fill="none" stroke="#534AB7" stroke-width="1.6"/>
+<path d="M 76.0 1182.0 C 84.0 1174.0, 92.0 1190.0, 100.0 1182.0" fill="none" stroke="#534AB7" stroke-width="1.6"/>
+<path d="M 76.0 1190.0 C 84.0 1182.0, 92.0 1198.0, 100.0 1190.0" fill="none" stroke="#534AB7" stroke-width="1.6"/>
+<text x="110.0" y="1174.0" font-size="15" font-weight="750" fill="#534AB7" text-anchor="start">OpenTelemetry on the request</text>
+<text x="110.0" y="1192.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">p-otel</text>
+<text x="72.0" y="1222.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">SDK plus node agent. One API. The collector fans out. Cite Agents otel-sdk. A dead collector is a blank board, not a pass.</text>
+<text x="700.0" y="1464.0" font-size="12" font-weight="500" fill="#5F5E5A" text-anchor="middle">v2 admits the change. Agents read the traces. Metal is the floor. Plane is the hop.</text>
+<g id="hits">
+<rect class="hit" data-id="p-lb" x="56.0" y="184.0" width="310.0" height="156.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="p-ingress" x="382.0" y="184.0" width="310.0" height="156.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="p-kubeproxy" x="708.0" y="184.0" width="310.0" height="156.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="p-cni" x="1034.0" y="184.0" width="310.0" height="156.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="p-svc" x="56.0" y="424.0" width="418.7" height="156.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="p-mesh" x="490.7" y="424.0" width="418.7" height="156.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="p-dns" x="925.3" y="424.0" width="418.7" height="156.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="p-redis" x="56.0" y="664.0" width="244.8" height="156.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="p-kafka" x="316.8" y="664.0" width="244.8" height="156.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="p-obj" x="577.6" y="664.0" width="244.8" height="156.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="p-sql" x="838.4" y="664.0" width="244.8" height="156.0" rx="8" fill="transparent"/>
+<rect class="hit" data-id="p-search" x="1099.2" y="664.0" width="244.8" height="156.0" rx="8" fill="transparent"/>
