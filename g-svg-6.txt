@@ -1,0 +1,42 @@
+250.0" height="120.0" rx="8"/>
+<rect class="hit" data-id="tfstate" x="810.0" y="1024.0" width="200.0" height="120.0" rx="8"/>
+<rect class="hit" data-id="cloud-apis" x="1030.0" y="1024.0" width="310.0" height="120.0" rx="8"/>
+<rect class="hit" data-id="cloud" x="40.0" y="1230.0" width="1320.0" height="910.0" rx="8"/>
+<rect class="hit" data-id="vpc" x="55.0" y="1268.0" width="1290.0" height="852.0" rx="8"/>
+<rect class="hit" data-id="k8s" x="70.0" y="1306.0" width="850.0" height="800.0" rx="8"/>
+<rect class="hit" data-id="k8s-cp" x="86.0" y="1342.0" width="818.0" height="96.0" rx="8"/>
+<rect class="hit" data-id="apiserver" x="100.0" y="1372.0" width="250.0" height="52.0" rx="8"/>
+<rect class="hit" data-id="scheduler" x="370.0" y="1372.0" width="250.0" height="52.0" rx="8"/>
+<rect class="hit" data-id="controllermgr" x="640.0" y="1372.0" width="250.0" height="52.0" rx="8"/>
+<rect class="hit" data-id="dns" x="86.0" y="1452.0" width="254.0" height="70.0" rx="8"/>
+<rect class="hit" data-id="lb" x="356.0" y="1452.0" width="254.0" height="70.0" rx="8"/>
+<rect class="hit" data-id="ingress" x="626.0" y="1452.0" width="254.0" height="70.0" rx="8"/>
+<rect class="hit" data-id="nodepool" x="86.0" y="1538.0" width="818.0" height="370.0" rx="8"/>
+<rect class="hit" data-id="newsfeed" x="100.0" y="1576.0" width="390.0" height="92.0" rx="8"/>
+<rect class="hit" data-id="svc-user" x="508.0" y="1576.0" width="184.0" height="70.0" rx="8"/>
+<rect class="hit" data-id="svc-post" x="704.0" y="1576.0" width="184.0" height="70.0" rx="8"/>
+<rect class="hit" data-id="svc-ranking" x="100.0" y="1682.0" width="184.0" height="70.0" rx="8"/>
+<rect class="hit" data-id="svc-media" x="300.0" y="1682.0" width="184.0" height="70.0" rx="8"/>
+<rect class="hit" data-id="svc-notify" x="508.0" y="1682.0" width="184.0" height="70.0" rx="8"/>
+<rect class="hit" data-id="autoscaling" x="100.0" y="1768.0" width="788.0" height="122.0" rx="8"/>
+<rect class="hit" data-id="hpa" x="114.0" y="1804.0" width="360.0" height="70.0" rx="8"/>
+<rect class="hit" data-id="ca" x="496.0" y="1804.0" width="376.0" height="70.0" rx="8"/>
+<rect class="hit" data-id="sql" x="940.0" y="1344.0" width="390.0" height="100.0" rx="8"/>
+<rect class="hit" data-id="redis" x="940.0" y="1456.0" width="390.0" height="100.0" rx="8"/>
+<rect class="hit" data-id="kafka" x="940.0" y="1568.0" width="390.0" height="100.0" rx="8"/>
+<rect class="hit" data-id="objstore" x="940.0" y="1680.0" width="390.0" height="100.0" rx="8"/>
+<rect class="hit" data-id="search" x="940.0" y="1792.0" width="390.0" height="100.0" rx="8"/>
+<rect class="hit" data-id="step9" x="12.0" y="1468.0" width="32.0" height="32.0" rx="8"/>
+<rect class="hit" data-id="otel-sdk" x="55.0" y="2224.0" width="190.0" height="130.0" rx="8"/>
+<rect class="hit" data-id="otel-collector" x="270.0" y="2224.0" width="190.0" height="130.0" rx="8"/>
+<rect class="hit" data-id="prometheus" x="490.0" y="2214.0" width="200.0" height="72.0" rx="8"/>
+<rect class="hit" data-id="loki" x="710.0" y="2214.0" width="200.0" height="72.0" rx="8"/>
+<rect class="hit" data-id="tempo" x="930.0" y="2214.0" width="200.0" height="72.0" rx="8"/>
+<rect class="hit" data-id="datadog" x="1150.0" y="2214.0" width="190.0" height="72.0" rx="8"/>
+<rect class="hit" data-id="grafana" x="490.0" y="2302.0" width="420.0" height="80.0" rx="8"/>
+<rect class="hit" data-id="alerts" x="930.0" y="2302.0" width="410.0" height="80.0" rx="8"/>
+<rect class="hit" data-id="engineers" x="490.0" y="2398.0" width="850.0" height="90.0" rx="8"/>
+<rect class="hit" data-id="step10" x="1322.0" y="2184.0" width="32.0" height="32.0" rx="8"/>
+<rect id="selbox" visibility="hidden" rx="10"/>
+</g>
+      </svg>
