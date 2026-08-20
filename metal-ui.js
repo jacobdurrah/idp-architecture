@@ -23,30 +23,9 @@ function escapeHtml(s) {
     .replace(/>/g, "&gt;");
 }
 
-function serverDrillSvg() {
-  return '<h3>Server to pod</h3>' +
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 292" width="100%" style="max-width:360px;margin:8px 0 12px">' +
-    '<rect x="8" y="8" width="344" height="42" rx="6" fill="#F1F0EB" stroke="#3D3C38" stroke-width="1.4"/>' +
-    '<text x="180" y="25" text-anchor="middle" font-size="12" font-weight="700" fill="#2C2C2A">Physical server</text>' +
-    '<text x="180" y="40" text-anchor="middle" font-size="10" fill="#5F5E5A">NIC · CPUs · RAM · local NVMe</text>' +
-    '<line x1="180" y1="50" x2="180" y2="62" stroke="#3D3C38" stroke-width="1.4"/>' +
-    '<rect x="8" y="62" width="344" height="42" rx="6" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.4"/>' +
-    '<text x="180" y="79" text-anchor="middle" font-size="12" font-weight="700" fill="#185FA5">Hypervisor (KVM)</text>' +
-    '<text x="180" y="94" text-anchor="middle" font-size="10" fill="#5F5E5A">vswitch vs SR-IOV · SmartNIC / DPU</text>' +
-    '<line x1="180" y1="104" x2="180" y2="116" stroke="#185FA5" stroke-width="1.4"/>' +
-    '<rect x="8" y="116" width="344" height="42" rx="6" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.4"/>' +
-    '<text x="180" y="133" text-anchor="middle" font-size="12" font-weight="700" fill="#185FA5">VM = Kubernetes node</text>' +
-    '<text x="180" y="148" text-anchor="middle" font-size="10" fill="#5F5E5A">kubelet · runtime · CNI</text>' +
-    '<line x1="180" y1="158" x2="180" y2="170" stroke="#0F6E56" stroke-width="1.4"/>' +
-    '<rect x="8" y="170" width="344" height="42" rx="6" fill="#E8F5F0" stroke="#1D9E75" stroke-width="1.4"/>' +
-    '<text x="180" y="187" text-anchor="middle" font-size="12" font-weight="700" fill="#0F6E56">Pod</text>' +
-    '<text x="180" y="202" text-anchor="middle" font-size="10" fill="#5F5E5A">containers · namespaces + cgroups</text>' +
-    '<line x1="180" y1="212" x2="180" y2="224" stroke="#0F6E56" stroke-width="1.4"/>' +
-    '<rect x="8" y="224" width="344" height="42" rx="6" fill="#E8F5F0" stroke="#0F6E56" stroke-width="1.6"/>' +
-    '<text x="180" y="241" text-anchor="middle" font-size="12" font-weight="700" fill="#0F6E56">newsfeed-service:v1827</text>' +
-    '<text x="180" y="256" text-anchor="middle" font-size="10" fill="#5F5E5A">same artifact Golden path ships</text>' +
-    '<text x="180" y="282" text-anchor="middle" font-size="10" fill="#5F5E5A">Worker node pool = these VMs on these slats</text>' +
-    "</svg>";
+function cutaway(id) {
+  const fn = window.IDP_CUTAWAYS;
+  return fn && id ? fn(id) : "";
 }
 
 function render(id) {
@@ -62,9 +41,10 @@ function render(id) {
   if (item.latency) extra += "<h3>Latency</h3><p>" + escapeHtml(item.latency) + "</p>";
   if (item.bandwidth) extra += "<h3>Bandwidth</h3><p>" + escapeHtml(item.bandwidth) + "</p>";
   if (item.owner) extra += "<h3>Owner</h3><p>" + escapeHtml(item.owner) + "</p>";
-  if (item.diagram === "server-drill" || current === "server" || current === "cpu-slat" || current === "gpu-slat") {
-    extra += serverDrillSvg();
-  }
+  if (item.look) extra += "<h3>What it looks like</h3><p>" + escapeHtml(item.look) + "</p>";
+  extra += cutaway(item.diagram);
+  if (item.job) extra += "<h3>The job</h3><p>" + escapeHtml(item.job) + "</p>";
+  if (item.whyShape) extra += "<h3>Why this shape</h3><p>" + escapeHtml(item.whyShape) + "</p>";
   panelBody.innerHTML =
     '<span class="chip ' + item.p + '">' + escapeHtml(plane.label) + "</span>" +
     "<h2>" + escapeHtml(item.n) + "</h2>" +
@@ -149,7 +129,8 @@ function bind() {
     if (evt.target.closest("#hits")) return;
     if (!mq.matches) render("overview");
   });
-  render("overview");
+  const hash = (location.hash || "").replace(/^#/, "");
+  render(DATA[hash] ? hash : "overview");
   if (mq.matches) panel.classList.remove("is-open");
 }
 
