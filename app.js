@@ -478,11 +478,22 @@
 
   async function loadSvg() {
     try {
-      const res = await fetch("diagram.svg");
-      if (!res.ok) throw new Error(String(res.status));
-      el.host.innerHTML = await res.text();
+      const names = ["svg-head.svg", "svg-frag0.svg", "svg-frag1.svg", "svg-frag2.svg", "svg-frag3.svg", "svg-tail.svg"];
+      const chunks = await Promise.all(names.map(function (n) {
+        return fetch(n).then(function (r) {
+          if (!r.ok) throw new Error(n + " " + r.status);
+          return r.text();
+        });
+      }));
+      el.host.innerHTML = chunks.join("");
     } catch (err) {
-      el.host.innerHTML = '<object data="diagram.svg" type="image/svg+xml" width="5600" height="3360" aria-label="IDP architecture diagram"></object>';
+      try {
+        const res = await fetch("diagram.svg");
+        if (!res.ok) throw new Error(String(res.status));
+        el.host.innerHTML = await res.text();
+      } catch (err2) {
+        el.host.innerHTML = '<object data="diagram.svg" type="image/svg+xml" width="5600" height="3360" aria-label="IDP architecture diagram"></object>';
+      }
     }
     const svg = el.host.querySelector("svg");
     if (svg) {
