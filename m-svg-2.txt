@@ -1,0 +1,65 @@
+<text x="906" y="1078" font-size="13" font-weight="700" fill="#854F0B" text-anchor="start">EDFA  ·  every 80–100 km</text>
+<text x="906" y="1100" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Erbium amp. No IP to ping.</text>
+<text x="906" y="1116" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Optical, not electrical regen.</text>
+<text x="906" y="1132" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Hut, power, padlock, generator.</text>
+<text x="906" y="1148" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">A failed amp is a color outage.</text>
+<path d="M 700 1016 L 700 1052" fill="none" stroke="#2A7AB0" stroke-width="2.2" marker-end="url(#arrP)"/>
+<text x="50" y="1248" font-size="15" font-weight="750" fill="#2C2C2A" text-anchor="start">Subsea  ·  a ship, not a ticket</text>
+<g class="badge"><circle cx="360" cy="1244" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="360" y="1249" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">6</text></g>
+<rect x="50" y="1258" width="820" height="178" rx="10" fill="#EAF3FA" stroke="#2A7AB0" stroke-width="1.8"/>
+<text x="66" y="1284" font-size="13" font-weight="700" fill="#2A7AB0" text-anchor="start">Subsea cable</text>
+<text x="66" y="1306" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Repeaters 60–80 km. Shore ~10 kV DC.</text>
+<text x="66" y="1322" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Transatlantic ~65–75 ms RTT.</text>
+<text x="66" y="1338" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">A few pairs, many colors.</text>
+<text x="66" y="1354" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">The route avoids trawl grounds and other cables.</text>
+<path d="M 80 1414 Q 220 1390 360 1414 T 640 1414 T 840 1414" fill="none" stroke="#2A7AB0" stroke-width="2.2"/>
+<circle cx="220" cy="1414" r="4" fill="#2A7AB0"/>
+<circle cx="360" cy="1414" r="4" fill="#2A7AB0"/>
+<circle cx="500" cy="1414" r="4" fill="#2A7AB0"/>
+<circle cx="640" cy="1414" r="4" fill="#2A7AB0"/>
+<circle cx="760" cy="1414" r="4" fill="#2A7AB0"/>
+<rect x="890" y="1258" width="480" height="178" rx="10" fill="#F1F0EB" stroke="#3D3C38" stroke-width="1.6"/>
+<text x="906" y="1284" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Cable landing station</text>
+<text x="906" y="1306" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Beach manhole, then a hardened hut.</text>
+<text x="906" y="1322" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Power feed equipment (~10 kV DC).</text>
+<text x="906" y="1338" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Lateral toward the nearest hotel.</text>
+<text x="906" y="1354" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">You do not land a cable in an AZ.</text>
+<path d="M 460 1220 L 460 1258" fill="none" stroke="#2A7AB0" stroke-width="2.2" marker-end="url(#arrP)"/>
+<text x="50" y="1464" font-size="15" font-weight="750" fill="#2C2C2A" text-anchor="start">Carrier hotel  ·  60 Hudson  /  350 E Cermak  /  One Wilshire</text>
+<g class="badge"><circle cx="780" cy="1460" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="780" y="1465" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">7</text></g>
+<rect x="50" y="1474" width="1320" height="430" rx="10" fill="#F1F0EB" stroke="#3D3C38" stroke-width="1.8"/>
+<text x="66" y="1498" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Cutaway  ·  a building whose product is interconnection</text>
+<rect x="70" y="1514" width="400" height="170" rx="7" fill="#FFFFFF" stroke="#3D3C38" stroke-width="1.6"/>
+<text x="86" y="1540" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Meet-me room (MMR)</text>
+<text x="86" y="1562" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Documented interconnects.</text>
+<text x="86" y="1578" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Work order and a monthly bill.</text>
+<text x="86" y="1594" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Escorted access, not a console.</text>
+<text x="86" y="1610" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Treat the panel like a spine.</text>
+<rect x="490" y="1514" width="400" height="170" rx="7" fill="#FFF8E1" stroke="#D4A017" stroke-width="1.8"/>
+<text x="506" y="1540" font-size="13" font-weight="700" fill="#8A6D00" text-anchor="start">Cross-connect (yellow jumper)</text>
+<text x="506" y="1562" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Meters of fiber between cages.</text>
+<text x="506" y="1578" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Politics in weeks, light in ns.</text>
+<text x="506" y="1594" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Remote hands pull the cable.</text>
+<text x="506" y="1610" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">A missing jumper looks like BGP.</text>
+<rect x="910" y="1514" width="440" height="170" rx="7" fill="#FFFFFF" stroke="#3D3C38" stroke-width="1.6"/>
+<text x="926" y="1540" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Carrier cage</text>
+<text x="926" y="1562" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Locked footprint, tenant routers.</text>
+<text x="926" y="1578" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Building sells power and cooling.</text>
+<text x="926" y="1594" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Remote hands reseat a transceiver.</text>
+<text x="926" y="1610" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Competitors share the hall.</text>
+<path d="M 470 1599 L 490 1599" fill="none" stroke="#D4A017" stroke-width="2.6"/>
+<path d="M 890 1599 L 910 1599" fill="none" stroke="#D4A017" stroke-width="2.6"/>
+<rect x="70" y="1704" width="400" height="180" rx="7" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<text x="86" y="1730" font-size="13" font-weight="700" fill="#185FA5" text-anchor="start">IXP + route servers</text>
+<text x="86" y="1752" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Shared L2 fabric in this hotel.</text>
+<text x="86" y="1768" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Route servers do not forward.</text>
+<text x="86" y="1784" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Member-to-member on the fabric.</text>
+<text x="86" y="1800" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">An IX outage shifts onto transit.</text>
+<rect x="490" y="1704" width="400" height="180" rx="7" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<text x="506" y="1730" font-size="13" font-weight="700" fill="#185FA5" text-anchor="start">BGP</text>
+<text x="506" y="1752" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">eBGP over jumpers and the IX.</text>
+<text x="506" y="1768" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Prefixes, MED, communities.</text>
+<text x="506" y="1784" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">RPKI keeps a typo from a hijack.</text>
+<text x="506" y="1800" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Anycast for EDGE starts here.</text>
+<rect x="910" y="1704" width="440" height="180" rx="7" fill="#FFFFFF" stroke="#3D3C38" stroke-width="1.6"/>
+<text x="926" y="1730" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Colo  ·  power, cooling, hands</text>
