@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>IDP Architecture — Source to Production</title>
+  <meta name="description" content="Living, zoomable architecture map of a mature internal developer platform: commit, validate, build, reconcile, run, observe.">
+  <meta property="og:title" content="IDP Architecture — Source to Production">
+  <meta property="og:description" content="Staff-review map of the internal developer platform. Zoom until every label is readable.">
+  <meta property="og:image" content="og.png">
+  <meta name="theme-color" content="#0b0d10">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <p class="eyebrow">Internal Developer Platform</p>
+      <h1>Source to Production</h1>
+    </div>
+    <nav class="chips" id="chips" aria-label="Jump to region"></nav>
+    <div class="zoombar" role="group" aria-label="Zoom">
+      <button type="button" id="zoom-out" title="Zoom out (−)" aria-label="Zoom out">−</button>
+      <span class="zoom-readout" id="zoom-readout">Fit</span>
+      <button type="button" id="zoom-in" title="Zoom in (+)" aria-label="Zoom in">+</button>
+      <button type="button" id="zoom-fit" title="Fit diagram (0)">Fit</button>
+      <button type="button" id="zoom-100" title="100%">100%</button>
+    </div>
+  </header>
+
+  <div class="workspace">
+    <aside class="rail" aria-label="Delivery path 1 to 12">
+      <p class="rail-label">Path</p>
+      <ol class="rail-list" id="rail"></ol>
+    </aside>
+
+    <main class="stage" id="stage">
+      <div class="canvas" id="canvas" tabindex="0" aria-label="Architecture diagram. Scroll to zoom, drag to pan, click a box for detail.">
+        <div class="world" id="world">
+          <div class="svg-host" id="svg-host"></div>
+          <div class="hits" id="hits"></div>
+          <div class="highlight" id="highlight" hidden></div>
+        </div>
+        <p class="hint" id="hint">Scroll to zoom · drag to pan · click a box</p>
+      </div>
+      <div class="legend" aria-label="Legend">
+        <span><i class="swatch control"></i> Control plane</span>
+        <span><i class="swatch data"></i> Data plane</span>
+        <span><i class="swatch solid"></i> Delivery</span>
+        <span><i class="swatch dashed"></i> Infra</span>
+        <span><i class="swatch dotted"></i> Telemetry</span>
+      </div>
+    </main>
+
+    <aside class="drawer" id="drawer" aria-hidden="true">
+      <div class="drawer-handle" aria-hidden="true"></div>
+      <header class="drawer-head">
+        <div>
+          <p class="drawer-kicker" id="drawer-kicker">Overview</p>
+          <h2 id="drawer-title">How to read this map</h2>
+        </div>
+        <button type="button" class="drawer-close" id="drawer-close" aria-label="Close detail">✕</button>
+      </header>
+      <div class="drawer-body" id="drawer-body"></div>
+    </aside>
+  </div>
+
+  <div class="scrim" id="scrim" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
