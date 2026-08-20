@@ -1,0 +1,64 @@
+"14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="1338.0" y="2464.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">12</text></g>
+<rect x="55.0" y="2488.0" width="190.0" height="120.0" rx="7" fill="#E8E4F8" stroke="#AFA9EC" stroke-width="1.4"/>
+<text x="67.0" y="2510.0" font-size="13" font-weight="700" fill="#3C3489" text-anchor="start">OTel SDKs</text>
+<text x="67.0" y="2530.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">In-process + node agent</text>
+<text x="67.0" y="2546.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">One API, every service</text>
+<rect x="270.0" y="2488.0" width="190.0" height="120.0" rx="7" fill="#E8E4F8" stroke="#AFA9EC" stroke-width="1.4"/>
+<text x="282.0" y="2510.0" font-size="13" font-weight="700" fill="#3C3489" text-anchor="start">OTel collector</text>
+<text x="282.0" y="2530.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Always-on hop</text>
+<text x="282.0" y="2546.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Sample, redact, route</text>
+<rect x="490.0" y="2480.0" width="200.0" height="70.0" rx="7" fill="#E8E4F8" stroke="#AFA9EC" stroke-width="1.4"/>
+<text x="502.0" y="2502.0" font-size="13" font-weight="700" fill="#3C3489" text-anchor="start">Prometheus</text>
+<text x="502.0" y="2522.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">SLIs + HPA/CA source</text>
+<rect x="710.0" y="2480.0" width="200.0" height="70.0" rx="7" fill="#E8E4F8" stroke="#AFA9EC" stroke-width="1.4"/>
+<text x="722.0" y="2502.0" font-size="13" font-weight="700" fill="#3C3489" text-anchor="start">Loki · Elastic</text>
+<text x="722.0" y="2522.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Logs. No SSH.</text>
+<rect x="930.0" y="2480.0" width="200.0" height="70.0" rx="7" fill="#E8E4F8" stroke="#AFA9EC" stroke-width="1.4"/>
+<text x="942.0" y="2502.0" font-size="13" font-weight="700" fill="#3C3489" text-anchor="start">Tempo · Jaeger</text>
+<text x="942.0" y="2522.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Traces across the fan-out</text>
+<rect x="1150.0" y="2480.0" width="190.0" height="70.0" rx="7" fill="#E8E4F8" stroke="#AFA9EC" stroke-width="1.4"/>
+<text x="1162.0" y="2502.0" font-size="13" font-weight="700" fill="#3C3489" text-anchor="start">Datadog</text>
+<text x="1162.0" y="2522.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Unified APM, same stream</text>
+<rect x="490.0" y="2568.0" width="420.0" height="78.0" rx="7" fill="#E8E4F8" stroke="#AFA9EC" stroke-width="1.4"/>
+<text x="502.0" y="2590.0" font-size="13" font-weight="700" fill="#3C3489" text-anchor="start">Grafana</text>
+<text x="502.0" y="2610.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Golden dashboards · SSO · SLO board</text>
+<rect x="930.0" y="2568.0" width="410.0" height="78.0" rx="7" fill="#F8E0E0" stroke="#A32D2D" stroke-width="1.4"/>
+<text x="942.0" y="2590.0" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Alerts + SLOs</text>
+<text x="942.0" y="2610.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Burn-rate · canary · image-pull / admit</text>
+<rect x="490.0" y="2664.0" width="850.0" height="110.0" rx="7" fill="#F1F0EB" stroke="#8A8984" stroke-width="1.4"/>
+<text x="502.0" y="2686.0" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Engineers + platform team</text>
+<text x="502.0" y="2706.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Pages, canaries, capacity, rollback PRs in platform-gitops</text>
+<text x="502.0" y="2722.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Feedback loop writes next month's infra. They do not log into nodes.</text>
+<line x1="245.0" y1="2548.0" x2="266.0" y2="2548.0" stroke="#534AB7" stroke-width="1.6" marker-end="url(#arrO)"/>
+<text x="70.0" y="2636.0" font-size="12" font-weight="500" fill="#534AB7" text-anchor="start">Apps / nodes emit continuously. Not a CI step.</text>
+<path d="M 470 2720 L 28 2720 L 28 180 L 40 180" fill="none" stroke="#534AB7" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arrO)"/>
+<text x="36.0" y="1100.0" font-size="11" font-weight="700" fill="#534AB7" text-anchor="start">feedback</text>
+<text x="36.0" y="1116.0" font-size="11" font-weight="700" fill="#534AB7" text-anchor="start">loop</text>
+<rect x="40.0" y="2920.0" width="1320.0" height="110.0" rx="10" fill="#0C447C" stroke="#0C447C" stroke-width="0"/>
+<text x="56.0" y="2950.0" font-size="13" font-weight="650" fill="#A9C7E8" text-anchor="start">Trace one change  ·  1–12</text>
+<text x="56.0" y="2976.0" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="start">1 commit   →   2 Git   →   3 PR #4821   →   4 CI gates   →   5 tests   →   6 build   →   7 registry   →   8 gitops bump   →   9 Argo   →   10 API   →   11 pull + rollout   →   12 observe</text>
+<text x="56.0" y="3004.0" font-size="12" font-weight="500" fill="#A9C7E8" text-anchor="start">Canary analysis + git revert = rollback through Argo. Next month's infra is written from this week's saturation.</text>
+<rect x="62.0" y="3050.0" width="100.0" height="56.0" rx="8" fill="#E4F0FA" stroke="#0C447C" stroke-width="1.4"/>
+<text x="112.0" y="3074.0" font-size="16" font-weight="750" fill="#0C447C" text-anchor="middle">1</text>
+<text x="112.0" y="3094.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="middle">commit</text>
+<rect x="172.0" y="3050.0" width="100.0" height="56.0" rx="8" fill="#E4F0FA" stroke="#0C447C" stroke-width="1.4"/>
+<text x="222.0" y="3074.0" font-size="16" font-weight="750" fill="#0C447C" text-anchor="middle">2</text>
+<text x="222.0" y="3094.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="middle">Git</text>
+<rect x="282.0" y="3050.0" width="100.0" height="56.0" rx="8" fill="#E4F0FA" stroke="#0C447C" stroke-width="1.4"/>
+<text x="332.0" y="3074.0" font-size="16" font-weight="750" fill="#0C447C" text-anchor="middle">3</text>
+<text x="332.0" y="3094.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="middle">PR</text>
+<rect x="392.0" y="3050.0" width="100.0" height="56.0" rx="8" fill="#E4F0FA" stroke="#0C447C" stroke-width="1.4"/>
+<text x="442.0" y="3074.0" font-size="16" font-weight="750" fill="#0C447C" text-anchor="middle">4</text>
+<text x="442.0" y="3094.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="middle">CI</text>
+<rect x="502.0" y="3050.0" width="100.0" height="56.0" rx="8" fill="#E4F0FA" stroke="#0C447C" stroke-width="1.4"/>
+<text x="552.0" y="3074.0" font-size="16" font-weight="750" fill="#0C447C" text-anchor="middle">5</text>
+<text x="552.0" y="3094.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="middle">tests</text>
+<rect x="612.0" y="3050.0" width="100.0" height="56.0" rx="8" fill="#E4F0FA" stroke="#0C447C" stroke-width="1.4"/>
+<text x="662.0" y="3074.0" font-size="16" font-weight="750" fill="#0C447C" text-anchor="middle">6</text>
+<text x="662.0" y="3094.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="middle">build</text>
+<rect x="722.0" y="3050.0" width="100.0" height="56.0" rx="8" fill="#E4F0FA" stroke="#0C447C" stroke-width="1.4"/>
+<text x="772.0" y="3074.0" font-size="16" font-weight="750" fill="#0C447C" text-anchor="middle">7</text>
+<text x="772.0" y="3094.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="middle">registry</text>
+<rect x="832.0" y="3050.0" width="100.0" height="56.0" rx="8" fill="#E4F0FA" stroke="#0C447C" stroke-width="1.4"/>
+<text x="882.0" y="3074.0" font-size="16" font-weight="750" fill="#0C447C" text-anchor="middle">8</text>
+<text x="882.0" y="3094.0" font-size="11" font-weight="600" fill="#5F5E5A" tex
