@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "f92dd34991b7",
+  "version": "ed7f8f12c7d0",
   "records": [
     {
       "id": "admission",
@@ -4460,6 +4460,21 @@
       "href": "/idp-architecture/p.html#p-ingress"
     },
     {
+      "id": "p-kafka",
+      "tab": "p",
+      "name": "Kafka (queue / log)",
+      "plane": "data",
+      "what": "Async fan-out: notifications, feed invalidation, downstream indexers. Producers in the app services write. Consumers (notifications, search) read. Retained streams, not user-facing reads.",
+      "why": "Not everything should be on the request path. A log lets you add a consumer next quarter without asking the feed to know about it. It is also how you replay.",
+      "notes": [
+        "A bus, not a request-response RPC. Offsets and consumer groups are the contract.",
+        "Not a replacement for Postgres. The post row is written first.",
+        "Provisioned by Terraform. Topics are platform objects.",
+        "Search and notify consume this log. The thumb does not."
+      ],
+      "href": "/idp-architecture/p.html#p-kafka"
+    },
+    {
       "id": "p-kubeproxy",
       "tab": "p",
       "name": "kube-proxy, IPVS, eBPF",
@@ -4503,6 +4518,51 @@
         "The newsfeed path can run without a mesh. Add one for mTLS and policy, not for fashion."
       ],
       "href": "/idp-architecture/p.html#p-mesh"
+    },
+    {
+      "id": "p-obj",
+      "tab": "p",
+      "name": "Object store",
+      "plane": "data",
+      "what": "Media bytes. The media service holds metadata and authorization. The bucket holds the objects. The CDN often fetches via signed URLs. Provisioned by Terraform. Versioning and lifecycle are infra policy.",
+      "why": "Blobs in block disks attached to pods will be lost. Object storage matches how media is used: write once, read many, cache at the edge.",
+      "notes": [
+        "Stores blobs, not rows. Public-by-default is a misconfiguration.",
+        "Signed URL, then the CDN. The pod does not stream every byte.",
+        "Created by plane B. A feature ship does not create a bucket.",
+        "newsfeed-service:v1827 asks media for metadata, not for the file."
+      ],
+      "href": "/idp-architecture/p.html#p-obj"
+    },
+    {
+      "id": "p-redis",
+      "tab": "p",
+      "name": "Redis (cache)",
+      "plane": "data",
+      "what": "Cache and short-lived coordination on the feed path. News feed, ranking, and user services use it. Ephemeral keys. Not the source of truth. Provisioned as a managed service by Terraform.",
+      "why": "The feed cannot hit Postgres on every fan-out and still keep a latency SLO. Redis is the cheap memory that makes the read path possible. Treating it as truth is how you lose posts on a failover.",
+      "notes": [
+        "Hot keys, sessions, ranking candidates. TTL is a feature.",
+        "A cache miss is normal. A cache as system of record is not.",
+        "Sized by telemetry. Created by Terraform. Not by Argo CD.",
+        "newsfeed-service:v1827 reads here. It does not persist here."
+      ],
+      "href": "/idp-architecture/p.html#p-redis"
+    },
+    {
+      "id": "p-sql",
+      "tab": "p",
+      "name": "Postgres",
+      "plane": "data",
+      "what": "System of record for users, posts, and the relational slice of the feed. Provisioned by Terraform, consumed by services, never migrated by a CI deploy job. Backups and replicas are plane-B concerns.",
+      "why": "Relational data does not belong in a container filesystem. A managed database is the boring store that survives a node drain. Schema changes are versioned and applied by a deliberate job, not by the rolling deploy of v1827.",
+      "notes": [
+        "Transactions, foreign keys, the post row. This is truth.",
+        "Created by Terraform, not by Argo CD. The services that own the tables talk to it.",
+        "A feature ship does not apply a database. Schema is its own path.",
+        "Replica and backup policy is infra. The feed does not invent it."
+      ],
+      "href": "/idp-architecture/p.html#p-sql"
     },
     {
       "id": "p-svc",
