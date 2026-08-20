@@ -11,10 +11,12 @@
     const ALLOWED = o => o === ORIGIN || /^http:\/\/localhost(:\d+)?$/.test(o) || /^http:\/\/127\.0\.0\.1(:\d+)?$/.test(o);
 
     // --- Tab identity, derived from the filename ---
-    var file = (location.pathname.split("/").pop() || "index.html");
-    if (!file) file = "index.html";
-    var TAB_OF = { "index.html": "map", "golden.html": "golden", "v2.html": "v2", "agents.html": "agents", "metal.html": "metal" };
-    var FILE_OF = { map: "index.html", golden: "golden.html", v2: "v2.html", agents: "agents.html", metal: "metal.html" };
+    // Normalize for clean URLs (vercel.json cleanUrls, local `serve`): a path
+    // ending in "/metal" is the same page as "metal.html".
+    var seg = location.pathname.split("/").pop() || "";
+    var file = seg === "" ? "index.html" : (/\.html?$/.test(seg) ? seg : seg + ".html");
+    var TAB_OF = { "index.html": "map", "golden.html": "golden", "v2.html": "v2", "agents.html": "agents", "metal.html": "metal", "scenarios.html": "scenarios" };
+    var FILE_OF = { map: "index.html", golden: "golden.html", v2: "v2.html", agents: "agents.html", metal: "metal.html", scenarios: "scenarios.html" };
     var tab = TAB_OF[file] || "map";
     var dark = document.body.classList.contains("idp-map") || file === "index.html";
 

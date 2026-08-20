@@ -21,7 +21,8 @@ const FILE_FOR_TAB = {
   v2: 'v2.html',
   agents: 'agents.html',
   metal: 'metal.html',
-  map: 'index.html'
+  map: 'index.html',
+  scenarios: 'scenarios.html'
 };
 const LIGHT_TABS = ['golden', 'v2', 'agents', 'metal'];
 

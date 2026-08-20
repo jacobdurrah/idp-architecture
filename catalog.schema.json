@@ -28,7 +28,7 @@
         "id": { "type": "string", "minLength": 1 },
         "tab": {
           "type": "string",
-          "enum": ["golden", "v2", "agents", "metal", "map"]
+          "enum": ["golden", "v2", "agents", "metal", "map", "scenarios"]
         },
         "name": { "type": "string", "minLength": 1 },
         "what": { "type": "string", "minLength": 1 },

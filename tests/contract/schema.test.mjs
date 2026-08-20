@@ -38,7 +38,9 @@ function loadSchema() {
 async function makeValidator(schema) {
   let Ajv, addFormats;
   try {
-    ({ default: Ajv } = await import('ajv'));
+    // The schema declares draft 2020-12, so use ajv's 2020 build (plain `ajv`
+    // is draft-07 and cannot resolve the 2020-12 meta-schema).
+    ({ default: Ajv } = await import('ajv/dist/2020.js'));
     ({ default: addFormats } = await import('ajv-formats'));
   } catch (err) {
     assert.fail(`ajv / ajv-formats not installed — add them as devDeps in IG-12. (${err.message})`);

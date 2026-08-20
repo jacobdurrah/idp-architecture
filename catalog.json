@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "3e542c675c2c",
+  "version": "a87bad1680c0",
   "records": [
     {
       "id": "admission",
@@ -4397,6 +4397,371 @@
         "The yellow on the poster is the jumper, not a logical peering session."
       ],
       "href": "/idp-architecture/metal.html#xconnect"
+    },
+    {
+      "id": "break",
+      "tab": "scenarios",
+      "name": "Break",
+      "plane": "story",
+      "what": "The service errors. Alerts fire. Rollback or snapshot. An agent triages the stigmergic boards.",
+      "why": "A blank observability board is not permission to guess. Missing heartbeats are not green. Freeze promotions. Do not invent a story from a dead collector.",
+      "notes": [
+        "Alert red and agent rose. Six frames, error to freeze or repair.",
+        "Rollback is a Git revert, synced by Argo. It is not a CI re-run.",
+        "Agents read boards. They do not kubectl. Humans own incident command."
+      ],
+      "href": "/idp-architecture/scenarios.html#break"
+    },
+    {
+      "id": "break-1",
+      "tab": "scenarios",
+      "name": "Error in the pod",
+      "plane": "alert",
+      "what": "The process throws, or the SLO burns. Four replicas on the hot path. A bad digest here is a canary and a burn-rate alert, then a Git revert.",
+      "why": "Break starts in the same box Ship ended in. If you page a different service, you are telling a different story.",
+      "notes": [
+        "Stateless feed assembly. It stores nothing durable.",
+        "Cite Metal newsfeed-pod and v2 newsfeed.",
+        "The replica count is a live object, not a hope in a runbook."
+      ],
+      "href": "/idp-architecture/scenarios.html#break-1"
+    },
+    {
+      "id": "break-2",
+      "tab": "scenarios",
+      "name": "Telemetry",
+      "plane": "obs",
+      "what": "Spans, metrics, and logs leave the process through the OTel SDK and the collector. When this hop dies, the observability board goes blank.",
+      "why": "A collector is not optional plumbing. Agents must not invent a story from a dead collector. The missing trace is the signal, if and only if a heartbeat was expected.",
+      "notes": [
+        "The template ships the SDK. The coding agent does not add telemetry later.",
+        "Heartbeats from this collector are what the obs-guard expects.",
+        "Cite Agents: otel-sdk, otel-collector."
+      ],
+      "href": "/idp-architecture/scenarios.html#break-2"
+    },
+    {
+      "id": "break-3",
+      "tab": "scenarios",
+      "name": "Alert",
+      "plane": "alert",
+      "what": "Burn-rate or error-budget pages fire. Pages are traces. The SRE agent reads them. Silence is not a canary pass.",
+      "why": "An SLO that does not page is a slide. A page that does not write a ticket is a shout. The board is the alert, the ticket, and the runbook.",
+      "notes": [
+        "On Agents this is the alerts box and the obs board.",
+        "Missing heartbeats are not green. A blank board is not all-clear.",
+        "Cite Agents: alerts, obs-board."
+      ],
+      "href": "/idp-architecture/scenarios.html#break-3"
+    },
+    {
+      "id": "break-4",
+      "tab": "scenarios",
+      "name": "Rollback / snapshot",
+      "plane": "ctrl",
+      "what": "Live goes back to the last good digest. The canary board can pause or fail. Fail writes a revert in platform-gitops. Argo syncs. It is not a CI re-run of a deploy script.",
+      "why": "Rollback is a Git operation. If the only undo is a person with kubectl, Ship was a story you told yourself.",
+      "notes": [
+        "A revert of the bump commit is a rollback (v2).",
+        "Silence on the canary board is not a pass (Agents).",
+        "Cite v2 argocd and Agents canary-board."
+      ],
+      "href": "/idp-architecture/scenarios.html#break-4"
+    },
+    {
+      "id": "break-5",
+      "tab": "scenarios",
+      "name": "Agent triage",
+      "plane": "agent",
+      "what": "An agent reads the boards (alerts, traces, canary, outage). It does not invent a story if observability is dark. It may open a rollback PR or a ticket. Humans still own incident command.",
+      "why": "If observability is dark: missing heartbeats are not green. Freeze promotions. Do not invent a story from a dead collector. That contract is already on the Agents tab (obs-guard, outage-board).",
+      "notes": [
+        "Reads: pages, traces, error budgets, runbooks, the canary board.",
+        "Writes: a rollback or fix PR, a ticket, a comment on the board. Never kubectl.",
+        "Cite Agents: sre-agent, obs-guard, outage-board."
+      ],
+      "href": "/idp-architecture/scenarios.html#break-5"
+    },
+    {
+      "id": "break-6",
+      "tab": "scenarios",
+      "name": "Freeze or repair",
+      "plane": "agent",
+      "what": "Promotion is frozen, or a repair agent writes on CI. The GitOps agent may open a revert. Nobody applies to the cluster. Resume autonomous improve-the-code loops only when heartbeats return.",
+      "why": "A blank board is not permission to guess. Autonomous loops that keep running on empty dashboards will optimize you into an outage.",
+      "notes": [
+        "Do not promote. Freeze the GitOps bump and the canary.",
+        "Repair agent: reads red checks and artifacts, writes a follow-up commit. It does not merge.",
+        "Cite Agents: repair-agent, gitops-agent."
+      ],
+      "href": "/idp-architecture/scenarios.html#break-6"
+    },
+    {
+      "id": "overview",
+      "tab": "scenarios",
+      "name": "How to read this map (scenarios)",
+      "plane": "step",
+      "what": "This tab is the stitch. v2 is how a change is admitted. Agents are who reads the traces. Metal is the floor. Play a direction.",
+      "why": "One change, three directions. newsfeed-service:v1827 and PR #4821 are the through-line so the conversation stays concrete. A fourth story is another shard, not a new layout.",
+      "notes": [
+        "Ship: code leaves the laptop and becomes a process on a slat.",
+        "Serve: a thumb uses the service. The request walks Metal hops to the same pod.",
+        "Break: the service errors. Alerts fire. Rollback. An agent reads the boards.",
+        "Each frame cites a box on v2, Agents, or Metal. Open in that tab to see the full poster."
+      ],
+      "href": "/idp-architecture/scenarios.html#overview"
+    },
+    {
+      "id": "serve",
+      "tab": "scenarios",
+      "name": "Serve",
+      "plane": "story",
+      "what": "A thumb uses the service. The request walks the data plane and the Metal hops to the same pod Ship landed.",
+      "why": "Logical diagrams start at the load balancer. Users do not. Serve is the request, not the deploy.",
+      "notes": [
+        "Data-plane green. Seven frames, air to process.",
+        "Metro, long-haul, and hotel are one cell. The full 13 hops live on Metal.",
+        "Physics numbers (4.9 μs/km, 1–10 ms radio, AZ <2 ms) are Metal's, cited in notes only."
+      ],
+      "href": "/idp-architecture/scenarios.html#serve"
+    },
+    {
+      "id": "serve-1",
+      "tab": "scenarios",
+      "name": "Thumb",
+      "plane": "edge",
+      "what": "A thumb hits the newsfeed. The handset turns the HTTP request into a radio burst on licensed LTE or 5G NR. The air is not the delay. The scheduler is.",
+      "why": "This is where the request is born. If you start the story at the load balancer you have already skipped the hops users pay for.",
+      "notes": [
+        "RF is essentially c. A kilometer of air is about 3 μs (Metal).",
+        "The 1–10 ms you measure is TTI scheduling, HARQ, and the radio grant (Metal).",
+        "Cite Metal: user-phone, e-rf."
+      ],
+      "href": "/idp-architecture/scenarios.html#serve-1"
+    },
+    {
+      "id": "serve-2",
+      "tab": "scenarios",
+      "name": "Tower",
+      "plane": "metal",
+      "what": "A steel or rooftop site. Radios face the handset. The BBU emits IP onto backhaul. This is where bytes become light.",
+      "why": "Coverage is a real-estate problem. The 1–10 ms phone-to-tower number is mostly the BBU schedule, not the speed of radio (Metal).",
+      "notes": [
+        "RRU on the mast. BBU in the hut or a nearby CO.",
+        "After this hop, treat the path as fiber.",
+        "Cite Metal: tower, bbu."
+      ],
+      "href": "/idp-architecture/scenarios.html#serve-2"
+    },
+    {
+      "id": "serve-3",
+      "tab": "scenarios",
+      "name": "Glass to the hotel",
+      "plane": "photon",
+      "what": "Metro ring, long-haul as needed, then a carrier hotel. This cell compresses those hops. The full 13 live on Metal. Light in fiber is about 4.9 μs/km one-way (Metal).",
+      "why": "You do not need every amplifier on this storyboard. You do need to remember the request is still photons, not a Service object.",
+      "notes": [
+        "Metro around a city is 1 to 2 ms typical (Metal).",
+        "The hotel is interconnection: meet-me, cross-connect, colo under one roof.",
+        "Cite Metal: metro-ring, hotel, xconnect. Do not invent numbers."
+      ],
+      "href": "/idp-architecture/scenarios.html#serve-3"
+    },
+    {
+      "id": "serve-4",
+      "tab": "scenarios",
+      "name": "EDGE or miss",
+      "plane": "edge",
+      "what": "An EDGE PoP or CDN cache may answer here. TLS can terminate. A miss goes on to the region and the AZ. Anycast brought the user to this city.",
+      "why": "This is the first place the request may be answered without crossing a region. If the feed is cacheable, the region never sees the byte.",
+      "notes": [
+        "Not a full AZ. A handful of racks, a cache, and a tight failure domain.",
+        "Inter-AZ budget on Metal is under 2 ms RTT. Cite that when the miss lands in-region.",
+        "Cite Metal: edge-pop, az."
+      ],
+      "href": "/idp-architecture/scenarios.html#serve-4"
+    },
+    {
+      "id": "serve-5",
+      "tab": "scenarios",
+      "name": "DC fabric",
+      "plane": "data",
+      "what": "Inside the building: border, then Clos spine, then ToR. East-west is cheap. This is the hop a service mesh cannot optimize away.",
+      "why": "If two pods in the same AZ are slow, look here before you look at the process. Metal's ToR to spine to ToR is 5–50 μs.",
+      "notes": [
+        "ToR is the server's first IP hop. Down: DAC. Up: 100/400G toward the spine.",
+        "ECMP on 5-tuple. One fat flow is still one path.",
+        "Cite Metal: fabric-spine, tor."
+      ],
+      "href": "/idp-architecture/scenarios.html#serve-5"
+    },
+    {
+      "id": "serve-6",
+      "tab": "scenarios",
+      "name": "Ingress + Service",
+      "plane": "data",
+      "what": "The packet becomes an in-cluster request. Cloud LB, then Ingress (or an API gateway) maps host and path to the News Feed Service. Desired state in platform-gitops.",
+      "why": "Services should not each invent a front door. Ingress is the platform's edge inside the cluster. Changing it is a GitOps change.",
+      "notes": [
+        "The LB is provisioned by Terraform or the cloud controller, not by CI.",
+        "Badge 11 on v2 is the moment traffic can reach the new digest.",
+        "Cite v2: ingress, lb."
+      ],
+      "href": "/idp-architecture/scenarios.html#serve-6"
+    },
+    {
+      "id": "serve-7",
+      "tab": "scenarios",
+      "name": "The pod",
+      "plane": "data",
+      "what": "The request lands on the same newsfeed-pod Ship landed: newsfeed-service:v1827, cgroups on a VM on a CPU slat. This is the process that answers the thumb.",
+      "why": "If you cannot follow the request to this box, Serve is a cartoon and Ship did not finish.",
+      "notes": [
+        "Same artifact. Same slat. Same digest sha256:9f3a…c21.",
+        "p99 the user feels is every hop above this, plus this process (Metal).",
+        "Cite Metal: newsfeed-pod."
+      ],
+      "href": "/idp-architecture/scenarios.html#serve-7"
+    },
+    {
+      "id": "ship",
+      "tab": "scenarios",
+      "name": "Ship",
+      "plane": "story",
+      "what": "Code leaves the laptop and changes shape until it is a process on a slat. The artifact is newsfeed-service:v1827. The inbox is PR #4821.",
+      "why": "If you cannot name the shape at each hop (commit, review, image, manifest, object, node, pod), the other tabs are disconnected pictures.",
+      "notes": [
+        "Control-plane blue. Nine frames, laptop to CPU slat.",
+        "CI never talks to the Kubernetes API. Argo is the only applicator.",
+        "The last frame is the same newsfeed-pod Serve and Break will use."
+      ],
+      "href": "/idp-architecture/scenarios.html#ship"
+    },
+    {
+      "id": "ship-1",
+      "tab": "scenarios",
+      "name": "Developer commit",
+      "plane": "ctrl",
+      "what": "A product engineer turns a working tree on the laptop into a git commit on app-newsfeed. The change is still only source.",
+      "why": "Ship starts when the tree becomes an object Git can name. If the first artifact is an image or a kubectl apply, you skipped the board.",
+      "notes": [
+        "Same laptop toolchain as v2. Local checks already ran.",
+        "The author is a control-plane client, not a tunnel into the cluster.",
+        "PR #4821 is not open yet. This is the commit that will sit on it."
+      ],
+      "href": "/idp-architecture/scenarios.html#ship-1"
+    },
+    {
+      "id": "ship-2",
+      "tab": "scenarios",
+      "name": "PR #4821",
+      "plane": "ctrl",
+      "what": "The commit becomes a review artifact. PR #4821 is a first-class object on the path, not a courtesy. Opening it starts validation. Nothing is deployed yet.",
+      "why": "Branch protection is the contract. The PR is the inbox. Chat is not the system of record. Agents and humans write on the same board.",
+      "notes": [
+        "Required checks: CI, lint, types, unit, SAST/SCA, policy, integration, review.",
+        "On Agents this is the PR board, a stigmergic space.",
+        "Humans still own merge. Green checks are necessary, not sufficient."
+      ],
+      "href": "/idp-architecture/scenarios.html#ship-2"
+    },
+    {
+      "id": "ship-3",
+      "tab": "scenarios",
+      "name": "Checks",
+      "plane": "ctrl",
+      "what": "The PR grows status checks. Compile, lint, unit, security (and the rest of the required set) write traces onto the PR. Fail-closed: a red or skipped required check blocks merge.",
+      "why": "If checks live in a private log, agents cannot coordinate and humans will merge on a story. The board is the Git status API.",
+      "notes": [
+        "Same gates as the laptop, now durable on the PR.",
+        "On Agents this is the checks board. A red check is a trace the repair agent can read.",
+        "CI still has not talked to Kubernetes."
+      ],
+      "href": "/idp-architecture/scenarios.html#ship-3"
+    },
+    {
+      "id": "ship-4",
+      "tab": "scenarios",
+      "name": "Image",
+      "plane": "ctrl",
+      "what": "A green SHA becomes an immutable OCI digest: newsfeed-service:v1827 (sha256:9f3a…c21). SBOM plus cosign. No :latest. No rebuild between environments.",
+      "why": "A named digest is the only thing Git, the registry, kubelet, and admission can agree on. Floating tags are how you lose the ability to say what is running.",
+      "notes": [
+        "The concrete artifact this site traces. linux/amd64, 184 MB.",
+        "CI writes. Nodes pull. The registry is storage, not a CI plugin.",
+        "Admission will refuse an unsigned or off-allow-list image."
+      ],
+      "href": "/idp-architecture/scenarios.html#ship-4"
+    },
+    {
+      "id": "ship-5",
+      "tab": "scenarios",
+      "name": "Manifest bump",
+      "plane": "ctrl",
+      "what": "CI writes the digest into the Deployment in platform-gitops. That write is the deploy. The gitops PR is policy-gated. CI still has not talked to Kubernetes.",
+      "why": "This is the move that turns a stored image into an intent. Without it, a green build is a souvenir. A revert of this commit is a rollback.",
+      "notes": [
+        "Desired workload state, not application source.",
+        "Promotion is a Git write, not a pipeline step that calls kubectl.",
+        "Argo CD watches this repo continuously."
+      ],
+      "href": "/idp-architecture/scenarios.html#ship-5"
+    },
+    {
+      "id": "ship-6",
+      "tab": "scenarios",
+      "name": "Admission",
+      "plane": "ctrl",
+      "what": "The manifest becomes an admitted Kubernetes object. OPA, Kyverno, and Pod Security Standards sit between Argo and the API server. A bypassed pipeline still cannot land a bad pod.",
+      "why": "Shift-left is not a replacement for a gate at the front door. Allow-list means kubelet will not be asked to pull from a random registry.",
+      "notes": [
+        "Evaluated at CI (gate-policy) and again at admit.",
+        "A signed, allow-listed digest is the only image that admits.",
+        "Denials are telemetry. The platform team pages on a spike."
+      ],
+      "href": "/idp-architecture/scenarios.html#ship-6"
+    },
+    {
+      "id": "ship-7",
+      "tab": "scenarios",
+      "name": "Reconcile",
+      "plane": "ctrl",
+      "what": "Argo CD watches platform-gitops, diffs desired versus live, and syncs. It is not a CI job. Pull-based: the cluster never gets CI credentials.",
+      "why": "The only write path into production Kubernetes for applications is this reconciler. That is how revert stays a Git operation.",
+      "notes": [
+        "Watch, compare, sync. That is the whole job, forever.",
+        "On Agents the sync status is the Argo board. Silence is a signal, not a pass.",
+        "If someone clicks in the cloud console, drift is detected and reconciled back to Git."
+      ],
+      "href": "/idp-architecture/scenarios.html#ship-7"
+    },
+    {
+      "id": "ship-8",
+      "tab": "scenarios",
+      "name": "Node",
+      "plane": "infra",
+      "what": "The admitted object is scheduled onto a VM that is a kube node. The VM lives on a hypervisor on a slat. The golden-path worker pool is a bag of these VMs.",
+      "why": "Autoscaling adds VMs (and maybe slats). It does not add magic. If the slat is full, the VM does not appear.",
+      "notes": [
+        "kubelet, runtime, and CNI live inside the VM.",
+        "Metal draws the stack: slat, hypervisor, VM, node.",
+        "This is the object the Cluster Autoscaler bargains for."
+      ],
+      "href": "/idp-architecture/scenarios.html#ship-8"
+    },
+    {
+      "id": "ship-9",
+      "tab": "scenarios",
+      "name": "Pod on metal",
+      "plane": "data",
+      "what": "The node runs cgroups and namespaces. The process is newsfeed-service:v1827 on a CPU slat in the general row. This is the pod Serve will hit and Break will page on.",
+      "why": "The whole Ship story exists so this process can answer a thumb. If you cannot follow the digest to this box, the other tabs are fiction.",
+      "notes": [
+        "Same image tag v2 produced. Stateless worker. CPU row, not GPU.",
+        "A pod is a scheduled slice of a VM that is already a slice of a slat.",
+        "Cite Metal: newsfeed-pod, pod, cpu-slat, rack-cpu."
+      ],
+      "href": "/idp-architecture/scenarios.html#ship-9"
     },
     {
       "id": "admission",

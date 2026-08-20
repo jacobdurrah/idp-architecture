@@ -118,8 +118,9 @@ test('idp.open renders in place on the same tab (metal)', async ({ page }) => {
   });
 
   await expect(page.locator('#panel h2')).toHaveText(/Subsea/);
-  // Same-tab open renders in place — it must not navigate away.
-  expect(page.url()).toContain('/metal.html');
+  // Same-tab open renders in place — it must not navigate away from the metal
+  // page (served as /metal.html or the clean URL /metal).
+  expect(page.url()).toMatch(/\/metal(\.html)?(#|$)/);
 });
 
 // 6. Agent→site idp.open, CROSS tab → navigate to <file>#id.
@@ -132,8 +133,9 @@ test('idp.open navigates cross-tab (golden → metal.html#subsea)', async ({ pag
     window.postMessage({ type: 'idp.open', tab: 'metal', id: 'subsea' }, '*');
   });
 
-  // The protocol maps tab "metal" → metal.html and appends #<id>.
-  await page.waitForURL(/\/metal\.html#subsea$/);
+  // The protocol maps tab "metal" → metal.html and appends #<id>. The local
+  // server (and Vercel) may serve that as the clean URL /metal, so accept both.
+  await page.waitForURL(/\/metal(\.html)?#subsea$/);
 });
 
 // 7. A message from a non-allowlisted origin is ignored.
