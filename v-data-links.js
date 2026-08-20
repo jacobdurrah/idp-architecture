@@ -1,57 +1,63 @@
-(function (D) {
-  var k8s="https://kubernetes.io/releases/";
-  var k8sG="https://github.com/kubernetes/kubernetes/releases";
-  var gw="https://gateway-api.sigs.k8s.io/";
-  var ngx="https://kubernetes.github.io/ingress-nginx/";
-  var env="https://www.envoyproxy.io/";
-  var argo="https://argo-cd.readthedocs.io/en/stable/";
-  var argoG="https://github.com/argoproj/argo-cd";
-  var val="https://valkey.io/";
-  var red="https://redis.io/";
-  var kaf="https://kafka.apache.org/";
-  var con="https://www.confluent.io/";
-  var pg="https://www.postgresql.org/";
-  var otel="https://opentelemetry.io/";
-  var prom="https://prometheus.io/";
-  var gra="https://grafana.com/";
-  var k8sL={n:"Kubernetes 1.36.3 current, 1.37 next",href:k8s};
-  var c={
-    argocd:{
-      latest:{n:"Argo CD",href:argo},
-      project:{n:"argoproj/argo-cd",href:argoG}
-    },
-    redis:{
-      latest:{n:"Valkey",href:val},
-      common:[{n:"Redis",href:red}],
-      project:{n:"Valkey",href:val}
-    },
-    kafka:{
-      latest:{n:"Apache Kafka",href:kaf},
-      common:[{n:"Confluent",href:con}],
-      project:{n:"Apache Kafka",href:kaf}
-    },
-    sql:{
-      latest:{n:"PostgreSQL",href:pg},
-      project:{n:"PostgreSQL",href:pg}
-    },
-    ingress:{
-      latest:{n:"Gateway API",href:gw},
-      common:[{n:"ingress-nginx",href:ngx},{n:"Envoy",href:env}],
-      project:{n:"Gateway API",href:gw}
-    },
-    k8s:{
-      latest:k8sL,
-      project:{n:"Kubernetes releases",href:k8sG}
-    },
-    apiserver:{
-      latest:k8sL,
-      project:{n:"Kubernetes releases",href:k8sG}
-    },
-    "otel-sdk":{
-      latest:{n:"OpenTelemetry",href:otel},
-      common:[{n:"Prometheus",href:prom},{n:"Grafana",href:gra}],
-      project:{n:"OpenTelemetry",href:otel}
-    }
-  };
-  Object.keys(c).forEach(function (k) { if (D[k]) Object.assign(D[k], c[k]); });
+(function(D){
+var k8s="https://kubernetes.io/releases/",k8sG="https://github.com/kubernetes/kubernetes/releases";
+var gw="https://gateway-api.sigs.k8s.io/",ngx="https://kubernetes.github.io/ingress-nginx/",env="https://www.envoyproxy.io/";
+var argo="https://argo-cd.readthedocs.io/en/stable/",argoG="https://github.com/argoproj/argo-cd";
+var val="https://valkey.io/",red="https://redis.io/",kaf="https://kafka.apache.org/",con="https://www.confluent.io/",pg="https://www.postgresql.org/";
+var otel="https://opentelemetry.io/",prom="https://prometheus.io/",gra="https://grafana.com/";
+var gha="https://docs.github.com/en/actions";
+var esl="https://eslint.org/",ruff="https://docs.astral.sh/ruff/",gli="https://golangci-lint.run/";
+var rc="https://docs.rubocop.org/rubocop/latest/index.html",clp="https://doc.rust-lang.org/clippy/",ts="https://www.typescriptlang.org/";
+var jest="https://jestjs.io/",pyt="https://docs.pytest.org/",ju="https://junit.org/";
+var cql="https://codeql.github.com/",sg="https://semgrep.dev/",sonar="https://www.sonarsource.com/products/sonarqube/";
+var trivy="https://trivy.dev/",snyk="https://snyk.io/";
+var dep="https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide";
+var tc="https://testcontainers.com/",pact="https://pact.io/",pw="https://playwright.dev/";
+var kind="https://kind.sigs.k8s.io/",ls="https://www.localstack.cloud/",cyp="https://www.cypress.io/";
+var wm="https://wiremock.org/",k3d="https://k3d.io/",dag="https://dagger.io/",ra="https://rest-assured.io/";
+var kyv="https://kyverno.io/",opa="https://www.openpolicyagent.org/";
+function L(n,h){return {n:n,href:h}}
+var k8sL={n:"Kubernetes 1.36.3 current, 1.37 next",href:k8s};
+var lint={latest:L("Ruff",ruff),common:[L("ESLint",esl),L("golangci-lint",gli),L("RuboCop",rc),L("Clippy",clp)],project:L("ESLint",esl)};
+var unit={latest:L("Jest",jest),common:[L("pytest",pyt),L("JUnit",ju)],project:L("Jest",jest)};
+var sec={latest:L("CodeQL",cql),common:[L("Semgrep",sg),L("SonarQube",sonar),L("Trivy",trivy),L("Snyk",snyk)],project:L("CodeQL",cql)};
+var integ={
+w:"Suites in flight: newsfeed-it, users-it, contract, e2e-feed, policy-it. newsfeed-service:v1827 uses Testcontainers for Postgres+Redis+Kafka, Pact against app-users, Playwright on GET /feed. Kind for cluster-level. LocalStack when the suite needs AWS APIs.",
+d:["Unit is Jest or pytest. Distributed integration is Testcontainers, Pact, Playwright, Kind.","newsfeed-it brings real Postgres, Redis, and Kafka up with Testcontainers.","contract is Pact against app-users. e2e-feed is Playwright through ingress on GET /feed.","policy-it rehearses admit. Kind or k3d for a real API server. WireMock or LocalStack when a hop is not in-process."],
+latest:L("Testcontainers",tc),
+common:[L("Pact",pact),L("Playwright",pw),L("Kind",kind),L("LocalStack",ls)],
+see:[L("Cypress",cyp),L("k3d",k3d),L("WireMock",wm),L("Dagger",dag),L("REST Assured",ra)],
+project:L("Testcontainers",tc)
+};
+var c={
+argocd:{latest:L("Argo CD",argo),project:L("argoproj/argo-cd",argoG)},
+redis:{latest:L("Valkey",val),common:[L("Redis",red)],project:L("Valkey",val)},
+kafka:{latest:L("Apache Kafka",kaf),common:[L("Confluent",con)],project:L("Apache Kafka",kaf)},
+sql:{latest:L("PostgreSQL",pg),project:L("PostgreSQL",pg)},
+ingress:{latest:L("Gateway API",gw),common:[L("ingress-nginx",ngx),L("Envoy",env)],project:L("Gateway API",gw)},
+k8s:{latest:k8sL,project:L("Kubernetes releases",k8sG)},
+apiserver:{latest:k8sL,project:L("Kubernetes releases",k8sG)},
+ci:{
+w:"CI is GitHub Actions (or the house runner). Lint is ESLint or Ruff. Unit is Jest or pytest. Distributed integration is Testcontainers / Pact / Playwright / Kind. SAST is CodeQL or Semgrep. Trivy on the image.",
+latest:L("GitHub Actions",gha),
+common:[L("ESLint",esl),L("Ruff",ruff),L("Jest",jest),L("Testcontainers",tc),L("CodeQL",cql),L("Trivy",trivy)],
+project:L("GitHub Actions",gha)
+},
+"gate-lint":lint,
+"gate-static":{latest:L("Ruff",ruff),common:[L("ESLint",esl),L("Semgrep",sg)],project:L("ESLint",esl)},
+"gate-type":{latest:L("TypeScript",ts),project:L("TypeScript",ts)},
+"gate-compile":{latest:L("TypeScript",ts),project:L("TypeScript",ts)},
+"gate-unit":Object.assign({
+w:"Unit tests run in CI on every PR. Unit is Jest, pytest, or JUnit. They do not stand up a cluster. Distributed integration is Testcontainers / Pact / Playwright / Kind on the suites box.",
+d:["Deterministic. No live network, no shared staging.","Unit is Jest or pytest. Integration is the next gate, not this one.","Local unit target matches CI so a push is not a surprise."]
+},unit),
+"gate-security":sec,
+"gate-deps":{latest:L("Dependabot",dep),common:[L("Trivy",trivy),L("Snyk",snyk)],project:L("Dependabot",dep)},
+"otel-sdk":{latest:L("OpenTelemetry",otel),common:[L("Prometheus",prom),L("Grafana",gra)],project:L("OpenTelemetry",otel)},
+suites:integ,
+coordinator:Object.assign({d:["The coordinator shards newsfeed-it, users-it, contract, e2e-feed, policy-it.","Workers boot Testcontainers, Pact, Playwright, or Kind. Dagger if the runner is the house CI."]},integ),
+workers:Object.assign({d:["A slot boots Testcontainers (Postgres+Redis+Kafka), Pact, Playwright, or a Kind cluster, then tears it down."]},integ),
+results:{latest:L("GitHub Actions",gha),common:[L("Testcontainers",tc),L("Pact",pact),L("Playwright",pw)],project:L("GitHub Actions",gha)},
+admission:{latest:L("Kyverno",kyv),common:[L("Open Policy Agent",opa)],project:L("Kyverno",kyv)}
+};
+Object.keys(c).forEach(function(k){if(D[k])Object.assign(D[k],c[k]);});
 })(window.IDP_DATA);
