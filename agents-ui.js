@@ -125,3 +125,4 @@ Promise.all([fetch("a-svg-0.txt").then(function(r){return r.text();}), fetch("a-
     document.getElementById("stage").insertAdjacentHTML("afterbegin", parts.join(""));
     bind();
   });
+
