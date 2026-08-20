@@ -1,6 +1,6 @@
 # Build Ledger — v1 (idp-guide: on-site study agent for the IDP posters, 2026-08-20)
 
-_Completing these tasks produces **v1** of the on-site guide: a grounded Q&A dock that rides on top of the existing posters and can jump the page to the matching box. Source of truth for scope is the pasted build brief (`idp-guide-build-prompt.md`); this file is the human-readable sequence and the living design. **WIP limit = 1 within a task, but streams A/B/C/D run in parallel** (see Execution Order). Every task carries an **Impact (plain terms)** line (what it does for a person, no jargon) and an explicit **Tests (done when these pass)** list; the nested `*Enables:*` notes are builder-facing detail. A task is DONE only when all its Tests pass on a real page (local static server or Pages preview), not just in theory._
+_Completing these tasks produces **v1** of the on-site guide: a grounded Q&A dock that rides on top of the existing posters and can jump the page to the matching box. Source of truth for scope is the pasted build brief (`idp-guide-build-prompt.md`); this file is the human-readable sequence and the living design. **WIP limit = 1 within a task, but streams A/B/C/D run in parallel** (see Execution Order). Every task carries an **Impact (plain terms)** line (what it does for a person, no jargon) and an explicit **Tests (done when these pass)** list; the nested `*Enables:*` notes are builder-facing detail. Work is **test-first with two agents** (§10): a 🧪 Test-Author writes each task's tests (red) before a 🔨 Builder makes them green, and the builder does not edit the tests. A task is DONE only when its test suite is green in CI and unweakened — not just in theory._
 
 _**The thesis in one line:** three jobs, three tools on the agent. v1 ships the first job (Questions) and its two tools (`lookup`, `open_box`). v2 adds Feedback (`flag_clarity`). v3 adds Deeper understanding (tutor). Everything is grounded in `catalog.json`, generated from the same shards the pages load — the agent never invents a hop._
 
@@ -50,6 +50,8 @@ _**Status legend:** ✅ done · 🟡 partial · ⬜ not started. **Owners:** �
 | **NFR-7 Freshness** | Agent fetches `catalog.json` at chat start, so a published copy fix teaches the next day | ⬜ | IG-01, IG-04 |
 | **NFR-8 Evolvability** | Adding a tab / technology / shard / content kind needs no agent code change; generator discovers content, agent re-fetches, schema grows additively | ⬜ | IG-01, IG-08 |
 | **NFR-9 No stale grounding** | Catalog carries a version/etag; a publish invalidates the agent's cache so answers match what is on screen | ⬜ | IG-04, IG-08 |
+| **NFR-10 Runnable by you** | Tests run independently with one command (`npm test`) and a GitHub Actions "Run workflow" button, both listed at the top of each README | ⬜ | IG-13, IG-14 |
+| **NFR-11 Test-first** | Each task's tests are authored (🧪) before its code (🔨); DONE = its suite green in CI and unweakened (test-lock check) | ⬜ | §10, IG-13 |
 
 ### 4. Architecture (high level)
 ```mermaid
@@ -133,6 +135,18 @@ The two repos never share code or a build. They meet at exactly two **published 
 
 **Not a monorepo, on purpose.** Two repos + two hosts is the resilience story: a Vercel outage or auth flake leaves the posters fully usable (NFR-2). The catalog seam is what lets them stay separate without drifting. *(Optional later: a `repository_dispatch` webhook so a catalog publish pings idp-guide to run a smoke test — v2, nice-to-have; the per-session fetch already handles freshness.)*
 
+### 10. Test-first, two agents — how we build
+Every task is built **test-first**: its executable tests are written **before** any implementation, and the builder builds toward turning them green. Two roles, deliberately separate so tests are never written to flatter the code:
+- **🧪 Test-Author agent** turns a task's **Tests (done when these pass)** list into an executable suite (Playwright for browser behavior, `node:test`/vitest for the generator, `ajv` for the schema, an eval harness for the agent). Commits them **red** — failing because the implementation does not exist yet. Does **not** write implementation.
+- **🔨 Builder agent** makes the suite green. Does **not** edit the test files. If a test is genuinely wrong, it is kicked back to the Test-Author, not quietly changed.
+- **Integrity:** test files live under `tests/` (and `idp-guide/tests/`); CI flags any build commit that modifies a locked test file — a commit must be prefixed `test-change:` to revise a test on purpose. So a green run means the code met the test, not that the test was bent to the code. A human/verifier spot-checks.
+
+**Tests parallelize as fully as the build does.** Because every test encodes only the task's Tests list plus the frozen §7 contracts (never the implementation), all suites can be authored **up front, in parallel**, before a line of feature code exists. The test fan-out (Phase T) mirrors the build fan-out (Phase B) one-to-one: TA-01 ↔ IG-01, and so on. Only the shared runner (Phase T0) must land first.
+
+**Running them yourself (no agent, no local build knowledge needed):**
+- **One command:** `npm test` at each repo root runs the whole suite; `npm run test:catalog` / `test:e2e` / `test:contract` run slices. Listed at the **top of each README**.
+- **One button:** a GitHub Actions workflow with `workflow_dispatch` puts a **"Run workflow" button** in the repo's Actions tab (it also runs on every push and PR). The Playwright HTML report is uploaded as a run artifact, so you see results without any local setup.
+
 ---
 
 ## ⚡ EXECUTION ORDER — the one list that matters
@@ -155,11 +169,43 @@ _Four build streams, then one join. **A/B/C land in `idp-architecture` and share
 
 **Foundational for the living site (§8):** IG-08 (catalog auto-regeneration in CI) is **in v1 scope** — it depends only on IG-01 (wraps the generator in a GitHub Action), and without it grounding drifts the first time a shard is edited. It follows IG-01, not in parallel. IG-09 (question telemetry → clarity backlog), IG-10 (workflow/sequence kind), and IG-11 (code-lifecycle journey) are later phases but are pre-designed here so they land additively (§7).
 
+**Test-first, three phases (§10).** Building is preceded by test authoring, and both fan out in parallel:
+- **Phase T0 — Harness (lands first, tiny):** IG-13 (idp-architecture) + IG-14 (idp-guide) stand up the runner, `npm test`, and the Actions "Run workflow" button.
+- **Phase T — Author tests (🧪 Test-Author, parallel):** one red suite per task, encoding only the task's Tests list + frozen contracts. Mirrors the build one-to-one.
+- **Phase B — Build (🔨 Builder, parallel):** IG-01..IG-12, each defined as "make its TA suite green" without editing the tests.
+
+| Test suite | Encodes | Kind / tool | Runs green after |
+|---|---|---|---|
+| **TA-01** | IG-01 | `node:test` on `catalog.json` | IG-01 |
+| **TA-02** | IG-02 | Playwright (hash-open, `idp:render`) | IG-02 |
+| **TA-03** | IG-03 | Playwright (dock, postMessage, offline) | IG-03 |
+| **TA-04** | IG-04 | eval harness vs fixture catalog | IG-04 |
+| **TA-05** | IG-05 | Playwright e2e vs preview | A+B+C+D integrated |
+| **TA-08** | IG-08 | `node:test` + CI (regen / version / drift) | IG-08 |
+| **TA-12** | IG-12 | `ajv` schema validation, both repos | IG-12 |
+
+All TA suites can be authored in parallel the moment Phase T0 exists — none depends on another's code. (TA-06/07/09/10/11 for v2/v3 tasks are authored when those phases are scheduled.)
+
 ---
 
 ## PHASE v1 — Dock + grounded Q&A + highlight
 _Goal: a visitor asks a question on any tab, gets a grounded answer citing a data-id, and the poster jumps to that box. v2 (clarity issues) and v3 (tutor/quiz) are out of scope — design the protocol and catalog so they land later without a rewrite._
 
+_Build order per §10: **Phase T0** (IG-13/IG-14 harness) → **Phase T** (🧪 Test-Author writes TA-01..TA-12 red, in parallel) → **Phase B** (🔨 Builder turns each green, in parallel). A task is DONE when its TA suite is green in CI and unweakened._
+
+- ⬜ **IG-13 — Test harness + one-command runner + Actions button (idp-architecture).** 🔨 *(v1, Phase T0 — lands first.)* Stand up Playwright + `node:test`, a root `npm test` that runs everything, slice scripts (`test:catalog`, `test:e2e`, `test:contract`), and `.github/workflows/tests.yml` triggered on `push`, `pull_request`, and `workflow_dispatch` (the "Run workflow" button); upload the Playwright HTML report as a run artifact. Document the command + button at the **top of README**. **Impact (plain terms):** gives you one command and one GitHub button to check the whole site yourself, any time, without touching code.
+
+  **Tests (done when these pass):**
+  1. `npm test` runs from a clean checkout and reports pass/fail.
+  2. The Actions tab shows a **"Run workflow" button** that runs the same suite.
+  3. A deliberately failing test shows up red in the Action and in the uploaded report.
+  4. The first section of README tells you exactly how to run it (command + button).
+- ⬜ **IG-14 — Test harness + runner + Actions button (idp-guide).** 🔨 *(v1, Phase T0.)* Same for the eve repo: `npm test` runs the agent eval + embed tests, a `workflow_dispatch` "Run workflow" button, README section. **Impact (plain terms):** the same one-command / one-button check for the guide app.
+
+  **Tests (done when these pass):**
+  1. `npm test` runs the agent's grounded-answer + refusal evals against the fixture catalog.
+  2. The Actions "Run workflow" button runs the same suite.
+  3. README's first section lists the command and the button.
 - ⬜ **IG-01 — Catalog generator (Stream A).** 🤖 A one-shot Node script `tools/build-catalog.js` that loads every `*-data-*.js` (g/v/a/m) plus Map's `content-*.js` in a shim capturing `window.IDP_DATA` / `window.IDP_CONTENT`, dedups by `(tab, id)`, and emits the §5 record for every key. Commit generated `catalog.json` at repo root so Pages serves it with no auth. **Impact (plain terms):** turns the words already on the posters into one machine-readable list the guide can read, so the guide only ever talks about things that are actually on the site.
 
   **Tests (done when these pass):**
@@ -268,3 +314,4 @@ _These keep the agent in sync as the diagrams grow and turn questions into clear
 - 2026-08-20 — **Folded IG-08 (catalog auto-regeneration) into v1 scope** so grounding never drifts once shards start changing. It sits in PHASE v1 after IG-01; the living-site phase now starts at IG-09.
 - 2026-08-20 — Added **§9 Repo integration & change management**: the two repos integrate through the catalog (a versioned public API), not through code. Content churn flows through the data seam with zero idp-guide changes; capability changes are rare and additive; guardrails = schema + contract test in both CIs (IG-12, v1), config-not-code origins, independent deploys, expand-only order. FR-11 added.
 - 2026-08-20 — Every v1 task (IG-01/02/03/04/05/08/12) now carries a jargon-free **Impact (plain terms)** line and an explicit numbered **Tests (done when these pass)** list; DONE = all Tests green on a real page. Convention noted in the intro so later tasks follow it.
+- 2026-08-20 — Adopted **test-first with two agents (§10)**: a 🧪 Test-Author writes each task's tests red before a 🔨 Builder turns them green (no editing tests to pass). Added **Phase T0** harness tasks (IG-13 idp-architecture, IG-14 idp-guide) and the **TA-01..TA-12** parallel test-authoring fan-out that mirrors the build one-to-one. Independent runs via `npm test` + a GitHub Actions **"Run workflow" button**, both listed at the top of each README. NFR-10 (Runnable by you) + NFR-11 (Test-first) added.
