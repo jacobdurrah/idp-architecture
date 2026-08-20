@@ -1,0 +1,63 @@
+<text x="66.0" y="981.0" font-size="12" font-weight="700" fill="#0C447C" text-anchor="start">Compile + build</text>
+<text x="66.0" y="1001.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Required · fail-closed</text>
+<rect x="217.0" y="955.0" width="152.0" height="64.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="227.0" y="981.0" font-size="12" font-weight="700" fill="#0C447C" text-anchor="start">Static analysis</text>
+<text x="227.0" y="1001.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Required · fail-closed</text>
+<rect x="378.0" y="955.0" width="152.0" height="64.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="388.0" y="981.0" font-size="12" font-weight="700" fill="#0C447C" text-anchor="start">Lint</text>
+<text x="388.0" y="1001.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Required · fail-closed</text>
+<rect x="539.0" y="955.0" width="152.0" height="64.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="549.0" y="981.0" font-size="12" font-weight="700" fill="#0C447C" text-anchor="start">Type check</text>
+<text x="549.0" y="1001.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Required · fail-closed</text>
+<rect x="700.0" y="955.0" width="152.0" height="64.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="710.0" y="981.0" font-size="12" font-weight="700" fill="#0C447C" text-anchor="start">Unit tests</text>
+<text x="710.0" y="1001.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Required · fail-closed</text>
+<rect x="861.0" y="955.0" width="152.0" height="64.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="871.0" y="981.0" font-size="12" font-weight="700" fill="#0C447C" text-anchor="start">Security scan</text>
+<text x="871.0" y="1001.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Required · fail-closed</text>
+<rect x="1022.0" y="955.0" width="152.0" height="64.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="1032.0" y="981.0" font-size="12" font-weight="700" fill="#0C447C" text-anchor="start">Dependency scan</text>
+<text x="1032.0" y="1001.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Required · fail-closed</text>
+<rect x="1183.0" y="955.0" width="152.0" height="64.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="1193.0" y="981.0" font-size="12" font-weight="700" fill="#0C447C" text-anchor="start">Policy checks</text>
+<text x="1193.0" y="1001.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Required · fail-closed</text>
+<rect x="56.0" y="1033.0" width="1288.0" height="100.0" rx="8" fill="#FCEEF2" stroke="#C45B78" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="72.0" y="1058.0" font-size="13" font-weight="700" fill="#9B3D6A" text-anchor="start">Status checks  ·  stigmergic space</text>
+<text x="72.0" y="1080.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">A red check is a trace the repair agent can read. A skipped required check is a failed check.</text>
+<text x="72.0" y="1098.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">The Git status API is the board. A Slack paste is not.</text>
+<rect x="40.0" y="1170.0" width="1320.0" height="290.0" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<text x="56.0" y="1194.0" font-size="15" font-weight="750" fill="#185FA5" text-anchor="start">Distributed integration testing   ·   ephemeral per-job envs   ·   merge queue only pops green</text>
+<g class="badge"><circle cx="1338.0" cy="1158.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="1338.0" y="1162.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">5</text></g>
+<rect x="56.0" y="1210.0" width="186.0" height="130.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="68.0" y="1234.0" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Test coordinator</text>
+<text x="68.0" y="1258.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Shards the five suites</text>
+<text x="68.0" y="1276.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Timeouts and retries</text>
+<rect x="258.0" y="1210.0" width="166.0" height="130.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="270.0" y="1234.0" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Job queue</text>
+<text x="270.0" y="1258.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Workers pull</text>
+<text x="270.0" y="1276.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Visible backlog</text>
+<rect x="440.0" y="1210.0" width="420.0" height="130.0" rx="7" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="452.0" y="1234.0" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Ephemeral workers  x1000s</text>
+<rect x="454.0" y="1248.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="502.0" y="1248.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="550.0" y="1248.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="598.0" y="1248.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="646.0" y="1248.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="694.0" y="1248.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="742.0" y="1248.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="790.0" y="1248.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="454.0" y="1270.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="502.0" y="1270.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="550.0" y="1270.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="598.0" y="1270.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="646.0" y="1270.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="694.0" y="1270.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="742.0" y="1270.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="790.0" y="1270.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<text x="650.0" y="1310.0" font-size="12" font-weight="650" fill="#085041" text-anchor="middle">newsfeed-it · users-it · contract · e2e-feed · policy-it</text>
+<rect x="876.0" y="1210.0" width="220.0" height="130.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="888.0" y="1234.0" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Results to PR</text>
+<text x="888.0" y="1258.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Status + comments</text>
+<text x="888.0" y="1276.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Required checks</text>
+<text x="888.0" y="1294.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Artifacts retained</text>
+<rect x="1112.0" y="1210.0" width="232.0" height="130.0" rx="7" fill="#FBEAF2" stroke="#9B3D6A" stroke-width="1.6"/>
