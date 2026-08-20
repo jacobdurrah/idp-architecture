@@ -1,0 +1,63 @@
+<text x="128" y="2392" font-size="17" font-weight="700" fill="#0F6E56" text-anchor="start">EDGE or miss</text>
+<text x="128" y="2422" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">EDGE  →  hit, or miss to region</text>
+<text x="128" y="2450" font-size="12" font-weight="600" fill="#0F6E56" text-anchor="start">Metal · edge-pop  ·  az</text>
+<text x="1320" y="2392" font-size="11" font-weight="600" fill="#854F0B" text-anchor="end">cache hit or regional miss</text>
+<path d="M 96 2500 L 96 2514" fill="none" stroke="#0F6E56" stroke-width="1.8" marker-end="url(#arrD)"/>
+<rect x="56" y="2516" width="1288" height="148" rx="10" fill="#E8F5F0" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56" y="2516" width="8" height="148" rx="4" fill="#0F6E56"/>
+<g class="badge"><circle cx="96" cy="2590" r="16" fill="#085041" stroke="#fff" stroke-width="2"/><text x="96" y="2595" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">5</text></g>
+<text x="128" y="2556" font-size="17" font-weight="700" fill="#0F6E56" text-anchor="start">DC fabric</text>
+<text x="128" y="2586" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">border  →  spine, then ToR</text>
+<text x="128" y="2614" font-size="12" font-weight="600" fill="#0F6E56" text-anchor="start">Metal · fabric-spine  ·  tor</text>
+<text x="1320" y="2556" font-size="11" font-weight="600" fill="#854F0B" text-anchor="end">in-building packet</text>
+<path d="M 96 2664 L 96 2678" fill="none" stroke="#0F6E56" stroke-width="1.8" marker-end="url(#arrD)"/>
+<rect x="56" y="2680" width="1288" height="148" rx="10" fill="#E8F5F0" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56" y="2680" width="8" height="148" rx="4" fill="#0F6E56"/>
+<g class="badge"><circle cx="96" cy="2754" r="16" fill="#085041" stroke="#fff" stroke-width="2"/><text x="96" y="2759" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">7</text></g>
+<text x="128" y="2720" font-size="17" font-weight="700" fill="#0F6E56" text-anchor="start">Ingress + Service</text>
+<text x="128" y="2750" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">packet  →  in-cluster request</text>
+<text x="128" y="2778" font-size="12" font-weight="600" fill="#0F6E56" text-anchor="start">v2 · ingress  ·  lb</text>
+<text x="1320" y="2720" font-size="11" font-weight="600" fill="#854F0B" text-anchor="end">in-cluster request</text>
+<path d="M 96 2828 L 96 2842" fill="none" stroke="#0F6E56" stroke-width="1.8" marker-end="url(#arrD)"/>
+<rect x="56" y="2844" width="1288" height="148" rx="10" fill="#E8F5F0" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56" y="2844" width="8" height="148" rx="4" fill="#0F6E56"/>
+<g class="badge"><circle cx="96" cy="2918" r="16" fill="#085041" stroke="#fff" stroke-width="2"/><text x="96" y="2923" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">7</text></g>
+<text x="128" y="2884" font-size="17" font-weight="700" fill="#0F6E56" text-anchor="start">The pod</text>
+<text x="128" y="2914" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">in-cluster request  →  newsfeed-pod (same as Ship)</text>
+<text x="128" y="2942" font-size="12" font-weight="600" fill="#0F6E56" text-anchor="start">Metal · newsfeed-pod</text>
+<text x="1320" y="2884" font-size="11" font-weight="600" fill="#854F0B" text-anchor="end">the process</text>
+</g>
+<g data-band="break">
+<rect x="36" y="3048" width="1328" height="1076" rx="12" fill="#FDF6F8" stroke="#E8B4C0" stroke-width="1.4"/>
+<text x="56" y="3080" font-size="18" font-weight="750" fill="#A32D2D" text-anchor="start">Break</text>
+<text x="140" y="3080" font-size="13" font-weight="500" fill="#5F5E5A" text-anchor="start">The service errors. Alerts fire. Rollback. An agent reads the stigmergic boards.</text>
+<text x="56" y="3102" font-size="12" font-weight="500" fill="#5F5E5A" text-anchor="start">6 frames. Same through-line.</text>
+<rect x="56" y="3136" width="1288" height="148" rx="10" fill="#FCEEEF" stroke="#C45B78" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56" y="3136" width="8" height="148" rx="4" fill="#9B3D6A"/>
+<g class="badge"><circle cx="96" cy="3210" r="16" fill="#A32D2D" stroke="#fff" stroke-width="2"/><text x="96" y="3215" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">1</text></g>
+<text x="128" y="3176" font-size="17" font-weight="700" fill="#A32D2D" text-anchor="start">Error in the pod</text>
+<text x="128" y="3206" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">process  →  error / SLO burn</text>
+<text x="128" y="3234" font-size="12" font-weight="600" fill="#9B3D6A" text-anchor="start">Metal · newsfeed-pod  ·  v2 · newsfeed</text>
+<text x="1320" y="3176" font-size="11" font-weight="600" fill="#854F0B" text-anchor="end">error / SLO burn</text>
+<path d="M 96 3284 L 96 3298" fill="none" stroke="#9B3D6A" stroke-width="1.8" marker-end="url(#arrA)"/>
+<rect x="56" y="3300" width="1288" height="148" rx="10" fill="#FCEEEF" stroke="#C45B78" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56" y="3300" width="8" height="148" rx="4" fill="#9B3D6A"/>
+<g class="badge"><circle cx="96" cy="3374" r="16" fill="#A32D2D" stroke="#fff" stroke-width="2"/><text x="96" y="3379" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">2</text></g>
+<text x="128" y="3340" font-size="17" font-weight="700" fill="#A32D2D" text-anchor="start">Telemetry</text>
+<text x="128" y="3370" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">process  →  spans, metrics, logs</text>
+<text x="128" y="3398" font-size="12" font-weight="600" fill="#9B3D6A" text-anchor="start">Agents · otel-sdk  ·  otel-collector</text>
+<text x="1320" y="3340" font-size="11" font-weight="600" fill="#854F0B" text-anchor="end">spans, metrics, logs</text>
+<path d="M 96 3448 L 96 3462" fill="none" stroke="#9B3D6A" stroke-width="1.8" marker-end="url(#arrA)"/>
+<rect x="56" y="3464" width="1288" height="148" rx="10" fill="#FCEEEF" stroke="#C45B78" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56" y="3464" width="8" height="148" rx="4" fill="#9B3D6A"/>
+<g class="badge"><circle cx="96" cy="3538" r="16" fill="#A32D2D" stroke="#fff" stroke-width="2"/><text x="96" y="3543" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">3</text></g>
+<text x="128" y="3504" font-size="17" font-weight="700" fill="#A32D2D" text-anchor="start">Alert</text>
+<text x="128" y="3534" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">burn or error budget  →  alert</text>
+<text x="128" y="3562" font-size="12" font-weight="600" fill="#9B3D6A" text-anchor="start">Agents · alerts  ·  obs-board</text>
+<text x="1320" y="3504" font-size="11" font-weight="600" fill="#854F0B" text-anchor="end">page / burn-rate alert</text>
+<path d="M 96 3612 L 96 3626" fill="none" stroke="#9B3D6A" stroke-width="1.8" marker-end="url(#arrA)"/>
+<rect x="56" y="3628" width="1288" height="148" rx="10" fill="#FCEEEF" stroke="#C45B78" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56" y="3628" width="8" height="148" rx="4" fill="#9B3D6A"/>
+<g class="badge"><circle cx="96" cy="3702" r="16" fill="#A32D2D" stroke="#fff" stroke-width="2"/><text x="96" y="3707" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">4</text></g>
+<text x="128" y="3668" font-size="17" font-weight="700" fill="#A32D2D" text-anchor="start">Rollback / snapshot</text>
+<text x="128" y="3698" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">live  →  last good digest</text>
