@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Scenarios</title>
+  <link rel="stylesheet" href="tabs.css">
+  <style>
+:root{
+  --ink:#2C2C2A; --mut:#5F5E5A; --line:#E5E3DC; --bg:#FFFFFF;
+  --ctrl:#185FA5; --ctrlD:#0C447C; --data:#0F6E56; --dataD:#085041;
+  --infra:#854F0B; --infraD:#633806;
+  --obs:#534AB7; --obsD:#3C3489;
+  --ppl:#5F5E5A; --step:#0C447C; --alert:#A32D2D;
+  --agent:#9B3D6A; --agentD:#72264C;
+  --stig:#C45B78;
+  --metal:#3D3C38; --photon:#2A7AB0;
+  --paper:#FAFAF7;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{display:grid;grid-template-columns:1fr;min-height:calc(100vh - 76px)}
+.stage{padding:8px 18px 96px;min-width:0}
+#poster{width:100%;max-width:1400px;display:block;margin:0 auto;height:auto}
+.panel{
+  background:var(--paper);
+  border-left:1px solid var(--line);
+  padding:18px 22px 36px;
+  min-width:0;
+}
+.panel-grab{display:none}
+.panel-close{
+  position:absolute;top:10px;right:12px;
+  width:32px;height:32px;border:0;background:transparent;
+  color:var(--mut);font-size:20px;cursor:pointer;line-height:1;
+}
+.panel h2{margin:8px 0 14px;font-size:22px;letter-spacing:-0.02em;line-height:1.25}
+.panel h3{
+  margin:18px 0 6px;font-size:11px;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;color:var(--mut);
+}
+.panel p{margin:0 0 10px}
+.panel ul{margin:0 0 8px;padding-left:1.15em}
+.panel li+li{margin-top:5px}
+.panel a{color:var(--ctrl);font-weight:600}
+.chip{
+  display:inline-block;font-size:11px;font-weight:700;
+  letter-spacing:0.08em;text-transform:uppercase;
+  padding:3px 8px;border-radius:4px;color:#fff;
+}
+.chip.ctrl{background:var(--ctrl)}
+.chip.data{background:var(--data)}
+.chip.infra{background:var(--infra)}
+.chip.obs{background:var(--obs)}
+.chip.ppl{background:var(--ppl)}
+.chip.step,.chip.story{background:var(--step)}
+.chip.alert{background:var(--alert)}
+.chip.agent{background:var(--agent)}
+.chip.stig{background:var(--stig)}
+.chip.metal{background:var(--metal)}
+.chip.photon{background:var(--photon)}
+.chip.edge{background:var(--data)}
+.chip.shape{background:var(--infra)}
+.storybar{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  min-height:40px;padding:0 16px;background:var(--paper);
+  border-bottom:1px solid var(--line);font-size:13px;
+}
+.stories{display:flex;gap:8px;flex-wrap:wrap}
+.stories button,.stepper button{
+  border:1px solid var(--line);background:#fff;color:var(--ink);
+  font:inherit;font-weight:600;font-size:13px;padding:4px 12px;border-radius:999px;cursor:pointer
+}
+.stories button[aria-current="true"]{background:var(--step);color:#fff;border-color:var(--step)}
+.stepper{display:flex;align-items:center;gap:8px;color:var(--mut);white-space:nowrap}
+.hintbar{
+  position:fixed;left:50%;bottom:18px;transform:translateX(-50%);
+  margin:0;padding:7px 14px;border-radius:999px;
+  background:rgba(255,255,255,0.92);border:1px solid var(--line);
+  color:var(--ink);font-size:13px;font-weight:500;
+  box-shadow:0 4px 16px rgba(44,44,42,0.08);
+  pointer-events:none;z-index:5;
+}
+#hits .hit{fill:transparent;cursor:pointer;pointer-events:all}
+#hits .hit:hover{fill:rgba(24,95,165,0.07);stroke:#185FA5;stroke-width:1.6}
+#selbox{fill:none;stroke:#185FA5;stroke-width:2.4;pointer-events:none}
+@media (min-width:980px){
+  .wrap{grid-template-columns:1fr 400px}
+  .panel{position:sticky;top:76px;height:calc(100vh - 76px);overflow:auto}
+  .panel-close{display:none}
+}
+@media (max-width:979px){
+  .panel{
+    position:fixed;left:0;right:0;bottom:0;top:auto;
+    height:auto;max-height:72vh;overflow:auto;
+    border-left:0;border-top:1px solid var(--line);
+    border-radius:16px 16px 0 0;
+    transform:translateY(110%);
+    transition:transform 0.28s ease;
+    z-index:20;
+    padding-top:22px;
+  }
+  .panel.is-open{transform:translateY(0)}
+  .panel-grab{
+    display:block;width:40px;height:4px;border-radius:4px;
+    background:#D4D1C8;margin:0 auto 10px;
+  }
+  .hintbar{bottom:12px;max-width:calc(100%% - 24px);text-align:center}
+}
+  </style>
+</head>
+<body>
+  <nav class="site-tabs" aria-label="Views">
+    <a href="index.html">Map</a>
+    <a href="golden.html">Golden path</a>
+    <a href="v2.html">v2</a>
+    <a href="agents.html">Agents</a>
+    <a href="metal.html">Metal</a>
+    <a href="scenarios.html" aria-current="page">Scenarios</a>
+  </nav>
+  <div class="storybar" id="storybar">
+    <div class="stories" id="stories" role="tablist" aria-label="Stories"></div>
+    <div class="stepper">
+      <button type="button" id="prev">Prev</button>
+      <span id="stepn">Step</span>
+      <button type="button" id="next">Next</button>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="stage" id="stage">
+      
+    </div>
+    <aside class="panel" id="panel" aria-label="Detail">
+      <div class="panel-grab" aria-hidden="true"></div>
+      <button type="button" class="panel-close" id="panel-close" aria-label="Close">×</button>
+      <div id="panel-body"></div>
+    </aside>
+  </div>
+  <p class="hintbar">Play a story, or tap a frame.</p>
+  <script src="s-data-0.js"></script>
+  <script src="s-data-1.js"></script>
+  <script src="s-data-2.js"></script>
+  <script src="scenarios-ui.js"></script>
+
+</body>
+</html>
