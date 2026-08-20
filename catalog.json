@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "d5c87479d242",
+  "version": "13d0f8473d57",
   "records": [
     {
       "id": "admission",
@@ -6206,6 +6206,104 @@
         "Results go back to the PR, not into a tribal spreadsheet."
       ],
       "href": "/idp-architecture/v2.html#workers"
+    },
+    {
+      "id": "overview",
+      "tab": "y",
+      "name": "How to read this map (styles)",
+      "plane": "step",
+      "what": "Styles are how you wire the hop. Plane is the BOM. Numbers here are typical order-of-magnitude bands operators use when choosing, not Jacob's prod metrics and not world records.",
+      "why": "newsfeed-service:v1827 and PR #4821 are the through-line. Five repos: app-newsfeed, app-users, platform-gitops, infra-terraform, ci-pipelines.",
+      "notes": [
+        "Eight styles: monolith, layered, microservices, event-driven, CQRS, pipe-and-filter, serverless, microkernel.",
+        "Scale chips reuse the Plane utilities. Tap one for reads and writes, then open Plane for the BOM.",
+        "A style is a wiring. A utility is a hop. Do not treat this tab as a second Plane."
+      ],
+      "href": "/idp-architecture/y.html#overview"
+    },
+    {
+      "id": "st-cqrs",
+      "tab": "y",
+      "name": "CQRS",
+      "plane": "data",
+      "what": "Write a post to Postgres. Read the feed from Redis or a materialized view. Feed reads crush writes (~100:1).",
+      "why": "Do not make the write model serve the hot read.",
+      "notes": [
+        "Write model is commands. Read model is the feed.",
+        "Search is another read model, fed from Kafka.",
+        "The ratio is the reason. ~100:1 is the usual newsfeed shape."
+      ],
+      "href": "/idp-architecture/y.html#st-cqrs"
+    },
+    {
+      "id": "st-event",
+      "tab": "y",
+      "name": "Event-driven / broker",
+      "plane": "data",
+      "what": "Post created → Kafka → ranking, notify, search index. The writer does not wait.",
+      "why": "Time and fan-out. Many readers, one write.",
+      "notes": [
+        "A log, not RPC. Offsets and consumer groups are the contract.",
+        "The post row is written first. Kafka is the fan-out.",
+        "Cite Plane Kafka and v2 kafka."
+      ],
+      "href": "/idp-architecture/y.html#st-event"
+    },
+    {
+      "id": "st-layer",
+      "tab": "y",
+      "name": "Layered / n-tier",
+      "plane": "data",
+      "what": "GET /feed = ingress → newsfeed-service → Redis → Postgres. Classic Serve path.",
+      "why": "Everyone can draw it. Cache sits on the read path. Writes stay on the primary.",
+      "notes": [
+        "The hop order is the architecture.",
+        "Redis makes the read path possible. Postgres stays truth.",
+        "Cite Scenarios Serve: the packet becomes an in-cluster request at ingress."
+      ],
+      "href": "/idp-architecture/y.html#st-layer"
+    },
+    {
+      "id": "st-micro",
+      "tab": "y",
+      "name": "Microservices",
+      "plane": "data",
+      "what": "newsfeed-service:v1827, users, ranking. Five repos. Independent deploy of PR #4821.",
+      "why": "Team ownership and different scale per hop. Cost is the fan-out and the contract.",
+      "notes": [
+        "Five repos: app-newsfeed, app-users, platform-gitops, infra-terraform, ci-pipelines.",
+        "PR #4821 ships one service. The others stay put.",
+        "A Service, a mesh, and DNS are the hops. Not a second monolith."
+      ],
+      "href": "/idp-architecture/y.html#st-micro"
+    },
+    {
+      "id": "st-mono",
+      "tab": "y",
+      "name": "Modular monolith",
+      "plane": "data",
+      "what": "One deployable. Modules for feed, graph, and ranking live in one process.",
+      "why": "One transaction, one deploy, one on-call. Default for a single product until team or scale forces a cut.",
+      "notes": [
+        "One repo can still be app-newsfeed.",
+        "Cache in front of the primary. Do not pretend the modules are a mesh.",
+        "Cut when a team or a write budget says so, not for fashion."
+      ],
+      "href": "/idp-architecture/y.html#st-mono"
+    },
+    {
+      "id": "st-pipe",
+      "tab": "y",
+      "name": "Pipe-and-filter",
+      "plane": "data",
+      "what": "Ingest → enrich → rank → cache-warm for the feed. Stream or nightly batch.",
+      "why": "Each stage scales and replaces independently.",
+      "notes": [
+        "A stage is a consumer. The contract is the message.",
+        "Stream by day or batch by night. Same shape.",
+        "Object store holds the heavy intermediates."
+      ],
+      "href": "/idp-architecture/y.html#st-pipe"
     }
   ]
 }
