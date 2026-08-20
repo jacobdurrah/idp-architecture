@@ -1,0 +1,68 @@
+<text x="726" y="2510" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Fuel is the long outage.</text>
+<text x="726" y="2526" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Test under load or it is a statue.</text>
+<rect x="1030" y="2450" width="320" height="150" rx="7" fill="#FFF6E5" stroke="#EF9F27" stroke-width="1.6"/>
+<text x="1046" y="2474" font-size="13" font-weight="700" fill="#854F0B" text-anchor="start">PDUs · busway · A/B</text>
+<text x="1046" y="2494" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">A and B to each rack.</text>
+<text x="1046" y="2510" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">10–15 kW CPU typical.</text>
+<text x="1046" y="2526" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">40–100 kW GPU rows.</text>
+<rect x="70" y="2620" width="620" height="166" rx="7" fill="#FFF6E5" stroke="#EF9F27" stroke-width="1.6"/>
+<text x="86" y="2646" font-size="13" font-weight="700" fill="#854F0B" text-anchor="start">CRAH  ·  hot / cold aisle</text>
+<text x="86" y="2668" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Precision air on a chilled-water loop.</text>
+<text x="86" y="2684" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Containment stops the aisles mixing.</text>
+<text x="86" y="2700" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Works for 10–15 kW CPU racks.</text>
+<text x="86" y="2716" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">A missing tile is a hot spot, then a trip.</text>
+<rect x="710" y="2620" width="640" height="166" rx="7" fill="#FFF6E5" stroke="#EF9F27" stroke-width="1.6"/>
+<text x="726" y="2646" font-size="13" font-weight="700" fill="#854F0B" text-anchor="start">GPU liquid cooling</text>
+<text x="726" y="2668" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Direct-to-chip or rear-door HEX.</text>
+<text x="726" y="2684" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">CDU is a row-level service now.</text>
+<text x="726" y="2700" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">40–100 kW. Air cannot move that heat.</text>
+<text x="726" y="2716" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Ranking (train + infer) dies without this.</text>
+<text x="50" y="2834" font-size="15" font-weight="750" fill="#2C2C2A" text-anchor="start">Network fabric  ·  border → Clos → ToR</text>
+<g class="badge"><circle cx="430" cy="2830" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="430" y="2835" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">11</text></g>
+<rect x="50" y="2844" width="310" height="178" rx="10" fill="#E8F5F0" stroke="#1D9E75" stroke-width="1.6"/>
+<text x="66" y="2870" font-size="13" font-weight="700" fill="#0F6E56" text-anchor="start">DC border</text>
+<text x="66" y="2892" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Front door of the building.</text>
+<text x="66" y="2908" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">eBGP toward backbone.</text>
+<text x="66" y="2924" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">DDoS and ACLs live here.</text>
+<text x="66" y="2940" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Then the Clos.</text>
+<rect x="380" y="2844" width="310" height="178" rx="10" fill="#E8F5F0" stroke="#1D9E75" stroke-width="1.6"/>
+<text x="396" y="2870" font-size="13" font-weight="700" fill="#0F6E56" text-anchor="start">Spine (Clos)</text>
+<text x="396" y="2892" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Non-blocking east-west.</text>
+<text x="396" y="2908" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">ECMP on 5-tuple.</text>
+<text x="396" y="2924" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">ToR→spine→ToR 5–50 μs.</text>
+<text x="396" y="2940" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Spines forward. They do not store.</text>
+<rect x="710" y="2844" width="310" height="178" rx="10" fill="#E8F5F0" stroke="#1D9E75" stroke-width="1.6"/>
+<text x="726" y="2870" font-size="13" font-weight="700" fill="#0F6E56" text-anchor="start">Leaf</text>
+<text x="726" y="2892" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">BGP-in-DC underlay.</text>
+<text x="726" y="2908" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Row-level failure domain.</text>
+<text x="726" y="2924" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Anycast VTEP / gateway.</text>
+<text x="726" y="2940" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">No STP novel.</text>
+<rect x="1040" y="2844" width="330" height="178" rx="10" fill="#E8F5F0" stroke="#1D9E75" stroke-width="1.6"/>
+<text x="1056" y="2870" font-size="13" font-weight="700" fill="#0F6E56" text-anchor="start">Top of rack</text>
+<text x="1056" y="2892" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">DAC / AOC down to slats.</text>
+<text x="1056" y="2908" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">QSFP 100/400G up.</text>
+<text x="1056" y="2924" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">In-rack 1–5 μs.</text>
+<text x="1056" y="2940" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">The server's first IP hop.</text>
+<path d="M 690 2933 L 710 2933" fill="none" stroke="#2A7AB0" stroke-width="2.4" marker-end="url(#arrP)"/>
+<path d="M 1020 2933 L 1040 2933" fill="none" stroke="#2A7AB0" stroke-width="2.4" marker-end="url(#arrP)"/>
+<text x="50" y="3050" font-size="15" font-weight="750" fill="#2C2C2A" text-anchor="start">Racks  ·  drawn as racks</text>
+<g class="badge"><circle cx="300" cy="3046" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="300" y="3051" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">12</text></g>
+<text x="330" y="3050" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">ToR on top. ~12 × 1U slats. A/B whips. DAC in-rack. QSFP 100/400G up.</text>
+<rect x="50" y="3088" width="200" height="254" rx="8" fill="#F1F0EB" stroke="#3D3C38" stroke-width="1.8"/>
+<text x="150.0" y="3080" font-size="13" font-weight="700" fill="#0F6E56" text-anchor="middle">General CPU</text>
+<rect x="58" y="3096" width="184" height="22" rx="3" fill="#D8EFE6" stroke="#1D9E75" stroke-width="1.2"/>
+<text x="150.0" y="3112" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="middle">ToR  100/400G</text>
+<rect x="62" y="3124" width="176" height="14" rx="2" fill="#E1EFE8" stroke="#3D3C38" stroke-width="0.8"/>
+<rect x="56" y="3128" width="5" height="5" fill="#C45B2D"/>
+<rect x="239" y="3128" width="5" height="5" fill="#185FA5"/>
+<rect x="62" y="3139" width="176" height="14" rx="2" fill="#E1EFE8" stroke="#3D3C38" stroke-width="0.8"/>
+<rect x="56" y="3143" width="5" height="5" fill="#C45B2D"/>
+<rect x="239" y="3143" width="5" height="5" fill="#185FA5"/>
+<rect x="62" y="3154" width="176" height="14" rx="2" fill="#E1EFE8" stroke="#3D3C38" stroke-width="0.8"/>
+<rect x="56" y="3158" width="5" height="5" fill="#C45B2D"/>
+<rect x="239" y="3158" width="5" height="5" fill="#185FA5"/>
+<rect x="62" y="3169" width="176" height="14" rx="2" fill="#E1EFE8" stroke="#3D3C38" stroke-width="0.8"/>
+<rect x="56" y="3173" width="5" height="5" fill="#C45B2D"/>
+<rect x="239" y="3173" width="5" height="5" fill="#185FA5"/>
+<rect x="62" y="3184" width="176" height="14" rx="2" fill="#E1EFE8" stroke="#3D3C38" stroke-width="0.8"/>
+<rect x="56" y="3188" width="5" height="5" fill="#C45B2D"/>
