@@ -1,0 +1,62 @@
+<text x="926" y="1752" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">A/B power. Chilled water or CRAH.</text>
+<text x="926" y="1768" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Remote hands at 03:00.</text>
+<text x="926" y="1784" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Cooling tonnage is the limit.</text>
+<text x="926" y="1800" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">The EDGE row buys this product.</text>
+<path d="M 1130 1884 L 1130 1968" fill="none" stroke="#2A7AB0" stroke-width="2.2" marker-end="url(#arrP)"/>
+<text x="50" y="1932" font-size="15" font-weight="750" fill="#2C2C2A" text-anchor="start">EDGE  ·  answer in the hotel if you can</text>
+<g class="badge"><circle cx="460" cy="1928" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="460" y="1933" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">8</text></g>
+<rect x="50" y="1942" width="820" height="178" rx="10" fill="#E8F5F0" stroke="#0F6E56" stroke-width="1.8"/>
+<text x="66" y="1968" font-size="13" font-weight="700" fill="#0F6E56" text-anchor="start">EDGE cloud / CDN PoP</text>
+<text x="66" y="1990" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Inside the hotel: cache, TLS, a handful of racks.</text>
+<text x="66" y="2006" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">A hit never meets the region.</text>
+<text x="66" y="2022" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">A miss is the next hop, on glass, toward an AZ.</text>
+<text x="66" y="2038" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Not a full AZ. A tight failure domain.</text>
+<rect x="760" y="1954" width="64" height="22" rx="4" fill="#0F6E56"/>
+<text x="792.0" y="1970" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">EDGE</text>
+<rect x="890" y="1942" width="480" height="178" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<text x="906" y="1968" font-size="13" font-weight="700" fill="#185FA5" text-anchor="start">Anycast + TLS</text>
+<text x="906" y="1990" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Same address, many PoPs.</text>
+<text x="906" y="2006" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">BGP plus health pick the city.</text>
+<text x="906" y="2022" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">TLS keys live at the edge.</text>
+<text x="906" y="2038" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">A withdraw is a failover.</text>
+<path d="M 460 2120 L 460 2168" fill="none" stroke="#2A7AB0" stroke-width="2.2" marker-end="url(#arrP)"/>
+<text x="50" y="2148" font-size="15" font-weight="750" fill="#2C2C2A" text-anchor="start">Region  ·  a metro with a product name</text>
+<g class="badge"><circle cx="430" cy="2144" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="430" y="2149" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">9</text></g>
+<rect x="50" y="2158" width="1320" height="210" rx="10" fill="#FFF6E5" stroke="#EF9F27" stroke-width="1.6"/>
+<text x="66" y="2182" font-size="15" font-weight="750" fill="#854F0B" text-anchor="start">Region (3+ AZs)</text>
+<text x="240" y="2182" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Not a single address. Buildings and a fiber ring.</text>
+<rect x="70" y="2200" width="400" height="148" rx="7" fill="#F1F0EB" stroke="#3D3C38" stroke-width="1.6"/>
+<text x="86" y="2226" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Availability zone</text>
+<text x="86" y="2248" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">One or more DC buildings.</text>
+<text x="86" y="2264" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Independent power and cooling.</text>
+<text x="86" y="2280" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">The unit you spread across.</text>
+<rect x="490" y="2200" width="400" height="148" rx="7" fill="#EAF3FA" stroke="#2A7AB0" stroke-width="1.6"/>
+<text x="506" y="2226" font-size="13" font-weight="700" fill="#2A7AB0" text-anchor="start">Inter-AZ dark fiber</text>
+<text x="506" y="2248" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">AZ↔AZ &lt;2 ms RTT.</text>
+<text x="506" y="2264" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Sync replication budget.</text>
+<text x="506" y="2280" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Provider-owned glass.</text>
+<rect x="910" y="2200" width="440" height="148" rx="7" fill="#EAF3FA" stroke="#2A7AB0" stroke-width="1.6"/>
+<text x="926" y="2226" font-size="13" font-weight="700" fill="#2A7AB0" text-anchor="start">Provider private backbone</text>
+<text x="926" y="2248" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Inter-region, not the public net.</text>
+<text x="926" y="2264" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Cross-US ~60–70 ms RTT.</text>
+<text x="926" y="2280" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Transatlantic ~65–75 ms RTT.</text>
+<path d="M 470 2274 L 490 2274" fill="none" stroke="#2A7AB0" stroke-width="2.4" marker-end="url(#arrP)"/>
+<path d="M 890 2274 L 910 2274" fill="none" stroke="#2A7AB0" stroke-width="2.4" marker-end="url(#arrP)"/>
+<text x="50" y="2396" font-size="15" font-weight="750" fill="#2C2C2A" text-anchor="start">Data center  ·  power chain beside cooling</text>
+<g class="badge"><circle cx="500" cy="2392" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="500" y="2397" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">10</text></g>
+<rect x="50" y="2406" width="1320" height="400" rx="10" fill="#F1F0EB" stroke="#3D3C38" stroke-width="1.8"/>
+<text x="66" y="2432" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Cutaway  ·  keep silicon in spec</text>
+<text x="340" y="2432" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">N+1 / 2N / A/B are the words that decide whether a fault is an incident.</text>
+<rect x="70" y="2450" width="300" height="150" rx="7" fill="#FFF6E5" stroke="#EF9F27" stroke-width="1.6"/>
+<text x="86" y="2474" font-size="13" font-weight="700" fill="#854F0B" text-anchor="start">Utility → transformers</text>
+<text x="86" y="2494" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Medium-voltage service.</text>
+<text x="86" y="2510" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">On-site transformers.</text>
+<text x="86" y="2526" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Switchgear isolates a hall.</text>
+<rect x="390" y="2450" width="300" height="150" rx="7" fill="#FFF6E5" stroke="#EF9F27" stroke-width="1.6"/>
+<text x="406" y="2474" font-size="13" font-weight="700" fill="#854F0B" text-anchor="start">UPS</text>
+<text x="406" y="2494" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Batteries ride the crank.</text>
+<text x="406" y="2510" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Seconds to a few minutes.</text>
+<text x="406" y="2526" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">A bridge, not a generator.</text>
+<rect x="710" y="2450" width="300" height="150" rx="7" fill="#FFF6E5" stroke="#EF9F27" stroke-width="1.6"/>
+<text x="726" y="2474" font-size="13" font-weight="700" fill="#854F0B" text-anchor="start">Diesel</text>
+<text x="726" y="2494" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Holds the building.</text>
