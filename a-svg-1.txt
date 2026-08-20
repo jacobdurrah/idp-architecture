@@ -1,0 +1,61 @@
+<g class="badge"><circle cx="1344.0" cy="448.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="1344.0" y="452.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">2</text></g>
+<rect x="56.0" y="470.0" width="244.0" height="118.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="68.0" y="494.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">app-newsfeed</text>
+<text x="68.0" y="516.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">News-feed source</text>
+<text x="68.0" y="532.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">PR #4821 lives here</text>
+<text x="68.0" y="548.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Not cluster YAML</text>
+<rect x="312.0" y="470.0" width="244.0" height="118.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="324.0" y="494.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">app-users</text>
+<text x="324.0" y="516.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">User / graph / authn</text>
+<text x="324.0" y="532.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Same CI contract</text>
+<text x="324.0" y="548.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Own reviewers</text>
+<rect x="568.0" y="470.0" width="244.0" height="118.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="580.0" y="494.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">platform-gitops</text>
+<text x="580.0" y="516.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Desired K8s state</text>
+<text x="580.0" y="532.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Step 8 writes digest</text>
+<text x="580.0" y="548.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Argo watches</text>
+<rect x="824.0" y="470.0" width="244.0" height="118.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="836.0" y="494.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">infra-terraform</text>
+<text x="836.0" y="516.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Plane B definitions</text>
+<text x="836.0" y="532.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">VPC, GKE/EKS, SQL</text>
+<text x="836.0" y="548.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Devs never apply</text>
+<rect x="1080.0" y="470.0" width="244.0" height="118.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="1092.0" y="494.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">ci-pipelines</text>
+<text x="1092.0" y="516.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Reusable workflows</text>
+<text x="1092.0" y="532.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Fail-closed gate set</text>
+<text x="1092.0" y="548.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">One definition</text>
+<rect x="40.0" y="625.0" width="920.0" height="270.0" rx="10" fill="#FCEEF2" stroke="#C45B78" stroke-width="2.0" stroke-dasharray="6 4"/>
+<text x="56.0" y="653.0" font-size="15" font-weight="750" fill="#9B3D6A" text-anchor="start">PR #4821  ·  stigmergic space</text>
+<text x="56.0" y="675.0" font-size="12" font-weight="500" fill="#5F5E5A" text-anchor="start">The PR is the board. Agents and humans coordinate by writing on it, not by a side channel.</text>
+<rect x="56.0" y="690.0" width="288.0" height="184.0" rx="7" fill="#FFFFFF" stroke="#C45B78" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="68.0" y="714.0" font-size="13" font-weight="700" fill="#72264C" text-anchor="start">Required checks</text>
+<text x="68.0" y="736.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">CI, lint, types, unit</text>
+<text x="68.0" y="754.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">SAST / SCA, policy</text>
+<text x="68.0" y="772.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Integration, review</text>
+<text x="68.0" y="790.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Fail-closed statuses</text>
+<rect x="352.0" y="690.0" width="288.0" height="184.0" rx="7" fill="#FFFFFF" stroke="#C45B78" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="364.0" y="714.0" font-size="13" font-weight="700" fill="#72264C" text-anchor="start">Review comments</text>
+<text x="364.0" y="736.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Humans still own merge</text>
+<text x="364.0" y="754.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Design, not taste</text>
+<text x="364.0" y="772.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Thread is the record</text>
+<text x="364.0" y="790.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">No side-channel yes</text>
+<rect x="648.0" y="690.0" width="288.0" height="184.0" rx="7" fill="#FFFFFF" stroke="#C45B78" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="660.0" y="714.0" font-size="13" font-weight="700" fill="#72264C" text-anchor="start">Bot reviews + patches</text>
+<text x="660.0" y="736.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Review agent writes here</text>
+<text x="660.0" y="754.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Suggested patches</text>
+<text x="660.0" y="772.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Fixup commits welcome</text>
+<text x="660.0" y="790.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Merge is still human</text>
+<rect x="980.0" y="625.0" width="380.0" height="270.0" rx="10" fill="#FBEAF2" stroke="#9B3D6A" stroke-width="1.6"/>
+<text x="996.0" y="653.0" font-size="15" font-weight="750" fill="#72264C" text-anchor="start">Review agent</text>
+<text x="996.0" y="681.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Reads the diff + red checks</text>
+<text x="996.0" y="699.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Writes comments or a patch</text>
+<text x="996.0" y="717.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">May push a fixup commit</text>
+<text x="996.0" y="735.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Does not merge</text>
+<text x="996.0" y="753.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Humans still own merge</text>
+<text x="996.0" y="771.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">No side channel with the author</text>
+<text x="996.0" y="789.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">The PR is the only inbox</text>
+<g class="badge"><circle cx="1344.0" cy="760.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="1344.0" y="764.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">3</text></g>
+<rect x="40.0" y="915.0" width="1320.0" height="235.0" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<text x="56.0" y="939.0" font-size="15" font-weight="750" fill="#185FA5" text-anchor="start">CI platform   ·   every PR, fail-closed, from ci-pipelines</text>
+<g class="badge"><circle cx="700.0" cy="903.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="700.0" y="907.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">4</text></g>
+<rect x="56.0" y="955.0" width="152.0" height="64.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
