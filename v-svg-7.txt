@@ -1,0 +1,31 @@
+lass="hit" data-id="ca" x="496.0" y="2070.0" width="376.0" height="90.0" rx="8"/>
+<rect class="hit" data-id="sql" x="940.0" y="1596.0" width="390.0" height="108.0" rx="8"/>
+<rect class="hit" data-id="redis" x="940.0" y="1716.0" width="390.0" height="108.0" rx="8"/>
+<rect class="hit" data-id="kafka" x="940.0" y="1836.0" width="390.0" height="108.0" rx="8"/>
+<rect class="hit" data-id="objstore" x="940.0" y="1956.0" width="390.0" height="108.0" rx="8"/>
+<rect class="hit" data-id="search" x="940.0" y="2076.0" width="390.0" height="108.0" rx="8"/>
+<rect class="hit" data-id="step12" x="1322.0" y="2444.0" width="32.0" height="32.0" rx="8"/>
+<rect class="hit" data-id="otel-sdk" x="55.0" y="2488.0" width="190.0" height="120.0" rx="8"/>
+<rect class="hit" data-id="otel-collector" x="270.0" y="2488.0" width="190.0" height="120.0" rx="8"/>
+<rect class="hit" data-id="prometheus" x="490.0" y="2480.0" width="200.0" height="70.0" rx="8"/>
+<rect class="hit" data-id="loki" x="710.0" y="2480.0" width="200.0" height="70.0" rx="8"/>
+<rect class="hit" data-id="tempo" x="930.0" y="2480.0" width="200.0" height="70.0" rx="8"/>
+<rect class="hit" data-id="datadog" x="1150.0" y="2480.0" width="190.0" height="70.0" rx="8"/>
+<rect class="hit" data-id="grafana" x="490.0" y="2568.0" width="420.0" height="78.0" rx="8"/>
+<rect class="hit" data-id="alerts" x="930.0" y="2568.0" width="410.0" height="78.0" rx="8"/>
+<rect class="hit" data-id="engineers" x="490.0" y="2664.0" width="850.0" height="110.0" rx="8"/>
+<rect class="hit" data-id="step1" x="62.0" y="3050.0" width="100.0" height="56.0" rx="8"/>
+<rect class="hit" data-id="step2" x="172.0" y="3050.0" width="100.0" height="56.0" rx="8"/>
+<rect class="hit" data-id="step3" x="282.0" y="3050.0" width="100.0" height="56.0" rx="8"/>
+<rect class="hit" data-id="step4" x="392.0" y="3050.0" width="100.0" height="56.0" rx="8"/>
+<rect class="hit" data-id="step5" x="502.0" y="3050.0" width="100.0" height="56.0" rx="8"/>
+<rect class="hit" data-id="step6" x="612.0" y="3050.0" width="100.0" height="56.0" rx="8"/>
+<rect class="hit" data-id="step7" x="722.0" y="3050.0" width="100.0" height="56.0" rx="8"/>
+<rect class="hit" data-id="step8" x="832.0" y="3050.0" width="100.0" height="56.0" rx="8"/>
+<rect class="hit" data-id="step9" x="942.0" y="3050.0" width="100.0" height="56.0" rx="8"/>
+<rect class="hit" data-id="step10" x="1052.0" y="3050.0" width="100.0" height="56.0" rx="8"/>
+<rect class="hit" data-id="step11" x="1162.0" y="3050.0" width="100.0" height="56.0" rx="8"/>
+<rect class="hit" data-id="step12" x="1272.0" y="3050.0" width="100.0" height="56.0" rx="8"/>
+<rect id="selbox" visibility="hidden" rx="10"/>
+</g>
+      </svg>
