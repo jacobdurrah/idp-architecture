@@ -230,42 +230,23 @@ button:focus-visible,
 
 .world {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 5600px;
-  height: 3360px;
-  transform-origin: 0 0;
-  will-change: transform;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  contain: strict;
 }
 
 .svg-host {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .svg-host svg {
   display: block;
-  width: 5600px;
-  height: 3360px;
-}
-
-.hits {
-  position: absolute;
-  inset: 0;
-}
-
-.hit {
-  position: absolute;
-  border-radius: 6px;
-  background: transparent;
-  border: 1px solid transparent;
-  cursor: pointer;
-}
-
-.hit:hover,
-.hit.is-active {
-  background: var(--hit);
-  border-color: var(--hit-line);
+  width: 100%;
+  height: 100%;
 }
 
 .highlight {
@@ -274,6 +255,10 @@ button:focus-visible,
   border-radius: 8px;
   box-shadow: 0 0 0 6px rgba(201, 162, 39, 0.12);
   pointer-events: none;
+}
+
+.canvas.is-panning .highlight {
+  visibility: hidden;
 }
 
 .hint {
