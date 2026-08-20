@@ -1,0 +1,59 @@
+<text x="1124.0" y="1234.0" font-size="13" font-weight="700" fill="#72264C" text-anchor="start">Repair agent</text>
+<text x="1124.0" y="1258.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Reads shard failures</text>
+<text x="1124.0" y="1276.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Opens a follow-up</text>
+<text x="1124.0" y="1294.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Same PR, no merge</text>
+<line x1="242.0" y1="1275.0" x2="254.0" y2="1275.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<line x1="424.0" y1="1275.0" x2="436.0" y2="1275.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<line x1="860.0" y1="1275.0" x2="872.0" y2="1275.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<line x1="1096.0" y1="1275.0" x2="1108.0" y2="1275.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<rect x="56.0" y="1354.0" width="1288.0" height="86.0" rx="8" fill="#FCEEF2" stroke="#C45B78" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="72.0" y="1380.0" font-size="13" font-weight="700" fill="#9B3D6A" text-anchor="start">Test artifacts / flake board  ·  stigmergic space</text>
+<text x="72.0" y="1402.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Repair agent reads shard failures + artifacts, then opens a follow-up commit on the same PR.</text>
+<text x="72.0" y="1420.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">A flake is written here. It is not a hallway story.</text>
+<rect x="40.0" y="1480.0" width="210.0" height="128.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="52.0" y="1504.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">Build service</text>
+<text x="52.0" y="1526.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">OCI from the green SHA</text>
+<text x="52.0" y="1544.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">No :latest</text>
+<text x="52.0" y="1562.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Argo never builds</text>
+<g class="badge"><circle cx="242.0" cy="1476.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="242.0" y="1480.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">6</text></g>
+<rect x="266.0" y="1480.0" width="230.0" height="128.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="278.0" y="1504.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">Artifact registry</text>
+<text x="278.0" y="1526.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">CI writes · nodes pull</text>
+<text x="278.0" y="1544.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">SBOM + cosign</text>
+<text x="278.0" y="1562.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Allow-listed only</text>
+<g class="badge"><circle cx="488.0" cy="1476.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="488.0" y="1480.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">7</text></g>
+<rect x="512.0" y="1480.0" width="250.0" height="128.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="524.0" y="1504.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">newsfeed-service:v1827</text>
+<text x="524.0" y="1526.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">sha256:9f3a…c21</text>
+<text x="524.0" y="1544.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">linux/amd64 · 184 MB</text>
+<text x="524.0" y="1562.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Retag, do not rebuild</text>
+<rect x="778.0" y="1480.0" width="230.0" height="128.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="790.0" y="1504.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">platform-gitops bump</text>
+<text x="790.0" y="1526.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Digest into Deployment</text>
+<text x="790.0" y="1544.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">That write is the deploy</text>
+<text x="790.0" y="1562.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">CI has no cluster creds</text>
+<g class="badge"><circle cx="1000.0" cy="1476.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="1000.0" y="1480.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">8</text></g>
+<rect x="1024.0" y="1480.0" width="336.0" height="128.0" rx="7" fill="#FBEAF2" stroke="#9B3D6A" stroke-width="1.6"/>
+<text x="1036.0" y="1504.0" font-size="13" font-weight="700" fill="#72264C" text-anchor="start">Supply-chain agent</text>
+<text x="1036.0" y="1526.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Reads scan-on-push / CVE</text>
+<text x="1036.0" y="1544.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Opens an upgrade PR</text>
+<text x="1036.0" y="1562.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Never retags a dirty image</text>
+<line x1="250.0" y1="1544.0" x2="262.0" y2="1544.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<line x1="496.0" y1="1544.0" x2="508.0" y2="1544.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<line x1="762.0" y1="1544.0" x2="774.0" y2="1544.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<line x1="1008.0" y1="1544.0" x2="1020.0" y2="1544.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<rect x="40.0" y="1624.0" width="1320.0" height="90.0" rx="8" fill="#FCEEF2" stroke="#C45B78" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="56.0" y="1650.0" font-size="13" font-weight="700" fill="#9B3D6A" text-anchor="start">Registry scan results  ·  stigmergic space</text>
+<text x="56.0" y="1672.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Scan-on-push and CVE findings. The supply agent reads them and opens an upgrade PR (a new stigmergic write).</text>
+<text x="56.0" y="1690.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">A finding that only exists in a scanner email is not a board.</text>
+<rect x="40.0" y="1734.0" width="560.0" height="188.0" rx="8" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.4"/>
+<text x="56.0" y="1758.0" font-size="14" font-weight="750" fill="#185FA5" text-anchor="start">Argo CD   always on   ·   watch, compare, sync</text>
+<g class="badge"><circle cx="584.0" cy="1746.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="584.0" y="1750.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">9</text></g>
+<rect x="56.0" y="1776.0" width="166.0" height="80.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="68.0" y="1802.0" font-size="14" font-weight="700" fill="#0C447C" text-anchor="start">Watch</text>
+<text x="68.0" y="1824.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">platform-gitops</text>
+<rect x="232.0" y="1776.0" width="166.0" height="80.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="244.0" y="1802.0" font-size="14" font-weight="700" fill="#0C447C" text-anchor="start">Compare</text>
+<text x="244.0" y="1824.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">desired vs live</text>
+<rect x="408.0" y="1776.0" width="166.0" height="80.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="420.0" y="1802.0" font-size="14" font-weight="700" fill="#0C447C" text-anchor="start">Sync</text>
