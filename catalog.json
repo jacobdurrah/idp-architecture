@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "a87bad1680c0",
+  "version": "489dd46183af",
   "records": [
     {
       "id": "admission",
@@ -4397,6 +4397,67 @@
         "The yellow on the poster is the jumper, not a logical peering session."
       ],
       "href": "/idp-architecture/metal.html#xconnect"
+    },
+    {
+      "id": "overview",
+      "tab": "p",
+      "name": "How to read this map (plane)",
+      "plane": "step",
+      "what": "This is the catalog of data-plane utilities the request actually uses. Follow newsfeed-service:v1827 from the edge of the cluster, through the in-cluster path, into the newsfeed BOM, then scale and GPU, then observe. Each card says when to pick the utility and when not to.",
+      "why": "v2 is how a change is admitted. Agents read the traces. Metal is the floor. Scenarios play Ship, Serve, Break. Plane is the BOM of the hop: which utility sits on the path, and which one you should have picked.",
+      "notes": [
+        "Edge: L4 LB, L7 ingress, kube-proxy (iptables, IPVS, eBPF), CNI.",
+        "In-cluster: Service, mesh, cluster DNS.",
+        "State and flow: Redis, Kafka, object store, Postgres, search. That is the newsfeed BOM.",
+        "Scale and GPU: HPA, cluster autoscaler, NVLink. Observe: OTel on the request.",
+        "Tap a card. When to use, when not, and what it looks like sit in the panel."
+      ],
+      "href": "/idp-architecture/p.html#overview"
+    },
+    {
+      "id": "p-ingress",
+      "tab": "p",
+      "name": "L7 Ingress / Gateway API",
+      "plane": "data",
+      "what": "Ingress or Gateway API maps host and path to the News Feed Service. TLS, routing, some authn. Desired state in platform-gitops, synced by Argo CD. This is the hop Serve names as Ingress + Service.",
+      "why": "Services should not each invent a front door. Ingress is the platform edge inside the cluster. Changing it is a GitOps change, which means it is reviewed and reversible.",
+      "notes": [
+        "HTTP and HTTPS. Host, path, headers. Not a second L4.",
+        "Gateway API is the successor shape. Same job.",
+        "Routes to newsfeed-service, then the fan-out.",
+        "Cite Scenarios Serve: the packet becomes an in-cluster request here."
+      ],
+      "href": "/idp-architecture/p.html#p-ingress"
+    },
+    {
+      "id": "p-kubeproxy",
+      "tab": "p",
+      "name": "kube-proxy, IPVS, eBPF",
+      "plane": "data",
+      "what": "The node dataplane that turns a Service ClusterIP into packet forwarding. Three modes, one card: kube-proxy iptables, kube-proxy IPVS, or an eBPF dataplane that replaces kube-proxy (Cilium and friends).",
+      "why": "A Service that never becomes a packet rule is fiction. This hop is how newsfeed-service:v1827 is reachable from other pods while endpoints change.",
+      "notes": [
+        "iptables: a chain per Service. Fine at small scale. Rule cost grows with Services and endpoints.",
+        "IPVS: an in-kernel load table. Better at many Services. Still a kube-proxy mode.",
+        "eBPF: the CNI dataplane can skip kube-proxy and steer in the kernel. Run one dataplane, not two.",
+        "Pick one mode for the cluster. Do not mix iptables and eBPF on the same node and call it a design."
+      ],
+      "href": "/idp-architecture/p.html#p-kubeproxy"
+    },
+    {
+      "id": "p-lb",
+      "tab": "p",
+      "name": "L4 load balancer",
+      "plane": "data",
+      "what": "A cloud or hardware L4 balancer accepts user bytes and forwards them to a backend set. It health-checks node ports or a target group. It is provisioned by Terraform or the cloud controller, not by CI. newsfeed-service:v1827 is not an LB object.",
+      "why": "You need a stable, addressable front door that is not a single node. The L4 hop is that door. Host and path do not live here.",
+      "notes": [
+        "VIP plus health checks. TCP or UDP. Not HTTP routing.",
+        "Sits in front of ingress, not in front of every pod.",
+        "Serve walks this hop after the metal path. Cite v2 lb.",
+        "A feature ship does not recreate the balancer."
+      ],
+      "href": "/idp-architecture/p.html#p-lb"
     },
     {
       "id": "break",
