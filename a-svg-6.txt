@@ -1,0 +1,68 @@
+<rect x="360.0" y="2784.0" width="288.0" height="220.0" rx="8" fill="#FFFFFF" stroke="#A32D2D" stroke-width="1.4"/>
+<text x="372.0" y="2810.0" font-size="13" font-weight="700" fill="#A32D2D" text-anchor="start">Do not promote</text>
+<text x="372.0" y="2836.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Freeze GitOps bumps.</text>
+<text x="372.0" y="2854.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Freeze canary pass.</text>
+<text x="372.0" y="2872.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Last-known-good stays.</text>
+<text x="372.0" y="2890.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">No pointer moves.</text>
+<rect x="664.0" y="2784.0" width="288.0" height="220.0" rx="8" fill="#FFFFFF" stroke="#A32D2D" stroke-width="1.4"/>
+<text x="676.0" y="2810.0" font-size="13" font-weight="700" fill="#A32D2D" text-anchor="start">Do not optimize the dark</text>
+<text x="676.0" y="2836.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Coding / repair agents</text>
+<text x="676.0" y="2854.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">may not treat missing</text>
+<text x="676.0" y="2872.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">metrics as healthy.</text>
+<text x="676.0" y="2890.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">No story from silence.</text>
+<rect x="968.0" y="2784.0" width="372.0" height="220.0" rx="10" fill="#FBEAF2" stroke="#9B3D6A" stroke-width="1.8"/>
+<text x="984.0" y="2810.0" font-size="14" font-weight="750" fill="#72264C" text-anchor="start">Observability-guard agent</text>
+<text x="984.0" y="2836.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Freeze promotions.</text>
+<text x="984.0" y="2854.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Page humans.</text>
+<text x="984.0" y="2872.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Prefer last-known-good</text>
+<text x="984.0" y="2890.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">and synthetic probes.</text>
+<text x="984.0" y="2908.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Resume autonomous loops</text>
+<text x="984.0" y="2926.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">only when heartbeats return.</text>
+<rect x="40.0" y="3050.0" width="1320.0" height="120.0" rx="10" fill="#0C447C" stroke="#0C447C" stroke-width="0"/>
+<text x="56.0" y="3080.0" font-size="13" font-weight="650" fill="#A9C7E8" text-anchor="start">Trace one change with agents</text>
+<text x="56.0" y="3106.0" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="start">1 local agent + commit → 2 Git → 3 PR board → 4 CI traces → 5 test artifacts → 6 build → 7 scan → 8 GitOps → 9 Argo → 10 API → 11 canary → 12 observe → write back to 1.</text>
+<text x="56.0" y="3134.0" font-size="13" font-weight="650" fill="#F8C8C8" text-anchor="start">If 12 is dark, stop.</text>
+<rect x="56.0" y="3188.0" width="100.0" height="56.0" rx="8" fill="#E4F0FA" stroke="#0C447C" stroke-width="1.4"/>
+<text x="106.0" y="3212.0" font-size="16" font-weight="750" fill="#0C447C" text-anchor="middle">1</text>
+<text x="106.0" y="3232.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="middle">commit</text>
+<rect x="166.0" y="3188.0" width="100.0" height="56.0" rx="8" fill="#E4F0FA" stroke="#0C447C" stroke-width="1.4"/>
+<text x="216.0" y="3212.0" font-size="16" font-weight="750" fill="#0C447C" text-anchor="middle">2</text>
+<text x="216.0" y="3232.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="middle">Git</text>
+<rect x="276.0" y="3188.0" width="100.0" height="56.0" rx="8" fill="#E4F0FA" stroke="#0C447C" stroke-width="1.4"/>
+<text x="326.0" y="3212.0" font-size="16" font-weight="750" fill="#0C447C" text-anchor="middle">3</text>
+<text x="326.0" y="3232.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="middle">PR</text>
+<rect x="386.0" y="3188.0" width="100.0" height="56.0" rx="8" fill="#E4F0FA" stroke="#0C447C" stroke-width="1.4"/>
+<text x="436.0" y="3212.0" font-size="16" font-weight="750" fill="#0C447C" text-anchor="middle">4</text>
+<text x="436.0" y="3232.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="middle">CI</text>
+<rect x="496.0" y="3188.0" width="100.0" height="56.0" rx="8" fill="#E4F0FA" stroke="#0C447C" stroke-width="1.4"/>
+<text x="546.0" y="3212.0" font-size="16" font-weight="750" fill="#0C447C" text-anchor="middle">5</text>
+<text x="546.0" y="3232.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="middle">tests</text>
+<rect x="606.0" y="3188.0" width="100.0" height="56.0" rx="8" fill="#E4F0FA" stroke="#0C447C" stroke-width="1.4"/>
+<text x="656.0" y="3212.0" font-size="16" font-weight="750" fill="#0C447C" text-anchor="middle">6</text>
+<text x="656.0" y="3232.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="middle">build</text>
+<rect x="716.0" y="3188.0" width="100.0" height="56.0" rx="8" fill="#E4F0FA" stroke="#0C447C" stroke-width="1.4"/>
+<text x="766.0" y="3212.0" font-size="16" font-weight="750" fill="#0C447C" text-anchor="middle">7</text>
+<text x="766.0" y="3232.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="middle">scan</text>
+<rect x="826.0" y="3188.0" width="100.0" height="56.0" rx="8" fill="#E4F0FA" stroke="#0C447C" stroke-width="1.4"/>
+<text x="876.0" y="3212.0" font-size="16" font-weight="750" fill="#0C447C" text-anchor="middle">8</text>
+<text x="876.0" y="3232.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="middle">GitOps</text>
+<rect x="936.0" y="3188.0" width="100.0" height="56.0" rx="8" fill="#E4F0FA" stroke="#0C447C" stroke-width="1.4"/>
+<text x="986.0" y="3212.0" font-size="16" font-weight="750" fill="#0C447C" text-anchor="middle">9</text>
+<text x="986.0" y="3232.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="middle">Argo</text>
+<rect x="1046.0" y="3188.0" width="100.0" height="56.0" rx="8" fill="#E4F0FA" stroke="#0C447C" stroke-width="1.4"/>
+<text x="1096.0" y="3212.0" font-size="16" font-weight="750" fill="#0C447C" text-anchor="middle">10</text>
+<text x="1096.0" y="3232.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="middle">API</text>
+<rect x="1156.0" y="3188.0" width="100.0" height="56.0" rx="8" fill="#E4F0FA" stroke="#0C447C" stroke-width="1.4"/>
+<text x="1206.0" y="3212.0" font-size="16" font-weight="750" fill="#0C447C" text-anchor="middle">11</text>
+<text x="1206.0" y="3232.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="middle">canary</text>
+<rect x="1266.0" y="3188.0" width="100.0" height="56.0" rx="8" fill="#E4F0FA" stroke="#0C447C" stroke-width="1.4"/>
+<text x="1316.0" y="3212.0" font-size="16" font-weight="750" fill="#0C447C" text-anchor="middle">12</text>
+<text x="1316.0" y="3232.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="middle">observe</text>
+<g id="hits">
+<rect class="hit" data-id="overview" x="80.0" y="20.0" width="1240.0" height="88.0" rx="8"/>
+<rect class="hit" data-id="developers" x="40.0" y="145.0" width="300.0" height="250.0" rx="8"/>
+<rect class="hit" data-id="coding-agent" x="356.0" y="145.0" width="320.0" height="250.0" rx="8"/>
+<rect class="hit" data-id="local-board" x="692.0" y="145.0" width="668.0" height="250.0" rx="8"/>
+<rect class="hit" data-id="step1" x="316.0" y="394.0" width="32.0" height="32.0" rx="8"/>
+<rect class="hit" data-id="git" x="40.0" y="430.0" width="1320.0" height="175.0" rx="8"/>
+<rect class="hit" data-id="step2" x="1328.0" y="432.0" width="32.0" height="32.0" rx="8"/>
