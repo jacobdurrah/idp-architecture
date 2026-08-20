@@ -40,7 +40,8 @@ window.IDP_DATA = Object.assign(window.IDP_DATA || {}, {
     "y": "Services should not each invent a front door. Ingress is the platform edge inside the cluster. Changing it is a GitOps change, which means it is reviewed and reversible.",
     "d": [
       "HTTP and HTTPS. Host, path, headers. Not a second L4.",
-      "Gateway API is the successor shape. Same job.",
+      "Gateway API is the successor shape. Same job. Most used in-cluster: ingress-nginx. Often Envoy.",
+      "Also common: Traefik, Kong Gateway, AWS Load Balancer Controller / ALB, Istio, Contour.",
       "Routes to newsfeed-service, then the fan-out.",
       "Cite Scenarios Serve: the packet becomes an in-cluster request here."
     ],
