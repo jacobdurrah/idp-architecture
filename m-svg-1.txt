@@ -1,0 +1,62 @@
+<rect x="490" y="400" width="400" height="142" rx="7" fill="#FFF6E5" stroke="#EF9F27" stroke-width="1.6"/>
+<text x="506" y="424" font-size="13" font-weight="700" fill="#854F0B" text-anchor="start">BBU  ·  baseband</text>
+<text x="506" y="444" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Hut or nearby CO</text>
+<text x="506" y="460" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">MAC / PHY schedule lives here</text>
+<text x="506" y="476" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Emits IP onto backhaul</text>
+<text x="506" y="492" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">This is where bytes become light</text>
+<rect x="910" y="400" width="440" height="142" rx="7" fill="#FFFFFF" stroke="#3D3C38" stroke-width="1.2"/>
+<text x="926" y="424" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Why the 1–10 ms</text>
+<text x="926" y="444" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Not distance. RF ≈ c.</text>
+<text x="926" y="460" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">TTI, HARQ, the radio grant.</text>
+<text x="926" y="476" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">vRAN can move the BBU to EDGE.</text>
+<text x="926" y="492" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Clock sync is a real dependency.</text>
+<path d="M 690 542 L 690 574 L 1080 574 L 1080 590" fill="none" stroke="#2A7AB0" stroke-width="2.0" marker-end="url(#arrP)"/>
+<text x="50" y="588" font-size="15" font-weight="750" fill="#2C2C2A" text-anchor="start">Wireline  ·  CPE to the central office</text>
+<g class="badge"><circle cx="470" cy="584" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="470" y="589" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">3</text></g>
+<rect x="50" y="598" width="620" height="168" rx="10" fill="#FFF6E5" stroke="#EF9F27" stroke-width="1.6"/>
+<text x="66" y="624" font-size="13" font-weight="700" fill="#854F0B" text-anchor="start">GPON / DOCSIS access plant</text>
+<text x="66" y="646" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Shared last mile. Splitters are passive.</text>
+<text x="66" y="662" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">XGS-PON is 10G-class. Classic GPON is 2.5G down.</text>
+<text x="66" y="678" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">1500-byte packet ~12 μs to serialize at 1G, ~120 ns at 100G.</text>
+<text x="66" y="694" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Then propagation is distance (4.9 μs/km on glass).</text>
+<rect x="690" y="598" width="680" height="168" rx="10" fill="#FFF6E5" stroke="#EF9F27" stroke-width="1.6"/>
+<text x="706" y="624" font-size="13" font-weight="700" fill="#854F0B" text-anchor="start">OLT / CMTS at the CO</text>
+<text x="706" y="646" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Terminates thousands of ONTs or modems.</text>
+<text x="706" y="662" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">First telco hall: DC power, transmission bays.</text>
+<text x="706" y="678" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Uplink 100G-class toward the metro ring.</text>
+<text x="706" y="694" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">From here the packet is just IP on glass.</text>
+<path d="M 670 682 L 690 682" fill="none" stroke="#2A7AB0" stroke-width="2.4" marker-end="url(#arrP)"/>
+<text x="50" y="796" font-size="15" font-weight="750" fill="#2C2C2A" text-anchor="start">Metro  ·  a city on a ring</text>
+<g class="badge"><circle cx="310" cy="792" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="310" y="797" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">4</text></g>
+<rect x="50" y="806" width="1320" height="210" rx="10" fill="#F3F8FC" stroke="#2A7AB0" stroke-width="1.8"/>
+<text x="66" y="830" font-size="15" font-weight="750" fill="#2A7AB0" text-anchor="start">Metro fiber ring</text>
+<text x="250" y="830" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">1–2 ms around the city. Protection switching is why it is a ring.</text>
+<ellipse cx="700" cy="868" rx="520" ry="28" fill="none" stroke="#2A7AB0" stroke-width="2.2"/>
+<path d="M 180 868 A 520 28 0 1 1 1220 868 A 520 28 0 1 1 180 868" fill="none" stroke="#2A7AB0" stroke-width="0.1"/>
+<rect x="70" y="900" width="400" height="98" rx="7" fill="#FFF6E5" stroke="#EF9F27" stroke-width="1.6"/>
+<text x="86" y="924" font-size="13" font-weight="700" fill="#854F0B" text-anchor="start">Aggregation router</text>
+<text x="86" y="944" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Folds access into fewer wavelengths</text>
+<text x="86" y="960" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">PE or leaf. City-slice failure domain.</text>
+<rect x="490" y="900" width="400" height="98" rx="7" fill="#FFF6E5" stroke="#EF9F27" stroke-width="1.6"/>
+<text x="506" y="924" font-size="13" font-weight="700" fill="#854F0B" text-anchor="start">Metro core</text>
+<text x="506" y="944" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Two to four buildings, full-ish tables</text>
+<text x="506" y="960" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Default route toward hotels and long-haul.</text>
+<rect x="910" y="900" width="440" height="98" rx="7" fill="#EAF3FA" stroke="#2A7AB0" stroke-width="1.6"/>
+<text x="926" y="924" font-size="13" font-weight="700" fill="#2A7AB0" text-anchor="start">DWDM</text>
+<text x="926" y="944" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">~96+ λ × 400G-class per pair</text>
+<text x="926" y="960" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">ROADMs. Colors do not go faster.</text>
+<text x="50" y="1042" font-size="15" font-weight="750" fill="#2C2C2A" text-anchor="start">Long-haul  ·  rail, highway, pipeline</text>
+<g class="badge"><circle cx="430" cy="1038" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="430" y="1043" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">5</text></g>
+<rect x="50" y="1052" width="820" height="168" rx="10" fill="#EAF3FA" stroke="#2A7AB0" stroke-width="1.8"/>
+<text x="66" y="1078" font-size="13" font-weight="700" fill="#2A7AB0" text-anchor="start">Terrestrial long-haul</text>
+<text x="66" y="1100" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">RoW is someone else's trench.</text>
+<text x="66" y="1116" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">NYC↔Chicago ~9 ms one-way on ~1,200 km of fiber.</text>
+<text x="66" y="1132" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Cross-US ~60–70 ms RTT.</text>
+<text x="66" y="1148" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Two wavelengths in one conduit are one backhoe.</text>
+<path d="M 80 1200 L 840 1200" fill="none" stroke="#2A7AB0" stroke-width="2"/>
+<rect x="170" y="1192" width="20" height="16" rx="2" fill="#FFF6E5" stroke="#EF9F27" stroke-width="1"/>
+<rect x="310" y="1192" width="20" height="16" rx="2" fill="#FFF6E5" stroke="#EF9F27" stroke-width="1"/>
+<rect x="450" y="1192" width="20" height="16" rx="2" fill="#FFF6E5" stroke="#EF9F27" stroke-width="1"/>
+<rect x="590" y="1192" width="20" height="16" rx="2" fill="#FFF6E5" stroke="#EF9F27" stroke-width="1"/>
+<rect x="730" y="1192" width="20" height="16" rx="2" fill="#FFF6E5" stroke="#EF9F27" stroke-width="1"/>
+<rect x="890" y="1052" width="480" height="168" rx="10" fill="#FFF6E5" stroke="#EF9F27" stroke-width="1.6"/>
