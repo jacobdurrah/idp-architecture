@@ -48,7 +48,8 @@ function render(id) {
     "<h2>" + escapeHtml(item.n) + "</h2>" +
     "<h3>What it does</h3><p>" + escapeHtml(item.w) + "</p>" +
     "<h3>Why it's needed</h3><p>" + escapeHtml(item.y) + "</p>" +
-    (notes ? "<h3>Design notes</h3><ul>" + notes + "</ul>" : "") + renderExtra(item);
+    (notes ? "<h3>Design notes</h3><ul>" + notes + "</ul>" : "") + renderExtra(item) +
+    (window.IDP_productLinks ? window.IDP_productLinks(item, escapeHtml) : "");
   highlight(current);
   const want = "#" + current;
   if (location.hash !== want) history.replaceState(null, "", want);
