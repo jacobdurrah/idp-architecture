@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="poster" viewBox="0 0 1400 3900" width="100%" role="img" aria-label="Metal: one HTTP request from a thumb to a pod, drawn as infrastructure">
+<defs>
+<marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1.2 L10 5 L0 8.8 z" fill="#2A7AB0"/></marker>
+<marker id="arrM" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1.2 L10 5 L0 8.8 z" fill="#3D3C38"/></marker>
+<marker id="arrC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1.2 L10 5 L0 8.8 z" fill="#185FA5"/></marker>
+<marker id="arrD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1.2 L10 5 L0 8.8 z" fill="#0F6E56"/></marker>
+<marker id="arrI" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1.2 L10 5 L0 8.8 z" fill="#854F0B"/></marker>
+<marker id="arrY" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1.2 L10 5 L0 8.8 z" fill="#D4A017"/></marker>
+<filter id="soft" x="-2%" y="-2%" width="104%" height="104%"><feDropShadow dx="0" dy="1" stdDeviation="1.2" flood-color="#2C2C2A" flood-opacity="0.08"/></filter>
+</defs>
+<rect x="0" y="0" width="1400" height="3900" rx="0" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0"/>
+<text x="700" y="44" font-size="26" font-weight="750" fill="#2C2C2A" text-anchor="middle">Metal</text>
+<text x="700" y="68" font-size="13" font-weight="500" fill="#5F5E5A" text-anchor="middle">One HTTP request, from a thumb to a pod and back, drawn as infrastructure.</text>
+<text x="700" y="88" font-size="12" font-weight="500" fill="#3D3C38" text-anchor="middle">Radio, fiber, carrier hotels, colo, racks, silicon. The other four tabs sit on this.</text>
+<rect x="48" y="108" width="16" height="10" rx="2" fill="#378ADD" stroke="#378ADD" stroke-width="0"/>
+<text x="70" y="117" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Control plane</text>
+<rect x="210" y="108" width="16" height="10" rx="2" fill="#1D9E75" stroke="#1D9E75" stroke-width="0"/>
+<text x="232" y="117" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Data plane</text>
+<rect x="360" y="108" width="16" height="10" rx="2" fill="#EF9F27" stroke="#EF9F27" stroke-width="0"/>
+<text x="382" y="117" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Infrastructure</text>
+<rect x="530" y="108" width="16" height="10" rx="2" fill="#AFA9EC" stroke="#AFA9EC" stroke-width="0"/>
+<text x="552" y="117" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Observability</text>
+<rect x="700" y="108" width="16" height="10" rx="2" fill="#3D3C38" stroke="#3D3C38" stroke-width="0"/>
+<text x="722" y="117" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Metal (graphite)</text>
+<rect x="890" y="108" width="16" height="10" rx="2" fill="#2A7AB0" stroke="#2A7AB0" stroke-width="0"/>
+<text x="912" y="117" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Photons (fiber)</text>
+<text x="50" y="156" font-size="15" font-weight="750" fill="#2C2C2A" text-anchor="start">Access  ·  the first meter</text>
+<g class="badge"><circle cx="360" cy="152" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="360" y="157" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">1</text></g>
+<rect x="50" y="168" width="330" height="150" rx="10" fill="#F1F0EB" stroke="#3D3C38" stroke-width="1.6"/>
+<rect x="70" y="198" width="36" height="64" rx="6" fill="#D8D6CF" stroke="#3D3C38" stroke-width="1.2"/>
+<rect x="80" y="206" width="16" height="28" rx="2" fill="#C9C7C0" stroke="#3D3C38" stroke-width="0.8"/>
+<text x="122" y="194" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Phone (RF)</text>
+<text x="122" y="214" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Thumb on the newsfeed</text>
+<text x="122" y="230" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">LTE / 5G NR in air</text>
+<text x="122" y="246" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">1–10 ms is scheduling</text>
+<text x="122" y="262" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">RF ≈ c, then the BBU</text>
+<rect x="400" y="168" width="330" height="150" rx="10" fill="#F1F0EB" stroke="#3D3C38" stroke-width="1.6"/>
+<rect x="418" y="212" width="52" height="34" rx="3" fill="#D8D6CF" stroke="#3D3C38" stroke-width="1.2"/>
+<rect x="430" y="246" width="28" height="6" rx="1" fill="#C9C7C0" stroke="#3D3C38" stroke-width="0.8"/>
+<text x="486" y="194" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Laptop (Wi-Fi)</text>
+<text x="486" y="214" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Wi-Fi to the CPE</text>
+<text x="486" y="230" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Then the path is glass</text>
+<text x="486" y="246" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Same HTTP request</text>
+<text x="486" y="262" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Different first meter</text>
+<rect x="750" y="168" width="310" height="150" rx="10" fill="#FFF6E5" stroke="#EF9F27" stroke-width="1.6"/>
+<text x="766" y="194" font-size="13" font-weight="700" fill="#854F0B" text-anchor="start">CPE  ·  ONT / cable modem</text>
+<text x="766" y="214" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Media converter at the wall</text>
+<text x="766" y="230" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">GPON ONT or DOCSIS modem</text>
+<text x="766" y="246" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Laptop dies here, glass begins</text>
+<text x="766" y="262" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">ISP asset, user power</text>
+<path d="M 215 318 L 215 354" fill="none" stroke="#2A7AB0" stroke-width="2.2" marker-end="url(#arrP)"/>
+<path d="M 565 318 L 565 340 L 880 340 L 880 318" fill="none" stroke="#2A7AB0" stroke-width="2.0" marker-end="url(#arrP)"/>
+<text x="50" y="352" font-size="15" font-weight="750" fill="#2C2C2A" text-anchor="start">Radio site  ·  bytes become light</text>
+<g class="badge"><circle cx="420" cy="348" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="420" y="353" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">2</text></g>
+<rect x="50" y="362" width="1320" height="200" rx="10" fill="#F1F0EB" stroke="#3D3C38" stroke-width="1.6"/>
+<text x="66" y="386" font-size="15" font-weight="750" fill="#2C2C2A" text-anchor="start">Cell tower / small cell</text>
+<text x="340" y="386" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Steel or rooftop. RF faces the handset. Fiber faces the city.</text>
+<rect x="70" y="400" width="400" height="142" rx="7" fill="#FFF6E5" stroke="#EF9F27" stroke-width="1.6"/>
+<text x="86" y="424" font-size="13" font-weight="700" fill="#854F0B" text-anchor="start">RRU  ·  remote radio</text>
+<text x="86" y="444" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">On the mast, in the wind</text>
+<text x="86" y="460" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">RF to the antenna</text>
+<text x="86" y="476" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">CPRI / eCPRI down the fiber</text>
+<text x="86" y="492" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">A failed RRU is a sector outage</text>
