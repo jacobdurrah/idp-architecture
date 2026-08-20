@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="poster" viewBox="0 0 1400 1480" width="100%" role="img" aria-label="Plane: data-plane utilities the request uses">
+<defs>
+<marker id="arrD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1.2 L10 5 L0 8.8 z" fill="#0F6E56"/></marker>
+<marker id="arrC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1.2 L10 5 L0 8.8 z" fill="#185FA5"/></marker>
+<filter id="soft" x="-2%" y="-2%" width="104%" height="104%"><feDropShadow dx="0" dy="1" stdDeviation="1.2" flood-color="#2C2C2A" flood-opacity="0.08"/></filter>
+</defs>
+<rect x="0.0" y="0.0" width="1400.0" height="1480.0" rx="0" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0"/>
+<text x="700.0" y="44.0" font-size="26" font-weight="750" fill="#2C2C2A" text-anchor="middle">Plane</text>
+<text x="700.0" y="70.0" font-size="14" font-weight="500" fill="#5F5E5A" text-anchor="middle">The utilities the request actually uses, and when to pick each one.</text>
+<text x="700.0" y="92.0" font-size="12" font-weight="500" fill="#3D3C38" text-anchor="middle">newsfeed-service:v1827  ·  the request path BOM</text>
+<rect x="220.0" y="108.0" width="16.0" height="10.0" rx="2" fill="#1D9E75" stroke="#1D9E75" stroke-width="0"/>
+<text x="242.0" y="117.0" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Data plane</text>
+<rect x="430.0" y="108.0" width="16.0" height="10.0" rx="2" fill="#EF9F27" stroke="#EF9F27" stroke-width="0"/>
+<text x="452.0" y="117.0" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Infrastructure</text>
+<rect x="650.0" y="108.0" width="16.0" height="10.0" rx="2" fill="#378ADD" stroke="#378ADD" stroke-width="0"/>
+<text x="672.0" y="117.0" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Control plane</text>
+<rect x="870.0" y="108.0" width="16.0" height="10.0" rx="2" fill="#AFA9EC" stroke="#AFA9EC" stroke-width="0"/>
+<text x="892.0" y="117.0" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Observability</text>
+<rect x="1100.0" y="108.0" width="16.0" height="10.0" rx="2" fill="#3D3C38" stroke="#3D3C38" stroke-width="0"/>
+<text x="1122.0" y="117.0" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Metal</text>
+<rect x="36.0" y="140.0" width="1328.0" height="224.0" rx="12" fill="#F3FBF7" stroke="#B7E0D0" stroke-width="1.4"/>
+<text x="56.0" y="168.0" font-size="18" font-weight="750" fill="#0F6E56" text-anchor="start">Edge of the cluster</text>
+<text x="238.8" y="168.0" font-size="13" font-weight="500" fill="#5F5E5A" text-anchor="start">L4, L7, node dataplane, pod network.</text>
+<rect x="56.0" y="184.0" width="310.0" height="156.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56.0" y="184.0" width="7.0" height="156.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<rect x="77.0" y="208.0" width="22.0" height="6" rx="2" fill="#0F6E56"/>
+<rect x="79.0" y="217.0" width="18.0" height="6" rx="2" fill="#0F6E56"/>
+<rect x="81.0" y="226.0" width="14.0" height="6" rx="2" fill="#0F6E56"/>
+<text x="110.0" y="214.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">L4 load balancer</text>
+<text x="110.0" y="232.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">p-lb</text>
+<text x="72.0" y="262.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">VIP and health checks. Not host or path.</text>
+<text x="72.0" y="280.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">When: a stable front door.</text>
+<rect x="382.0" y="184.0" width="310.0" height="156.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="382.0" y="184.0" width="7.0" height="156.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<path d="M 402.0 230.0 L 402.0 216.0 Q 414.0 206.0 426.0 216.0 L 426.0 230.0 Z" fill="none" stroke="#0F6E56" stroke-width="1.8"/>
+<rect x="410.0" y="220.0" width="8" height="10" rx="1.2" fill="#0F6E56"/>
+<text x="436.0" y="214.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">L7 Ingress / Gateway</text>
+<text x="436.0" y="232.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">p-ingress</text>
+<text x="398.0" y="262.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Host and path to the Service. TLS. When:</text>
+<text x="398.0" y="280.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">one L7 front door.</text>
+<rect x="708.0" y="184.0" width="310.0" height="156.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="708.0" y="184.0" width="7.0" height="156.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<line x1="730.0" y1="214.0" x2="750.0" y2="214.0" stroke="#0F6E56" stroke-width="1.4"/>
+<line x1="730.0" y1="214.0" x2="740.0" y2="230.0" stroke="#0F6E56" stroke-width="1.4"/>
+<line x1="750.0" y1="214.0" x2="740.0" y2="230.0" stroke="#0F6E56" stroke-width="1.4"/>
+<circle cx="730.0" cy="214.0" r="3.4" fill="#0F6E56"/>
+<circle cx="750.0" cy="214.0" r="3.4" fill="#0F6E56"/>
+<circle cx="740.0" cy="230.0" r="3.4" fill="#0F6E56"/>
+<text x="762.0" y="214.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">kube-proxy / IPVS / eBPF</text>
+<text x="762.0" y="232.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">p-kubeproxy</text>
+<text x="724.0" y="262.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">iptables, IPVS, or eBPF. Pick one</text>
+<text x="724.0" y="280.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">dataplane.</text>
+<rect x="1034.0" y="184.0" width="310.0" height="156.0" rx="10" fill="#FBF3E4" stroke="#EF9F27" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="1034.0" y="184.0" width="7.0" height="156.0" rx="4" fill="#854F0B" stroke="#854F0B" stroke-width="0"/>
+<line x1="1058.0" y1="212.0" x2="1074.0" y2="212.0" stroke="#854F0B" stroke-width="1.3"/>
+<line x1="1058.0" y1="212.0" x2="1058.0" y2="228.0" stroke="#854F0B" stroke-width="1.3"/>
+<line x1="1074.0" y1="212.0" x2="1074.0" y2="228.0" stroke="#854F0B" stroke-width="1.3"/>
+<line x1="1058.0" y1="228.0" x2="1074.0" y2="228.0" stroke="#854F0B" stroke-width="1.3"/>
+<circle cx="1058.0" cy="212.0" r="3.2" fill="#854F0B"/>
+<circle cx="1074.0" cy="212.0" r="3.2" fill="#854F0B"/>
+<circle cx="1058.0" cy="228.0" r="3.2" fill="#854F0B"/>
+<circle cx="1074.0" cy="228.0" r="3.2" fill="#854F0B"/>
+<text x="1088.0" y="214.0" font-size="15" font-weight="750" fill="#854F0B" text-anchor="start">CNI (pod network)</text>
+<text x="1088.0" y="232.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">p-cni</text>
+<text x="1050.0" y="262.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">A pod IP and a route. Not a mesh. When:</text>
+<text x="1050.0" y="280.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">east-west needs an address.</text>
+<rect x="36.0" y="380.0" width="1328.0" height="224.0" rx="12" fill="#F7FBFE" stroke="#B5D4F4" stroke-width="1.4"/>
+<text x="56.0" y="408.0" font-size="18" font-weight="750" fill="#185FA5" text-anchor="start">In-cluster path</text>
+<text x="202.0" y="408.0" font-size="13" font-weight="500" fill="#5F5E5A" text-anchor="start">The name, the policy, the lookup.</text>
+<rect x="56.0" y="424.0" width="418.7" height="156.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56.0" y="424.0" width="7.0" height="156.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<circle cx="88.0" cy="460.0" r="5" fill="#0F6E56"/>
