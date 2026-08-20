@@ -8,8 +8,12 @@ test('smoke: golden path renders the shared tab bar', async ({ page }) => {
   await expect(page.locator('.site-tabs')).toBeVisible();
 });
 
-test('smoke: all five tabs are reachable from the tab bar', async ({ page }) => {
+test('smoke: the core tabs are reachable from the tab bar', async ({ page }) => {
   await page.goto('/golden.html');
   const tabs = page.locator('.site-tabs a');
-  await expect(tabs).toHaveCount(5);
+  // Resilient to new tabs landing (living site): at least the original five,
+  // and the stable Golden path + Metal links are always present.
+  expect(await tabs.count()).toBeGreaterThanOrEqual(5);
+  await expect(page.locator('.site-tabs a[href*="golden"]')).toHaveCount(1);
+  await expect(page.locator('.site-tabs a[href*="metal"]')).toHaveCount(1);
 });
