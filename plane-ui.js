@@ -21,6 +21,9 @@ function render(id) {
   const plane = PLANES[item.p] || PLANES.data;
   const notes = (item.d || []).map(function (x) { return "<li>" + escapeHtml(x) + "</li>"; }).join("");
   let extra = "";
+  if (item.reads) extra += "<h3>Reads</h3><p>" + escapeHtml(item.reads) + "</p>";
+  if (item.writes) extra += "<h3>Writes</h3><p>" + escapeHtml(item.writes) + "</p>";
+  if (item.scaleNote) extra += "<h3>Scale note</h3><p>" + escapeHtml(item.scaleNote) + "</p>";
   if (item.useWhen) extra += "<h3>When to use</h3><p>" + escapeHtml(item.useWhen) + "</p>";
   if (item.useNot) extra += "<h3>When not</h3><p>" + escapeHtml(item.useNot) + "</p>";
   if (item.look) extra += "<h3>What it looks like</h3><p>" + escapeHtml(item.look) + "</p>";
