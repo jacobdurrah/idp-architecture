@@ -1,0 +1,13 @@
+<g id="region-anchors" fill="none" stroke="none" pointer-events="none" aria-hidden="true">
+  <rect id="dev" x="40" y="128" width="488" height="1360"/>
+  <rect id="git" x="548" y="128" width="548" height="1360"/>
+  <rect id="ci" x="1116" y="128" width="920" height="498"/>
+  <rect id="tests" x="1132" y="626" width="888" height="838"/>
+  <rect id="registry" x="2056" y="128" width="428" height="1360"/>
+  <rect id="argocd" x="2504" y="128" width="780" height="1360"/>
+  <rect id="terraform" x="40" y="1564" width="3244" height="556"/>
+  <rect id="k8s" x="3304" y="128" width="2256" height="400"/>
+  <rect id="app" x="3336" y="528" width="2192" height="668"/>
+  <rect id="otel" x="40" y="2144" width="5520" height="900"/>
+</g>
+</svg>
