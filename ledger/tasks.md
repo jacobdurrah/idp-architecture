@@ -36,6 +36,7 @@ _**Status legend:** ✅ done · 🟡 partial · ⬜ not started. **Owners:** �
 | **FR-8** | Catalog auto-regenerates on any shard/diagram change (CI), so grounding never drifts from the posters | ⬜ | IG-08 |
 | **FR-9** | Question telemetry: each question logged with hit/confidence, feeding a ranked diagram-clarity backlog | ⬜ | IG-09 |
 | **FR-10** | Content kinds beyond static boxes: sequenced workflows + a code-lifecycle journey, carried by catalog + protocol | ⬜ | IG-10, IG-11 |
+| **FR-11** | `catalog.json` is a versioned public API: `catalog.schema.json` + `schemaVersion`, validated in both repos' CI, additive-only | ⬜ | IG-12 |
 
 ### 3. Non-functional requirements (NFR)
 | ID | Requirement | Status | Where |
@@ -86,7 +87,7 @@ One record per `(tab, id)`, generated from `window.IDP_DATA` (keys `n/p/w/y/d` +
   "href": "/idp-architecture/metal.html#e-subsea"
 }
 ```
-Generated, never hand-written, and **tab-agnostic**: the generator globs `*-data-*.js` and Map content, so a new tab, technology, or shard flows into the catalog with **no generator edit**. `kind`/`seq` carry sequenced content (workflows, the code-lifecycle journey) alongside today's static boxes; `tech` and `badge` are optional retrieval/curriculum hints. Unknown fields are ignored by v1 readers, so the schema grows additively (§7). Ship a top-level `version`/`generatedAt` so a publish can bust the agent's cache (NFR-9). If a naive push truncates (this repo has bitten tools around ~8–11KB), split into `catalog-0.json …` + a manifest; prefer one file if it stays reasonable.
+Generated, never hand-written, and **tab-agnostic**: the generator globs `*-data-*.js` and Map content, so a new tab, technology, or shard flows into the catalog with **no generator edit**. `kind`/`seq` carry sequenced content (workflows, the code-lifecycle journey) alongside today's static boxes; `tech` and `badge` are optional retrieval/curriculum hints. Unknown fields are ignored by v1 readers, so the schema grows additively (§7). Ship a top-level `version`/`generatedAt` so a publish can bust the agent's cache (NFR-9), plus a `schemaVersion` validated in both repos' CI against the published `catalog.schema.json` (§9). If a naive push truncates (this repo has bitten tools around ~8–11KB), split into `catalog-0.json …` + a manifest; prefer one file if it stays reasonable.
 
 ### 6. Interfaces
 - **Tools (v1):** `lookup(id | query) → up to ~8 catalog records` (fetch + cache `catalog.json` from `IDP_CATALOG_URL`, default `https://jacobdurrah.github.io/idp-architecture/catalog.json`). `open_box(tab, id) → {ok:true}` after the embed posts `idp.open`; only the five tab names, only ids that exist in the catalog.
@@ -98,7 +99,7 @@ Generated, never hand-written, and **tab-agnostic**: the generator globs `*-data
 2. **postMessage protocol** — site→agent `{type:"idp.context", tab, id, href}` (id may be `"overview"`/omitted); agent→site `{type:"idp.open", tab, id}`. Same tab → `render(id)`; different tab → navigate to `<file>#id`. Tab→file: map=index.html, golden=golden.html, v2=v2.html, agents=agents.html, metal=metal.html. Ignore messages from any origin outside `jacobdurrah.github.io` + `localhost`. No other message types in v1.
 3. **`idp:render` seam** — the one seam Streams B and C share. On every `render(id)`, the UI files dispatch `window.dispatchEvent(new CustomEvent('idp:render', {detail:{id, tab}}))`. B owns firing it (inside `render`); C listens to send `idp.context`. Neither touches the other's code.
 
-**Additive-only evolution (the rule that lets the site grow without a rewrite).** New fields, `kind`s, tabs, and technologies are added to the catalog and read by the agent **without changing these three contracts**. `idp.open` may later carry an optional `step` index for sequenced content; v1 pages ignore it. `idp.context` may carry `kind`; v1 agents ignore it. A contract changes only by **extension** — never by breaking a name v1 relies on. This is what makes §8's living-site loops safe.
+**Additive-only evolution (the rule that lets the site grow without a rewrite).** New fields, `kind`s, tabs, and technologies are added to the catalog and read by the agent **without changing these three contracts**. `idp.open` may later carry an optional `step` index for sequenced content; v1 pages ignore it. `idp.context` may carry `kind`; v1 agents ignore it. A contract changes only by **extension** — never by breaking a name v1 relies on. `catalog.schema.json` (§9) is the machine-checkable form of contract 1, enforced in both CIs by IG-12. This is what makes §8's living-site loops safe.
 
 ### 8. Living site — the site is a document that improves itself
 The posters are not frozen. We add technologies, add tabs, and turn questions into clearer diagrams. Three loops keep the agent and the diagrams growing together:
@@ -109,6 +110,28 @@ The posters are not frozen. We add technologies, add tabs, and turn questions in
   - **Code-lifecycle journey** — IDE human-readable edit → commit → build → binary → image layer → container → pod → VM → slat/server, showing what shape the code takes at each hop. This is the canonical sequence the tutor's "trace this build/request" (v3) leans on, and it reuses the same sequence machinery.
 
 Design rule for all of it: **evolution is additive** (§7). New fields/kinds/tabs never break v1's frozen names; v1 pages ignore what they do not understand.
+
+### 9. Repo integration & change management — integrate through the catalog, not the code
+The two repos never share code or a build. They meet at exactly two **published contracts**, and rapid content change is designed to flow through the first one with **zero changes to the other repo**. Expectation: the posters change rapidly and often as curiosity grows, so the seam is built to absorb that churn on one side only.
+
+**The two seams:**
+| Seam | Artifact | Producer | Consumer | Changes… |
+|---|---|---|---|---|
+| **Data** | `catalog.json` (+ `catalog.schema.json`, `version`, `schemaVersion`) on Pages | idp-architecture | idp-guide agent (`lookup`) | constantly (every box / copy / tech edit) |
+| **UI** | postMessage protocol (§7.2) | both | both | rarely (only new interaction kinds) |
+
+**The 95% path — content churn, one repo only.** Curiosity → edit a shard (new box, new technology, sharper copy, new tab) → push → IG-08 CI regenerates `catalog.json`, validates it against `catalog.schema.json`, bumps `version`, publishes to Pages. The agent fetches the fresh catalog on its next session and teaches the new material. **idp-guide is never touched.** This is the loop built for rapid change.
+
+**The 5% path — a new capability.** A new *content kind* the dock must render (a sequence), a new tool, or prompt tuning touches idp-guide too. Rare, and lands **additively** (§7) so nothing breaks mid-flight.
+
+**Guardrails that make churn safe (push freely, let CI catch breaks — matches the easily-reverted, direct-to-main workflow):**
+- **Catalog is a versioned public API.** `catalog.schema.json` (source of truth in idp-architecture, published next to the data) + `schemaVersion`. The schema only ever gains **optional** fields.
+- **Contract test in both CIs (IG-12).** idp-architecture: the generated catalog must validate against the schema, and every field v1's `lookup` reads must still be present — a rename/removal turns CI red **before** publish. idp-guide: its fixture and a fetch of the live catalog must both validate against the same schema — catches drift the day it happens.
+- **Config, not code, at the seam.** The dock's `IDP_GUIDE_ORIGIN` and the agent's frame-ancestors allowlist are env/config, so pointing at a new preview or production URL is a flip, not an edit.
+- **Independent deploys + previews.** Vercel preview-per-PR for idp-guide; local `npx serve` (or a Pages preview action) for the posters. Either side can be verified against the *other side's production* because the only link is a URL. No lock-step releases.
+- **Expand-only order when a change spans both repos.** Publish the additive catalog/schema first (old agent ignores the new field) → then ship the dock/agent that uses it. Never remove a name a live reader depends on; if you must, expand → migrate → contract across separate deploys.
+
+**Not a monorepo, on purpose.** Two repos + two hosts is the resilience story: a Vercel outage or auth flake leaves the posters fully usable (NFR-2). The catalog seam is what lets them stay separate without drifting. *(Optional later: a `repository_dispatch` webhook so a catalog publish pings idp-guide to run a smoke test — v2, nice-to-have; the per-session fetch already handles freshness.)*
 
 ---
 
@@ -166,6 +189,10 @@ _Goal: a visitor asks a question on any tab, gets a grounded answer citing a dat
   - [ ] **`npm run build:catalog`** wrapping `tools/build-catalog.js`. *Enables: one command to regenerate.*
   - [ ] **GitHub Action on shard/content change** → regenerate + publish + version bump. *Enables: FR-8 no-drift grounding.*
   - [ ] **Drift check** (CI fails if `catalog.json` is stale vs shards). *Enables: catches a hand-edit that skipped regeneration.*
+- ⬜ **IG-12 — Catalog contract test (both repos).** 🤖 *(v1 — the guardrail for rapid change; §9.)* Author `catalog.schema.json` (published on Pages next to `catalog.json`) + a `schemaVersion`. idp-architecture CI: the generated catalog validates against the schema, and an additive-only assertion checks every field v1 `lookup` reads (`id`, `tab`, `name`, `what`, `why`) is still present. idp-guide CI: its fixture **and** a fetch of the live catalog both validate against the same schema. *Accept: adding an optional field passes both CIs; renaming/removing `id`/`tab`/`name`/`what`/`why` fails idp-architecture CI before publish; a catalog whose `schemaVersion` the agent does not support is flagged, not silently mis-read.*
+  - [ ] **`catalog.schema.json` + `schemaVersion`**, published on Pages. *Enables: one machine-checkable definition of the data contract (§7.1).*
+  - [ ] **Producer-side validation + additive-only assertion** in IG-08's CI. *Enables: a breaking regen turns red before it reaches Pages.*
+  - [ ] **Consumer-side validation** (fixture + live fetch) in idp-guide CI. *Enables: drift surfaces on the agent side the day it happens.*
 
 ## PHASE v2 — Feedback (out of scope for v1; design so it lands without a rewrite)
 - ⬜ **IG-06 — `flag_clarity` tool.** 🤖👤 Takes the open data-id + the visitor's note, files a GitHub issue on `jacobdurrah/idp-architecture` labeled `clarity` via Vercel Connect (no pasted token). The on-site agent does not push; Jacob or a cloud agent applies the edit from the issue. Feeds the **same diagram-clarity backlog** as IG-09. *(Not implemented in v1. The `idp.context` protocol already carries the open id it needs.)*
@@ -194,3 +221,4 @@ _These keep the agent in sync as the diagrams grow and turn questions into clear
 - 2026-08-20 — Ledger opened in the shared `ledger/tasks.md` format. v1 brief locked; design + four parallel streams (A/B/C/D) drafted; three contracts frozen (catalog schema, postMessage protocol, `idp:render` seam). Next concrete action: IG-01.
 - 2026-08-20 — Added the **living-site** design (§8): the posters keep growing, so the catalog schema now carries `kind`/`seq`/`badge`/`tech` and a `version`, evolution is additive-only (§7), and two loops are specced — auto-regeneration for freshness (IG-08) and question-telemetry → clarity backlog for continuous diagram improvement (IG-09). New content kinds (workflow/sequence IG-10, code-lifecycle journey IG-11) ride the same pipeline. FR-8/9/10, NFR-8/9 added.
 - 2026-08-20 — **Folded IG-08 (catalog auto-regeneration) into v1 scope** so grounding never drifts once shards start changing. It sits in PHASE v1 after IG-01; the living-site phase now starts at IG-09.
+- 2026-08-20 — Added **§9 Repo integration & change management**: the two repos integrate through the catalog (a versioned public API), not through code. Content churn flows through the data seam with zero idp-guide changes; capability changes are rare and additive; guardrails = schema + contract test in both CIs (IG-12, v1), config-not-code origins, independent deploys, expand-only order. FR-11 added.
