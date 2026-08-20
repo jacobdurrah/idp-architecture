@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "a61fe50c03c4",
+  "version": "a812c58b319f",
   "records": [
     {
       "id": "admission",
@@ -6334,6 +6334,18 @@
       "href": "/idp-architecture/y.html#st-pipe"
     },
     {
+      "id": "ys-ca",
+      "tab": "y",
+      "name": "Cluster autoscaler",
+      "plane": "ctrl",
+      "what": "Scale band for the Cluster autoscaler hop. Same utility as Plane p-ca.",
+      "why": "Styles and Plane agree on the band. Open Plane for when to pick the hop.",
+      "notes": [
+        "Inside the Terraform max. Not a request hop."
+      ],
+      "href": "/idp-architecture/y.html#ys-ca"
+    },
+    {
       "id": "ys-cni",
       "tab": "y",
       "name": "CNI (pod network)",
@@ -6358,6 +6370,18 @@
       "href": "/idp-architecture/y.html#ys-dns"
     },
     {
+      "id": "ys-hpa",
+      "tab": "y",
+      "name": "Horizontal pod autoscaler",
+      "plane": "ctrl",
+      "what": "Scale band for the Horizontal pod autoscaler hop. Same utility as Plane p-hpa.",
+      "why": "Styles and Plane agree on the band. Open Plane for when to pick the hop.",
+      "notes": [
+        "Four is a floor. Node count is CA."
+      ],
+      "href": "/idp-architecture/y.html#ys-hpa"
+    },
+    {
       "id": "ys-ingress",
       "tab": "y",
       "name": "L7 Ingress / Gateway",
@@ -6368,6 +6392,18 @@
         "Envoy / nginx class. CPU and TLS dominate before raw packet PPS."
       ],
       "href": "/idp-architecture/y.html#ys-ingress"
+    },
+    {
+      "id": "ys-kafka",
+      "tab": "y",
+      "name": "Kafka (queue / log)",
+      "plane": "data",
+      "what": "Scale band for the Kafka (queue / log) hop. Same utility as Plane p-kafka.",
+      "why": "Styles and Plane agree on the band. Open Plane for when to pick the hop.",
+      "notes": [
+        "A log, not RPC. Partition count is the scale knob."
+      ],
+      "href": "/idp-architecture/y.html#ys-kafka"
     },
     {
       "id": "ys-kubeproxy",
@@ -6404,6 +6440,78 @@
         "Sidecar or ambient. Tax is real. A three-service app may not need it."
       ],
       "href": "/idp-architecture/y.html#ys-mesh"
+    },
+    {
+      "id": "ys-nvlink",
+      "tab": "y",
+      "name": "NVLink / GPU fabric",
+      "plane": "metal",
+      "what": "Scale band for the NVLink / GPU fabric hop. Same utility as Plane p-nvlink.",
+      "why": "Styles and Plane agree on the band. Open Plane for when to pick the hop.",
+      "notes": [
+        "Inside the tray. The newsfeed worker is CPU."
+      ],
+      "href": "/idp-architecture/y.html#ys-nvlink"
+    },
+    {
+      "id": "ys-obj",
+      "tab": "y",
+      "name": "Object store",
+      "plane": "data",
+      "what": "Scale band for the Object store hop. Same utility as Plane p-obj.",
+      "why": "Styles and Plane agree on the band. Open Plane for when to pick the hop.",
+      "notes": [
+        "Write once, read many."
+      ],
+      "href": "/idp-architecture/y.html#ys-obj"
+    },
+    {
+      "id": "ys-otel",
+      "tab": "y",
+      "name": "OpenTelemetry",
+      "plane": "obs",
+      "what": "Scale band for the OpenTelemetry hop. Same utility as Plane p-otel.",
+      "why": "Styles and Plane agree on the band. Open Plane for when to pick the hop.",
+      "notes": [
+        "A dead collector is a blank board."
+      ],
+      "href": "/idp-architecture/y.html#ys-otel"
+    },
+    {
+      "id": "ys-redis",
+      "tab": "y",
+      "name": "Redis (cache)",
+      "plane": "data",
+      "what": "Scale band for the Redis (cache) hop. Same utility as Plane p-redis.",
+      "why": "Styles and Plane agree on the band. Open Plane for when to pick the hop.",
+      "notes": [
+        "Hot keys. Not truth."
+      ],
+      "href": "/idp-architecture/y.html#ys-redis"
+    },
+    {
+      "id": "ys-search",
+      "tab": "y",
+      "name": "Search index",
+      "plane": "data",
+      "what": "Scale band for the Search index hop. Same utility as Plane p-search.",
+      "why": "Styles and Plane agree on the band. Open Plane for when to pick the hop.",
+      "notes": [
+        "Derived. Fed from Kafka. Rebuild is allowed."
+      ],
+      "href": "/idp-architecture/y.html#ys-search"
+    },
+    {
+      "id": "ys-sql",
+      "tab": "y",
+      "name": "Postgres",
+      "plane": "data",
+      "what": "Scale band for the Postgres hop. Same utility as Plane p-sql.",
+      "why": "Styles and Plane agree on the band. Open Plane for when to pick the hop.",
+      "notes": [
+        "Transactions. Not a cache. Schema is its own path."
+      ],
+      "href": "/idp-architecture/y.html#ys-sql"
     },
     {
       "id": "ys-svc",
