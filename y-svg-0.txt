@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="poster" viewBox="0 0 1400 1760" width="100%" role="img" aria-label="Styles: how the data plane is wired">
+<defs>
+<marker id="arrD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1.2 L10 5 L0 8.8 z" fill="#0F6E56"/></marker>
+<filter id="soft" x="-2%" y="-2%" width="104%" height="104%"><feDropShadow dx="0" dy="1" stdDeviation="1.2" flood-color="#2C2C2A" flood-opacity="0.08"/></filter>
+</defs>
+<rect x="0.0" y="0.0" width="1400.0" height="1760.0" rx="0" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0"/>
+<text x="700.0" y="44.0" font-size="26" font-weight="750" fill="#2C2C2A" text-anchor="middle">Styles</text>
+<text x="700.0" y="70.0" font-size="14" font-weight="500" fill="#5F5E5A" text-anchor="middle">How the data plane is wired for the shapes teams actually ship.</text>
+<text x="700.0" y="92.0" font-size="12" font-weight="500" fill="#3D3C38" text-anchor="middle">newsfeed-service:v1827  ·  PR #4821</text>
+<rect x="430.0" y="108.0" width="16.0" height="10.0" rx="2" fill="#1D9E75"/>
+<text x="452.0" y="117.0" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Style</text>
+<rect x="530.0" y="108.0" width="16.0" height="10.0" rx="2" fill="#EF9F27"/>
+<text x="552.0" y="117.0" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Scale chip</text>
+<rect x="680.0" y="108.0" width="16.0" height="10.0" rx="2" fill="#378ADD"/>
+<text x="702.0" y="117.0" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Control / observe</text>
+<rect x="36.0" y="140.0" width="1328.0" height="504.0" rx="12" fill="#F3FBF7" stroke="#B7E0D0" stroke-width="1.4"/>
+<text x="56.0" y="168.0" font-size="18" font-weight="750" fill="#0F6E56" text-anchor="start">Eight styles</text>
+<text x="188.0" y="168.0" font-size="13" font-weight="500" fill="#5F5E5A" text-anchor="start">Most common in production now. Tap a card.</text>
+<rect x="56.0" y="184.0" width="310.0" height="210.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56.0" y="184.0" width="7.0" height="210.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<text x="78.0" y="214.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">Modular monolith</text>
+<text x="78.0" y="232.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">st-mono</text>
+<text x="72.0" y="260.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">One deployable. Modules for feed,</text>
+<text x="72.0" y="278.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">graph, ranking.</text>
+<rect x="72.0" y="354.0" width="105.6" height="22" rx="11" fill="#0F6E56"/>
+<text x="124.8" y="369.0" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">reads 1k–20k/s</text>
+<rect x="382.0" y="184.0" width="310.0" height="210.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="382.0" y="184.0" width="7.0" height="210.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<text x="404.0" y="214.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">Layered / n-tier</text>
+<text x="404.0" y="232.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">st-layer</text>
+<text x="398.0" y="260.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">GET /feed = ingress → service</text>
+<text x="398.0" y="278.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">→ Redis → Postgres.</text>
+<rect x="398.0" y="354.0" width="118.4" height="22" rx="11" fill="#0F6E56"/>
+<text x="457.2" y="369.0" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">reads 10k–100k/s</text>
+<rect x="708.0" y="184.0" width="310.0" height="210.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="708.0" y="184.0" width="7.0" height="210.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<text x="730.0" y="214.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">Microservices</text>
+<text x="730.0" y="232.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">st-micro</text>
+<text x="724.0" y="260.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Five repos. PR #4821 ships</text>
+<text x="724.0" y="278.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">one service.</text>
+<rect x="724.0" y="354.0" width="118.4" height="22" rx="11" fill="#0F6E56"/>
+<text x="783.2" y="369.0" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">1k–50k RPS / svc</text>
+<rect x="1034.0" y="184.0" width="310.0" height="210.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="1034.0" y="184.0" width="7.0" height="210.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<text x="1056.0" y="214.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">Event-driven / broker</text>
+<text x="1056.0" y="232.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">st-event</text>
+<text x="1050.0" y="260.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Post → Kafka → ranking, notify,</text>
+<text x="1050.0" y="278.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">search. Writer does not wait.</text>
+<rect x="1050.0" y="354.0" width="118.4" height="22" rx="11" fill="#0F6E56"/>
+<text x="1109.2" y="369.0" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">1k–100k events/s</text>
+<rect x="56.0" y="414.0" width="310.0" height="210.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56.0" y="414.0" width="7.0" height="210.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<text x="78.0" y="444.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">CQRS</text>
+<text x="78.0" y="462.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">st-cqrs</text>
+<text x="72.0" y="490.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Write Postgres. Read the view.</text>
+<text x="72.0" y="508.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Feed reads crush writes (~100:1).</text>
+<rect x="72.0" y="584.0" width="131.2" height="22" rx="11" fill="#0F6E56"/>
+<text x="137.6" y="599.0" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">reads crush writes</text>
+<rect x="382.0" y="414.0" width="310.0" height="210.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="382.0" y="414.0" width="7.0" height="210.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<text x="404.0" y="444.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">Pipe-and-filter</text>
+<text x="404.0" y="462.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">st-pipe</text>
+<text x="398.0" y="490.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Ingest → enrich → rank →</text>
+<text x="398.0" y="508.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">cache-warm. Stream or batch.</text>
+<rect x="398.0" y="584.0" width="112.0" height="22" rx="11" fill="#0F6E56"/>
+<text x="454.0" y="599.0" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">10k–100k msgs/s</text>
+<rect x="708.0" y="414.0" width="310.0" height="210.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="708.0" y="414.0" width="7.0" height="210.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
