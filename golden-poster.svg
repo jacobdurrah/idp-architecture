@@ -29,3 +29,74 @@
 <text x="762.0" y="113.0" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Infrastructure</text>
 <rect x="920.0" y="104.0" width="16.0" height="10.0" rx="2" fill="#AFA9EC" stroke="#AFA9EC" stroke-width="0"/>
 <text x="942.0" y="113.0" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Observability</text>
+<rect x="40.0" y="150.0" width="300.0" height="120.0" rx="10" fill="#F1F0EB" stroke="#8A8984" stroke-width="1.6"/>
+<text x="56.0" y="178.0" font-size="15" font-weight="750" fill="#2C2C2A" text-anchor="start">Software developers</text>
+<text x="56.0" y="200.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Write service code on a standard laptop</text>
+<text x="56.0" y="216.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Local lint · types · unit tests</text>
+<text x="56.0" y="232.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Only human trigger on the daily path</text>
+<rect x="430.0" y="130.0" width="930.0" height="170.0" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<text x="446.0" y="154.0" font-size="15" font-weight="750" fill="#185FA5" text-anchor="start">Git, source of truth</text>
+<rect x="448.0" y="168.0" width="286.0" height="116.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="460.0" y="192.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">App code + CI</text>
+<text x="460.0" y="214.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">newsfeed-service source</text>
+<text x="460.0" y="230.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Unit tests, service config</text>
+<text x="460.0" y="246.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">References shared pipelines</text>
+<rect x="746.0" y="168.0" width="286.0" height="116.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="758.0" y="192.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">Deploy manifests</text>
+<text x="758.0" y="214.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Desired Kubernetes state</text>
+<text x="758.0" y="230.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Digest written here on green</text>
+<text x="758.0" y="246.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Argo CD watches this repo</text>
+<rect x="1044.0" y="168.0" width="300.0" height="116.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="1056.0" y="192.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">Infrastructure Terraform</text>
+<text x="1056.0" y="214.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">VPC, GKE/EKS, SQL, IAM</text>
+<text x="1056.0" y="230.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Plane B. Rare, deliberate</text>
+<text x="1056.0" y="246.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">App devs never apply this</text>
+<line x1="340.0" y1="210.0" x2="424.0" y2="210.0" stroke="#185FA5" stroke-width="1.8" marker-end="url(#arrC)"/>
+<text x="386.0" y="198.0" font-size="11" font-weight="600" fill="#185FA5" text-anchor="middle">commit · push · open PR</text>
+<g class="badge"><circle cx="376.0" cy="215.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="376.0" y="219.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">1</text></g>
+<rect x="40.0" y="330.0" width="1320.0" height="310.0" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<text x="56.0" y="354.0" font-size="15" font-weight="750" fill="#185FA5" text-anchor="start">CI platform  ·  every PR, fail-closed</text>
+<g class="badge"><circle cx="700.0" cy="314.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="700.0" y="318.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">2</text></g>
+<rect x="55.0" y="362.0" width="148.0" height="68.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="65.0" y="386.0" font-size="12" font-weight="700" fill="#0C447C" text-anchor="start">Compile + build</text>
+<text x="65.0" y="406.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Deterministic SHA</text>
+<rect x="211.0" y="362.0" width="148.0" height="68.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="221.0" y="386.0" font-size="12" font-weight="700" fill="#0C447C" text-anchor="start">Static analysis</text>
+<text x="221.0" y="406.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Bugs compilers miss</text>
+<rect x="367.0" y="362.0" width="148.0" height="68.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="377.0" y="386.0" font-size="12" font-weight="700" fill="#0C447C" text-anchor="start">Lint</text>
+<text x="377.0" y="406.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">One style, required</text>
+<rect x="523.0" y="362.0" width="148.0" height="68.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="533.0" y="386.0" font-size="12" font-weight="700" fill="#0C447C" text-anchor="start">Type check</text>
+<text x="533.0" y="406.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Same compiler as local</text>
+<rect x="679.0" y="362.0" width="148.0" height="68.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="689.0" y="386.0" font-size="12" font-weight="700" fill="#0C447C" text-anchor="start">Unit tests</text>
+<text x="689.0" y="406.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">No live network</text>
+<rect x="835.0" y="362.0" width="148.0" height="68.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="845.0" y="386.0" font-size="12" font-weight="700" fill="#0C447C" text-anchor="start">Security scan</text>
+<text x="845.0" y="406.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">SAST, fail-closed</text>
+<rect x="991.0" y="362.0" width="148.0" height="68.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="1001.0" y="386.0" font-size="12" font-weight="700" fill="#0C447C" text-anchor="start">Dependency scan</text>
+<text x="1001.0" y="406.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">SCA + lockfiles</text>
+<rect x="1147.0" y="362.0" width="148.0" height="68.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="1157.0" y="386.0" font-size="12" font-weight="700" fill="#0C447C" text-anchor="start">Policy checks</text>
+<text x="1157.0" y="406.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Again at admit time</text>
+<rect x="55.0" y="445.0" width="1288.0" height="178.0" rx="8" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text x="70.0" y="466.0" font-size="13" font-weight="700" fill="#185FA5" text-anchor="start">Distributed integration testing</text>
+<rect x="70.0" y="478.0" width="200.0" height="128.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="82.0" y="500.0" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Test coordinator</text>
+<text x="82.0" y="522.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Shards suites</text>
+<text x="82.0" y="538.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Timeouts and retries</text>
+<text x="82.0" y="554.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">A small control plane</text>
+<rect x="300.0" y="478.0" width="180.0" height="128.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="312.0" y="500.0" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Job queue</text>
+<text x="312.0" y="522.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Workers pull jobs</text>
+<text x="312.0" y="538.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">newsfeed-it · users-it</text>
+<text x="312.0" y="554.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Visible backlog</text>
+<rect x="510.0" y="478.0" width="560.0" height="128.0" rx="7" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="522.0" y="500.0" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Ephemeral workers  ×1000s</text>
+<rect x="1100.0" y="478.0" width="225.0" height="128.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="1112.0" y="500.0" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Results → PR</text>
+<text x="1112.0" y="522.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Status + comments</text>
+<text x="1112.0" y="538.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Required checks block</text>
+<text x="1112.0" y="554.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Artifacts retained</text>
