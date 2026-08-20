@@ -1,0 +1,66 @@
+<text x="730.0" y="444.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">Serverless / FaaS</text>
+<text x="730.0" y="462.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">st-lambda</text>
+<text x="724.0" y="490.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Resize, webhook, cron.</text>
+<text x="724.0" y="508.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Not the hot GET /feed path.</text>
+<rect x="724.0" y="584.0" width="124.8" height="22" rx="11" fill="#0F6E56"/>
+<text x="786.4" y="599.0" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">0–100k concurrent</text>
+<rect x="1034.0" y="414.0" width="310.0" height="210.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="1034.0" y="414.0" width="7.0" height="210.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<text x="1056.0" y="444.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">Microkernel / plugin</text>
+<text x="1056.0" y="462.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">st-kernel</text>
+<text x="1050.0" y="490.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">IDP core plus plugins.</text>
+<text x="1050.0" y="508.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Platform team, not feed QPS.</text>
+<rect x="1050.0" y="584.0" width="156.8" height="22" rx="11" fill="#0F6E56"/>
+<text x="1128.4" y="599.0" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">platform, not feed QPS</text>
+<rect x="36.0" y="664.0" width="1328.0" height="1008.0" rx="12" fill="#FBF6EC" stroke="#E8C98A" stroke-width="1.4"/>
+<text x="56.0" y="692.0" font-size="18" font-weight="750" fill="#854F0B" text-anchor="start">Data plane scale</text>
+<text x="230.0" y="692.0" font-size="13" font-weight="500" fill="#5F5E5A" text-anchor="start">Typical bands. Same utilities as Plane. Tap a chip.</text>
+<rect x="56.0" y="716.0" width="310.0" height="200.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56.0" y="716.0" width="7.0" height="200.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<text x="78.0" y="746.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">L4 load balancer</text>
+<text x="78.0" y="764.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">ys-lb</text>
+<text x="72.0" y="796.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Reads</text>
+<text x="72.0" y="814.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">100k–1M+ PPS per pair</text>
+<text x="72.0" y="840.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Writes</text>
+<text x="72.0" y="858.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">packets, same hop</text>
+<text x="72.0" y="898.0" font-size="11" font-weight="600" fill="#185FA5" text-anchor="start">Open Plane</text>
+<rect x="382.0" y="716.0" width="310.0" height="200.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="382.0" y="716.0" width="7.0" height="200.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<text x="404.0" y="746.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">L7 Ingress / Gateway</text>
+<text x="404.0" y="764.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">ys-ingress</text>
+<text x="398.0" y="796.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Reads</text>
+<text x="398.0" y="814.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">10k–100k RPS / instance</text>
+<text x="398.0" y="840.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Writes</text>
+<text x="398.0" y="858.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">mutating reqs, same hop</text>
+<text x="398.0" y="898.0" font-size="11" font-weight="600" fill="#185FA5" text-anchor="start">Open Plane</text>
+<rect x="708.0" y="716.0" width="310.0" height="200.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="708.0" y="716.0" width="7.0" height="200.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<text x="730.0" y="746.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">kube-proxy / eBPF</text>
+<text x="730.0" y="764.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">ys-kubeproxy</text>
+<text x="724.0" y="796.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Reads</text>
+<text x="724.0" y="814.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">iptables → IPVS → eBPF</text>
+<text x="724.0" y="840.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Writes</text>
+<text x="724.0" y="858.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">churn, not HTTP writes</text>
+<text x="724.0" y="898.0" font-size="11" font-weight="600" fill="#185FA5" text-anchor="start">Open Plane</text>
+<rect x="1034.0" y="716.0" width="310.0" height="200.0" rx="10" fill="#FBF3E4" stroke="#EF9F27" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="1034.0" y="716.0" width="7.0" height="200.0" rx="4" fill="#854F0B" stroke="#854F0B" stroke-width="0"/>
+<text x="1056.0" y="746.0" font-size="15" font-weight="750" fill="#854F0B" text-anchor="start">CNI (pod network)</text>
+<text x="1056.0" y="764.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">ys-cni</text>
+<text x="1050.0" y="796.0" font-size="11" font-weight="700" fill="#854F0B" text-anchor="start">Reads</text>
+<text x="1050.0" y="814.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">NIC / eBPF PPS</text>
+<text x="1050.0" y="840.0" font-size="11" font-weight="700" fill="#854F0B" text-anchor="start">Writes</text>
+<text x="1050.0" y="858.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">east-west packets</text>
+<text x="1050.0" y="898.0" font-size="11" font-weight="600" fill="#185FA5" text-anchor="start">Open Plane</text>
+<rect x="56.0" y="932.0" width="310.0" height="200.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56.0" y="932.0" width="7.0" height="200.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<text x="78.0" y="962.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">Kubernetes Service</text>
+<text x="78.0" y="980.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">ys-svc</text>
+<text x="72.0" y="1012.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Reads</text>
+<text x="72.0" y="1030.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">no extra QPS</text>
+<text x="72.0" y="1056.0" font-size="11" font-weight="700" fill="#0F6E56" text-anchor="start">Writes</text>
+<text x="72.0" y="1074.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">name is free</text>
+<text x="72.0" y="1114.0" font-size="11" font-weight="600" fill="#185FA5" text-anchor="start">Open Plane</text>
+<rect x="382.0" y="932.0" width="310.0" height="200.0" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="382.0" y="932.0" width="7.0" height="200.0" rx="4" fill="#0F6E56" stroke="#0F6E56" stroke-width="0"/>
+<text x="404.0" y="962.0" font-size="15" font-weight="750" fill="#0F6E56" text-anchor="start">Service mesh</text>
+<text x="404.0" y="980.0" font-size="11" font-weight="600" fill="#5F5E5A" text-anchor="start">ys-mesh</text>
