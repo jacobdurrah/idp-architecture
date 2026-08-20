@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="poster" viewBox="0 0 1400 4400" width="100%" role="img" aria-label="Scenarios: three directions through the same change">
+<defs>
+<marker id="arrC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1.2 L10 5 L0 8.8 z" fill="#185FA5"/></marker>
+<marker id="arrD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1.2 L10 5 L0 8.8 z" fill="#0F6E56"/></marker>
+<marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1.2 L10 5 L0 8.8 z" fill="#A32D2D"/></marker>
+<filter id="soft" x="-2%" y="-2%" width="104%" height="104%"><feDropShadow dx="0" dy="1" stdDeviation="1.2" flood-color="#2C2C2A" flood-opacity="0.08"/></filter>
+</defs>
+<rect x="0" y="0" width="1400" height="4400" rx="0" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0"/>
+<text x="700" y="44" font-size="26" font-weight="750" fill="#2C2C2A" text-anchor="middle">Scenarios</text>
+<text x="700" y="70" font-size="14" font-weight="500" fill="#5F5E5A" text-anchor="middle">Three directions through the same change. Ship it, serve it, break it.</text>
+<text x="700" y="92" font-size="12" font-weight="500" fill="#3D3C38" text-anchor="middle">newsfeed-service:v1827  ·  PR #4821</text>
+<rect x="430" y="108" width="16" height="10" rx="2" fill="#378ADD"/>
+<text x="452" y="117" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Ship</text>
+<rect x="640" y="108" width="16" height="10" rx="2" fill="#1D9E75"/>
+<text x="662" y="117" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Serve</text>
+<rect x="850" y="108" width="16" height="10" rx="2" fill="#C45B78"/>
+<text x="872" y="117" font-size="12" font-weight="600" fill="#5F5E5A" text-anchor="start">Break</text>
+<text x="700" y="148" font-size="12" font-weight="500" fill="#5F5E5A" text-anchor="middle">v2 admits the change. Agents read the traces. Metal is the floor. Play a direction.</text>
+<g data-band="ship">
+<rect x="36" y="168" width="1328" height="1568" rx="12" fill="#F7FBFE" stroke="#B5D4F4" stroke-width="1.4"/>
+<text x="56" y="200" font-size="18" font-weight="750" fill="#185FA5" text-anchor="start">Ship</text>
+<text x="140" y="200" font-size="13" font-weight="500" fill="#5F5E5A" text-anchor="start">Code leaves the laptop and changes shape until it is a process on a slat.</text>
+<text x="56" y="222" font-size="12" font-weight="500" fill="#5F5E5A" text-anchor="start">9 frames. Same through-line.</text>
+<rect x="56" y="256" width="1288" height="148" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56" y="256" width="8" height="148" rx="4" fill="#185FA5"/>
+<g class="badge"><circle cx="96" cy="330" r="16" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="96" y="335" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">1</text></g>
+<text x="128" y="296" font-size="17" font-weight="700" fill="#185FA5" text-anchor="start">Developer commit</text>
+<text x="128" y="326" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">working tree  →  git commit on app-newsfeed</text>
+<text x="128" y="354" font-size="12" font-weight="600" fill="#185FA5" text-anchor="start">v2 · developers  ·  app-newsfeed</text>
+<text x="1320" y="296" font-size="11" font-weight="600" fill="#854F0B" text-anchor="end">git commit</text>
+<path d="M 96 404 L 96 418" fill="none" stroke="#185FA5" stroke-width="1.8" marker-end="url(#arrC)"/>
+<rect x="56" y="420" width="1288" height="148" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56" y="420" width="8" height="148" rx="4" fill="#185FA5"/>
+<g class="badge"><circle cx="96" cy="494" r="16" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="96" y="499" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">2</text></g>
+<text x="128" y="460" font-size="17" font-weight="700" fill="#185FA5" text-anchor="start">PR #4821</text>
+<text x="128" y="490" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">commit  →  review artifact</text>
+<text x="128" y="518" font-size="12" font-weight="600" fill="#185FA5" text-anchor="start">v2 · pr-4821  ·  Agents · pr-board</text>
+<text x="1320" y="460" font-size="11" font-weight="600" fill="#854F0B" text-anchor="end">review artifact</text>
+<path d="M 96 568 L 96 582" fill="none" stroke="#185FA5" stroke-width="1.8" marker-end="url(#arrC)"/>
+<rect x="56" y="584" width="1288" height="148" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56" y="584" width="8" height="148" rx="4" fill="#185FA5"/>
+<g class="badge"><circle cx="96" cy="658" r="16" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="96" y="663" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">3</text></g>
+<text x="128" y="624" font-size="17" font-weight="700" fill="#185FA5" text-anchor="start">Checks</text>
+<text x="128" y="654" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">PR  →  status checks (compile, lint, unit, security)</text>
+<text x="128" y="682" font-size="12" font-weight="600" fill="#185FA5" text-anchor="start">v2 · ci  ·  Agents · checks-board</text>
+<text x="1320" y="624" font-size="11" font-weight="600" fill="#854F0B" text-anchor="end">status checks</text>
+<path d="M 96 732 L 96 746" fill="none" stroke="#185FA5" stroke-width="1.8" marker-end="url(#arrC)"/>
+<rect x="56" y="748" width="1288" height="148" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56" y="748" width="8" height="148" rx="4" fill="#185FA5"/>
+<g class="badge"><circle cx="96" cy="822" r="16" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="96" y="827" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">4</text></g>
+<text x="128" y="788" font-size="17" font-weight="700" fill="#185FA5" text-anchor="start">Image</text>
+<text x="128" y="818" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">source  →  OCI digest newsfeed-service:v1827</text>
+<text x="128" y="846" font-size="12" font-weight="600" fill="#185FA5" text-anchor="start">v2 · image-v1827  ·  registry</text>
+<text x="1320" y="788" font-size="11" font-weight="600" fill="#854F0B" text-anchor="end">OCI image digest</text>
+<path d="M 96 896 L 96 910" fill="none" stroke="#185FA5" stroke-width="1.8" marker-end="url(#arrC)"/>
+<rect x="56" y="912" width="1288" height="148" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6" filter="url(#soft)"/>
+<rect x="56" y="912" width="8" height="148" rx="4" fill="#185FA5"/>
+<g class="badge"><circle cx="96" cy="986" r="16" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="96" y="991" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">5</text></g>
+<text x="128" y="952" font-size="17" font-weight="700" fill="#185FA5" text-anchor="start">Manifest bump</text>
+<text x="128" y="982" font-size="13" font-weight="500" fill="#3D3C38" text-anchor="start">digest  →  gitops desired state in platform-gitops</text>
+<text x="128" y="1010" font-size="12" font-weight="600" fill="#185FA5" text-anchor="start">v2 · bump  ·  platform-gitops</text>
+<text x="1320" y="952" font-size="11" font-weight="600" fill="#854F0B" text-anchor="end">gitops desired state</text>
+<path d="M 96 1060 L 96 1074" fill="none" stroke="#185FA5" stroke-width="1.8" marker-end="url(#arrC)"/>
+<rect x="56" y="1076" width="1288" height="148" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6" filter="url(#soft)"/>
