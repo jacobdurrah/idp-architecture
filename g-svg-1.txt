@@ -1,0 +1,68 @@
+<text x="689.0" y="406.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">No live network</text>
+<rect x="835.0" y="362.0" width="148.0" height="68.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="845.0" y="386.0" font-size="12" font-weight="700" fill="#0C447C" text-anchor="start">Security scan</text>
+<text x="845.0" y="406.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">SAST, fail-closed</text>
+<rect x="991.0" y="362.0" width="148.0" height="68.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="1001.0" y="386.0" font-size="12" font-weight="700" fill="#0C447C" text-anchor="start">Dependency scan</text>
+<text x="1001.0" y="406.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">SCA + lockfiles</text>
+<rect x="1147.0" y="362.0" width="148.0" height="68.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="1157.0" y="386.0" font-size="12" font-weight="700" fill="#0C447C" text-anchor="start">Policy checks</text>
+<text x="1157.0" y="406.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Again at admit time</text>
+<rect x="55.0" y="445.0" width="1288.0" height="178.0" rx="8" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text x="70.0" y="466.0" font-size="13" font-weight="700" fill="#185FA5" text-anchor="start">Distributed integration testing</text>
+<rect x="70.0" y="478.0" width="200.0" height="128.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="82.0" y="500.0" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Test coordinator</text>
+<text x="82.0" y="522.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Shards suites</text>
+<text x="82.0" y="538.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Timeouts and retries</text>
+<text x="82.0" y="554.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">A small control plane</text>
+<rect x="300.0" y="478.0" width="180.0" height="128.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="312.0" y="500.0" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Job queue</text>
+<text x="312.0" y="522.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Workers pull jobs</text>
+<text x="312.0" y="538.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">newsfeed-it · users-it</text>
+<text x="312.0" y="554.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Visible backlog</text>
+<rect x="510.0" y="478.0" width="560.0" height="128.0" rx="7" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="522.0" y="500.0" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Ephemeral workers  ×1000s</text>
+<rect x="1100.0" y="478.0" width="225.0" height="128.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="1112.0" y="500.0" font-size="13" font-weight="700" fill="#2C2C2A" text-anchor="start">Results → PR</text>
+<text x="1112.0" y="522.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Status + comments</text>
+<text x="1112.0" y="538.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Required checks block</text>
+<text x="1112.0" y="554.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Artifacts retained</text>
+<rect x="524.0" y="512.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="568.0" y="512.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="612.0" y="512.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="656.0" y="512.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="700.0" y="512.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="744.0" y="512.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="788.0" y="512.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="832.0" y="512.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="876.0" y="512.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="920.0" y="512.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="964.0" y="512.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="1008.0" y="512.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="524.0" y="532.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="568.0" y="532.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="612.0" y="532.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="656.0" y="532.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="700.0" y="532.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="744.0" y="532.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="788.0" y="532.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="832.0" y="532.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="876.0" y="532.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="920.0" y="532.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="964.0" y="532.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="1008.0" y="532.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="524.0" y="552.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="568.0" y="552.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="612.0" y="552.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="656.0" y="552.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="700.0" y="552.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="744.0" y="552.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="788.0" y="552.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="832.0" y="552.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="876.0" y="552.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="920.0" y="552.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="964.0" y="552.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="1008.0" y="552.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="524.0" y="572.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="568.0" y="572.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="612.0" y="572.0" width="36.0" height="14.0" 
