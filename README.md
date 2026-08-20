@@ -1,6 +1,6 @@
 # IDP Architecture Map
 
-A living map of a mature internal developer platform, source to production. Six views share a top tab bar.
+A living map of a mature internal developer platform, source to production. Seven views share a top tab bar.
 
 ## Views
 
@@ -12,6 +12,7 @@ A living map of a mature internal developer platform, source to production. Six 
 | **Agents** | `agents.html` | [Agents](agents.html) · https://jacobdurrah.github.io/idp-architecture/agents.html | Light vertical poster. Where agentic agents sit from developer to observability, and which spaces are stigmergic (the environment holds the trace). |
 | **Metal** | `metal.html` | [Metal](metal.html) · https://jacobdurrah.github.io/idp-architecture/metal.html | Light vertical poster. The physical path of one HTTP request: radio, fiber, carrier hotels, colo, racks, silicon. The other tabs sit on this. |
 | **Scenarios** | `scenarios.html` | [Scenarios](scenarios.html) · https://jacobdurrah.github.io/idp-architecture/scenarios.html | Player, not another map. Three stories (Ship, Serve, Break) through `newsfeed-service:v1827` and PR #4821. Each frame cites v2, Agents, or Metal. A fourth story is another shard, not a new layout. |
+| **Plane** | `plane.html` | [Plane](plane.html) · https://jacobdurrah.github.io/idp-architecture/plane.html | Light vertical poster. The utilities the request actually uses (`newsfeed-service:v1827`), and when to pick each one. |
 
 Open a tab, tap a box, read the panel. More pages can land here later as sibling HTML files linked from `tabs.css` / `.site-tabs`.
 
@@ -44,6 +45,6 @@ Two files, two jobs on the dark map:
    - `HITS` — invisible click targets over boxes.
    - `window.IDP_CONTENT` (top of the file) — drawer prose (`name`, `plane`, `does`, `triggers`, `stores`, `talksTo`).
 
-The light posters (`golden.html`, `v2.html`, `agents.html`, `metal.html`, `scenarios.html`) keep CSS, SVG, and `DATA` in sibling shards. Edit a box by changing the SVG and the matching `DATA` key. Shared chrome is `tabs.css`.
+The light posters (`golden.html`, `v2.html`, `agents.html`, `metal.html`, `scenarios.html`, `plane.html`) keep CSS, SVG, and `DATA` in sibling shards. Edit a box by changing the SVG and the matching `DATA` key. Shared chrome is `tabs.css`.
 
 The PNG at `og.png` is only the social/OG preview. The live Map view is always the SVG — do not swap it for a bitmap.
