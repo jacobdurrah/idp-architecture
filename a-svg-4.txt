@@ -1,0 +1,59 @@
+<text x="420.0" y="1824.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">apply / prune / drift</text>
+<text x="56.0" y="1880.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Not a CI job. Cluster never receives CI credentials. Console clicks are drift.</text>
+<rect x="616.0" y="1734.0" width="340.0" height="188.0" rx="8" fill="#E8E4F8" stroke="#534AB7" stroke-width="1.6"/>
+<text x="632.0" y="1760.0" font-size="15" font-weight="750" fill="#3C3489" text-anchor="start">Admission  ·  API</text>
+<text x="632.0" y="1786.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">OPA  ·  Kyverno  ·  Pod Security</text>
+<text x="632.0" y="1804.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Provenance + registry allow-list</text>
+<text x="632.0" y="1822.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Resource limits, no privileged</text>
+<text x="632.0" y="1840.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">CI already asked. Admit asks again.</text>
+<text x="632.0" y="1858.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">A deny is a trace on the Argo board.</text>
+<g class="badge"><circle cx="940.0" cy="1746.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="940.0" y="1750.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">10</text></g>
+<rect x="972.0" y="1734.0" width="388.0" height="188.0" rx="10" fill="#FBEAF2" stroke="#9B3D6A" stroke-width="1.6"/>
+<text x="988.0" y="1760.0" font-size="15" font-weight="750" fill="#72264C" text-anchor="start">GitOps agent</text>
+<text x="988.0" y="1786.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Reads drift or admission deny</text>
+<text x="988.0" y="1804.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Opens a revert or manifest fix</text>
+<text x="988.0" y="1822.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Writes Git. Never kubectl-applies.</text>
+<text x="988.0" y="1840.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Never clicks Sync to hide drift</text>
+<text x="988.0" y="1858.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Cluster is a projection of Git</text>
+<line x1="600.0" y1="1828.0" x2="612.0" y2="1828.0" stroke="#534AB7" stroke-width="1.6" marker-end="url(#arrO)"/>
+<rect x="40.0" y="1938.0" width="1320.0" height="80.0" rx="8" fill="#FCEEF2" stroke="#C45B78" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="56.0" y="1964.0" font-size="13" font-weight="700" fill="#9B3D6A" text-anchor="start">Argo sync status / drift / admission decisions  ·  stigmergic space</text>
+<text x="56.0" y="1986.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">The GitOps agent reads a drift or a deny and opens a revert or a fix in Git. Silence on this board is a signal, not a pass.</text>
+<rect x="40.0" y="2038.0" width="880.0" height="260.0" rx="10" fill="#F7FBF9" stroke="#1D9E75" stroke-width="1.6"/>
+<text x="56.0" y="2062.0" font-size="14" font-weight="750" fill="#0F6E56" text-anchor="start">Runtime   ·   image pull + rollout   ·   ingress, HPA, CA</text>
+<g class="badge"><circle cx="904.0" cy="2052.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="904.0" y="2056.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">11</text></g>
+<rect x="56.0" y="2078.0" width="300.0" height="70.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.8"/>
+<text x="70.0" y="2100.0" font-size="14" font-weight="750" fill="#085041" text-anchor="start">News feed service  x4</text>
+<text x="70.0" y="2120.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">v1827  ·  sha256:9f3a…c21  ·  HPA</text>
+<rect x="368.0" y="2078.0" width="168.0" height="70.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="378.0" y="2102.0" font-size="12" font-weight="700" fill="#085041" text-anchor="start">User  x3</text>
+<text x="378.0" y="2122.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Profile, graph, authn</text>
+<rect x="548.0" y="2078.0" width="168.0" height="70.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="558.0" y="2102.0" font-size="12" font-weight="700" fill="#085041" text-anchor="start">Post  x3</text>
+<text x="558.0" y="2122.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Create / read posts</text>
+<rect x="728.0" y="2078.0" width="168.0" height="70.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="738.0" y="2102.0" font-size="12" font-weight="700" fill="#085041" text-anchor="start">Ranking  x3</text>
+<text x="738.0" y="2122.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Candidates + rank</text>
+<rect x="56.0" y="2162.0" width="188.0" height="56.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="66.0" y="2184.0" font-size="12" font-weight="700" fill="#085041" text-anchor="start">Media  x2</text>
+<text x="66.0" y="2202.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Metadata + authz</text>
+<rect x="256.0" y="2162.0" width="188.0" height="56.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="266.0" y="2184.0" font-size="12" font-weight="700" fill="#085041" text-anchor="start">Notifications  x2</text>
+<text x="266.0" y="2202.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Fan-out, push, email</text>
+<rect x="456.0" y="2162.0" width="188.0" height="56.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="466.0" y="2184.0" font-size="12" font-weight="700" fill="#085041" text-anchor="start">Ingress / gateway</text>
+<text x="466.0" y="2202.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Host + path to feed</text>
+<rect x="656.0" y="2162.0" width="120.0" height="56.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="668.0" y="2184.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">HPA</text>
+<text x="668.0" y="2202.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">CPU / RPS</text>
+<rect x="788.0" y="2162.0" width="116.0" height="56.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="800.0" y="2184.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">CA</text>
+<text x="800.0" y="2202.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Nodes follow</text>
+<text x="56.0" y="2248.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Same Prometheus metrics as the dashboards. Scale-out is not a Terraform apply.</text>
+<text x="56.0" y="2268.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">A digest that never serves a request is a souvenir.</text>
+<rect x="936.0" y="2038.0" width="424.0" height="140.0" rx="10" fill="#FCEEF2" stroke="#C45B78" stroke-width="1.8" stroke-dasharray="6 4"/>
+<text x="952.0" y="2064.0" font-size="13" font-weight="700" fill="#9B3D6A" text-anchor="start">Canary verdict / deploy-health</text>
+<text x="952.0" y="2088.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Baseline vs candidate SLIs</text>
+<text x="952.0" y="2106.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Silence is not a canary pass</text>
+<text x="952.0" y="2124.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Fail writes a git revert</text>
+<text x="952.0" y="2142.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Pass is a Git pointer, not a yes</text>
