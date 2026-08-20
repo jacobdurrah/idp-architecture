@@ -14,6 +14,23 @@ A living map of a mature internal developer platform, source to production. Five
 
 Open a tab, tap a box, read the panel. More pages can land here later as sibling HTML files linked from `tabs.css` / `.site-tabs`.
 
+## Testing — run it yourself
+
+Two ways to run the full test suite, no code knowledge needed:
+
+- **A button (no setup):** open the repo's **Actions** tab → **Tests** → **Run workflow**. It runs the same suite CI runs on every push, and attaches a Playwright HTML report to the run.
+- **A command (local):** from this directory:
+
+  ```bash
+  npm install            # first time only
+  npx playwright install # first time only, for the browser tests
+  npm test               # runs everything
+  ```
+
+  Slices: `npm run test:unit` (catalog + schema, fast, no browser), `npm run test:e2e` (browser behavior: hash-open, dock, end-to-end question flow).
+
+Tests are written **before** the feature (test-first, see `ledger/tasks.md` §10): a task is done when its suite is green here. `tests/unit/catalog.test.mjs` and `tests/contract/schema.test.mjs` are placeholders until the Test-Author fills them.
+
 ## Run locally
 
 Any static file server works. From this directory:
