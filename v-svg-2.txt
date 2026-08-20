@@ -1,0 +1,65 @@
+0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="724.0" y="674.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="772.0" y="674.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="820.0" y="674.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="868.0" y="674.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="916.0" y="674.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="484.0" y="696.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="532.0" y="696.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="580.0" y="696.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="628.0" y="696.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="676.0" y="696.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="724.0" y="696.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="772.0" y="696.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="820.0" y="696.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="868.0" y="696.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="916.0" y="696.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="484.0" y="718.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="532.0" y="718.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="580.0" y="718.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="628.0" y="718.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="676.0" y="718.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="724.0" y="718.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="772.0" y="718.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="820.0" y="718.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="868.0" y="718.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="916.0" y="718.0" width="40.0" height="16.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<text x="720.0" y="744.0" font-size="12" font-weight="650" fill="#085041" text-anchor="middle">newsfeed-it · users-it · contract · e2e-feed · policy-it</text>
+<line x1="260.0" y1="686.0" x2="276.0" y2="686.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<line x1="450.0" y1="686.0" x2="466.0" y2="686.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<line x1="970.0" y1="686.0" x2="986.0" y2="686.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<rect x="40.0" y="810.0" width="1320.0" height="400.0" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<text x="56.0" y="834.0" font-size="15" font-weight="750" fill="#185FA5" text-anchor="start">Build, registry, GitOps, admission</text>
+<rect x="55.0" y="850.0" width="210.0" height="120.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="67.0" y="874.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">Build service</text>
+<text x="67.0" y="896.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">OCI from the green SHA</text>
+<text x="67.0" y="912.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">No :latest</text>
+<text x="67.0" y="928.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Argo never builds</text>
+<g class="badge"><circle cx="257.0" cy="846.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="257.0" y="850.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">6</text></g>
+<rect x="290.0" y="850.0" width="250.0" height="120.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="302.0" y="874.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">Artifact registry</text>
+<text x="302.0" y="896.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">CI writes · nodes pull</text>
+<text x="302.0" y="912.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">SBOM + cosign</text>
+<text x="302.0" y="928.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Allow-listed only</text>
+<g class="badge"><circle cx="532.0" cy="846.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="532.0" y="850.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">7</text></g>
+<rect x="560.0" y="850.0" width="250.0" height="120.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="572.0" y="874.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">newsfeed-service:v1827</text>
+<text x="572.0" y="896.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">sha256:9f3a…c21</text>
+<text x="572.0" y="912.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">linux/amd64 · 184 MB</text>
+<text x="572.0" y="928.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Retag, do not rebuild</text>
+<rect x="830.0" y="850.0" width="240.0" height="120.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="842.0" y="874.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">platform-gitops bump</text>
+<text x="842.0" y="896.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Digest into Deployment</text>
+<text x="842.0" y="912.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">That write is the deploy</text>
+<text x="842.0" y="928.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">CI has no cluster creds</text>
+<g class="badge"><circle cx="1062.0" cy="846.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="1062.0" y="850.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">8</text></g>
+<rect x="1092.0" y="850.0" width="248.0" height="120.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="1104.0" y="874.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">CI ends · CD begins</text>
+<text x="1104.0" y="896.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">CI ends at Git</text>
+<text x="1104.0" y="912.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">CD is Argo, always on</text>
+<text x="1104.0" y="928.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Arrow of record</text>
+<line x1="265.0" y1="912.0" x2="286.0" y2="912.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<line x1="540.0" y1="910.0" x2="556.0" y2="910.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<line x1="810.0" y1="910.0" x2="826.0" y2="910.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<line x1="1070.0" y1="910.0" x2="1088.0" y2="910.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<rect x="55.0" y="988.0" width="820.0" height="200.0" rx="8" fill="#F5F9FC" stroke="#37
