@@ -1,0 +1,64 @@
+"400" fill="#5F5E5A" text-anchor="start">Stateless assembly  ·  HPA-managed  ·  v1827</text>
+<rect x="508.0" y="1576.0" width="184.0" height="70.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="518.0" y="1600.0" font-size="12" font-weight="700" fill="#085041" text-anchor="start">User  ×3</text>
+<text x="518.0" y="1620.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Profile, graph, authn</text>
+<rect x="704.0" y="1576.0" width="184.0" height="70.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="714.0" y="1600.0" font-size="12" font-weight="700" fill="#085041" text-anchor="start">Post  ×3</text>
+<text x="714.0" y="1620.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Create / read posts</text>
+<rect x="100.0" y="1682.0" width="184.0" height="70.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="110.0" y="1706.0" font-size="12" font-weight="700" fill="#085041" text-anchor="start">Ranking  ×3</text>
+<text x="110.0" y="1726.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Candidates + rank</text>
+<rect x="300.0" y="1682.0" width="184.0" height="70.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="310.0" y="1706.0" font-size="12" font-weight="700" fill="#085041" text-anchor="start">Media  ×2</text>
+<text x="310.0" y="1726.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Metadata + authz</text>
+<rect x="508.0" y="1682.0" width="184.0" height="70.0" rx="6" fill="#D8F3E7" stroke="#1D9E75" stroke-width="1.4"/>
+<text x="518.0" y="1706.0" font-size="12" font-weight="700" fill="#085041" text-anchor="start">Notifications  ×2</text>
+<text x="518.0" y="1726.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Fan-out, push, email</text>
+<rect x="100.0" y="1768.0" width="788.0" height="122.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="114.0" y="1790.0" font-size="13" font-weight="700" fill="#185FA5" text-anchor="start">Autoscaling  ·  signals from Prometheus, not from CI</text>
+<rect x="114.0" y="1804.0" width="360.0" height="70.0" rx="5" fill="#D6E8F7" stroke="#378ADD" stroke-width="1.4"/>
+<text x="128.0" y="1828.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">Horizontal pod autoscaler</text>
+<text x="128.0" y="1846.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Replicas follow CPU / RPS / custom</text>
+<rect x="496.0" y="1804.0" width="376.0" height="70.0" rx="5" fill="#D6E8F7" stroke="#378ADD" stroke-width="1.4"/>
+<text x="510.0" y="1828.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">Cluster autoscaler</text>
+<text x="510.0" y="1846.0" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="start">Nodes follow unschedulable pods</text>
+<text x="100.0" y="2090.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Admission allow-list · rolling deploy replaces the old replica set · LB shifts traffic</text>
+<text x="948.0" y="1328.0" font-size="13" font-weight="700" fill="#854F0B" text-anchor="start">Managed data services</text>
+<rect x="940.0" y="1344.0" width="390.0" height="100.0" rx="7" fill="#F8E8C4" stroke="#EF9F27" stroke-width="1.4"/>
+<text x="954.0" y="1372.0" font-size="14" font-weight="750" fill="#633806" text-anchor="start">Cloud SQL</text>
+<text x="954.0" y="1394.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Users, posts, relational truth</text>
+<text x="954.0" y="1412.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Provisioned by Terraform</text>
+<rect x="940.0" y="1456.0" width="390.0" height="100.0" rx="7" fill="#F8E8C4" stroke="#EF9F27" stroke-width="1.4"/>
+<text x="954.0" y="1484.0" font-size="14" font-weight="750" fill="#633806" text-anchor="start">Redis</text>
+<text x="954.0" y="1506.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Cache, short-lived coordination</text>
+<text x="954.0" y="1524.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Not the source of truth</text>
+<rect x="940.0" y="1568.0" width="390.0" height="100.0" rx="7" fill="#F8E8C4" stroke="#EF9F27" stroke-width="1.4"/>
+<text x="954.0" y="1596.0" font-size="14" font-weight="750" fill="#633806" text-anchor="start">Kafka</text>
+<text x="954.0" y="1618.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Async fan-out, replay</text>
+<text x="954.0" y="1636.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Notify, invalidate, index</text>
+<rect x="940.0" y="1680.0" width="390.0" height="100.0" rx="7" fill="#F8E8C4" stroke="#EF9F27" stroke-width="1.4"/>
+<text x="954.0" y="1708.0" font-size="14" font-weight="750" fill="#633806" text-anchor="start">Object storage</text>
+<text x="954.0" y="1730.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Media bytes</text>
+<text x="954.0" y="1748.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">CDN via signed URLs</text>
+<rect x="940.0" y="1792.0" width="390.0" height="100.0" rx="7" fill="#F8E8C4" stroke="#EF9F27" stroke-width="1.4"/>
+<text x="954.0" y="1820.0" font-size="14" font-weight="750" fill="#633806" text-anchor="start">Search</text>
+<text x="954.0" y="1842.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Derived index of posts + people</text>
+<text x="954.0" y="1860.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Fed from Kafka, not the GET path</text>
+<g class="badge"><circle cx="28.0" cy="1484.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="28.0" y="1488.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">9</text></g>
+<text x="28.0" y="1510.0" font-size="10" font-weight="600" fill="#0C447C" text-anchor="middle">user</text>
+<text x="28.0" y="1522.0" font-size="10" font-weight="600" fill="#0C447C" text-anchor="middle">traffic</text>
+<rect x="40.0" y="2180.0" width="1320.0" height="430.0" rx="12" fill="#F6F5FB" stroke="#AFA9EC" stroke-width="1.8"/>
+<text x="56.0" y="2206.0" font-size="15" font-weight="750" fill="#534AB7" text-anchor="start">Observability   ·   one collection layer, interchangeable backends</text>
+<rect x="55.0" y="2224.0" width="190.0" height="130.0" rx="7" fill="#E8E4F8" stroke="#AFA9EC" stroke-width="1.4"/>
+<text x="67.0" y="2246.0" font-size="13" font-weight="700" fill="#3C3489" text-anchor="start">OTel SDKs</text>
+<text x="67.0" y="2266.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">In-process + node agent</text>
+<text x="67.0" y="2282.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Metrics, logs, traces</text>
+<text x="67.0" y="2298.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">One API for every service</text>
+<rect x="270.0" y="2224.0" width="190.0" height="130.0" rx="7" fill="#E8E4F8" stroke="#AFA9EC" stroke-width="1.4"/>
+<text x="282.0" y="2246.0" font-size="13" font-weight="700" fill="#3C3489" text-anchor="start">OTel collector</text>
+<text x="282.0" y="2266.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Always-on hop</text>
+<text x="282.0" y="2282.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Sample, redact, route</text>
+<text x="282.0" y="2298.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Not a warehouse</text>
+<rect x="490.0" y="2214.0" width="200.0" height="72.0" rx="7" fill="#E8E4F8" stroke="#AFA9EC" stroke-width="1.4"/>
+<text x="502.0" y="2236.0" font-size="13" font-weight="700" fill="#3C3489" text-anchor="start">Prometheus</text>
+<text x="502.0" y="2256.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anc
