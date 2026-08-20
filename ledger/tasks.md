@@ -4,6 +4,8 @@ _Completing these tasks produces **v1** of the on-site guide: a grounded Q&A doc
 
 _**The thesis in one line:** three jobs, three tools on the agent. v1 ships the first job (Questions) and its two tools (`lookup`, `open_box`). v2 adds Feedback (`flag_clarity`). v3 adds Deeper understanding (tutor). Everything is grounded in `catalog.json`, generated from the same shards the pages load — the agent never invents a hop._
 
+_**The site is a living document.** We keep enhancing the diagrams, add technologies, and add new content kinds (step-by-step workflows like a rollback, a code-lifecycle journey from IDE edit to binary running in a container on a pod on a VM on a server). The agent must (a) stay in sync automatically as the posters grow and (b) feed the questions people ask back into making the diagrams clearer. The design in §8 (Living site) is how those two loops stay closed; the frozen contracts in §7 grow **additively** so growth never triggers a rewrite._
+
 _**Status legend:** ✅ done · 🟡 partial · ⬜ not started. **Owners:** 🤖 Claude Code / Cursor agents build · 👤 Jacob reviews + applies copy edits + holds Vercel/GitHub credentials. The on-site agent never pushes to `main`._
 
 ---
@@ -31,6 +33,9 @@ _**Status legend:** ✅ done · 🟡 partial · ⬜ not started. **Owners:** �
 | **FR-5** | eve agent: grounded Q&A citing a data-id, `lookup` + `open_box` tools, refuses to invent boxes | ⬜ | IG-04 |
 | **FR-6** | Embed chat UI at `/embed`, speaks the protocol, streams replies, "Open on poster" affordance | ⬜ | IG-04 |
 | **FR-7** | End-to-end: "why is transatlantic 65–75 ms?" from Golden path lands on Metal `e-subsea` | ⬜ | IG-05 |
+| **FR-8** | Catalog auto-regenerates on any shard/diagram change (CI), so grounding never drifts from the posters | ⬜ | IG-08 |
+| **FR-9** | Question telemetry: each question logged with hit/confidence, feeding a ranked diagram-clarity backlog | ⬜ | IG-09 |
+| **FR-10** | Content kinds beyond static boxes: sequenced workflows + a code-lifecycle journey, carried by catalog + protocol | ⬜ | IG-10, IG-11 |
 
 ### 3. Non-functional requirements (NFR)
 | ID | Requirement | Status | Where |
@@ -42,6 +47,8 @@ _**Status legend:** ✅ done · 🟡 partial · ⬜ not started. **Owners:** �
 | **NFR-5 Copy voice** | Site + agent copy uses commas/periods/parentheses, no em dashes | ⬜ | IG-01, IG-04 |
 | **NFR-6 Cost guard** | No wide-open high-cost model with no limit; simple per-IP/session rate limit if easy | ⬜ | IG-04 |
 | **NFR-7 Freshness** | Agent fetches `catalog.json` at chat start, so a published copy fix teaches the next day | ⬜ | IG-01, IG-04 |
+| **NFR-8 Evolvability** | Adding a tab / technology / shard / content kind needs no agent code change; generator discovers content, agent re-fetches, schema grows additively | ⬜ | IG-01, IG-08 |
+| **NFR-9 No stale grounding** | Catalog carries a version/etag; a publish invalidates the agent's cache so answers match what is on screen | ⬜ | IG-04, IG-08 |
 
 ### 4. Architecture (high level)
 ```mermaid
@@ -69,13 +76,17 @@ One record per `(tab, id)`, generated from `window.IDP_DATA` (keys `n/p/w/y/d` +
 ```json
 {
   "id": "e-subsea", "tab": "metal", "name": "Subsea hop", "plane": "photon",
+  "kind": "box",                       // "box" | "sequence" | "step"  (default "box")
+  "badge": 6,                          // optional: numbered curriculum position (Golden 1-12, Metal 1-13)
   "what": "...", "why": "...", "notes": ["..."],
   "medium": "optional", "speed": "optional", "latency": "optional",
   "bandwidth": "optional", "owner": "optional",
+  "tech": ["fiber", "dwdm"],           // optional: technology tags, so "what uses DWDM?" retrieves
+  "seq": { "of": "rollback", "index": 3, "prev": "s-detect", "next": "s-drain" },  // only when kind != "box"
   "href": "/idp-architecture/metal.html#e-subsea"
 }
 ```
-Generated, never hand-written. If a naive push truncates (this repo has bitten tools around ~8–11KB), split into `catalog-0.json …` + a manifest; prefer one file if it stays reasonable.
+Generated, never hand-written, and **tab-agnostic**: the generator globs `*-data-*.js` and Map content, so a new tab, technology, or shard flows into the catalog with **no generator edit**. `kind`/`seq` carry sequenced content (workflows, the code-lifecycle journey) alongside today's static boxes; `tech` and `badge` are optional retrieval/curriculum hints. Unknown fields are ignored by v1 readers, so the schema grows additively (§7). Ship a top-level `version`/`generatedAt` so a publish can bust the agent's cache (NFR-9). If a naive push truncates (this repo has bitten tools around ~8–11KB), split into `catalog-0.json …` + a manifest; prefer one file if it stays reasonable.
 
 ### 6. Interfaces
 - **Tools (v1):** `lookup(id | query) → up to ~8 catalog records` (fetch + cache `catalog.json` from `IDP_CATALOG_URL`, default `https://jacobdurrah.github.io/idp-architecture/catalog.json`). `open_box(tab, id) → {ok:true}` after the embed posts `idp.open`; only the five tab names, only ids that exist in the catalog.
@@ -86,6 +97,18 @@ Generated, never hand-written. If a naive push truncates (this repo has bitten t
 1. **catalog schema** — the §5 record shape. Stream D builds `lookup` against a fixture of this; Stream A produces the real file. They meet only at integration.
 2. **postMessage protocol** — site→agent `{type:"idp.context", tab, id, href}` (id may be `"overview"`/omitted); agent→site `{type:"idp.open", tab, id}`. Same tab → `render(id)`; different tab → navigate to `<file>#id`. Tab→file: map=index.html, golden=golden.html, v2=v2.html, agents=agents.html, metal=metal.html. Ignore messages from any origin outside `jacobdurrah.github.io` + `localhost`. No other message types in v1.
 3. **`idp:render` seam** — the one seam Streams B and C share. On every `render(id)`, the UI files dispatch `window.dispatchEvent(new CustomEvent('idp:render', {detail:{id, tab}}))`. B owns firing it (inside `render`); C listens to send `idp.context`. Neither touches the other's code.
+
+**Additive-only evolution (the rule that lets the site grow without a rewrite).** New fields, `kind`s, tabs, and technologies are added to the catalog and read by the agent **without changing these three contracts**. `idp.open` may later carry an optional `step` index for sequenced content; v1 pages ignore it. `idp.context` may carry `kind`; v1 agents ignore it. A contract changes only by **extension** — never by breaking a name v1 relies on. This is what makes §8's living-site loops safe.
+
+### 8. Living site — the site is a document that improves itself
+The posters are not frozen. We add technologies, add tabs, and turn questions into clearer diagrams. Three loops keep the agent and the diagrams growing together:
+- **Content → catalog → agent (freshness, closed by IG-08).** Any diagram/shard edit regenerates `catalog.json` in CI. The agent re-fetches per session and the `version` busts its cache, so a copy fix or a whole new box teaches the next day with **no agent redeploy**. Grounding can never drift from what is on screen.
+- **Questions → clarity backlog → better diagrams (the improvement loop, closed by IG-09).** Every question is logged with whether it hit a box and the agent's confidence. Misses, low-confidence answers, and "closest box" offers become a **ranked backlog of where a diagram is unclear**. Explicit "this is unclear" flags (IG-06) feed the same backlog. A human or a cloud agent enhances the shard; regeneration closes the loop. **The questions people actually ask are the spec for the next diagram.**
+- **New content kinds → same pipeline (IG-10, IG-11).** New material enters as new shards/tabs and rides the existing catalog + dock + agent with no rewrite:
+  - **Workflows / sequences** — step-by-step visuals like a rollback, modeled as a `kind:"sequence"` header over ordered `kind:"step"` records. The dock gains next/prev; the agent can "walk me through the rollback" and step the poster.
+  - **Code-lifecycle journey** — IDE human-readable edit → commit → build → binary → image layer → container → pod → VM → slat/server, showing what shape the code takes at each hop. This is the canonical sequence the tutor's "trace this build/request" (v3) leans on, and it reuses the same sequence machinery.
+
+Design rule for all of it: **evolution is additive** (§7). New fields/kinds/tabs never break v1's frozen names; v1 pages ignore what they do not understand.
 
 ---
 
@@ -107,6 +130,8 @@ _Four build streams, then one join. **A/B/C land in `idp-architecture` and share
 
 **Not parallel (integration, not building):** the dock's production origin is a one-line constant flip once D deploys; the e2e test needs everything merged. Both live in IG-05.
 
+**Foundational for the living site (§8):** IG-08 (catalog auto-regeneration in CI) depends only on IG-01 existing and should land with v1 — without it, grounding drifts the first time a shard is edited. IG-09 (question telemetry → clarity backlog), IG-10 (workflow/sequence kind), and IG-11 (code-lifecycle journey) are later phases but are pre-designed here so they land additively (§7).
+
 ---
 
 ## PHASE v1 — Dock + grounded Q&A + highlight
@@ -116,6 +141,7 @@ _Goal: a visitor asks a question on any tab, gets a grounded answer citing a dat
   - [ ] **Shim loader** captures `IDP_DATA`/`IDP_CONTENT` without a browser. *Enables: regenerating the catalog after any shard edit.*
   - [ ] **Field map + Metal extras** (`n/p/w/y/d` + medium/speed/latency/bandwidth/owner). *Enables: the agent can answer Metal's medium/speed/latency questions.*
   - [ ] **Dedup by `(tab, id)` + `href` per §5.** *Enables: `open_box`/hash-open target a unique, real box.*
+  - [ ] **Tab-agnostic discovery** (glob `*-data-*.js`, no hardcoded tab list) + top-level `version`/`generatedAt`. *Enables: NFR-8 — a new tab/technology/shard flows in with no generator edit; NFR-9 cache-busting.*
   - [ ] **Split-if-large fallback** (`catalog-0.json…` + manifest) only if one file truncates on push. *Enables: NFR-3 safe publish on a repo that has truncated large files.*
 - ⬜ **IG-02 — Hash-open + `idp:render` seam (Stream B).** 🤖 In `golden-ui.js`, `v2-ui.js`, `agents-ui.js`, `metal-ui.js`: after `bind()`, if `location.hash` (minus `#`) is a real `IDP_DATA` key, call `render(id)`; on every successful `render(id)` (taps included) `history.replaceState` the hash (no new history entry per tap) **and** dispatch the `idp:render` seam event (§7.3). Map (`app.js`) opens its drawer only if the hash maps to a real id, else ignores. *Accept: `metal.html#e-subsea` opens the Subsea panel with no click; tapping a box updates the hash without stacking history; clearing to overview may clear the hash; Map ignores an unknown hash.*
   - [ ] **Hash-on-load** for the four light tabs. *Enables: deep links + the agent's cross-tab `idp.open` navigate target.*
@@ -137,10 +163,23 @@ _Goal: a visitor asks a question on any tab, gets a grounded answer citing a dat
 - ⬜ **IG-05 — Integration + e2e + deploy (join).** 🤖👤 Merge A+B+C in `idp-architecture` (one PR: "Add guide dock, hash-open, and catalog.json"). Deploy `idp-guide` to Vercel; flip the dock's default origin to the production URL. Deploy the dock + hash + catalog to Pages (or a PR for Jacob to merge). *Accept: on the live (or preview/local) Golden path, asking "why is transatlantic 65–75 ms?" cites Metal `e-subsea` and navigates to `metal.html#e-subsea`; asking something not in the catalog does not invent a box; posters work with the dock collapsed or blocked; README on both repos explains local run + what v1 is + the postMessage protocol + env vars.*
 
 ## PHASE v2 — Feedback (out of scope for v1; design so it lands without a rewrite)
-- ⬜ **IG-06 — `flag_clarity` tool.** 🤖👤 Takes the open data-id + the visitor's note, files a GitHub issue on `jacobdurrah/idp-architecture` labeled `clarity` via Vercel Connect (no pasted token). The on-site agent does not push; Jacob or a cloud agent applies the edit from the issue. *(Not implemented in v1. The `idp.context` protocol already carries the open id it needs.)*
+- ⬜ **IG-06 — `flag_clarity` tool.** 🤖👤 Takes the open data-id + the visitor's note, files a GitHub issue on `jacobdurrah/idp-architecture` labeled `clarity` via Vercel Connect (no pasted token). The on-site agent does not push; Jacob or a cloud agent applies the edit from the issue. Feeds the **same diagram-clarity backlog** as IG-09. *(Not implemented in v1. The `idp.context` protocol already carries the open id it needs.)*
 
 ## PHASE v3 — Deeper understanding (out of scope for v1)
-- ⬜ **IG-07 — Tutor mode for real.** 🤖 Socratic follow-ups, "trace this request", "what dies if this box fails", quiz from the numbered badges (Golden 1–12, Metal 1–13). Durable eve sessions so a study thread survives a refresh. *(v1 ships only the `tutor` stub.)*
+- ⬜ **IG-07 — Tutor mode for real.** 🤖 Socratic follow-ups, "trace this request", "what dies if this box fails", quiz from the numbered badges (Golden 1–12, Metal 1–13). Durable eve sessions so a study thread survives a refresh. Leans on the code-lifecycle sequence (IG-11) for "trace this build". *(v1 ships only the `tutor` stub.)*
+
+## PHASE — Living site & new content types (the site grows over time; §8)
+_These keep the agent in sync as the diagrams grow and turn questions into clearer diagrams. All land additively on the §7 contracts — no rewrite of v1._
+- ⬜ **IG-08 — Catalog auto-regeneration (CI).** 🤖 *(v1.5, foundational — land with v1.)* Wrap IG-01's generator as an npm script + a GitHub Action that regenerates `catalog.json` on any change to `*-data-*.js`/`content-*.js` and commits/publishes it to Pages, stamping a fresh `version`/`generatedAt`. *Accept: editing a shard's copy and pushing produces an updated `catalog.json` on Pages within the same CI run, with a new `version`; the agent picks up the new copy on its next session with no redeploy; a shard edit that forgets to regenerate fails the check.*
+  - [ ] **`npm run build:catalog`** wrapping `tools/build-catalog.js`. *Enables: one command to regenerate.*
+  - [ ] **GitHub Action on shard/content change** → regenerate + publish + version bump. *Enables: FR-8 no-drift grounding.*
+  - [ ] **Drift check** (CI fails if `catalog.json` is stale vs shards). *Enables: catches a hand-edit that skipped regeneration.*
+- ⬜ **IG-09 — Question telemetry + diagram-clarity backlog.** 🤖👤 *(v2.)* Log every question with the box it resolved to (if any) and the agent's confidence; roll misses, low-confidence answers, and "closest box" offers into a ranked backlog of where a diagram is unclear. Merges with IG-06's explicit flags. *Accept: a week of questions produces a ranked list of unclear/uncovered ids; a repeated miss on a topic with no box surfaces as a "needs a new box" item; PII/rate limits respected.*
+  - [ ] **Per-question log** (question, resolved id, confidence, tab). *Enables: the raw signal.*
+  - [ ] **Backlog rollup** (rank by frequency × miss/low-confidence). *Enables: "the questions are the spec for the next diagram".*
+  - [ ] **Feed into IG-06's `clarity` backlog** (one queue, two sources). *Enables: humans/cloud agent act on both explicit and inferred gaps.*
+- ⬜ **IG-10 — Workflow / sequence content kind (rollback).** 🤖 *(v3/v4.)* A `kind:"sequence"` header over ordered `kind:"step"` records (e.g. a rollback: detect → freeze → drain → revert → verify). Generator emits `seq`; the dock gains next/prev and the agent can step the poster; `idp.open` optionally carries `step` (additive, §7). First target: the rollback workflow. *Accept: a rollback sequence renders as ordered steps a visitor can walk; "walk me through a rollback" steps the poster start-to-finish citing each step id; static boxes are unaffected.*
+- ⬜ **IG-11 — Code-lifecycle journey.** 🤖 *(v4.)* The canonical sequence: IDE human-readable edit → commit → build → binary → image layer → container → pod → VM → slat/server, showing what shape the code takes and what transforms it at each hop. Built on IG-10's sequence machinery; anchors the tutor's "trace this build/request" (IG-07). *Accept: the journey renders as a walkable sequence tying back to the existing server-to-pod drill on Metal; "what shape is my code inside the container?" lands on the right step and cites it.*
 
 ---
 
@@ -152,3 +191,4 @@ _Goal: a visitor asks a question on any tab, gets a grounded answer citing a dat
 
 ## Log
 - 2026-08-20 — Ledger opened in the shared `ledger/tasks.md` format. v1 brief locked; design + four parallel streams (A/B/C/D) drafted; three contracts frozen (catalog schema, postMessage protocol, `idp:render` seam). Next concrete action: IG-01.
+- 2026-08-20 — Added the **living-site** design (§8): the posters keep growing, so the catalog schema now carries `kind`/`seq`/`badge`/`tech` and a `version`, evolution is additive-only (§7), and two loops are specced — auto-regeneration for freshness (IG-08) and question-telemetry → clarity backlog for continuous diagram improvement (IG-09). New content kinds (workflow/sequence IG-10, code-lifecycle journey IG-11) ride the same pipeline. FR-8/9/10, NFR-8/9 added.
