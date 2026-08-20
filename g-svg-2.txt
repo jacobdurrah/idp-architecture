@@ -1,0 +1,62 @@
+rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="656.0" y="572.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="700.0" y="572.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="744.0" y="572.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="788.0" y="572.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="832.0" y="572.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="876.0" y="572.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="920.0" y="572.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="964.0" y="572.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<rect x="1008.0" y="572.0" width="36.0" height="14.0" rx="2" fill="#B7E4D0" stroke="#1D9E75" stroke-width="0.8"/>
+<text x="790.0" y="594.0" font-size="11" font-weight="500" fill="#085041" text-anchor="middle">Per-job namespace / compose / preview  ·  torn down after the run</text>
+<line x1="270.0" y1="542.0" x2="296.0" y2="542.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<line x1="480.0" y1="542.0" x2="506.0" y2="542.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<line x1="1070.0" y1="542.0" x2="1096.0" y2="542.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<g class="badge"><circle cx="1338.0" cy="410.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="1338.0" y="414.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">3</text></g>
+<rect x="40.0" y="670.0" width="1320.0" height="290.0" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<text x="56.0" y="694.0" font-size="15" font-weight="750" fill="#185FA5" text-anchor="start">Build, registry, GitOps</text>
+<rect x="55.0" y="705.0" width="220.0" height="100.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="67.0" y="729.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">Build service</text>
+<text x="67.0" y="751.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Immutable OCI from green SHA</text>
+<text x="67.0" y="767.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">No :latest in production</text>
+<g class="badge"><circle cx="268.0" cy="698.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="268.0" y="702.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">4</text></g>
+<rect x="310.0" y="705.0" width="280.0" height="100.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="322.0" y="729.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">Artifact registry</text>
+<text x="322.0" y="751.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">newsfeed-service:v1827</text>
+<text x="322.0" y="767.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">CI writes  ·  nodes pull</text>
+<g class="badge"><circle cx="582.0" cy="698.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="582.0" y="702.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">5</text></g>
+<rect x="625.0" y="705.0" width="240.0" height="100.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="637.0" y="729.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">Deploy manifests bump</text>
+<text x="637.0" y="751.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">Digest written into Git</text>
+<text x="637.0" y="767.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">That write is the deploy</text>
+<g class="badge"><circle cx="857.0" cy="698.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="857.0" y="702.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">6</text></g>
+<rect x="900.0" y="705.0" width="200.0" height="100.0" rx="7" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="912.0" y="729.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">CI vs CD</text>
+<text x="912.0" y="751.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">CI ends at Git</text>
+<text x="912.0" y="767.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">CD is Argo, always on</text>
+<g class="badge"><circle cx="1092.0" cy="698.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="1092.0" y="702.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">7</text></g>
+<line x1="275.0" y1="755.0" x2="306.0" y2="755.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<line x1="590.0" y1="755.0" x2="621.0" y2="755.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<line x1="865.0" y1="755.0" x2="896.0" y2="755.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<rect x="1120.0" y="705.0" width="220.0" height="100.0" rx="7" fill="#FFF8E8" stroke="#EF9F27" stroke-width="1.4"/>
+<text x="1132.0" y="729.0" font-size="13" font-weight="700" fill="#854F0B" text-anchor="start">No kubectl from CI</text>
+<text x="1132.0" y="751.0" font-size="12" font-weight="400" fill="#633806" text-anchor="start">Cluster never sees</text>
+<text x="1132.0" y="767.0" font-size="12" font-weight="400" fill="#633806" text-anchor="start">CI credentials</text>
+<rect x="55.0" y="822.0" width="1288.0" height="120.0" rx="8" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text x="70.0" y="844.0" font-size="13" font-weight="700" fill="#185FA5" text-anchor="start">Argo CD   watch  →  diff  →  sync     (always on, pull-based, not a CI job)</text>
+<rect x="80.0" y="858.0" width="250.0" height="68.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="94.0" y="882.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">Watch Git</text>
+<text x="94.0" y="902.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">manifests repo</text>
+<rect x="360.0" y="858.0" width="250.0" height="68.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="374.0" y="882.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">Compare</text>
+<text x="374.0" y="902.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">desired vs live</text>
+<rect x="640.0" y="858.0" width="250.0" height="68.0" rx="6" fill="#E4F0FA" stroke="#378ADD" stroke-width="1.4"/>
+<text x="654.0" y="882.0" font-size="13" font-weight="700" fill="#0C447C" text-anchor="start">Sync</text>
+<text x="654.0" y="902.0" font-size="12" font-weight="400" fill="#5F5E5A" text-anchor="start">apply / prune / drift</text>
+<line x1="330.0" y1="892.0" x2="354.0" y2="892.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<line x1="610.0" y1="892.0" x2="634.0" y2="892.0" stroke="#185FA5" stroke-width="1.6" marker-end="url(#arrC)"/>
+<text x="980.0" y="892.0" font-size="13" font-weight="600" fill="#0C447C" text-anchor="start">Cluster never gets CI credentials</text>
+<g class="badge"><circle cx="1338.0" cy="850.0" r="14" fill="#0C447C" stroke="#fff" stroke-width="2"/><text x="1338.0" y="854.6" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">8</text></g>
+<rect x="40.0" y="990.0" width="240.0" height="170.0" rx="10" fill="#F1F0EB" stroke="#8A8984" stroke-width="1.6"/>
+<text x="56.0" y="1018.0" font-size="15" font-weight="750" fill="#2C2C2A" text-anchor="start">Internet users</text>
+<text x="56.0" y="1042.0" font-size="12" font-weight="400" fill="#5F5E5A" text-
