@@ -9,7 +9,8 @@ var pw=L("Playwright","https://playwright.dev/"),kind=L("Kind","https://kind.sig
 var k8s=L("Kubernetes","https://kubernetes.io/"),kyv=L("Kyverno","https://kyverno.io/"),opa=L("Open Policy Agent","https://www.openpolicyagent.org/");
 var gh=L("GitHub","https://github.com/"),argo=L("Argo CD","https://argo-cd.readthedocs.io/en/stable/");
 var gw=L("Gateway API","https://gateway-api.sigs.k8s.io/"),env=L("Envoy","https://www.envoyproxy.io/");
-var ngx=L("ingress-nginx","https://kubernetes.github.io/ingress-nginx/"),cm=L("cert-manager","https://cert-manager.io/");
+var egw=L("Envoy Gateway","https://gateway.envoyproxy.io/");
+var cm=L("cert-manager","https://cert-manager.io/");
 var otel=L("OpenTelemetry","https://opentelemetry.io/"),prom=L("Prometheus","https://prometheus.io/"),gra=L("Grafana","https://grafana.com/");
 var tp=L("Grafana Tempo","https://github.com/grafana/tempo"),lk=L("Grafana Loki","https://github.com/grafana/loki");
 var kaf=L("Apache Kafka","https://kafka.apache.org/"),kst=L("Kafka Streams","https://kafka.apache.org/documentation/streams/");
@@ -23,11 +24,11 @@ put(T("GitHub Actions + ESLint + Jest + CodeQL + Trivy","One required check set 
 put(T("Testcontainers + Pact + Playwright + Kind","Real Postgres Redis Kafka in CI, contract against app-users, browser on GET /feed, cluster when the API server is the fixture. LocalStack only if the suite needs AWS APIs.",[tc,pact,pw,kind]),["step3","coordinator","workers","results"]);
 put(T("GitHub + Argo CD + Kubernetes","PR merges, Argo syncs the Deployment. CI does not talk to the cluster.",[gh,argo,k8s]),["git","argocd","repo-manifests","bump","repo-app","step6","step8"]);
 put(T("Kubernetes + Kyverno + OPA","Core plus admission plugins. Kyverno is the usual YAML path. OPA when the policy is Rego.",[k8s,kyv,opa]),["gate-policy"]);
-put(T("Gateway API + Envoy","One front door. nginx + cert-manager is the still-most-used twin. Gateway API + Envoy is the current direction.",[gw,env,ngx,cm]),["ingress"]);
+put(T("Gateway API + Envoy Gateway + cert-manager","One front door. Envoy Gateway is the maintained controller. ingress-nginx was the most-used Ingress controller; Kubernetes retired it March 2026.",[gw,egw,cm]),["ingress"]);
 put(T("OpenTelemetry + Prometheus + Grafana","One SDK, scrape or remote-write, one dashboard. Tempo or Loki join when you want traces or logs in the same Grafana.",[otel,prom,gra,tp,lk]),["otel-sdk","otel-collector"]);
 put(T("Kafka + Kafka Streams","One log, many consumers. Flink swaps in when the job is a long-running stream. Confluent is the sold cluster.",[kaf,kst]),["kafka"]);
 put(T("HPA + Cluster Autoscaler","HPA adds pods. CA adds nodes a few minutes later. One without the other stalls.",[hpa,ca]),["hpa","ca","autoscaling"]);
-put(T("AWS NLB + ingress-nginx","L4 VIP in front of L7. MetalLB + ingress-nginx on prem. Do not skip a layer and call it a design.",[nlb,ngx]),["lb"]);
+put(T("AWS NLB + Gateway API","L4 VIP in front of L7. MetalLB + Gateway API on prem. Do not pair a new cluster with retired ingress-nginx.",[nlb,gw]),["lb"]);
 put(T("Docker Build + Harbor or ECR","Image is the artifact. Registry is where Argo pulls from.",[db,hbr,ecr]),["registry","build","step4","step5"]);
 put(T("Prometheus + Alertmanager + PagerDuty","Fire, route, wake a human. Datadog is the sold all-in-one swap.",[prom,am,pd]),["alerts","datadog"]);
 put(T("Amazon VPC + Amazon EKS","The cluster lives in a VPC. Nodes are VMs in that network.",[vpc,eks]),["vpc","cloud","cloud-apis"]);
