@@ -12,12 +12,21 @@ var cql="https://codeql.github.com/",sg="https://semgrep.dev/",trivy="https://tr
 var dep="https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide";
 var tc="https://testcontainers.com/",pact="https://pact.io/",pw="https://playwright.dev/";
 var kind="https://kind.sigs.k8s.io/",ls="https://www.localstack.cloud/",cyp="https://www.cypress.io/";
+var tf="https://www.terraform.io/",hbr="https://goharbor.io/",ecr="https://aws.amazon.com/ecr/",db="https://docs.docker.com/build/";
+var nats="https://nats.io/",rmq="https://www.rabbitmq.com/";
+var lk="https://github.com/grafana/loki",tp="https://github.com/grafana/tempo",jae="https://www.jaegertracing.io/";
+var dd="https://docs.datadoghq.com/",am="https://prometheus.io/docs/alerting/latest/alertmanager/",pd="https://www.pagerduty.com/";
+var vpc="https://aws.amazon.com/vpc/",eks="https://aws.amazon.com/eks/";
 var kyv="https://kyverno.io/",opa="https://www.openpolicyagent.org/";
 function L(n,h){return {n:n,href:h}}
 var k8sL={latest:L("Kubernetes",k8sR),project:L("Kubernetes releases",k8sG)};
 var lint={latest:L("Ruff",ruff),common:[L("ESLint",esl),L("golangci-lint",gli)],project:L("ESLint",esl)};
 var unit={latest:L("Jest",jest),common:[L("pytest",pyt),L("JUnit",ju)],project:L("Jest",jest)};
-var integ={latest:L("Testcontainers",tc),common:[L("Pact",pact),L("Playwright",pw),L("Kind",kind),L("LocalStack",ls)],see:[L("Cypress",cyp)],project:L("Testcontainers",tc)};
+var integ={d:["Unit is Jest; distributed integration is Testcontainers / Pact / Playwright / Kind. newsfeed-service:v1827 uses Testcontainers for Postgres+Redis+Kafka, Pact against app-users, Playwright on GET /feed."],latest:L("Testcontainers",tc),common:[L("Pact",pact),L("Playwright",pw),L("Kind",kind),L("LocalStack",ls)],see:[L("Cypress",cyp)],project:L("Testcontainers",tc)};
+var arL={latest:L("Argo CD",argo),project:L("argoproj/argo-cd",argoG)};
+var tfL={latest:L("Terraform",tf),project:L("Terraform",tf)};
+var reg={latest:L("Harbor",hbr),common:[L("Amazon ECR",ecr)],project:L("Harbor",hbr)};
+var qL={latest:L("NATS",nats),common:[L("RabbitMQ",rmq)],project:L("NATS",nats)};
 var c={
 git:{latest:L("GitHub",gh),project:L("GitHub",gh)},
 ci:{
@@ -26,7 +35,7 @@ latest:L("GitHub Actions",gha),
 common:[L("ESLint",esl),L("Ruff",ruff),L("Jest",jest),L("Testcontainers",tc),L("CodeQL",cql),L("Trivy",trivy)],
 project:L("GitHub Actions",gha)
 },
-argocd:{latest:L("Argo CD",argo),project:L("argoproj/argo-cd",argoG)},
+argocd:arL,
 k8s:k8sL,apiserver:k8sL,
 ingress:{latest:L("Gateway API",gw),common:[L("ingress-nginx",ngx),L("Envoy",env)],project:L("Gateway API",gw)},
 sql:{latest:L("PostgreSQL",pg),project:L("PostgreSQL",pg)},
@@ -52,7 +61,19 @@ objstore:{latest:L("MinIO","https://min.io/"),common:[L("Amazon S3","https://aws
 search:{latest:L("OpenSearch","https://opensearch.org/"),common:[L("Elasticsearch","https://www.elastic.co/elasticsearch")],project:L("OpenSearch","https://opensearch.org/")},
 dns:{latest:L("CoreDNS","https://coredns.io/"),project:L("CoreDNS","https://coredns.io/")},
 "otel-collector":{latest:L("OpenTelemetry",otel),project:L("OpenTelemetry",otel)},
-cicd:{latest:L("GitHub Actions",gha),project:L("GitHub Actions",gha)}
+cicd:{latest:L("GitHub Actions",gha),project:L("GitHub Actions",gha)},
+step3:integ,registry:reg,build:{latest:L("Docker Build",db),project:L("Docker Build",db)},queue:qL,
+loki:{latest:L("Grafana Loki",lk),common:[L("Elasticsearch","https://www.elastic.co/elasticsearch")],project:L("grafana/loki",lk)},
+tempo:{latest:L("Grafana Tempo",tp),common:[L("Jaeger",jae),L("Datadog",dd)],project:L("grafana/tempo",tp)},
+datadog:{latest:L("Datadog",dd),buy:[L("Datadog",dd)],project:L("Datadog",dd)},
+terraform:tfL,"repo-infra":tfL,tfstate:tfL,
+"repo-manifests":arL,bump:arL,"repo-app":{latest:L("GitHub",gh),project:L("GitHub",gh)},
+"k8s-cp":k8sL,scheduler:k8sL,controllermgr:k8sL,nodepool:k8sL,
+autoscaling:{latest:L("Horizontal Pod Autoscaler",hpa),common:[L("Cluster Autoscaler",ca)],project:L("HPA docs",hpa)},
+alerts:{latest:L("Alertmanager",am),common:[L("PagerDuty",pd),L("Datadog",dd)],project:L("Alertmanager",am)},
+vpc:{latest:L("Amazon VPC",vpc),buy:[L("Amazon VPC",vpc)],project:L("Amazon VPC",vpc)},
+cloud:{latest:L("Amazon EKS",eks),buy:[L("Amazon EKS",eks)],project:L("Amazon EKS",eks)},
+"cloud-apis":{latest:L("Amazon EKS",eks),common:[L("Amazon VPC",vpc),L("Amazon ECR",ecr)],project:L("Amazon EKS",eks)}
 };
 Object.keys(c).forEach(function(k){if(D[k])Object.assign(D[k],c[k]);});
 })(window.IDP_DATA);
