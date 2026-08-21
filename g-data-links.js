@@ -17,6 +17,7 @@ var nats="https://nats.io/",rmq="https://www.rabbitmq.com/";
 var lk="https://github.com/grafana/loki",tp="https://github.com/grafana/tempo",jae="https://www.jaegertracing.io/";
 var dd="https://docs.datadoghq.com/",am="https://prometheus.io/docs/alerting/latest/alertmanager/",pd="https://www.pagerduty.com/";
 var vpc="https://aws.amazon.com/vpc/",eks="https://aws.amazon.com/eks/";
+var sb="https://spring.io/projects/spring-boot",nest="https://nestjs.com/";
 var kyv="https://kyverno.io/",opa="https://www.openpolicyagent.org/";
 function L(n,h){return {n:n,href:h}}
 var k8sL={latest:L("Kubernetes",k8sR),project:L("Kubernetes releases",k8sG)};
@@ -27,6 +28,7 @@ var arL={latest:L("Argo CD",argo),project:L("argoproj/argo-cd",argoG)};
 var tfL={latest:L("Terraform",tf),project:L("Terraform",tf)};
 var reg={latest:L("Harbor",hbr),common:[L("Amazon ECR",ecr)],project:L("Harbor",hbr)};
 var qL={latest:L("NATS",nats),common:[L("RabbitMQ",rmq)],project:L("NATS",nats)};
+var svc={latest:L("Spring Boot",sb),common:[L("NestJS",nest)],project:L("Spring Boot",sb)};
 var c={
 git:{latest:L("GitHub",gh),project:L("GitHub",gh)},
 ci:{
@@ -73,7 +75,10 @@ autoscaling:{latest:L("Horizontal Pod Autoscaler",hpa),common:[L("Cluster Autosc
 alerts:{latest:L("Alertmanager",am),common:[L("PagerDuty",pd),L("Datadog",dd)],project:L("Alertmanager",am)},
 vpc:{latest:L("Amazon VPC",vpc),buy:[L("Amazon VPC",vpc)],project:L("Amazon VPC",vpc)},
 cloud:{latest:L("Amazon EKS",eks),buy:[L("Amazon EKS",eks)],project:L("Amazon EKS",eks)},
-"cloud-apis":{latest:L("Amazon EKS",eks),common:[L("Amazon VPC",vpc),L("Amazon ECR",ecr)],project:L("Amazon EKS",eks)}
+"cloud-apis":{latest:L("Amazon EKS",eks),common:[L("Amazon VPC",vpc),L("Amazon ECR",ecr)],project:L("Amazon EKS",eks)},
+newsfeed:svc,"svc-user":svc,"svc-post":svc,"svc-ranking":svc,"svc-media":svc,"svc-notify":svc,
+step2:{latest:L("GitHub Actions",gha),common:[L("ESLint",esl),L("Jest",jest),L("Testcontainers",tc)],project:L("GitHub Actions",gha)},
+step4:{latest:L("Docker Build",db),project:L("Docker Build",db)},step5:reg,step6:arL,step8:arL
 };
 Object.keys(c).forEach(function(k){if(D[k])Object.assign(D[k],c[k]);});
 })(window.IDP_DATA);
