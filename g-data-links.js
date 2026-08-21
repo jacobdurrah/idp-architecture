@@ -46,7 +46,13 @@ ca:{latest:L("Cluster Autoscaler",ca),project:L("kubernetes/autoscaler",ca)},
 "gate-policy":{latest:L("Kyverno",kyv),common:[L("Open Policy Agent",opa)],project:L("Kyverno",kyv)},
 coordinator:Object.assign({d:["Shards newsfeed-it, users-it, contract, e2e-feed, policy-it onto Testcontainers, Pact, Playwright, or Kind."]},integ),
 workers:Object.assign({d:["A slot boots Testcontainers for Postgres+Redis+Kafka, Pact, Playwright, or Kind, then tears it down."]},integ),
-results:{latest:L("GitHub Actions",gha),common:[L("Testcontainers",tc),L("Pact",pact),L("Playwright",pw)],project:L("GitHub Actions",gha)}
+results:{latest:L("GitHub Actions",gha),common:[L("Testcontainers",tc),L("Pact",pact),L("Playwright",pw)],project:L("GitHub Actions",gha)},
+lb:{latest:L("MetalLB","https://metallb.io/"),common:[L("AWS Elastic Load Balancing","https://aws.amazon.com/elasticloadbalancing/")],project:L("MetalLB","https://metallb.io/")},
+objstore:{latest:L("MinIO","https://min.io/"),common:[L("Amazon S3","https://aws.amazon.com/s3/")],project:L("MinIO","https://min.io/")},
+search:{latest:L("OpenSearch","https://opensearch.org/"),common:[L("Elasticsearch","https://www.elastic.co/elasticsearch")],project:L("OpenSearch","https://opensearch.org/")},
+dns:{latest:L("CoreDNS","https://coredns.io/"),project:L("CoreDNS","https://coredns.io/")},
+"otel-collector":{latest:L("OpenTelemetry",otel),project:L("OpenTelemetry",otel)},
+cicd:{latest:L("GitHub Actions",gha),project:L("GitHub Actions",gha)}
 };
 Object.keys(c).forEach(function(k){if(D[k])Object.assign(D[k],c[k]);});
 })(window.IDP_DATA);
