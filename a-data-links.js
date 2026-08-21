@@ -63,7 +63,11 @@ loki:{latest:L("Grafana Loki",lk),common:[L("Elasticsearch","https://www.elastic
 tempo:{latest:L("Grafana Tempo",tp),common:[L("Jaeger",jae),L("Datadog",dd)],project:L("grafana/tempo",tp)},
 "infra-terraform":{latest:L("Terraform",tf),project:L("Terraform",tf)},
 alerts:{latest:L("Alertmanager",am),common:[L("PagerDuty",pd),L("Datadog",dd)],project:L("Alertmanager",am)},
-"obs-board":{latest:L("Grafana",gra),common:[L("Prometheus",prom),L("Datadog",dd)],project:L("Grafana",gra)}
+"obs-board":{latest:L("Grafana",gra),common:[L("Prometheus",prom),L("Datadog",dd)],project:L("Grafana",gra)},
+step3:gitL,step4:{latest:L("GitHub Actions",gha),common:[L("Testcontainers",tc),L("Jest",jest)],project:L("GitHub Actions",gha)},
+step6:{latest:L("Docker Build",db),project:L("Docker Build",db)},step7:{latest:L("Trivy",trivy),project:L("Trivy",trivy)},
+step8:arL,step9:arL,step2:gitL,
+"outage-board":{latest:L("Alertmanager",am),common:[L("PagerDuty",pd)],project:L("Alertmanager",am)}
 };
 Object.keys(c).forEach(function(k){if(D[k])Object.assign(D[k],c[k]);});
 })(window.IDP_DATA);
