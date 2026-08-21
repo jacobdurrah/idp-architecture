@@ -57,7 +57,21 @@ suites:integ,
 coordinator:Object.assign({d:["The coordinator shards newsfeed-it, users-it, contract, e2e-feed, policy-it.","Workers boot Testcontainers, Pact, Playwright, or Kind. Dagger if the runner is the house CI."]},integ),
 workers:Object.assign({d:["A slot boots Testcontainers (Postgres+Redis+Kafka), Pact, Playwright, or a Kind cluster, then tears it down."]},integ),
 results:{latest:L("GitHub Actions",gha),common:[L("Testcontainers",tc),L("Pact",pact),L("Playwright",pw)],project:L("GitHub Actions",gha)},
-admission:{latest:L("Kyverno",kyv),common:[L("Open Policy Agent",opa)],project:L("Kyverno",kyv)}
+admission:{latest:L("Kyverno",kyv),common:[L("Open Policy Agent",opa)],project:L("Kyverno",kyv)},
+git:{latest:L("GitHub","https://github.com/"),project:L("GitHub","https://github.com/")},
+prometheus:{latest:L("Prometheus",prom),project:L("Prometheus",prom)},
+grafana:{latest:L("Grafana",gra),project:L("Grafana",gra)},
+hpa:{latest:L("Horizontal Pod Autoscaler","https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/"),project:L("HPA docs","https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/")},
+ca:{latest:L("Cluster Autoscaler","https://github.com/kubernetes/autoscaler"),project:L("kubernetes/autoscaler","https://github.com/kubernetes/autoscaler")},
+lb:{latest:L("MetalLB","https://metallb.io/"),common:[L("HAProxy","https://www.haproxy.org/"),L("AWS Elastic Load Balancing","https://aws.amazon.com/elasticloadbalancing/")],buy:[L("AWS Elastic Load Balancing","https://aws.amazon.com/elasticloadbalancing/")],project:L("MetalLB","https://metallb.io/")},
+objstore:{latest:L("MinIO","https://min.io/"),common:[L("Ceph","https://ceph.io/"),L("Amazon S3","https://aws.amazon.com/s3/")],buy:[L("Amazon S3","https://aws.amazon.com/s3/")],project:L("MinIO","https://min.io/")},
+search:{latest:L("OpenSearch","https://opensearch.org/"),common:[L("Elasticsearch","https://www.elastic.co/elasticsearch")],project:L("OpenSearch","https://opensearch.org/")},
+dns:{latest:L("CoreDNS","https://coredns.io/"),project:L("CoreDNS","https://coredns.io/")},
+"otel-collector":{latest:L("OpenTelemetry",otel),project:L("OpenTelemetry",otel)},
+cicd:{latest:L("GitHub Actions",gha),project:L("GitHub Actions",gha)},
+"ci-pipelines":{latest:L("GitHub Actions",gha),common:[L("Testcontainers",tc),L("Jest",jest),L("CodeQL",cql)],project:L("GitHub Actions",gha)},
+"platform-gitops":{latest:L("Argo CD",argo),project:L("argoproj/argo-cd",argoG)},
+"repo-app":{latest:L("GitHub","https://github.com/"),project:L("GitHub","https://github.com/")}
 };
 Object.keys(c).forEach(function(k){if(D[k])Object.assign(D[k],c[k]);});
 })(window.IDP_DATA);
