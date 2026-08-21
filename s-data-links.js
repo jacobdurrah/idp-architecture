@@ -30,7 +30,11 @@ project:L("GitHub Actions",gha)
 "serve-6":{latest:L("Gateway API",gw),common:[L("ingress-nginx",ngx),L("Envoy",env)],project:L("Gateway API",gw)},
 "break-2":{latest:L("OpenTelemetry",otel),project:L("OpenTelemetry",otel)},
 "ship-4":{latest:L("containerd","https://containerd.io/"),common:[L("Docker Engine","https://docs.docker.com/engine/")],project:L("containerd","https://containerd.io/")},
-"break-4":{latest:L("Argo CD",argo),project:L("argoproj/argo-cd",argoG)}
+"break-4":{latest:L("Argo CD",argo),project:L("argoproj/argo-cd",argoG)},
+"ship-5":{w:"CI writes the digest into the Deployment in platform-gitops with Argo CD watching. That write is the deploy. CI still has not talked to Kubernetes.",
+d:["Manifest bump is Argo CD GitOps. Promotion is a Git write, not kubectl."],
+latest:L("Argo CD",argo),project:L("argoproj/argo-cd",argoG)},
+"serve-7":{latest:L("Kubernetes","https://kubernetes.io/"),project:L("Kubernetes","https://kubernetes.io/")}
 };
 Object.keys(c).forEach(function(k){if(D[k])Object.assign(D[k],c[k]);});
 })(window.IDP_DATA);
