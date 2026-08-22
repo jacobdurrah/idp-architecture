@@ -1,0 +1,78 @@
+<text x="724" y="636" font-size="12" font-weight="400" fill="#5F5E5A">Gates before operate.</text>
+<rect x="1044" y="578" width="316" height="110" rx="10" fill="#F3F1FC" stroke="#AFA9EC" stroke-width="1.6"/>
+<rect x="1044" y="578" width="7" height="110" rx="4" fill="#534AB7"/>
+<text x="1066" y="600" font-size="14" font-weight="750" fill="#534AB7">Operate and Monitor</text>
+<text x="1066" y="618" font-size="11" font-weight="600" fill="#5F5E5A">phases</text>
+<text x="1060" y="636" font-size="12" font-weight="400" fill="#5F5E5A">SCSS on the application.</text>
+<rect x="20" y="720" width="1360" height="200" rx="12" fill="#F3FBF7" stroke="#B7E0D0" stroke-width="1.4"/>
+<text x="40" y="746" font-size="16" font-weight="750" fill="#085041" text-anchor="start">Figure 5. Containerized factory / CI/CD (v2.1 PDF only)</text>
+<rect x="36" y="762" width="430" height="140" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<rect x="36" y="762" width="7" height="140" rx="4" fill="#185FA5"/>
+<text x="58" y="784" font-size="14" font-weight="750" fill="#185FA5">CI/CD orchestrator</text>
+<text x="58" y="802" font-size="11" font-weight="600" fill="#5F5E5A">cicd</text>
+<text x="52" y="820" font-size="12" font-weight="400" fill="#5F5E5A">Check-in, build, SAST, DAST, scan.</text>
+<text x="52" y="836" font-size="12" font-weight="400" fill="#5F5E5A">Entrance and exit gates. ATC to go live.</text>
+<rect x="482" y="762" width="430" height="140" rx="10" fill="#F4F1EA" stroke="#C4A574" stroke-width="1.6"/>
+<rect x="482" y="762" width="7" height="140" rx="4" fill="#854F0B"/>
+<text x="504" y="784" font-size="14" font-weight="750" fill="#854F0B">Iron Bank harden / sign</text>
+<text x="504" y="802" font-size="11" font-weight="600" fill="#5F5E5A">ironbank</text>
+<text x="498" y="820" font-size="12" font-weight="400" fill="#5F5E5A">DCAR of signed hardened images.</text>
+<text x="498" y="836" font-size="12" font-weight="400" fill="#5F5E5A">Factory tools and app bases both pull.</text>
+<rect x="928" y="762" width="432" height="140" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6"/>
+<rect x="928" y="762" width="7" height="140" rx="4" fill="#0F6E56"/>
+<text x="950" y="784" font-size="14" font-weight="750" fill="#0F6E56">Container unit</text>
+<text x="950" y="802" font-size="11" font-weight="600" fill="#5F5E5A">k8s</text>
+<text x="944" y="820" font-size="12" font-weight="400" fill="#5F5E5A">OCI container is the deploy unit.</text>
+<text x="944" y="836" font-size="12" font-weight="400" fill="#5F5E5A">Certified K8s in every environment.</text>
+<rect x="20" y="936" width="1360" height="200" rx="12" fill="#F5F9FC" stroke="#B9D4EA" stroke-width="1.4"/>
+<text x="40" y="962" font-size="16" font-weight="750" fill="#0C447C" text-anchor="start">Runtime anywhere (v2.1 purpose + Figure 6). Not current doctrine.</text>
+<rect x="36" y="978" width="322" height="140" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<rect x="36" y="978" width="7" height="140" rx="4" fill="#185FA5"/>
+<text x="58" y="1000" font-size="14" font-weight="750" fill="#185FA5">Cloud</text>
+<text x="58" y="1018" font-size="11" font-weight="600" fill="#5F5E5A">host-cloud</text>
+<text x="52" y="1036" font-size="12" font-weight="400" fill="#5F5E5A">CSP with DoD PA or ATO.</text>
+<text x="52" y="1052" font-size="12" font-weight="400" fill="#5F5E5A">CSP-agnostic design.</text>
+<rect x="372" y="978" width="322" height="140" rx="10" fill="#F4F1EA" stroke="#C4A574" stroke-width="1.6"/>
+<rect x="372" y="978" width="7" height="140" rx="4" fill="#854F0B"/>
+<text x="394" y="1000" font-size="14" font-weight="750" fill="#854F0B">On Premise</text>
+<text x="394" y="1018" font-size="11" font-weight="600" fill="#5F5E5A">host-onprem</text>
+<text x="388" y="1036" font-size="12" font-weight="400" fill="#5F5E5A">DoD data center or bare metal.</text>
+<text x="388" y="1052" font-size="12" font-weight="400" fill="#5F5E5A">Physical or virtual resources.</text>
+<rect x="708" y="978" width="322" height="140" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6"/>
+<rect x="708" y="978" width="7" height="140" rx="4" fill="#0F6E56"/>
+<text x="730" y="1000" font-size="14" font-weight="750" fill="#0F6E56">Embedded System</text>
+<text x="730" y="1018" font-size="11" font-weight="600" fill="#5F5E5A">host-embedded</text>
+<text x="724" y="1036" font-size="12" font-weight="400" fill="#5F5E5A">Jets, satellites, weapons.</text>
+<text x="724" y="1052" font-size="12" font-weight="400" fill="#5F5E5A">Same K8s API abstraction.</text>
+<rect x="1044" y="978" width="316" height="140" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6"/>
+<rect x="1044" y="978" width="7" height="140" rx="4" fill="#0F6E56"/>
+<text x="1066" y="1000" font-size="14" font-weight="750" fill="#0F6E56">Edge Computing</text>
+<text x="1066" y="1018" font-size="11" font-weight="600" fill="#5F5E5A">host-edge</text>
+<text x="1060" y="1036" font-size="12" font-weight="400" fill="#5F5E5A">Elastic factory at the edge.</text>
+<text x="1060" y="1052" font-size="12" font-weight="400" fill="#5F5E5A">Same Iron Bank + SCSS.</text>
+<rect x="20" y="1152" width="1360" height="300" rx="12" fill="#FAFAF7" stroke="#E5E3DC" stroke-width="1.4"/>
+<text x="40" y="1178" font-size="16" font-weight="750" fill="#2C2C2A" text-anchor="start">Production, Figure 8 logging (v2.1), later practice</text>
+<rect x="36" y="1194" width="430" height="236" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<rect x="36" y="1194" width="7" height="236" rx="4" fill="#0C447C"/>
+<text x="58" y="1216" font-size="14" font-weight="750" fill="#0C447C">Production includes K8s</text>
+<text x="58" y="1234" font-size="11" font-weight="600" fill="#5F5E5A">production</text>
+<text x="52" y="1252" font-size="12" font-weight="400" fill="#5F5E5A">Must be in production, not only factory.</text>
+<text x="52" y="1268" font-size="12" font-weight="400" fill="#5F5E5A">Human button allowed. ATC to connect.</text>
+<text x="52" y="1284" font-size="12" font-weight="400" fill="#5F5E5A">v1827 is this site&#x27;s example image.</text>
+<rect x="482" y="1194" width="430" height="236" rx="10" fill="#F3F1FC" stroke="#AFA9EC" stroke-width="1.6"/>
+<rect x="482" y="1194" width="7" height="236" rx="4" fill="#534AB7"/>
+<text x="504" y="1216" font-size="14" font-weight="750" fill="#534AB7">Logging and log analysis</text>
+<text x="504" y="1234" font-size="11" font-weight="600" fill="#5F5E5A">logging</text>
+<text x="498" y="1252" font-size="12" font-weight="400" fill="#5F5E5A">Figure 8. Pod to local SIEM/SOAR.</text>
+<text x="498" y="1268" font-size="12" font-weight="400" fill="#5F5E5A">Then DCO / Tier 2 CSSP after filter.</text>
+<text x="498" y="1284" font-size="12" font-weight="400" fill="#5F5E5A">Behavior + signature detection.</text>
+<rect x="928" y="1194" width="432" height="236" rx="10" fill="#F1F0EB" stroke="#8A8984" stroke-width="1.6"/>
+<rect x="928" y="1194" width="7" height="236" rx="4" fill="#5F5E5A"/>
+<text x="950" y="1216" font-size="14" font-weight="750" fill="#5F5E5A">Big Bang (later practice)</text>
+<text x="950" y="1234" font-size="11" font-weight="600" fill="#5F5E5A">bigbang</text>
+<text x="944" y="1252" font-size="12" font-weight="400" fill="#5F5E5A">Not a 2021 PDF figure.</text>
+<text x="944" y="1268" font-size="12" font-weight="400" fill="#5F5E5A">One instantiation at all class levels.</text>
+<text x="944" y="1284" font-size="12" font-weight="400" fill="#5F5E5A">PDF names Platform One (p1.dso.mil).</text>
+<text x="700" y="1494" font-size="12" font-weight="500" fill="#5F5E5A" text-anchor="middle">Figures 1-8 are the 2021 v2.1 PDF only. Doctrine is Fundamentals v2.5. Agents and MCP have no DoD RD.</text>
+<g id="hits">
+<rect class="hit" data-id="now" x="36" y="136" width="322" height="132" rx="8" fill="transparent"/>
