@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="poster" viewBox="0 0 1400 1520" width="100%" role="img" aria-label="DoD DevSecOps doctrine">
+<rect x="0" y="0" width="1400" height="1520" fill="#FFFFFF"/>
+<text x="700" y="36" font-size="26" font-weight="750" fill="#2C2C2A" text-anchor="middle">DoD DevSecOps doctrine</text>
+<text x="700" y="58" font-size="13" font-weight="500" fill="#5F5E5A" text-anchor="middle">Fundamentals v2.5 is current. The 2021 CNCF Kubernetes RD is a stale-but-still-listed interconnect spec.</text>
+<text x="700" y="78" font-size="12" font-weight="500" fill="#3D3C38" text-anchor="middle">No DoD RD covers agents or MCP.  newsfeed-service:v1827 is this site&#x27;s app example.</text>
+<rect x="20" y="96" width="1360" height="188" rx="12" fill="#FAFAF7" stroke="#E5E3DC" stroke-width="1.4"/>
+<text x="40" y="120" font-size="16" font-weight="750" fill="#2C2C2A" text-anchor="start">Doctrine (cite order)</text>
+<rect x="36" y="136" width="322" height="132" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<rect x="36" y="136" width="7" height="132" rx="4" fill="#0C447C"/>
+<text x="58" y="158" font-size="14" font-weight="750" fill="#0C447C">NOW</text>
+<text x="58" y="176" font-size="11" font-weight="600" fill="#5F5E5A">now</text>
+<text x="52" y="194" font-size="12" font-weight="400" fill="#5F5E5A">Fundamentals v2.5 (Oct 2024).</text>
+<text x="52" y="210" font-size="12" font-weight="400" fill="#5F5E5A">Activities v2.5: see library.</text>
+<rect x="372" y="136" width="322" height="132" rx="10" fill="#F8E8E8" stroke="#D46A6A" stroke-width="1.6"/>
+<rect x="372" y="136" width="7" height="132" rx="4" fill="#A32D2D"/>
+<text x="394" y="158" font-size="14" font-weight="750" fill="#A32D2D">INTERCONNECT (stale)</text>
+<text x="394" y="176" font-size="11" font-weight="600" fill="#5F5E5A">stale</text>
+<text x="388" y="194" font-size="12" font-weight="400" fill="#5F5E5A">CNCF Kubernetes v2.1, 2021.</text>
+<text x="388" y="210" font-size="12" font-weight="400" fill="#5F5E5A">Iron Bank, CNAP, SCSS, mesh.</text>
+<rect x="708" y="136" width="322" height="132" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<rect x="708" y="136" width="7" height="132" rx="4" fill="#185FA5"/>
+<text x="730" y="158" font-size="14" font-weight="750" fill="#185FA5">SUCCESSOR DESIGN</text>
+<text x="730" y="176" font-size="11" font-weight="600" fill="#5F5E5A">successor</text>
+<text x="724" y="194" font-size="12" font-weight="400" fill="#5F5E5A">Multi-Cluster v1.0, July 2022.</text>
+<text x="724" y="210" font-size="12" font-weight="400" fill="#5F5E5A">Also AWS and Azure RDs.</text>
+<rect x="1044" y="136" width="316" height="132" rx="10" fill="#F8E8E8" stroke="#D46A6A" stroke-width="1.6"/>
+<rect x="1044" y="136" width="7" height="132" rx="4" fill="#A32D2D"/>
+<text x="1066" y="158" font-size="14" font-weight="750" fill="#A32D2D">NOT YET</text>
+<text x="1066" y="176" font-size="11" font-weight="600" fill="#5F5E5A">notyet</text>
+<text x="1060" y="194" font-size="12" font-weight="400" fill="#5F5E5A">No DoD RD for agents or MCP.</text>
+<text x="1060" y="210" font-size="12" font-weight="400" fill="#5F5E5A">Tasked. Not delivered.</text>
+<rect x="20" y="300" width="1360" height="220" rx="12" fill="#F5F9FC" stroke="#B9D4EA" stroke-width="1.4"/>
+<text x="40" y="326" font-size="16" font-weight="750" fill="#0C447C" text-anchor="start">v2.1 interconnects only (Figure 1). Stale. Still listed.</text>
+<rect x="36" y="344" width="250" height="156" rx="10" fill="#F4F1EA" stroke="#C4A574" stroke-width="1.6"/>
+<rect x="36" y="344" width="7" height="156" rx="4" fill="#854F0B"/>
+<text x="58" y="366" font-size="14" font-weight="750" fill="#854F0B">CNAP north-south</text>
+<text x="58" y="384" font-size="11" font-weight="600" fill="#5F5E5A">cnap</text>
+<text x="52" y="402" font-size="12" font-weight="400" fill="#5F5E5A">Infrastructure layer.</text>
+<text x="52" y="418" font-size="12" font-weight="400" fill="#5F5E5A">IL-2 / IL-4 / IL-5 access.</text>
+<rect x="300" y="344" width="250" height="156" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<rect x="300" y="344" width="7" height="156" rx="4" fill="#185FA5"/>
+<text x="322" y="366" font-size="14" font-weight="750" fill="#185FA5">Three layers</text>
+<text x="322" y="384" font-size="11" font-weight="600" fill="#5F5E5A">interconnect</text>
+<text x="316" y="402" font-size="12" font-weight="400" fill="#5F5E5A">Infrastructure.</text>
+<text x="316" y="418" font-size="12" font-weight="400" fill="#5F5E5A">Platform / Factory.</text>
+<text x="316" y="434" font-size="12" font-weight="400" fill="#5F5E5A">Application(s).</text>
+<rect x="564" y="344" width="250" height="156" rx="10" fill="#EEF6FB" stroke="#7EB6D9" stroke-width="1.6"/>
+<rect x="564" y="344" width="7" height="156" rx="4" fill="#2A7AB0"/>
+<text x="586" y="366" font-size="14" font-weight="750" fill="#2A7AB0">Service mesh</text>
+<text x="586" y="384" font-size="11" font-weight="600" fill="#5F5E5A">mesh</text>
+<text x="580" y="402" font-size="12" font-weight="400" fill="#5F5E5A">East-west.</text>
+<text x="580" y="418" font-size="12" font-weight="400" fill="#5F5E5A">Control + data plane.</text>
+<rect x="828" y="344" width="250" height="156" rx="10" fill="#F8E8E8" stroke="#D46A6A" stroke-width="1.6"/>
+<rect x="828" y="344" width="7" height="156" rx="4" fill="#A32D2D"/>
+<text x="850" y="366" font-size="14" font-weight="750" fill="#A32D2D">SCSS sidecar</text>
+<text x="850" y="384" font-size="11" font-weight="600" fill="#5F5E5A">scss</text>
+<text x="844" y="402" font-size="12" font-weight="400" fill="#5F5E5A">Figure 3. Injected pod.</text>
+<text x="844" y="418" font-size="12" font-weight="400" fill="#5F5E5A">Zero trust container.</text>
+<rect x="1092" y="344" width="268" height="156" rx="10" fill="#F4F1EA" stroke="#C4A574" stroke-width="1.6"/>
+<rect x="1092" y="344" width="7" height="156" rx="4" fill="#854F0B"/>
+<text x="1114" y="366" font-size="14" font-weight="750" fill="#854F0B">Local artifact repo</text>
+<text x="1114" y="384" font-size="11" font-weight="600" fill="#5F5E5A">artifact</text>
+<text x="1108" y="402" font-size="12" font-weight="400" fill="#5F5E5A">Iron Bank pulls stay local.</text>
+<text x="1108" y="418" font-size="12" font-weight="400" fill="#5F5E5A">Figure 1 must.</text>
+<rect x="20" y="536" width="1360" height="168" rx="12" fill="#F7F4EE" stroke="#D3C4A8" stroke-width="1.4"/>
+<text x="40" y="562" font-size="16" font-weight="750" fill="#633806" text-anchor="start">Figure 4. Implementation phases (v2.1 PDF only)</text>
+<rect x="36" y="578" width="322" height="110" rx="10" fill="#F7F4EE" stroke="#C4A574" stroke-width="1.6"/>
+<rect x="36" y="578" width="7" height="110" rx="4" fill="#854F0B"/>
+<text x="58" y="600" font-size="14" font-weight="750" fill="#854F0B">Design</text>
+<text x="58" y="618" font-size="11" font-weight="600" fill="#5F5E5A">phases</text>
+<text x="52" y="636" font-size="12" font-weight="400" fill="#5F5E5A">Factory design. Security across all.</text>
+<rect x="372" y="578" width="322" height="110" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<rect x="372" y="578" width="7" height="110" rx="4" fill="#185FA5"/>
+<text x="394" y="600" font-size="14" font-weight="750" fill="#185FA5">Instantiate</text>
+<text x="394" y="618" font-size="11" font-weight="600" fill="#5F5E5A">phases</text>
+<text x="388" y="636" font-size="12" font-weight="400" fill="#5F5E5A">Certified K8s + Iron Bank.</text>
+<rect x="708" y="578" width="322" height="110" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6"/>
+<rect x="708" y="578" width="7" height="110" rx="4" fill="#0F6E56"/>
+<text x="730" y="600" font-size="14" font-weight="750" fill="#0F6E56">Verify</text>
+<text x="730" y="618" font-size="11" font-weight="600" fill="#5F5E5A">phases</text>
