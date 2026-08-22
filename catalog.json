@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "86f50d6172a2",
+  "version": "2db06f9a628c",
   "records": [
     {
       "id": "admission",
@@ -1008,6 +1008,65 @@
       "href": "/idp-architecture/agents.html#workers"
     },
     {
+      "id": "cnap",
+      "tab": "factory",
+      "name": "CNAP (north-south)",
+      "plane": "infra",
+      "what": "Cloud Native Access Point. Figure 1 places CNAP on the Infrastructure layer to manage all north-south traffic. The PDF describes a zero-trust access path to development, testing, and production enclaves at IL-2, IL-4, and IL-5.",
+      "why": "North-south is not the mesh. East-west is the service mesh. Mixing them hides the interconnect the design requires.",
+      "notes": [
+        "Cited from Figure 1 and section 3.1 of the 2021 PDF.",
+        "CNAP is an access architecture, not a substitute for Iron Bank or SCSS.",
+        "IL-2 / IL-4 / IL-5 here are the PDF's CNAP access levels, not a high-side JWICS claim."
+      ],
+      "href": "/idp-architecture/factory.html#cnap"
+    },
+    {
+      "id": "interconnect",
+      "tab": "factory",
+      "name": "Figure 1. Kubernetes interconnects (v2.1, stale)",
+      "plane": "ctrl",
+      "what": "Figure 1 names the interconnects that must be present. The DevSecOps platform is three layers: Infrastructure, Platform/Software Factory, and Application(s).",
+      "why": "Interconnects let a program tailor tools without dropping core factory capabilities.",
+      "notes": [
+        "Cloud Native Access Point (CNAP) at Infrastructure manages north-south traffic.",
+        "A conformant Kubernetes installation in each development environment.",
+        "A locally centralized artifact repository hosting Iron Bank (DCAR) hardened containers.",
+        "A service mesh inside the orchestrator for east-west traffic.",
+        "Mandatory Sidecar Container Security Stack (SCSS) for zero trust at the container."
+      ],
+      "href": "/idp-architecture/factory.html#interconnect"
+    },
+    {
+      "id": "mesh",
+      "tab": "factory",
+      "name": "Service mesh (east-west)",
+      "plane": "photon",
+      "what": "Figure 1 and section 3.5. A service mesh inside the K8s orchestrator manages east-west traffic. Table 11 names a control plane (routing policies, authentication certificates) and a data plane (service communication data).",
+      "why": "East-west without a mesh is the attack surface the design is trying to close. mTLS and deny-by-default are in the text.",
+      "notes": [
+        "REQUIRED when the application uses microservices (Table 1).",
+        "Control plane versus data plane is the document's wording, not this site's Plane tab.",
+        "Coupled with behavior detection, the mesh can stop lateral movement."
+      ],
+      "href": "/idp-architecture/factory.html#mesh"
+    },
+    {
+      "id": "notyet",
+      "tab": "factory",
+      "name": "NOT YET. Agents and MCP",
+      "plane": "alert",
+      "what": "No DoD reference design covers AI agents, agent orchestration, or MCP. Anyone claiming one is describing something that does not exist. The agent package on Sides is this site's promote unit, not a Department RD.",
+      "why": "The work is tasked, not delivered. Until a real RD exists, security is a bridge: NIST AI RMF, SP 800-218 (SSDF), and the MCP spec.",
+      "notes": [
+        "DoD CIO FY25-26 Software Modernization Implementation Plan tasks creating a DevSecOps RD for AI and software-based automation.",
+        "Jan 2026 DoW AI Acceleration Strategy names an Agent Network priority.",
+        "DoD AI Cybersecurity Risk Management Tailoring Guide v2 (July 2025) is RMF tailoring, not architecture.",
+        "newsfeed-service:v1827 / PR #4821 remain the app example. They do not mint a missing RD."
+      ],
+      "href": "/idp-architecture/factory.html#notyet"
+    },
+    {
       "id": "now",
       "tab": "factory",
       "name": "NOW. Fundamentals v2.5",
@@ -1036,6 +1095,20 @@
         "Agent and MCP security today: bridge NIST AI RMF, SP 800-218, and the MCP spec. Not a DoD RD. newsfeed-service:v1827 / PR #4821 stay the app example."
       ],
       "href": "/idp-architecture/factory.html#overview"
+    },
+    {
+      "id": "scss",
+      "tab": "factory",
+      "name": "Sidecar Container Security Stack",
+      "plane": "alert",
+      "what": "Figure 3. SCSS is injected into each pod from Iron Bank. Baked-in, not bolt-on. Shares disk and network with the application container while keeping runtimes isolated.",
+      "why": "The cyber stack can update without rebuilding the microservice. Zero trust down to the container is a Figure 1 must.",
+      "notes": [
+        "Table 1 REQUIRED pieces include logging agent, log storage, container policy, runtime defense, vulnerability management, CVE service, zero trust to the pod.",
+        "Service mesh proxy is REQUIRED if the app uses microservices.",
+        "Continuous monitoring, signature scanning, runtime behavior analysis."
+      ],
+      "href": "/idp-architecture/factory.html#scss"
     },
     {
       "id": "stale",
