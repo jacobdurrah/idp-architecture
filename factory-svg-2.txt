@@ -1,0 +1,25 @@
+<rect class="hit" data-id="stale" x="372" y="136" width="322" height="132" rx="8" fill="transparent"/>
+<rect class="hit" data-id="successor" x="708" y="136" width="322" height="132" rx="8" fill="transparent"/>
+<rect class="hit" data-id="notyet" x="1044" y="136" width="316" height="132" rx="8" fill="transparent"/>
+<rect class="hit" data-id="cnap" x="36" y="344" width="250" height="156" rx="8" fill="transparent"/>
+<rect class="hit" data-id="interconnect" x="300" y="344" width="250" height="156" rx="8" fill="transparent"/>
+<rect class="hit" data-id="mesh" x="564" y="344" width="250" height="156" rx="8" fill="transparent"/>
+<rect class="hit" data-id="scss" x="828" y="344" width="250" height="156" rx="8" fill="transparent"/>
+<rect class="hit" data-id="artifact" x="1092" y="344" width="268" height="156" rx="8" fill="transparent"/>
+<rect class="hit" data-id="phases" x="36" y="578" width="322" height="110" rx="8" fill="transparent"/>
+<rect class="hit" data-id="phases" x="372" y="578" width="322" height="110" rx="8" fill="transparent"/>
+<rect class="hit" data-id="phases" x="708" y="578" width="322" height="110" rx="8" fill="transparent"/>
+<rect class="hit" data-id="phases" x="1044" y="578" width="316" height="110" rx="8" fill="transparent"/>
+<rect class="hit" data-id="cicd" x="36" y="762" width="430" height="140" rx="8" fill="transparent"/>
+<rect class="hit" data-id="ironbank" x="482" y="762" width="430" height="140" rx="8" fill="transparent"/>
+<rect class="hit" data-id="k8s" x="928" y="762" width="432" height="140" rx="8" fill="transparent"/>
+<rect class="hit" data-id="host-cloud" x="36" y="978" width="322" height="140" rx="8" fill="transparent"/>
+<rect class="hit" data-id="host-onprem" x="372" y="978" width="322" height="140" rx="8" fill="transparent"/>
+<rect class="hit" data-id="host-embedded" x="708" y="978" width="322" height="140" rx="8" fill="transparent"/>
+<rect class="hit" data-id="host-edge" x="1044" y="978" width="316" height="140" rx="8" fill="transparent"/>
+<rect class="hit" data-id="production" x="36" y="1194" width="430" height="236" rx="8" fill="transparent"/>
+<rect class="hit" data-id="logging" x="482" y="1194" width="430" height="236" rx="8" fill="transparent"/>
+<rect class="hit" data-id="bigbang" x="928" y="1194" width="432" height="236" rx="8" fill="transparent"/>
+<rect id="selbox" visibility="hidden" rx="10"/>
+</g>
+</svg>
