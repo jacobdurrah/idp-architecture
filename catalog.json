@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "c978765f39a1",
+  "version": "9b486a7670c7",
   "records": [
     {
       "id": "admission",
@@ -1008,6 +1008,20 @@
       "href": "/idp-architecture/agents.html#workers"
     },
     {
+      "id": "artifact",
+      "tab": "factory",
+      "name": "Locally centralized artifact repository",
+      "plane": "infra",
+      "what": "Section 3.3. A local repository tied to the factory. It stores Iron Bank pulls and locally developed artifacts: container images, binaries, VM images, archives, documentation.",
+      "why": "Figure 1 requires a clear local repo. Programs may use one repo with tags, or separate local and released repos.",
+      "notes": [
+        "This is the factory-side twin of the high-side Harbor mirror on Sides.",
+        "Table 5 lists Artifact Repository (container registry) as REQUIRED.",
+        "Deliver container to the registry is a Deploy-phase activity (Table 12)."
+      ],
+      "href": "/idp-architecture/factory.html#artifact"
+    },
+    {
       "id": "bigbang",
       "tab": "factory",
       "name": "Big Bang (later practice)",
@@ -1022,6 +1036,20 @@
       "href": "/idp-architecture/factory.html#bigbang"
     },
     {
+      "id": "cicd",
+      "tab": "factory",
+      "name": "Figure 5. CI/CD orchestrator",
+      "plane": "ctrl",
+      "what": "Figure 5 is the containerized software factory. A check-in triggers the CI/CD orchestrator: automated build, SAST, DAST, unit and other tests, then a container security scan. Stages have entrance and exit gates (Table 2).",
+      "why": "There is no one size fits all toolchain. The orchestrator is REQUIRED. Tools are pluggable and must come from Iron Bank hardened containers.",
+      "notes": [
+        "If tests pass, the artifact moves to the test environment, then may deploy to production.",
+        "Production deploy may be a human button. Turning it on typically needs an Authorization to Connect (ATC).",
+        "newsfeed-service:v1827 / PR #4821 is this site's app example of a check-in, not a figure in the PDF."
+      ],
+      "href": "/idp-architecture/factory.html#cicd"
+    },
+    {
       "id": "cnap",
       "tab": "factory",
       "name": "CNAP (north-south)",
@@ -1034,6 +1062,20 @@
         "IL-2 / IL-4 / IL-5 here are the PDF's CNAP access levels, not a high-side JWICS claim."
       ],
       "href": "/idp-architecture/factory.html#cnap"
+    },
+    {
+      "id": "host-cloud",
+      "tab": "factory",
+      "name": "Cloud (anywhere)",
+      "plane": "infra",
+      "what": "Purpose statement: elastic factory anywhere, including Cloud. Section 4.2: hosting may be a CSP with a DoD provisional authorization or ATO. Figure 6 is DevSecOps Platform Options.",
+      "why": "The design is CSP-agnostic. Cloud is one host, not the only host.",
+      "notes": [
+        "K8s on an authorized Cloud is still under DoD Cloud SRG and DISA SCCA (section 4.3).",
+        "Same Iron Bank containers as on-prem. That is the no-drift claim in section 4.1.",
+        "Classification split is Sides. This card is the 2021 runtime location."
+      ],
+      "href": "/idp-architecture/factory.html#host-cloud"
     },
     {
       "id": "host-edge",
@@ -1064,6 +1106,20 @@
       "href": "/idp-architecture/factory.html#host-embedded"
     },
     {
+      "id": "host-onprem",
+      "tab": "factory",
+      "name": "On Premise / data center",
+      "plane": "infra",
+      "what": "Purpose statement lists On Premise. Section 4.2 allows DoD data centers or on-premises servers. Section 4.3 allows bare metal. Compute, storage, and network may be physical or virtual.",
+      "why": "A factory that only exists in one commercial region is not the reference design.",
+      "notes": [
+        "Same Certified K8s and Iron Bank rule.",
+        "Figure 6 is the platform-options figure for these hosts.",
+        "Disconnected high-side (Sides) is the same stack with the guard closed."
+      ],
+      "href": "/idp-architecture/factory.html#host-onprem"
+    },
+    {
       "id": "interconnect",
       "tab": "factory",
       "name": "Figure 1. Kubernetes interconnects (v2.1, stale)",
@@ -1078,6 +1134,34 @@
         "Mandatory Sidecar Container Security Stack (SCSS) for zero trust at the container."
       ],
       "href": "/idp-architecture/factory.html#interconnect"
+    },
+    {
+      "id": "ironbank",
+      "tab": "factory",
+      "name": "Iron Bank (harden / sign)",
+      "plane": "infra",
+      "what": "Iron Bank is the DoD Centralized Artifact Repository (DCAR) of digitally signed, hardened, STIG-compliant containers. The factory and the applications pull different Iron Bank sets. Instantiations must use those hardened containers.",
+      "why": "Section 4 says the factory is created from DevSecOps tools stored in Iron Bank. That is the harden and sign step the poster names.",
+      "notes": [
+        "At writing (2021) the PDF said over 300 artifacts, with more added.",
+        "Container builder must use an Iron Bank base image in all cases (Table 5).",
+        "IL2 public pull is the Sides low-side move. This card is the factory fact."
+      ],
+      "href": "/idp-architecture/factory.html#ironbank"
+    },
+    {
+      "id": "k8s",
+      "tab": "factory",
+      "name": "CNCF Certified Kubernetes",
+      "plane": "data",
+      "what": "Figure 2. Kubernetes here means a CNCF Certified implementation. It schedules OCI-compliant containers across nodes. The container is the standard unit of deployment. K8s must be part of production.",
+      "why": "Without Certified Kubernetes, this reference design does not apply. The API is how the same factory runs Cloud to embedded.",
+      "notes": [
+        "Benefits named: multimodal environment, baked-in SCSS, resiliency, adaptability, GitOps / IaC automation, scalability.",
+        "Table 11 lists CNCF-certified Kubernetes as REQUIRED in Deploy.",
+        "Platform One is named as the first DoD-wide approved DevSecOps managed service."
+      ],
+      "href": "/idp-architecture/factory.html#k8s"
     },
     {
       "id": "logging",
@@ -1151,6 +1235,20 @@
         "Agent and MCP security today: bridge NIST AI RMF, SP 800-218, and the MCP spec. Not a DoD RD. newsfeed-service:v1827 / PR #4821 stay the app example."
       ],
       "href": "/idp-architecture/factory.html#overview"
+    },
+    {
+      "id": "phases",
+      "tab": "factory",
+      "name": "Figure 4. Implementation phases",
+      "plane": "step",
+      "what": "All software factory implementations go through four phases: Design, Instantiate, Verify, Operate and Monitor. Security is applied across all phases. SCSS monitors the application.",
+      "why": "These are the PDF's factory phases. They are not a second copy of Develop / Build / Test / Release and Deliver / Deploy / Operate / Monitor (the lifecycle tables).",
+      "notes": [
+        "Design, Instantiate, Verify, Operate and Monitor (Figure 4).",
+        "Instantiate: CSP-agnostic CNCF Certified K8s, hardened containers from Iron Bank.",
+        "Lifecycle tables later name Develop, Build, Test, Release and Deliver, Deploy, Operate, Monitor."
+      ],
+      "href": "/idp-architecture/factory.html#phases"
     },
     {
       "id": "production",
