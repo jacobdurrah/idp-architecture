@@ -8,11 +8,20 @@ window.IDP_DATA = Object.assign(window.IDP_DATA || {}, {
       "Low-side: internet or GovCloud, prototypes, CI on unclass fixtures. Iron Bank (IL2 public) is pulled here.",
       "The package goes low to high. Production data, user traces, classified context, and model outputs that saw high-side data do not go high to low.",
       "High-side: SIPR ~ IL6, JWICS ~ IL7 (standard DoD mapping, not a vendor claim). Local registry, Cosign verify, evals stay.",
-      "This tab is an IDP reading. Official DoD factory language lives on Factory."
+      "This tab is an IDP reading. Factory holds current doctrine versus the stale 2021 interconnect spec.",
+      "The CNCF Kubernetes reference design (v2.1, Oct 2021) is stale but still listed. Current doctrine is DevSecOps Fundamentals v2.5. No DoD reference design covers agents or MCP."
     ],
     "see": [
       {
-        "n": "DoD Enterprise DevSecOps Reference Design (CNCF Kubernetes, Oct 2021)",
+        "n": "DoD CIO Library (current document set)",
+        "href": "https://dodcio.defense.gov/library/"
+      },
+      {
+        "n": "DevSecOps Fundamentals v2.5",
+        "href": "https://dodcio.defense.gov/Portals/0/Documents/Library/DoD%20Enterprise%20DevSecOps%20Fundamentals%20v2.5.pdf"
+      },
+      {
+        "n": "CNCF Kubernetes RD v2.1 (stale, still listed)",
         "href": "https://dodcio.defense.gov/Portals/0/Documents/Library/DoD%20Enterprise%20DevSecOps%20Reference%20Design%20-%20CNCF%20Kubernetes%20w-DD1910_cleared_20211022.pdf"
       },
       {
@@ -24,8 +33,8 @@ window.IDP_DATA = Object.assign(window.IDP_DATA || {}, {
         "href": "https://p1docs.dso.mil/iron-bank/overview"
       }
     ],
-    "seeHref": "https://dodcio.defense.gov/Portals/0/Documents/Library/DoD%20Enterprise%20DevSecOps%20Reference%20Design%20-%20CNCF%20Kubernetes%20w-DD1910_cleared_20211022.pdf",
-    "seeLabel": "Official DoD PDF (DD1910 cleared, Oct 2021)"
+    "seeHref": "https://dodcio.defense.gov/Portals/0/Documents/Library/DoD%20Enterprise%20DevSecOps%20Fundamentals%20v2.5.pdf",
+    "seeLabel": "Current doctrine: Fundamentals v2.5"
   },
   "lo-internet": {
     "n": "Internet (unclass / CUI)",
@@ -111,17 +120,6 @@ window.IDP_DATA = Object.assign(window.IDP_DATA || {}, {
       "Goes: container image, prompts, tool/MCP schemas, unclass eval set, IaC.",
       "Does not go: production data, user traces, classified retrieval, high-side model outputs.",
       "The agent package is the promote unit. newsfeed-service:v1827 is the app example inside it."
-    ]
-  },
-  "package": {
-    "n": "Agent package (what promotes)",
-    "p": "ctrl",
-    "w": "The agent package is the thing that crosses the guard. It holds a signed container image (newsfeed-service:v1827 from PR #4821 as the app example), prompts, tool/MCP schemas, an unclass eval set, and IaC.",
-    "y": "If you promote a chat, you have no digest, no schema pin, and no eval set. The package is reviewable. A transcript is not.",
-    "d": [
-      "Assembled on the low-side. Verified on the high-side (Cosign, local registry, local catalog).",
-      "Does not include production data or high-side traces.",
-      "Same package shape on both sides. The high-side copy is not a sync back."
     ]
   }
 });
