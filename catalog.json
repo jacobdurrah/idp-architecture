@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "2db06f9a628c",
+  "version": "c978765f39a1",
   "records": [
     {
       "id": "admission",
@@ -1008,6 +1008,20 @@
       "href": "/idp-architecture/agents.html#workers"
     },
     {
+      "id": "bigbang",
+      "tab": "factory",
+      "name": "Big Bang (later practice)",
+      "plane": "ppl",
+      "what": "Big Bang is one instantiation used at all classifications in later DoD practice. It is not a figure in the 2021 PDF. The FAQ is linked so you can see how programs instantiate Certified K8s plus Iron Bank today.",
+      "why": "The 2021 design is CSP-agnostic and product-agnostic. Naming Big Bang here is a later-practice pointer, not a rewrite of Figure 5.",
+      "notes": [
+        "Labeled later practice on purpose.",
+        "The PDF instead names Platform One as the first DoD-wide approved DevSecOps managed service (https://p1.dso.mil).",
+        "Use Factory labels from the PDF. Use Sides for the classification guard."
+      ],
+      "href": "/idp-architecture/factory.html#bigbang"
+    },
+    {
       "id": "cnap",
       "tab": "factory",
       "name": "CNAP (north-south)",
@@ -1020,6 +1034,34 @@
         "IL-2 / IL-4 / IL-5 here are the PDF's CNAP access levels, not a high-side JWICS claim."
       ],
       "href": "/idp-architecture/factory.html#cnap"
+    },
+    {
+      "id": "host-edge",
+      "tab": "factory",
+      "name": "Edge Computing",
+      "plane": "edge",
+      "what": "Purpose statement: Edge Computing. Same Certified K8s, same container unit, same Iron Bank harden path.",
+      "why": "Edge is a location of the elastic factory, not a different methodology.",
+      "notes": [
+        "Figure 2 notional nodes still apply.",
+        "SCSS and mesh rules do not drop because the node is at the edge.",
+        "Production still must include Kubernetes."
+      ],
+      "href": "/idp-architecture/factory.html#host-edge"
+    },
+    {
+      "id": "host-embedded",
+      "tab": "factory",
+      "name": "Embedded System",
+      "plane": "edge",
+      "what": "Purpose statement: Embedded System. The K8s API is how software runs from Cloud to being embedded inside platforms like jets or satellites (section 3.2).",
+      "why": "Weapons and platforms are in scope (section 1.4: business and weapons systems, C3, embedded, big data, AI).",
+      "notes": [
+        "Still Certified Kubernetes and OCI containers.",
+        "The factory produces the artifact. The embedded runtime must still include Kubernetes if it is production under this design.",
+        "Do not invent extra platform names beyond the PDF."
+      ],
+      "href": "/idp-architecture/factory.html#host-embedded"
     },
     {
       "id": "interconnect",
@@ -1036,6 +1078,20 @@
         "Mandatory Sidecar Container Security Stack (SCSS) for zero trust at the container."
       ],
       "href": "/idp-architecture/factory.html#interconnect"
+    },
+    {
+      "id": "logging",
+      "tab": "factory",
+      "name": "Figure 8. Logging and log analysis",
+      "plane": "obs",
+      "what": "Figure 8: monitoring, logging, log analysis, and alerting. Starts at the pod: application, compute, storage, network, security, and data monitoring. Logs aggregate locally, then can forward to DCO / Tier 2 CSSP after a filter. Local SIEM/SOAR raises incidents.",
+      "why": "Section 5.1: continuous monitoring must include behavior and signature-based detection. Table 15 names netflow, centralized logging (REQUIRED), and centralized analysis (PREFERRED).",
+      "notes": [
+        "Cross-cut with policy enforcement and vulnerability management (Table 14).",
+        "SCSS supplies the logging agent and runtime defense.",
+        "This is the PDF's observe path. High-side traces still do not cross Sides."
+      ],
+      "href": "/idp-architecture/factory.html#logging"
     },
     {
       "id": "mesh",
@@ -1095,6 +1151,20 @@
         "Agent and MCP security today: bridge NIST AI RMF, SP 800-218, and the MCP spec. Not a DoD RD. newsfeed-service:v1827 / PR #4821 stay the app example."
       ],
       "href": "/idp-architecture/factory.html#overview"
+    },
+    {
+      "id": "production",
+      "tab": "factory",
+      "name": "Production must include Kubernetes",
+      "plane": "step",
+      "what": "Purpose: Kubernetes must be part of the production environment. Figure 5: after gates, the artifact is eligible for production. Deploy may be automated or a human button, then an ATC to turn it on.",
+      "why": "A factory that stops at a staging cluster is not this design. The runtime is Certified K8s.",
+      "notes": [
+        "Containerization is how the PDF says you avoid drift across dev, test, staging, production, and classification levels.",
+        "Deploy tools: CNCF-certified Kubernetes and service mesh are REQUIRED (Table 11).",
+        "newsfeed-service:v1827 is this site's example image that would be delivered to the registry (Table 12)."
+      ],
+      "href": "/idp-architecture/factory.html#production"
     },
     {
       "id": "scss",
