@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "5f7fdf8db3db",
+  "version": "2715d064a3fc",
   "records": [
     {
       "id": "admission",
@@ -5019,6 +5019,119 @@
         "Cite Metal: newsfeed-pod, pod, cpu-slat, rack-cpu."
       ],
       "href": "/idp-architecture/scenarios.html#ship-9"
+    },
+    {
+      "id": "guard",
+      "tab": "sides",
+      "name": "One-way guard",
+      "plane": "alert",
+      "what": "A classification split. The package goes low to high. Production data, user traces, retrieved classified context, and model outputs that saw high-side data do not go high to low. This is not staging versus prod.",
+      "why": "If the guard is two-way, the high-side is just another VPC. The point of the split is that traces stay.",
+      "notes": [
+        "Goes: container image, prompts, tool/MCP schemas, unclass eval set, IaC.",
+        "Does not go: production data, user traces, classified retrieval, high-side model outputs.",
+        "The agent package is the promote unit. newsfeed-service:v1827 is the app example inside it."
+      ],
+      "href": "/idp-architecture/sides.html#guard"
+    },
+    {
+      "id": "lo-bedrock",
+      "tab": "sides",
+      "name": "Prototypes and Bedrock catalog",
+      "plane": "data",
+      "what": "Low-side model work uses a commercial or GovCloud Bedrock catalog. Prototypes, prompts, and tool/MCP schemas are drafted here. The model ID that ships high-side must later exist in that enclave catalog.",
+      "why": "You cannot invent a high-side model ID on the internet. You can prototype the agent package against an unclass catalog.",
+      "notes": [
+        "Commercial or GovCloud Bedrock is a low-side catalog.",
+        "Prompts and MCP schemas go in the package that promotes.",
+        "High-side will refuse a model ID that is not in its own catalog."
+      ],
+      "href": "/idp-architecture/sides.html#lo-bedrock"
+    },
+    {
+      "id": "lo-ci",
+      "tab": "sides",
+      "name": "CI and unclass evals",
+      "plane": "ctrl",
+      "what": "CI builds the image and runs evals on unclassified fixtures. PR #4821 is the review board. The agent package is the thing CI stamps, not a chat log.",
+      "why": "Gates have to fail closed on the low-side before a one-way promote. High-side evals are a different board and they stay there.",
+      "notes": [
+        "Fixtures are unclass. Do not smuggle production traces into CI.",
+        "newsfeed-service:v1827 is the app image CI produces.",
+        "The agent package also carries prompts, schemas, the unclass eval set, and IaC."
+      ],
+      "href": "/idp-architecture/sides.html#lo-ci"
+    },
+    {
+      "id": "lo-govcloud",
+      "tab": "sides",
+      "name": "GovCloud fence (FedRAMP High / IL4-shaped)",
+      "plane": "infra",
+      "what": "A managed federal boundary on the low-side. Inherited FedRAMP High / IL4 fence. A named example is Knox on AWS GovCloud (June 2026 PR). That is a fence example, not a classification claim for any vendor product.",
+      "why": "Some low-side work needs a federal boundary without crossing into Secret. The fence is inherited ATO shape, not a high-side enclave.",
+      "notes": [
+        "Still low-side. CUI can sit here. Secret and TS do not.",
+        "Knox on AWS GovCloud is cited only as a public FedRAMP High example.",
+        "Same CNCF stack as the rest of the factory, still connected enough to pull Iron Bank."
+      ],
+      "href": "/idp-architecture/sides.html#lo-govcloud"
+    },
+    {
+      "id": "lo-internet",
+      "tab": "sides",
+      "name": "Internet (unclass / CUI)",
+      "plane": "data",
+      "what": "Commercial internet is the open low-side. Prototypes, public docs, and unclass fixtures live here. newsfeed-service:v1827 can be built and reviewed as PR #4821 before any promotion.",
+      "why": "You need a place that can see the public catalog and talk to commercial CI. That is not the high-side.",
+      "notes": [
+        "Unclassified / CUI only. No production high-side data.",
+        "Pull Iron Bank here (IL2 public). Do not expect a push of classified traces back out.",
+        "The agent package is assembled here, then promoted. The app example is newsfeed-service:v1827."
+      ],
+      "href": "/idp-architecture/sides.html#lo-internet"
+    },
+    {
+      "id": "lo-ironbank",
+      "tab": "sides",
+      "name": "Iron Bank pull (IL2 public)",
+      "plane": "infra",
+      "what": "Iron Bank (registry1) is the DoD centralized artifact repository of hardened, signed containers. It is IL2 public. You pull here on the low-side. The high-side later mirrors what it is allowed to hold.",
+      "why": "A factory that invents its own base images skips the hardened set the 2021 reference design names.",
+      "notes": [
+        "IL2 public. Pull, do not treat it as a high-side registry.",
+        "The official design stores Iron Bank pulls in a locally centralized artifact repository.",
+        "High-side uses a Harbor mirror and Cosign verify, not a live internet pull."
+      ],
+      "href": "/idp-architecture/sides.html#lo-ironbank"
+    },
+    {
+      "id": "overview",
+      "tab": "sides",
+      "name": "Low-side to high-side",
+      "plane": "step",
+      "what": "A classification split, not a staging/prod metaphor. Left is unclassified / CUI. Right is Secret / TS. The middle is a one-way guard. The agent package is what promotes. newsfeed-service:v1827 and PR #4821 are the app example that can ride in that package.",
+      "why": "High-side traces and retrieved classified context must not walk back to the internet. The same CNCF stack can run on both sides, disconnected.",
+      "notes": [
+        "Low-side: internet or GovCloud, prototypes, CI on unclass fixtures. Iron Bank (IL2 public) is pulled here.",
+        "The package goes low to high. Production data, user traces, classified context, and model outputs that saw high-side data do not go high to low.",
+        "High-side: SIPR ~ IL6, JWICS ~ IL7 (standard DoD mapping, not a vendor claim). Local registry, Cosign verify, evals stay.",
+        "This tab is an IDP reading. Official DoD factory language lives on Factory."
+      ],
+      "href": "/idp-architecture/sides.html#overview"
+    },
+    {
+      "id": "package",
+      "tab": "sides",
+      "name": "Agent package (what promotes)",
+      "plane": "ctrl",
+      "what": "The agent package is the thing that crosses the guard. It holds a signed container image (newsfeed-service:v1827 from PR #4821 as the app example), prompts, tool/MCP schemas, an unclass eval set, and IaC.",
+      "why": "If you promote a chat, you have no digest, no schema pin, and no eval set. The package is reviewable. A transcript is not.",
+      "notes": [
+        "Assembled on the low-side. Verified on the high-side (Cosign, local registry, local catalog).",
+        "Does not include production data or high-side traces.",
+        "Same package shape on both sides. The high-side copy is not a sync back."
+      ],
+      "href": "/idp-architecture/sides.html#package"
     },
     {
       "id": "admission",
