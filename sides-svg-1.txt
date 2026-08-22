@@ -18,7 +18,7 @@
 <text x="892" y="878" font-size="12" font-weight="400" fill="#5F5E5A">Probers live in the enclave.</text>
 <text x="892" y="894" font-size="12" font-weight="400" fill="#5F5E5A">Traces do not walk back.</text>
 <line x1="524" y1="590" x2="556" y2="590" stroke="#A32D2D" stroke-width="2.4" marker-end="url(#arrR)"/>
-<text x="700" y="1048" font-size="12" font-weight="500" fill="#5F5E5A" text-anchor="middle">Same CNCF stack on both sides. Disconnected on the right. Official factory PDF is on Factory.</text>
+<text x="700" y="1048" font-size="12" font-weight="500" fill="#5F5E5A" text-anchor="middle">Same CNCF stack on both sides. Factory: Fundamentals v2.5 is current. The 2021 RD is a stale interconnect spec.</text>
 <g id="hits">
 <rect class="hit" data-id="lo-internet" x="36" y="156" width="488" height="150" rx="8" fill="transparent"/>
 <rect class="hit" data-id="lo-govcloud" x="36" y="322" width="488" height="164" rx="8" fill="transparent"/>
