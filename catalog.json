@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "c847cc8d7fea",
+  "version": "1c5428db21c1",
   "records": [
     {
       "id": "admission",
@@ -5185,23 +5185,10 @@
         "Low-side: internet or GovCloud, prototypes, CI on unclass fixtures. Iron Bank (IL2 public) is pulled here.",
         "The package goes low to high. Production data, user traces, classified context, and model outputs that saw high-side data do not go high to low.",
         "High-side: SIPR ~ IL6, JWICS ~ IL7 (standard DoD mapping, not a vendor claim). Local registry, Cosign verify, evals stay.",
-        "This tab is an IDP reading. Official DoD factory language lives on Factory."
+        "This tab is an IDP reading. Factory holds current doctrine versus the stale 2021 interconnect spec.",
+        "The CNCF Kubernetes reference design (v2.1, Oct 2021) is stale but still listed. Current doctrine is DevSecOps Fundamentals v2.5. No DoD reference design covers agents or MCP."
       ],
       "href": "/idp-architecture/sides.html#overview"
-    },
-    {
-      "id": "package",
-      "tab": "sides",
-      "name": "Agent package (what promotes)",
-      "plane": "ctrl",
-      "what": "The agent package is the thing that crosses the guard. It holds a signed container image (newsfeed-service:v1827 from PR #4821 as the app example), prompts, tool/MCP schemas, an unclass eval set, and IaC.",
-      "why": "If you promote a chat, you have no digest, no schema pin, and no eval set. The package is reviewable. A transcript is not.",
-      "notes": [
-        "Assembled on the low-side. Verified on the high-side (Cosign, local registry, local catalog).",
-        "Does not include production data or high-side traces.",
-        "Same package shape on both sides. The high-side copy is not a sync back."
-      ],
-      "href": "/idp-architecture/sides.html#package"
     },
     {
       "id": "admission",
