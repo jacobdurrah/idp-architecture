@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="poster" viewBox="0 0 1400 1080" width="100%" role="img" aria-label="Low-side to high-side">
+<defs>
+<marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1.2 L10 5 L0 8.8 z" fill="#A32D2D"/></marker>
+</defs>
+<rect x="0" y="0" width="1400" height="1080" fill="#FFFFFF"/>
+<text x="700" y="40" font-size="26" font-weight="750" fill="#2C2C2A" text-anchor="middle">Low-side to high-side</text>
+<text x="700" y="64" font-size="14" font-weight="500" fill="#5F5E5A" text-anchor="middle">Classification split. The agent package promotes. Traces do not walk back.</text>
+<text x="700" y="84" font-size="12" font-weight="500" fill="#3D3C38" text-anchor="middle">newsfeed-service:v1827  ·  PR #4821  ·  one-way guard</text>
+<rect x="20" y="108" width="520" height="930" rx="12" fill="#F3FBF7" stroke="#B7E0D0" stroke-width="1.4"/>
+<text x="40" y="134" font-size="18" font-weight="750" fill="#0F6E56" text-anchor="start">Low-side  (unclassified / CUI)</text>
+<rect x="860" y="108" width="520" height="930" rx="12" fill="#F4F1EA" stroke="#D3C4A8" stroke-width="1.4"/>
+<text x="880" y="134" font-size="18" font-weight="750" fill="#633806" text-anchor="start">High-side  (Secret / TS)</text>
+<rect x="556" y="108" width="288" height="930" rx="12" fill="#FBF2F2" stroke="#E8B4B4" stroke-width="1.4"/>
+<text x="700" y="134" font-size="16" font-weight="750" fill="#A32D2D" text-anchor="middle">The guard  (one-way)</text>
+<rect x="36" y="156" width="488" height="150" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6"/>
+<rect x="36" y="156" width="7" height="150" rx="4" fill="#0F6E56"/>
+<text x="58" y="178" font-size="14" font-weight="750" fill="#0F6E56">Internet</text>
+<text x="58" y="196" font-size="11" font-weight="600" fill="#5F5E5A">lo-internet</text>
+<text x="52" y="214" font-size="12" font-weight="400" fill="#5F5E5A">Internet or public unclass.</text>
+<text x="52" y="230" font-size="12" font-weight="400" fill="#5F5E5A">Prototypes. PR #4821 lives here.</text>
+<rect x="36" y="322" width="488" height="164" rx="10" fill="#F4F1EA" stroke="#C4A574" stroke-width="1.6"/>
+<rect x="36" y="322" width="7" height="164" rx="4" fill="#854F0B"/>
+<text x="58" y="344" font-size="14" font-weight="750" fill="#854F0B">GovCloud fence</text>
+<text x="58" y="362" font-size="11" font-weight="600" fill="#5F5E5A">lo-govcloud</text>
+<text x="52" y="380" font-size="12" font-weight="400" fill="#5F5E5A">Inherited FedRAMP High / IL4 fence.</text>
+<text x="52" y="396" font-size="12" font-weight="400" fill="#5F5E5A">Knox on AWS GovCloud is one example.</text>
+<text x="52" y="412" font-size="12" font-weight="400" fill="#5F5E5A">Still low-side, not Secret.</text>
+<rect x="36" y="502" width="488" height="150" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6"/>
+<rect x="36" y="502" width="7" height="150" rx="4" fill="#0F6E56"/>
+<text x="58" y="524" font-size="14" font-weight="750" fill="#0F6E56">Bedrock catalog</text>
+<text x="58" y="542" font-size="11" font-weight="600" fill="#5F5E5A">lo-bedrock</text>
+<text x="52" y="560" font-size="12" font-weight="400" fill="#5F5E5A">Commercial or GovCloud catalog.</text>
+<text x="52" y="576" font-size="12" font-weight="400" fill="#5F5E5A">Prompts and MCP schemas start here.</text>
+<rect x="36" y="668" width="488" height="150" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<rect x="36" y="668" width="7" height="150" rx="4" fill="#185FA5"/>
+<text x="58" y="690" font-size="14" font-weight="750" fill="#185FA5">CI / unclass evals</text>
+<text x="58" y="708" font-size="11" font-weight="600" fill="#5F5E5A">lo-ci</text>
+<text x="52" y="726" font-size="12" font-weight="400" fill="#5F5E5A">CI stamps the agent package.</text>
+<text x="52" y="742" font-size="12" font-weight="400" fill="#5F5E5A">Evals on unclass fixtures only.</text>
+<rect x="36" y="834" width="488" height="180" rx="10" fill="#F4F1EA" stroke="#C4A574" stroke-width="1.6"/>
+<rect x="36" y="834" width="7" height="180" rx="4" fill="#854F0B"/>
+<text x="58" y="856" font-size="14" font-weight="750" fill="#854F0B">Iron Bank pull</text>
+<text x="58" y="874" font-size="11" font-weight="600" fill="#5F5E5A">lo-ironbank</text>
+<text x="52" y="892" font-size="12" font-weight="400" fill="#5F5E5A">registry1 is IL2 public.</text>
+<text x="52" y="908" font-size="12" font-weight="400" fill="#5F5E5A">You pull here. High-side mirrors.</text>
+<rect x="572" y="156" width="256" height="280" rx="10" fill="#F8E8E8" stroke="#D46A6A" stroke-width="1.6"/>
+<rect x="572" y="156" width="7" height="280" rx="4" fill="#A32D2D"/>
+<text x="594" y="178" font-size="14" font-weight="750" fill="#A32D2D">One-way</text>
+<text x="594" y="196" font-size="11" font-weight="600" fill="#5F5E5A">guard</text>
+<text x="588" y="214" font-size="12" font-weight="400" fill="#5F5E5A">Package: low to high.</text>
+<text x="588" y="230" font-size="12" font-weight="400" fill="#5F5E5A">Not high to low.</text>
+<text x="588" y="246" font-size="12" font-weight="400" fill="#5F5E5A">Not staging / prod.</text>
+<text x="588" y="262" font-size="12" font-weight="400" fill="#5F5E5A">Classification split.</text>
+<rect x="572" y="452" width="256" height="360" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<rect x="572" y="452" width="7" height="360" rx="4" fill="#185FA5"/>
+<text x="594" y="474" font-size="14" font-weight="750" fill="#185FA5">Agent package</text>
+<text x="594" y="492" font-size="11" font-weight="600" fill="#5F5E5A">package</text>
+<text x="588" y="510" font-size="12" font-weight="400" fill="#5F5E5A">What promotes:</text>
+<text x="588" y="526" font-size="12" font-weight="400" fill="#5F5E5A">image (v1827)</text>
+<text x="588" y="542" font-size="12" font-weight="400" fill="#5F5E5A">prompts</text>
+<text x="588" y="558" font-size="12" font-weight="400" fill="#5F5E5A">MCP schemas</text>
+<text x="588" y="574" font-size="12" font-weight="400" fill="#5F5E5A">unclass eval set</text>
+<text x="588" y="590" font-size="12" font-weight="400" fill="#5F5E5A">IaC</text>
+<rect x="572" y="828" width="256" height="186" rx="10" fill="#F8E8E8" stroke="#D46A6A" stroke-width="1.6"/>
+<rect x="572" y="828" width="7" height="186" rx="4" fill="#A32D2D"/>
+<text x="594" y="850" font-size="14" font-weight="750" fill="#A32D2D">Does not return</text>
+<text x="594" y="868" font-size="11" font-weight="600" fill="#5F5E5A">guard</text>
+<text x="588" y="886" font-size="12" font-weight="400" fill="#5F5E5A">prod data, traces,</text>
+<text x="588" y="902" font-size="12" font-weight="400" fill="#5F5E5A">classified context,</text>
+<text x="588" y="918" font-size="12" font-weight="400" fill="#5F5E5A">high-side outputs</text>
+<rect x="876" y="156" width="488" height="150" rx="10" fill="#F1F0EB" stroke="#8A8984" stroke-width="1.6"/>
+<rect x="876" y="156" width="7" height="150" rx="4" fill="#3D3C38"/>
+<text x="898" y="178" font-size="14" font-weight="750" fill="#3D3C38">SIPR  ~ IL6</text>
+<text x="898" y="196" font-size="11" font-weight="600" fill="#5F5E5A">hi-sipr</text>
+<text x="892" y="214" font-size="12" font-weight="400" fill="#5F5E5A">Secret. Standard DoD mapping.</text>
+<text x="892" y="230" font-size="12" font-weight="400" fill="#5F5E5A">Air-gapped or tightly guarded.</text>
+<rect x="876" y="322" width="488" height="150" rx="10" fill="#F1F0EB" stroke="#8A8984" stroke-width="1.6"/>
+<rect x="876" y="322" width="7" height="150" rx="4" fill="#3D3C38"/>
+<text x="898" y="344" font-size="14" font-weight="750" fill="#3D3C38">JWICS  ~ IL7</text>
+<text x="898" y="362" font-size="11" font-weight="600" fill="#5F5E5A">hi-jwics</text>
+<text x="892" y="380" font-size="12" font-weight="400" fill="#5F5E5A">TS/SCI. Standard DoD mapping.</text>
