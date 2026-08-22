@@ -1,4 +1,15 @@
 window.IDP_DATA = Object.assign(window.IDP_DATA || {}, {
+  "package": {
+    "n": "Agent package (what promotes)",
+    "p": "ctrl",
+    "w": "The agent package is the thing that crosses the guard. It holds a signed container image (newsfeed-service:v1827 from PR #4821 as the app example), prompts, tool/MCP schemas, an unclass eval set, and IaC.",
+    "y": "If you promote a chat, you have no digest, no schema pin, and no eval set. The package is reviewable. A transcript is not.",
+    "d": [
+      "Assembled on the low-side. Verified on the high-side (Cosign, local registry, local catalog).",
+      "Does not include production data or high-side traces.",
+      "Same package shape on both sides. The high-side copy is not a sync back."
+    ]
+  },
   "hi-sipr": {
     "n": "SIPR (~ IL6)",
     "p": "metal",
