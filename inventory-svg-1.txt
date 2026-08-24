@@ -1,0 +1,82 @@
+<text x="628" y="384" font-size="12" font-weight="400" fill="#5F5E5A">Fees, overlays.</text>
+<text x="628" y="400" font-size="12" font-weight="400" fill="#5F5E5A">EXAMPLE price 28995.</text>
+<rect x="612" y="422" width="276" height="86" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6"/>
+<rect x="612" y="422" width="7" height="86" rx="4" fill="#0F6E56"/>
+<text x="634" y="444" font-size="14" font-weight="750" fill="#0F6E56">Recall enricher</text>
+<text x="634" y="462" font-size="11" font-weight="600" fill="#5F5E5A">inv-recall</text>
+<text x="628" y="482" font-size="12" font-weight="400" fill="#5F5E5A">Open recalls.</text>
+<text x="628" y="498" font-size="12" font-weight="400" fill="#5F5E5A">Sold does not wait.</text>
+<text x="750" y="540" font-size="12" font-weight="600" fill="#0F6E56" text-anchor="middle">Sold never waits on enrich</text>
+<rect x="924" y="160" width="276" height="120" rx="10" fill="#F3F1FC" stroke="#AFA9EC" stroke-width="1.6"/>
+<rect x="924" y="160" width="7" height="120" rx="4" fill="#534AB7"/>
+<text x="946" y="182" font-size="14" font-weight="750" fill="#534AB7">Materializer</text>
+<text x="946" y="200" font-size="11" font-weight="600" fill="#5F5E5A">inv-mat</text>
+<text x="940" y="220" font-size="12" font-weight="400" fill="#5F5E5A">One writer. VIN+dealer.</text>
+<text x="940" y="236" font-size="12" font-weight="400" fill="#5F5E5A">Source sequence.</text>
+<text x="940" y="252" font-size="12" font-weight="400" fill="#5F5E5A">Inferred: CQRS.</text>
+<rect x="924" y="296" width="276" height="120" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6"/>
+<rect x="924" y="296" width="7" height="120" rx="4" fill="#0F6E56"/>
+<text x="946" y="318" font-size="14" font-weight="750" fill="#0F6E56">Current-state SoR</text>
+<text x="946" y="336" font-size="11" font-weight="600" fill="#5F5E5A">inv-sor</text>
+<text x="940" y="356" font-size="12" font-weight="400" fill="#5F5E5A">Truth per VIN+dealer.</text>
+<text x="940" y="372" font-size="12" font-weight="400" fill="#5F5E5A">Log is for replay.</text>
+<text x="940" y="388" font-size="12" font-weight="400" fill="#5F5E5A">VDP re-checks here.</text>
+<rect x="924" y="500" width="276" height="110" rx="10" fill="#F3F1FC" stroke="#AFA9EC" stroke-width="1.6"/>
+<rect x="924" y="500" width="7" height="110" rx="4" fill="#534AB7"/>
+<text x="946" y="522" font-size="14" font-weight="750" fill="#534AB7">Nightly recon</text>
+<text x="946" y="540" font-size="11" font-weight="600" fill="#5F5E5A">inv-recon</text>
+<text x="940" y="560" font-size="12" font-weight="400" fill="#5F5E5A">SoR vs projectors.</text>
+<text x="940" y="576" font-size="12" font-weight="400" fill="#5F5E5A">10 min to leadership</text>
+<text x="940" y="592" font-size="12" font-weight="400" fill="#5F5E5A">if lots are not selling.</text>
+<rect x="1236" y="118" width="336" height="96" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<rect x="1236" y="118" width="7" height="96" rx="4" fill="#185FA5"/>
+<text x="1258" y="140" font-size="14" font-weight="750" fill="#185FA5">Facet index</text>
+<text x="1258" y="158" font-size="11" font-weight="600" fill="#5F5E5A">inv-search</text>
+<text x="1252" y="178" font-size="12" font-weight="400" fill="#5F5E5A">Projector. Vendor unstated.</text>
+<text x="1252" y="194" font-size="12" font-weight="400" fill="#5F5E5A">CDC = HI name for copy.</text>
+<rect x="1236" y="226" width="336" height="96" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6"/>
+<rect x="1236" y="226" width="7" height="96" rx="4" fill="#0F6E56"/>
+<text x="1258" y="248" font-size="14" font-weight="750" fill="#0F6E56">VDP re-check</text>
+<text x="1258" y="266" font-size="11" font-weight="600" fill="#5F5E5A">inv-vdp</text>
+<text x="1252" y="286" font-size="12" font-weight="400" fill="#5F5E5A">Ask SoR, not cache.</text>
+<text x="1252" y="302" font-size="12" font-weight="400" fill="#5F5E5A">Hide after VehicleSold.</text>
+<rect x="1236" y="334" width="336" height="86" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<rect x="1236" y="334" width="7" height="86" rx="4" fill="#185FA5"/>
+<text x="1258" y="356" font-size="14" font-weight="750" fill="#185FA5">Channel feed</text>
+<text x="1258" y="374" font-size="11" font-weight="600" fill="#5F5E5A">inv-feed</text>
+<text x="1252" y="394" font-size="12" font-weight="400" fill="#5F5E5A">Realtime out.</text>
+<text x="1252" y="410" font-size="12" font-weight="400" fill="#5F5E5A">Same sequence.</text>
+<rect x="1236" y="432" width="336" height="96" rx="10" fill="#F8E8E8" stroke="#D46A6A" stroke-width="1.6"/>
+<rect x="1236" y="432" width="7" height="96" rx="4" fill="#A32D2D"/>
+<text x="1258" y="454" font-size="14" font-weight="750" fill="#A32D2D">Cache invalidate</text>
+<text x="1258" y="472" font-size="11" font-weight="600" fill="#5F5E5A">inv-cache</text>
+<text x="1252" y="492" font-size="12" font-weight="400" fill="#5F5E5A">From events, not 24h TTL.</text>
+<text x="1252" y="508" font-size="12" font-weight="400" fill="#5F5E5A">TTL = sold still showing.</text>
+<path d="M 304 170 L 338 280" fill="none" stroke="#185FA5" stroke-width="1.6"/>
+<path d="M 576 310 L 610 170" fill="none" stroke="#0F6E56" stroke-width="1.4"/>
+<path d="M 576 310 L 922 220" fill="none" stroke="#534AB7" stroke-width="1.6"/>
+<path d="M 1200 220 L 1234 170" fill="none" stroke="#185FA5" stroke-width="1.6"/>
+<path d="M 1200 356 L 1234 274" fill="none" stroke="#0F6E56" stroke-width="1.6"/>
+<g id="hits">
+<rect class="hit" data-id="inv-dealer" x="28" y="118" width="276" height="96" rx="8" fill="transparent"/>
+<rect class="hit" data-id="inv-land" x="28" y="226" width="276" height="86" rx="8" fill="transparent"/>
+<rect class="hit" data-id="inv-batch" x="28" y="324" width="276" height="102" rx="8" fill="transparent"/>
+<rect class="hit" data-id="inv-diff" x="28" y="438" width="276" height="86" rx="8" fill="transparent"/>
+<rect class="hit" data-id="inv-absent" x="28" y="536" width="276" height="86" rx="8" fill="transparent"/>
+<rect class="hit" data-id="inv-breaker" x="28" y="634" width="276" height="86" rx="8" fill="transparent"/>
+<rect class="hit" data-id="inv-onprem" x="28" y="732" width="276" height="86" rx="8" fill="transparent"/>
+<rect class="hit" data-id="inv-hub" x="340" y="200" width="236" height="220" rx="8" fill="transparent"/>
+<rect class="hit" data-id="inv-rpo" x="612" y="118" width="276" height="96" rx="8" fill="transparent"/>
+<rect class="hit" data-id="inv-img" x="612" y="226" width="276" height="86" rx="8" fill="transparent"/>
+<rect class="hit" data-id="inv-price" x="612" y="324" width="276" height="86" rx="8" fill="transparent"/>
+<rect class="hit" data-id="inv-recall" x="612" y="422" width="276" height="86" rx="8" fill="transparent"/>
+<rect class="hit" data-id="inv-mat" x="924" y="160" width="276" height="120" rx="8" fill="transparent"/>
+<rect class="hit" data-id="inv-sor" x="924" y="296" width="276" height="120" rx="8" fill="transparent"/>
+<rect class="hit" data-id="inv-recon" x="924" y="500" width="276" height="110" rx="8" fill="transparent"/>
+<rect class="hit" data-id="inv-search" x="1236" y="118" width="336" height="96" rx="8" fill="transparent"/>
+<rect class="hit" data-id="inv-vdp" x="1236" y="226" width="336" height="96" rx="8" fill="transparent"/>
+<rect class="hit" data-id="inv-feed" x="1236" y="334" width="336" height="86" rx="8" fill="transparent"/>
+<rect class="hit" data-id="inv-cache" x="1236" y="432" width="336" height="96" rx="8" fill="transparent"/>
+<rect id="selbox" visibility="hidden" rx="10"/>
+</g>
+</svg>
