@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "8acf3d3ffe17",
+  "version": "c71e3cae454d",
   "records": [
     {
       "id": "admission",
@@ -2342,6 +2342,20 @@
       "href": "/idp-architecture/golden.html#workers"
     },
     {
+      "id": "inv-absent",
+      "tab": "inventory",
+      "name": "Absence is not a sale",
+      "plane": "alert",
+      "what": "A VIN missing from today's dealer file is not VehicleSold. Do not flip SOLD. Do not wipe the SoR row. Wait for a sold event or a confirmed delete.",
+      "why": "File gaps look like mass sold. That is how you hide cars that are still on the lot and lose the next sale.",
+      "notes": [
+        "File story step. Pair with the 20% drop breaker.",
+        "Known stake: missing VIN = lost sale (the other direction).",
+        "Inferred rule: absence != sale."
+      ],
+      "href": "/idp-architecture/inventory.html#inv-absent"
+    },
+    {
       "id": "inv-batch",
       "tab": "inventory",
       "name": "Worker / parse",
@@ -2384,6 +2398,20 @@
       "href": "/idp-architecture/inventory.html#inv-breaker"
     },
     {
+      "id": "inv-cache",
+      "tab": "inventory",
+      "name": "Cache invalidate",
+      "plane": "data",
+      "what": "Invalidate from events, not a 24h TTL. VehicleSold seq 1842 drops vdp:1GNEVHKW8EX123456:24781 now.",
+      "why": "A TTL cache is how sold-still-showing lives until morning. That is an empty stall until expiry.",
+      "notes": [
+        "Break story: 24h TTL still serving AVAILABLE after 14:02 ET.",
+        "Do not invent Redis. The rule is event-driven invalidate.",
+        "Inferred: cache is a projector with a short life, not SoR."
+      ],
+      "href": "/idp-architecture/inventory.html#inv-cache"
+    },
+    {
       "id": "inv-dealer",
       "tab": "inventory",
       "name": "Dealer file",
@@ -2410,6 +2438,19 @@
         "Inferred: snapshot-diff at the edge, then the log."
       ],
       "href": "/idp-architecture/inventory.html#inv-diff"
+    },
+    {
+      "id": "inv-feed",
+      "tab": "inventory",
+      "name": "Channel feed",
+      "plane": "data",
+      "what": "Realtime feed to channels (site, partners, whatever is wired). Same sequence. A sold VIN must leave the feed, not wait for a nightly dump.",
+      "why": "A partner that still has AVAILABLE at 14:10 ET after a 14:02 ET sold is the same empty-stall bug, off your lot.",
+      "notes": [
+        "Known: realtime feed. 104 topics on the inside; the feed is the outside.",
+        "Do not invent GraphQL or a partner list."
+      ],
+      "href": "/idp-architecture/inventory.html#inv-feed"
     },
     {
       "id": "inv-file",
@@ -2440,6 +2481,19 @@
       "href": "/idp-architecture/inventory.html#inv-hub"
     },
     {
+      "id": "inv-img",
+      "tab": "inventory",
+      "name": "Image enricher",
+      "plane": "data",
+      "what": "Attach or refresh images for the VIN. Sold does not wait. A sold unit with a stale photo is still sold.",
+      "why": "Image fetch is slow and flaky. Putting it on the sold path is how you keep a car on the VDP after 14:02 ET.",
+      "notes": [
+        "Known: enrich images.",
+        "Inferred: async. Failure retries. Never blocks VehicleSold."
+      ],
+      "href": "/idp-architecture/inventory.html#inv-img"
+    },
+    {
       "id": "inv-land",
       "tab": "inventory",
       "name": "Landing zone",
@@ -2452,6 +2506,34 @@
         "A truncated upload is a Break, not a silent short snapshot."
       ],
       "href": "/idp-architecture/inventory.html#inv-land"
+    },
+    {
+      "id": "inv-mat",
+      "tab": "inventory",
+      "name": "Materializer",
+      "plane": "ctrl",
+      "what": "One materializer. Key is VIN+dealer. Applies source sequence. Reads Event Hubs, writes the current-state SoR. Enrichment can arrive later as a follow-on apply.",
+      "why": "Two writers are how you get two truths. CQRS (inferred): the log is the write, the SoR is the read model.",
+      "notes": [
+        "Inferred: one materializer, CQRS, source sequence on VIN+dealer.",
+        "seq 1842 beats seq 1841. Late enrich does not resurrect AVAILABLE after VehicleSold.",
+        "EXAMPLE payload is the event plus any enrich already in hand."
+      ],
+      "href": "/idp-architecture/inventory.html#inv-mat"
+    },
+    {
+      "id": "inv-onprem",
+      "tab": "inventory",
+      "name": "On-prem (strangler)",
+      "plane": "infra",
+      "what": "On-prem is still authoritative for the leave-behind. Second legacy app still in play. Brazil cut over first; ~2/3 of US still on the old side. Inferred strangler, not a claimed program name.",
+      "why": "If Azure and on-prem both write the same VIN, you get two lots. The copy is downstream until a dealer is cut over.",
+      "notes": [
+        "Known (Priya): Brazil then US, ~2/3 left, second legacy app.",
+        "Inferred: strangler. On-prem still authoritative.",
+        "Do not invent Oracle or an on-prem SKU."
+      ],
+      "href": "/idp-architecture/inventory.html#inv-onprem"
     },
     {
       "id": "inv-overview",
@@ -2471,6 +2553,46 @@
       "href": "/idp-architecture/inventory.html#inv-overview"
     },
     {
+      "id": "inv-price",
+      "tab": "inventory",
+      "name": "Price math",
+      "plane": "data",
+      "what": "Price math on the VIN (fees, offers, dealer overlays). The EXAMPLE list price is 28995. Sold does not wait for a later overlay.",
+      "why": "A wrong price is a complaint. A sold car still listed is an empty stall. Rank the stall first.",
+      "notes": [
+        "Known: enrich price math.",
+        "Do not invent a pricing vendor."
+      ],
+      "href": "/idp-architecture/inventory.html#inv-price"
+    },
+    {
+      "id": "inv-recall",
+      "tab": "inventory",
+      "name": "Recall enricher",
+      "plane": "data",
+      "what": "Attach open recalls to the VIN. Sold does not wait. A recall flag can arrive after the SoR row already says SOLD.",
+      "why": "Recalls are safety copy, not a reason to delay taking a car off the lot.",
+      "notes": [
+        "Known: enrich recalls.",
+        "Inferred: side path. Same 'sold never waits' rule as RPO and images."
+      ],
+      "href": "/idp-architecture/inventory.html#inv-recall"
+    },
+    {
+      "id": "inv-recon",
+      "tab": "inventory",
+      "name": "Nightly recon",
+      "plane": "obs",
+      "what": "Nightly SoR versus projectors (search, feed, cache). Drift is a page, not a dashboard curiosity. 10 minutes to leadership if lots are not selling.",
+      "why": "You will miss a daytime sold-still-showing if recon is the only net. Use it for the holes events missed.",
+      "notes": [
+        "Known: 10 min to leadership if not selling.",
+        "Inferred: recon is SoR vs projectors. CDC lag shows up here.",
+        "Break: recon is how you prove the TTL cache lied."
+      ],
+      "href": "/idp-architecture/inventory.html#inv-recon"
+    },
+    {
       "id": "inv-rpo",
       "tab": "inventory",
       "name": "RPO enricher",
@@ -2482,6 +2604,20 @@
         "Inferred: enricher is a side path, not a gate on sold."
       ],
       "href": "/idp-architecture/inventory.html#inv-rpo"
+    },
+    {
+      "id": "inv-search",
+      "tab": "inventory",
+      "name": "Facet index",
+      "plane": "data",
+      "what": "Facet search is a projector off the SoR (or the log). Vendor unstated. CDC is the HI name for this copy. APIs sit beside it.",
+      "why": "Buyers filter make, model, price, RPO. If the projector lags sold, the filter still shows a car that is gone.",
+      "notes": [
+        "Known: facet search + APIs. Do not invent a search vendor.",
+        "Inferred: search as projector. CQRS read side.",
+        "Nightly recon compares this copy to the SoR."
+      ],
+      "href": "/idp-architecture/inventory.html#inv-search"
     },
     {
       "id": "inv-sold",
@@ -2496,6 +2632,34 @@
         "VDP re-checks the SoR. Search is a projector, vendor unstated."
       ],
       "href": "/idp-architecture/inventory.html#inv-sold"
+    },
+    {
+      "id": "inv-sor",
+      "tab": "inventory",
+      "name": "Current-state SoR",
+      "plane": "data",
+      "what": "The SoR (system of record) holds the current row per VIN+dealer. The log is for replay. VDP re-checks here. Search is a copy, not the truth.",
+      "why": "If search or a 24h cache is treated as SoR, sold-still-showing becomes normal. The stall stays empty.",
+      "notes": [
+        "Inferred: current-state SoR + log for replay. Do not name Postgres.",
+        "Known stake: missing VIN = lost sale. Sold still showing = empty stall.",
+        "CDC (change data capture) is the HI name for SoR-to-search copy. Inferred."
+      ],
+      "href": "/idp-architecture/inventory.html#inv-sor"
+    },
+    {
+      "id": "inv-vdp",
+      "tab": "inventory",
+      "name": "VDP re-check",
+      "plane": "data",
+      "what": "The VDP (vehicle detail page) re-checks the SoR before it paints. A search hit is not enough. EXAMPLE: hide 1GNEVHKW8EX123456 after seq 1842.",
+      "why": "Search can lag. Cache can lie. The page that names a price and a VIN must ask the SoR.",
+      "notes": [
+        "Known stake: sold-still-showing = empty stall.",
+        "Break: if the page trusts a 24h TTL, the stall is empty and the listing is still up.",
+        "Factory-to-VIN later. This box is dealer inventory, not the plant."
+      ],
+      "href": "/idp-architecture/inventory.html#inv-vdp"
     },
     {
       "id": "admission",
