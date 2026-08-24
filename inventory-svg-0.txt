@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="poster" viewBox="0 0 1600 900" width="100%" role="img" aria-label="Inventory: dealer file to VDP">
+<rect x="0" y="0" width="1600" height="900" fill="#FFFFFF"/>
+<text x="800" y="32" font-size="24" font-weight="750" fill="#2C2C2A" text-anchor="middle">Inventory</text>
+<text x="800" y="52" font-size="13" font-weight="500" fill="#5F5E5A" text-anchor="middle">Dealer file to VDP. ~1.7M vehicles, ~5500 dealers. Azure. Event Hubs (left Kafka). 104 topics.</text>
+<text x="800" y="70" font-size="12" font-weight="500" fill="#3D3C38" text-anchor="middle">Brazil then US. Missing VIN = lost sale. Sold still showing = empty stall. Play Sold, File, or Break.</text>
+<rect x="16" y="84" width="300" height="800" rx="12" fill="#FAF6F0" stroke="#E5D4B8" stroke-width="1.4"/>
+<text x="30" y="106" font-size="13" font-weight="750" fill="#854F0B">Collect</text>
+<rect x="328" y="84" width="260" height="800" rx="12" fill="#F5F9FC" stroke="#B5D4F4" stroke-width="1.4"/>
+<text x="342" y="106" font-size="13" font-weight="750" fill="#185FA5">Stream</text>
+<rect x="600" y="84" width="300" height="800" rx="12" fill="#EAF6F1" stroke="#B7DDCF" stroke-width="1.4"/>
+<text x="614" y="106" font-size="13" font-weight="750" fill="#0F6E56">Enrich</text>
+<rect x="912" y="84" width="300" height="800" rx="12" fill="#F3F1FC" stroke="#C8C3EE" stroke-width="1.4"/>
+<text x="926" y="106" font-size="13" font-weight="750" fill="#534AB7">Materialize</text>
+<rect x="1224" y="84" width="360" height="800" rx="12" fill="#F7FBFE" stroke="#B5D4F4" stroke-width="1.4"/>
+<text x="1238" y="106" font-size="13" font-weight="750" fill="#0C447C">Serve</text>
+<rect x="28" y="118" width="276" height="96" rx="10" fill="#F4F1EA" stroke="#C4A574" stroke-width="1.6"/>
+<rect x="28" y="118" width="7" height="96" rx="4" fill="#854F0B"/>
+<text x="50" y="140" font-size="14" font-weight="750" fill="#854F0B">Dealer file</text>
+<text x="50" y="158" font-size="11" font-weight="600" fill="#5F5E5A">inv-dealer</text>
+<text x="44" y="178" font-size="12" font-weight="400" fill="#5F5E5A">FTP-or-drop snapshot.</text>
+<text x="44" y="194" font-size="12" font-weight="400" fill="#5F5E5A">~5500 dealers.</text>
+<text x="44" y="210" font-size="12" font-weight="400" fill="#5F5E5A">EXAMPLE: Lakeside 24781</text>
+<rect x="28" y="226" width="276" height="86" rx="10" fill="#F4F1EA" stroke="#C4A574" stroke-width="1.6"/>
+<rect x="28" y="226" width="7" height="86" rx="4" fill="#854F0B"/>
+<text x="50" y="248" font-size="14" font-weight="750" fill="#854F0B">Landing zone</text>
+<text x="50" y="266" font-size="11" font-weight="600" fill="#5F5E5A">inv-land</text>
+<text x="44" y="286" font-size="12" font-weight="400" fill="#5F5E5A">Azure blob (shape).</text>
+<text x="44" y="302" font-size="12" font-weight="400" fill="#5F5E5A">Land, then parse.</text>
+<rect x="28" y="324" width="276" height="102" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<rect x="28" y="324" width="7" height="102" rx="4" fill="#185FA5"/>
+<text x="50" y="346" font-size="14" font-weight="750" fill="#185FA5">Worker / parse</text>
+<text x="50" y="364" font-size="11" font-weight="600" fill="#5F5E5A">inv-batch</text>
+<text x="44" y="384" font-size="12" font-weight="400" fill="#5F5E5A">Spring Batch-shaped.</text>
+<text x="44" y="400" font-size="12" font-weight="400" fill="#5F5E5A">Schema version. DLQ.</text>
+<text x="44" y="416" font-size="12" font-weight="400" fill="#5F5E5A">Inferred, not live BOM.</text>
+<rect x="28" y="438" width="276" height="86" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6"/>
+<rect x="28" y="438" width="7" height="86" rx="4" fill="#0F6E56"/>
+<text x="50" y="460" font-size="14" font-weight="750" fill="#0F6E56">Diff last snapshot</text>
+<text x="50" y="478" font-size="11" font-weight="600" fill="#5F5E5A">inv-diff</text>
+<text x="44" y="498" font-size="12" font-weight="400" fill="#5F5E5A">Emit deltas only.</text>
+<text x="44" y="514" font-size="12" font-weight="400" fill="#5F5E5A">Gone != VehicleSold.</text>
+<rect x="28" y="536" width="276" height="86" rx="10" fill="#F8E8E8" stroke="#D46A6A" stroke-width="1.6"/>
+<rect x="28" y="536" width="7" height="86" rx="4" fill="#A32D2D"/>
+<text x="50" y="558" font-size="14" font-weight="750" fill="#A32D2D">Absence is not a sale</text>
+<text x="50" y="576" font-size="11" font-weight="600" fill="#5F5E5A">inv-absent</text>
+<text x="44" y="596" font-size="12" font-weight="400" fill="#5F5E5A">Missing row != SOLD.</text>
+<text x="44" y="612" font-size="12" font-weight="400" fill="#5F5E5A">Hold. Wait for event.</text>
+<rect x="28" y="634" width="276" height="86" rx="10" fill="#F8E8E8" stroke="#D46A6A" stroke-width="1.6"/>
+<rect x="28" y="634" width="7" height="86" rx="4" fill="#A32D2D"/>
+<text x="50" y="656" font-size="14" font-weight="750" fill="#A32D2D">20% drop breaker</text>
+<text x="50" y="674" font-size="11" font-weight="600" fill="#5F5E5A">inv-breaker</text>
+<text x="44" y="694" font-size="12" font-weight="400" fill="#5F5E5A">Short file: HOLD.</text>
+<text x="44" y="710" font-size="12" font-weight="400" fill="#5F5E5A">No mass emit. Page.</text>
+<rect x="28" y="732" width="276" height="86" rx="10" fill="#F1F0EB" stroke="#8A8984" stroke-width="1.6"/>
+<rect x="28" y="732" width="7" height="86" rx="4" fill="#5F5E5A"/>
+<text x="50" y="754" font-size="14" font-weight="750" fill="#3D3C38">On-prem / strangler</text>
+<text x="50" y="772" font-size="11" font-weight="600" fill="#5F5E5A">inv-onprem</text>
+<text x="44" y="792" font-size="12" font-weight="400" fill="#5F5E5A">Still authoritative.</text>
+<text x="44" y="808" font-size="12" font-weight="400" fill="#5F5E5A">Brazil first. ~2/3 US left.</text>
+<rect x="340" y="200" width="236" height="220" rx="10" fill="#F5F9FC" stroke="#378ADD" stroke-width="1.6"/>
+<rect x="340" y="200" width="7" height="220" rx="4" fill="#185FA5"/>
+<text x="362" y="222" font-size="14" font-weight="750" fill="#185FA5">Event Hubs</text>
+<text x="362" y="240" font-size="11" font-weight="600" fill="#5F5E5A">inv-hub</text>
+<text x="356" y="260" font-size="12" font-weight="400" fill="#5F5E5A">Partition by VIN.</text>
+<text x="356" y="276" font-size="12" font-weight="400" fill="#5F5E5A">Left Kafka. 104 topics.</text>
+<text x="356" y="292" font-size="12" font-weight="400" fill="#5F5E5A">Sold never waits.</text>
+<rect x="612" y="118" width="276" height="96" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6"/>
+<rect x="612" y="118" width="7" height="96" rx="4" fill="#0F6E56"/>
+<text x="634" y="140" font-size="14" font-weight="750" fill="#0F6E56">RPO enricher</text>
+<text x="634" y="158" font-size="11" font-weight="600" fill="#5F5E5A">inv-rpo</text>
+<text x="628" y="178" font-size="12" font-weight="400" fill="#5F5E5A">Option codes.</text>
+<text x="628" y="194" font-size="12" font-weight="400" fill="#5F5E5A">Sold does not wait.</text>
+<rect x="612" y="226" width="276" height="86" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6"/>
+<rect x="612" y="226" width="7" height="86" rx="4" fill="#0F6E56"/>
+<text x="634" y="248" font-size="14" font-weight="750" fill="#0F6E56">Image enricher</text>
+<text x="634" y="266" font-size="11" font-weight="600" fill="#5F5E5A">inv-img</text>
+<text x="628" y="286" font-size="12" font-weight="400" fill="#5F5E5A">Photos on the VIN.</text>
+<text x="628" y="302" font-size="12" font-weight="400" fill="#5F5E5A">Sold does not wait.</text>
+<rect x="612" y="324" width="276" height="86" rx="10" fill="#EAF6F1" stroke="#1D9E75" stroke-width="1.6"/>
+<rect x="612" y="324" width="7" height="86" rx="4" fill="#0F6E56"/>
+<text x="634" y="346" font-size="14" font-weight="750" fill="#0F6E56">Price math</text>
+<text x="634" y="364" font-size="11" font-weight="600" fill="#5F5E5A">inv-price</text>
