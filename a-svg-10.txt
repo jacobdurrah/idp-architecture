@@ -1,0 +1,22 @@
+<rect class="hit" data-id="fde" x="40" y="3288" width="1320" height="48" rx="8"/>
+<rect class="hit" data-id="fde-tenant" x="40" y="3350" width="420" height="150" rx="8"/>
+<rect class="hit" data-id="fde-rbac" x="480" y="3350" width="420" height="150" rx="8"/>
+<rect class="hit" data-id="fde-creds" x="920" y="3350" width="420" height="150" rx="8"/>
+<rect class="hit" data-id="fde-tags" x="40" y="3520" width="420" height="130" rx="8"/>
+<rect class="hit" data-id="fde-workflow" x="480" y="3520" width="420" height="130" rx="8"/>
+<rect class="hit" data-id="fde-gates" x="920" y="3520" width="420" height="130" rx="8"/>
+<rect class="hit" data-id="fde-boards" x="40" y="3670" width="420" height="150" rx="8"/>
+<rect class="hit" data-id="fde-pave" x="480" y="3670" width="420" height="150" rx="8"/>
+<rect class="hit" data-id="fde-slo" x="920" y="3670" width="420" height="150" rx="8"/>
+<rect class="hit" data-id="fde-tenant" x="56" y="3888" width="120" height="42" rx="8"/>
+<rect class="hit" data-id="fde-rbac" x="188" y="3888" width="120" height="42" rx="8"/>
+<rect class="hit" data-id="fde-creds" x="320" y="3888" width="120" height="42" rx="8"/>
+<rect class="hit" data-id="fde-tags" x="452" y="3888" width="120" height="42" rx="8"/>
+<rect class="hit" data-id="fde-workflow" x="584" y="3888" width="120" height="42" rx="8"/>
+<rect class="hit" data-id="fde-gates" x="716" y="3888" width="120" height="42" rx="8"/>
+<rect class="hit" data-id="fde-boards" x="848" y="3888" width="120" height="42" rx="8"/>
+<rect class="hit" data-id="fde-pave" x="980" y="3888" width="120" height="42" rx="8"/>
+<rect class="hit" data-id="fde-slo" x="1112" y="3888" width="120" height="42" rx="8"/>
+<rect id="selbox" visibility="hidden" rx="10"/>
+</g>
+</svg>
