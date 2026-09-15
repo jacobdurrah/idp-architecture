@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "f87d7694409b",
+  "version": "eb9df57fef33",
   "records": [
     {
       "id": "admission",
@@ -317,68 +317,6 @@
       "href": "/idp-architecture/agents.html#fde-s1"
     },
     {
-      "id": "fde-s10",
-      "tab": "agents",
-      "name": "10. Define monitoring, latency, cost, reliability, and operations",
-      "plane": "obs",
-      "what": "SLO (service level objective) and SLA (service level agreement) plus business outcome metrics (TTR, tickets avoided), not only latency. Cost and error budgets are first-class.",
-      "why": "Ops is how the platform stays honest after the demo.",
-      "notes": [
-        "Spine step 10 of 14 from the FDE interview sheet.",
-        "SLO/SLA plus business outcomes, not only latency."
-      ],
-      "href": "/idp-architecture/agents.html#fde-s10"
-    },
-    {
-      "id": "fde-s11",
-      "tab": "agents",
-      "name": "11. Troubleshoot failures systematically",
-      "plane": "alert",
-      "what": "Reproduce, isolate plane (data, control, model, tool), read stigmergic boards (shared traces), freeze autonomous loops if observe is dark.",
-      "why": "Systematic triage beats improvisation when a tenant is on fire.",
-      "notes": [
-        "Spine step 11 of 14 from the FDE interview sheet."
-      ],
-      "href": "/idp-architecture/agents.html#fde-s11"
-    },
-    {
-      "id": "fde-s12",
-      "tab": "agents",
-      "name": "12. Compare alternatives and tradeoffs",
-      "plane": "step",
-      "what": "Compare deterministic workflow vs free-form agent, managed vs self-host, build vs buy. Name cost, risk, time-to-value.",
-      "why": "Tradeoffs prove you heard the customer constraints.",
-      "notes": [
-        "Spine step 12 of 14 from the FDE interview sheet."
-      ],
-      "href": "/idp-architecture/agents.html#fde-s12"
-    },
-    {
-      "id": "fde-s13",
-      "tab": "agents",
-      "name": "13. Make a concrete customer-facing recommendation",
-      "plane": "step",
-      "what": "One clear path: what to ship first, what to defer, who owns what, and how success will be measured in 30/90 days.",
-      "why": "FDE ends in a decision the customer can act on, not a menu of options.",
-      "notes": [
-        "Spine step 13 of 14 from the FDE interview sheet."
-      ],
-      "href": "/idp-architecture/agents.html#fde-s13"
-    },
-    {
-      "id": "fde-s14",
-      "tab": "agents",
-      "name": "14. Convert field pain into product feedback",
-      "plane": "stig",
-      "what": "Stigmergy: write toil, incidents, and gaps to boards. Field pain becomes paved road (allowlist, workflow, eval, template). Prefer a rule over another prompt tip.",
-      "why": "The loop closes when ops pain improves the product for the next tenant.",
-      "notes": [
-        "Spine step 14 of 14 from the FDE interview sheet.",
-        "Field pain on a board becomes a paved road: allowlist, workflow, eval, template."
-      ],
-      "href": "/idp-architecture/agents.html#fde-s14"
-    },
-    {
       "id": "fde-s2",
       "tab": "agents",
       "name": "2. Identify stakeholders and success criteria",
@@ -409,43 +347,49 @@
       "href": "/idp-architecture/agents.html#fde-s3"
     },
     {
-      "id": "fde-s7",
+      "id": "fde-s4",
       "tab": "agents",
-      "name": "7. Discuss retrieval, grounding, model interaction, and tools",
-      "plane": "agent",
-      "what": "Ground answers in tagged retrieval. Prefer deterministic workflow and tool allowlists for mechanical work. Model only where judgment is required. MCP (Model Context Protocol) tools stay behind policy.",
-      "why": "Ungrounded generation and open tools are how demos become incidents.",
-      "notes": [
-        "Spine step 7 of 14 from the FDE interview sheet.",
-        "Bias to deterministic workflow and allowlisted tools; model for judgment only."
-      ],
-      "href": "/idp-architecture/agents.html#fde-s7"
-    },
-    {
-      "id": "fde-s8",
-      "tab": "agents",
-      "name": "8. Address privacy, identity, tenant isolation, and auditability",
+      "name": "4. Define functional and non-functional requirements",
       "plane": "ctrl",
-      "what": "Tenant = customer boundary. Identity for human and agent. Short-lived scoped tokens (delegation), never passwords in chat. Every sensitive action is auditable.",
-      "why": "Enterprise buyers buy isolation and audit as much as they buy accuracy.",
+      "what": "Functional is the job the agent or workflow must complete. Non-functional is the contract: tenant isolation, audit, p95 latency, cost per query, human-in-the-loop SLA.",
+      "why": "You ship a clever path with no isolation, no audit, and no latency or cost bound. Finance and security both veto.",
       "notes": [
-        "Spine step 8 of 14 from the FDE interview sheet.",
-        "Privacy, identity, tenant isolation, audit: same trust story as step 6, customer-facing."
+        "Ask: (1) What must be true for every tenant, not just the pilot, including isolation and audit? (2) What is the p95 and the cost ceiling per completed job, not per token? (3) When must a human be in the loop, and what is that SLA from page to decision?",
+        "Platform box: Requirements sheet: jobs, NFRs (isolation, audit, p95, cost/query, HITL SLA), data classes, token scope, retention.",
+        "Deterministic bias: Encode NFRs as policy and workflow gates, not as prompt instructions. Isolation, audit, and HITL are rules.",
+        "Theme: NFRs are tenant isolation, audit, p95, cost/query, and human-in-loop SLA."
       ],
-      "href": "/idp-architecture/agents.html#fde-s8"
+      "href": "/idp-architecture/agents.html#fde-s4"
     },
     {
-      "id": "fde-s9",
+      "id": "fde-s5",
       "tab": "agents",
-      "name": "9. Define evaluation and hallucination controls",
-      "plane": "agent",
-      "what": "Evals, schema validation, grounding checks, fail-closed gates before side effects. A failed gate writes a board; it does not silently continue.",
-      "why": "Hallucination control is a product requirement, not a prompt tip.",
+      "name": "5. Propose the initial architecture",
+      "plane": "ctrl",
+      "what": "Draw ingress to tagged store to deterministic workflow to gated agent to boards to observe. Use category names: IdP, policy engine, workflow engine, secrets broker, tool gateway, warehouse.",
+      "why": "A vendor collage. Nobody can say where RBAC, tokens, or tenant tags live, so the build becomes a pile of connectors.",
       "notes": [
-        "Spine step 9 of 14 from the FDE interview sheet.",
-        "Evals and fail-closed gates before side effects."
+        "Ask: (1) Where does tagging happen, before the model ever sees a token or a document? (2) Which plane owns credentials (secrets broker, not the agent) and which plane owns RBAC? (3) What is out of the agent and inside workflow on day one?",
+        "Platform box: One-page architecture: planes, trust boundaries, tagged store, workflow vs agent split, boards, observe. Category names, not a vendor dump.",
+        "Deterministic bias: Default the spine to workflow. The agent is a gated judgment box, not the orchestrator.",
+        "Theme: Ingress, tagged store, deterministic workflow, gated agent, boards, observe."
       ],
-      "href": "/idp-architecture/agents.html#fde-s9"
+      "href": "/idp-architecture/agents.html#fde-s5"
+    },
+    {
+      "id": "fde-s6",
+      "tab": "agents",
+      "name": "6. Explain data flow, control flow, and trust boundaries",
+      "plane": "ctrl",
+      "what": "Data flow is what moves and how it is tagged. Control flow is who decides. Trust boundaries sit at the IdP, the secrets broker, and the tool gateway. A user-delegated scoped token rides the workflow; the agent never holds a long-lived user password.",
+      "why": "The agent becomes a second control plane with standing credentials. One prompt can cross a tenant or call a write tool.",
+      "notes": [
+        "Ask: (1) Where does a retrieval stop if the tenant tag does not match, at index or only after the model? (2) Which hop mints the short-lived token, what is its scope and TTL, and what never sees the user password? (3) What can the model see that the tool gateway will still refuse, and who owns that deny?",
+        "Platform box: Flow diagram with two inks: data vs control. Boxes at IdP, secrets broker, tool gateway. Token scope table (actor, scope, TTL, broker). RBAC on tools and on data.",
+        "Deterministic bias: Token mint, tenant match, and tool RBAC are workflow and policy. Never leave them to model judgment.",
+        "Theme: Scoped short-lived tokens ride the workflow. Agent never holds the user password."
+      ],
+      "href": "/idp-architecture/agents.html#fde-s6"
     },
     {
       "id": "gate-compile",
