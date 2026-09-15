@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "f6aa0911f02e",
+  "version": "f87d7694409b",
   "records": [
     {
       "id": "admission",
@@ -292,11 +292,11 @@
       "tab": "agents",
       "name": "FDE enterprise (14-step spine)",
       "plane": "story",
-      "what": "Forward Deployed Engineer interview spine: clarify the customer problem through convert field pain into product feedback. Fourteen steps. RBAC, tenant isolation, credentials under 6+8; deterministic workflow and tools under 7; evals under 9; SLO/SLA and business metrics under 10; toil to pave under 14.",
-      "why": "Ship agent shows delivery. This story is how an FDE designs and runs a tenant-safe enterprise agent.",
+      "what": "Forward Deployed Engineer interview spine: clarify the customer problem through convert field pain into product feedback. Fourteen dense cards. Every step carries Say, Ask, Platform box, Fail if skipped, and Deterministic bias. RBAC, tenant isolation, tagged sources, scoped short-lived tokens, deterministic workflow, SLO/SLA plus business outcomes, and toil-to-board feedback run the whole spine, not only steps 6-10.",
+      "why": "Ship agent shows delivery. This story is how an FDE designs and runs a tenant-safe enterprise agent, and how field toil becomes a paved road.",
       "notes": [
-        "Story bar: Ship agent vs FDE enterprise.",
-        "Print wall: print.html · panels 1-4 left to right.",
+        "Story bar: Ship agent vs FDE enterprise. Ship agent story stays separate.",
+        "Print wall: print.html · 6 tabloid panels left to right. Dense reference, not a slogan poster.",
         "Stigmergy: boards hold traces; agents do not replace the board with chat."
       ],
       "href": "/idp-architecture/agents.html#fde"
@@ -306,10 +306,13 @@
       "tab": "agents",
       "name": "1. Clarify the customer problem",
       "plane": "ctrl",
-      "what": "Start with the customer's pain in their words. Name who hurts, what breaks, and why now. Do not jump to models.",
-      "why": "A vague problem produces a vague agent. FDE clarity is the first trust boundary.",
+      "what": "Restate the pain and the constraint in their nouns: who is blocked, what work stalls, and what they already tried. If you cannot say that without saying agent, you do not have a problem yet.",
+      "why": "Demo chasing. You sell a model instead of a job. Security and ops kill it after the room applauds.",
       "notes": [
-        "Spine step 1 of 14 from the FDE interview sheet."
+        "Ask: (1) What is broken today with no agent in the loop, named as a ticket, queue, or handoff? (2) Which constraint (tenant, data class, SLA, allowed tools) would make a clever demo useless in production? (3) What did they already automate, and why did that path stall?",
+        "Platform box: Problem brief on a shared board: actor, pain in their words, constraint, why-now, non-goals. Tag the tenant and data class on the brief from day one.",
+        "Deterministic bias: N/A for wording the problem. Bias discovery toward existing deterministic workflows that already almost work. Do not assume a model is the fix.",
+        "Theme: Tenant, data class, and SLA show up here as constraints, not as later extras."
       ],
       "href": "/idp-architecture/agents.html#fde-s1"
     },
@@ -380,10 +383,13 @@
       "tab": "agents",
       "name": "2. Identify stakeholders and success criteria",
       "plane": "ppl",
-      "what": "Map buyers, users, security, ops, and who can say no. Write success criteria that are observable, not slogan-level.",
-      "why": "Without named stakeholders and success, you cannot defend RBAC, SLO, or a recommendation.",
+      "what": "Success is a measurable: time-to-X, error rate, dollars, tickets closed. Name the people who can block: security, identity, ops, and the data owner, not only the excited buyer.",
+      "why": "A champion loves the demo. Security and ops were never in the room. The project dies at procurement or production access.",
       "notes": [
-        "Spine step 2 of 14 from the FDE interview sheet."
+        "Ask: (1) Who signs the SLO, and who can stop a tool allowlist or a production token? (2) What metric moves if this works, who already owns that dashboard, and what is the baseline? (3) Which tenant or business unit is in scope for the first 30 days, and who speaks for isolation?",
+        "Platform box: Stakeholder map plus a success card: metric, baseline, target, owner, review date. Include security, ops, and the data owner as named rows, not footnotes.",
+        "Deterministic bias: Success criteria themselves are rules (thresholds, SLAs, error budgets). Do not let a qualitative feels smarter replace a measurable outcome.",
+        "Theme: Security and ops can block. Success is a number tied to a business outcome."
       ],
       "href": "/idp-architecture/agents.html#fde-s2"
     },
@@ -392,49 +398,15 @@
       "tab": "agents",
       "name": "3. Ask focused discovery questions",
       "plane": "ppl",
-      "what": "Probe systems of record, data ownership, latency budgets, compliance, and which workflows are already deterministic.",
-      "why": "Focused questions surface tenant boundaries and tool allowlists before you invent architecture.",
+      "what": "Ask where truth lives, who owns PII, and which automations must stay deterministic. Tag every source you hear: system, tenant, classification, owner, lineage.",
+      "why": "You design retrieval against a wiki copy, miss the system of record, and leak PII across tenants because nobody named the tags.",
       "notes": [
-        "Spine step 3 of 14 from the FDE interview sheet."
+        "Ask: (1) What is the system of record for the job, and what is only a copy or an export? (2) Who owns PII, and how does it get tagged at ingest rather than in the prompt? (3) Which existing runbooks, RPA, or workflows must not become free-form model steps?",
+        "Platform box: Discovery log: sources with tags (tenant, system, classification, lineage), PII owner, existing automations to keep, credential paths already in use.",
+        "Deterministic bias: Prefer existing workflow and allowlisted integrations over a new agent skill whenever the step is already mechanical.",
+        "Theme: Tag data from all sources now. Keep deterministic automations deterministic."
       ],
       "href": "/idp-architecture/agents.html#fde-s3"
-    },
-    {
-      "id": "fde-s4",
-      "tab": "agents",
-      "name": "4. Define functional and non-functional requirements",
-      "plane": "ctrl",
-      "what": "Functional: jobs the agent must complete. Non-functional: latency, cost, availability, privacy, audit, retention.",
-      "why": "Requirements are the contract. Evals, SLO, and SLA hang from them later.",
-      "notes": [
-        "Spine step 4 of 14 from the FDE interview sheet."
-      ],
-      "href": "/idp-architecture/agents.html#fde-s4"
-    },
-    {
-      "id": "fde-s5",
-      "tab": "agents",
-      "name": "5. Propose the initial architecture",
-      "plane": "ctrl",
-      "what": "Sketch planes: identity, policy, workflow, retrieval, model, tools, boards, observe. Prefer category names (IdP, policy engine, workflow engine, secrets broker, warehouse).",
-      "why": "Architecture is a customer-facing story, not a vendor dump.",
-      "notes": [
-        "Spine step 5 of 14 from the FDE interview sheet."
-      ],
-      "href": "/idp-architecture/agents.html#fde-s5"
-    },
-    {
-      "id": "fde-s6",
-      "tab": "agents",
-      "name": "6. Explain data flow, control flow, and trust boundaries",
-      "plane": "ctrl",
-      "what": "Show where data moves, who decides, and where trust stops. RBAC (role-based access control), tenant isolation, and scoped credential handoff live here.",
-      "why": "If trust boundaries are fuzzy, the agent is a second control plane.",
-      "notes": [
-        "Spine step 6 of 14 from the FDE interview sheet.",
-        "Trust boundaries include RBAC, tenant isolation, and scoped credential handoff."
-      ],
-      "href": "/idp-architecture/agents.html#fde-s6"
     },
     {
       "id": "fde-s7",
