@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "239ea65e8264",
+  "version": "f6aa0911f02e",
   "records": [
     {
       "id": "admission",
@@ -810,7 +810,7 @@
       "tab": "agents",
       "name": "How to read this map (agents)",
       "plane": "step",
-      "what": "Two stories. Ship agent: navy badges 1-12 (commit through observe). FDE enterprise: the 14-step interview spine (clarify problem through field pain to product feedback). RBAC, tenant isolation, and credentials sit in steps 6 and 8; deterministic tools in 7; evals in 9; SLO/SLA and business metrics in 10; toil to pave in 14. Stigmergy means coordination through shared boards, not agent chat.",
+      "what": "Two stories. Ship agent: navy badges 1-12 (commit through observe). FDE enterprise: the 14-step interview spine (clarify problem through field pain to product feedback). RBAC, tenant isolation, tagged sources, scoped tokens, deterministic workflow, SLO/SLA plus outcomes, and toil-to-board feedback run the whole spine, not only steps 6-10. Stigmergy means coordination through shared boards, not agent chat.",
       "why": "Staff review needs both pictures: how an agent ships like a colleague, and how an FDE designs a tenant-safe enterprise agent for a customer.",
       "notes": [
         "Dashed rose boxes are stigmergic spaces. Switch Ship agent vs FDE enterprise in the story bar. Print wall panels via print.html.",
