@@ -27,8 +27,8 @@ var idp=L("Okta","https://www.okta.com/"),ent=L("Microsoft Entra ID","https://le
 var opa2=L("Open Policy Agent","https://www.openpolicyagent.org/"),ced=L("Cedar","https://www.cedarpolicy.com/");
 var vlt=L("HashiCorp Vault","https://developer.hashicorp.com/vault"),sts=L("AWS STS","https://docs.aws.amazon.com/STS/latest/APIReference/welcome.html");
 var tmp=L("Temporal","https://temporal.io/"),sfn=L("AWS Step Functions","https://aws.amazon.com/step-functions/");
-put(T("IdP + tenant mapping","Who and which tenant. Groups map to tenant roles.",[idp,ent]),["fde-tenant","fde"]);
-put(T("Policy engine + MCP allowlist","RBAC and tool/verb allowlists. Deny default.",[opa2,ced]),["fde-rbac"]);
-put(T("Secrets broker + scoped tokens","Short-lived delegation. No passwords in chat.",[vlt,sts]),["fde-creds"]);
-put(T("Workflow engine first","Deterministic orchestration; model only for judgment.",[tmp,sfn]),["fde-workflow","fde-gates","fde-pave"]);
+put(T("IdP + tenant mapping","Who and which tenant. Groups map to tenant roles.",[idp,ent]),["fde-s6","fde-s8","fde"]);
+put(T("Policy engine + MCP allowlist","RBAC and tool/verb allowlists. Deny default.",[opa2,ced]),["fde-s6","fde-s7","fde-s8"]);
+put(T("Secrets broker + scoped tokens","Short-lived delegation. No passwords in chat.",[vlt,sts]),["fde-s6","fde-s8"]);
+put(T("Workflow engine first","Deterministic orchestration; model only for judgment.",[tmp,sfn]),["fde-s7","fde-s9","fde-s14"]);
 })(window.IDP_DATA);
