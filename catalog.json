@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "65a1dc8492ad",
+  "version": "239ea65e8264",
   "records": [
     {
       "id": "admission",
@@ -810,10 +810,10 @@
       "tab": "agents",
       "name": "How to read this map (agents)",
       "plane": "step",
-      "what": "This is the agent view of the golden path. Follow navy badges 1 through 12: local agent and commit, Git, the PR board, CI traces, test artifacts, build, scan, GitOps, Argo, the API, canary, observe. Then write back to 1. Agents sit beside people and planes. They read and write shared artifacts. They do not hold a private conversation that replaces the board. You named this idea stigmergent. The word on the poster is stigmergic: coordination through traces in a shared environment, not direct chat.",
-      "why": "Staff review needs one picture of where an agent is allowed to act. An agent that can kubectl-apply is a second control plane. An agent that can only open a PR is a colleague with a keyboard. Observability is the top of the loop. When that board goes blank, a blank board is not permission to guess. If step 12 is dark, stop.",
+      "what": "Two stories. Ship agent: navy badges 1-12 (commit through observe). FDE enterprise: the 14-step interview spine (clarify problem through field pain to product feedback). RBAC, tenant isolation, and credentials sit in steps 6 and 8; deterministic tools in 7; evals in 9; SLO/SLA and business metrics in 10; toil to pave in 14. Stigmergy means coordination through shared boards, not agent chat.",
+      "why": "Staff review needs both pictures: how an agent ships like a colleague, and how an FDE designs a tenant-safe enterprise agent for a customer.",
       "notes": [
-        "Dashed rose boxes are stigmergic spaces. The environment holds the trace. Agents and humans read those traces to improve code, hold a ship, or respond when observability is dark.",
+        "Dashed rose boxes are stigmergic spaces. Switch Ship agent vs FDE enterprise in the story bar. Print wall panels via print.html.",
         "Solid navy arrows are delivery. Dotted rose and purple is telemetry writing the next change.",
         "Agents never apply to the cluster. A fix is a Git write. Argo is the only applicator.",
         "Tap any box. The panel is the prose layer. The poster is the source of truth."
