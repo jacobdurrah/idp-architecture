@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "c71e3cae454d",
+  "version": "8a8ace70c557",
   "records": [
     {
       "id": "admission",
@@ -286,6 +286,62 @@
         "When the board is dark, they take the freeze the obs-guard writes."
       ],
       "href": "/idp-architecture/agents.html#engineers"
+    },
+    {
+      "id": "fde-boards",
+      "tab": "agents",
+      "name": "7. Boards (stigmergy)",
+      "plane": "stig",
+      "what": "Stigmergy: coordination through traces in a shared environment, not agent-to-agent chat. Toil, incidents, drift, denials, and eval fails write to shared boards humans and agents both read.",
+      "why": "Private agent memory does not improve the platform. A board write is how the next run and the next engineer learn.",
+      "notes": [
+        "Toil tickets, incident pages, drift, deny, eval fail.",
+        "Agents never replace the board with a DM.",
+        "Same idea as PR / checks / canary on the Ship path."
+      ],
+      "href": "/idp-architecture/agents.html#fde-boards"
+    },
+    {
+      "id": "fde-gates",
+      "tab": "agents",
+      "name": "6. Agent loop + gates",
+      "plane": "agent",
+      "what": "Where judgment is needed, the agent loops under mechanical gates: schema validation, evals, score thresholds, fail-closed. A failed gate writes a board trace; it does not silently continue.",
+      "why": "Ungated generation ships confident wrongness. Gates make the loop safe enough for a tenant.",
+      "notes": [
+        "Evals and schemas before side effects.",
+        "Fail closed: no tool call on invalid plan.",
+        "Same through-line as Ship: boards hold the verdict."
+      ],
+      "href": "/idp-architecture/agents.html#fde-gates"
+    },
+    {
+      "id": "fde-pave",
+      "tab": "agents",
+      "name": "8. Feedback to pave",
+      "plane": "step",
+      "what": "Ops pain on a board becomes a paved road: a new allowlist entry, a workflow step, a test, or a template. Agent or human fixes once; the platform reuses forever.",
+      "why": "Toil that only lives in a hero's head never compounds. The FDE bias is: every repeated pain becomes product.",
+      "notes": [
+        "Toil ticket -> board -> fix PR -> paved road.",
+        "Prefer a rule or eval over another prompt tip.",
+        "Ship path still delivers the change via Git and gates."
+      ],
+      "href": "/idp-architecture/agents.html#fde-pave"
+    },
+    {
+      "id": "fde-slo",
+      "tab": "agents",
+      "name": "9. Serve + SLO / outcomes",
+      "plane": "obs",
+      "what": "Serve under SLO (service level objective: target reliability) and SLA (service level agreement: contracted floor). Track business outcome metrics (time-to-resolution, tickets avoided, revenue tasks completed), not only latency.",
+      "why": "A fast wrong answer is not success. FDE platforms prove value with outcomes and hold the line with SLO/SLA.",
+      "notes": [
+        "SLO dashboards + error budgets; SLA is the contract.",
+        "Business metrics beside golden signals.",
+        "If observe is dark, freeze autonomous improve loops (same as Ship step 12)."
+      ],
+      "href": "/idp-architecture/agents.html#fde-slo"
     },
     {
       "id": "gate-compile",
