@@ -1,39 +1,66 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 850" width="11in" height="8.5in">
-<rect width="1100" height="850" fill="#FFFFFF"/>
-<rect x="0" y="0" width="1100" height="72" fill="#72264C"/>
-<text x="40" y="34" font-size="22" font-weight="750" fill="#FFFFFF">FDE enterprise agent path · panel 4 of 4</text>
-<text x="40" y="58" font-size="16" font-weight="500" fill="#F3D6E4">Tradeoffs → recommend → pave · 14-step interview spine</text>
-<text x="40" y="100" font-size="14" fill="#5F5E5A">← from panel 3</text>
-<text x="1060" y="100" font-size="14" fill="#5F5E5A" text-anchor="end">END · step 14 · pave</text>
-<rect x="36" y="120" width="326.7" height="580" rx="14" fill="#E4F0FA" stroke="#0C447C" stroke-width="2.2"/>
-<circle cx="70" cy="156" r="20" fill="#0C447C"/>
-<text x="70" y="162" text-anchor="middle" font-size="18" font-weight="750" fill="#FFFFFF">12</text>
-<text x="56" y="198" font-size="17" font-weight="750" fill="#0C447C">Compare alternatives and</text>
-<text x="56" y="222" font-size="17" font-weight="750" fill="#0C447C">tradeoffs.</text>
-<text x="56" y="256" font-size="15" font-weight="500" fill="#2C2C2A">Deterministic vs free-form agent,</text>
-<text x="56" y="278" font-size="15" font-weight="500" fill="#2C2C2A">managed vs self-host, build vs</text>
-<text x="56" y="300" font-size="15" font-weight="500" fill="#2C2C2A">buy. Name cost, risk,</text>
-<text x="56" y="322" font-size="15" font-weight="500" fill="#2C2C2A">time-to-value.</text>
-<line x1="364.7" y1="410" x2="384.7" y2="410" stroke="#2C2C2A" stroke-width="3"/>
-<polygon points="384.7,410 373.7,403 373.7,417" fill="#2C2C2A"/>
-<rect x="386.7" y="120" width="326.7" height="580" rx="14" fill="#E4F0FA" stroke="#0C447C" stroke-width="2.2"/>
-<circle cx="420.7" cy="156" r="20" fill="#0C447C"/>
-<text x="420.7" y="162" text-anchor="middle" font-size="18" font-weight="750" fill="#FFFFFF">13</text>
-<text x="406.7" y="198" font-size="17" font-weight="750" fill="#0C447C">Make a concrete customer-facing</text>
-<text x="406.7" y="222" font-size="17" font-weight="750" fill="#0C447C">recommendation.</text>
-<text x="406.7" y="256" font-size="15" font-weight="500" fill="#2C2C2A">One clear path: what to ship</text>
-<text x="406.7" y="278" font-size="15" font-weight="500" fill="#2C2C2A">first, what to defer, owners, and</text>
-<text x="406.7" y="300" font-size="15" font-weight="500" fill="#2C2C2A">30/90 day success measures.</text>
-<line x1="715.3" y1="410" x2="735.3" y2="410" stroke="#2C2C2A" stroke-width="3"/>
-<polygon points="735.3,410 724.3,403 724.3,417" fill="#2C2C2A"/>
-<rect x="737.3" y="120" width="326.7" height="580" rx="14" fill="#FCEEF2" stroke="#C45B78" stroke-width="2.2" stroke-dasharray="8 5"/>
-<circle cx="771.3" cy="156" r="20" fill="#C45B78"/>
-<text x="771.3" y="162" text-anchor="middle" font-size="18" font-weight="750" fill="#FFFFFF">14</text>
-<text x="757.3" y="198" font-size="17" font-weight="750" fill="#C45B78">Convert field pain into product</text>
-<text x="757.3" y="222" font-size="17" font-weight="750" fill="#C45B78">feedback.</text>
-<text x="757.3" y="256" font-size="15" font-weight="500" fill="#2C2C2A">Stigmergy: write toil to boards.</text>
-<text x="757.3" y="278" font-size="15" font-weight="500" fill="#2C2C2A">Pain becomes paved road</text>
-<text x="757.3" y="300" font-size="15" font-weight="500" fill="#2C2C2A">(allowlist, workflow, eval,</text>
-<text x="757.3" y="322" font-size="15" font-weight="500" fill="#2C2C2A">template).</text>
-<text x="550" y="820" text-anchor="middle" font-size="14" fill="#5F5E5A">jacobdurrah.github.io/idp-architecture/agents.html</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1632 1056" width="17in" height="11in"><style>text{font-family:Helvetica,Arial,sans-serif}</style>
+<rect width="1632" height="1056" fill="#FFFFFF"/>
+<rect x="0" y="0" width="1632" height="64" fill="#72264C"/>
+<text x="32" y="28" font-size="20" font-weight="750" fill="#FFFFFF">FDE platform engineering · enterprise agent · panel 4 of 6</text>
+<text x="32" y="50" font-size="14" font-weight="500" fill="#F3D6E4">Steps 9-10 · evals and operations · SAY · ASK · PLATFORM BOX · FAIL IF SKIPPED · DETERMINISTIC BIAS</text>
+<text x="32" y="88" font-size="13" fill="#5F5E5A">from panel 3</text>
+<text x="1600" y="88" font-size="13" fill="#5F5E5A" text-anchor="end">to panel 5</text>
+<rect x="28.0" y="108.0" width="780.0" height="900.0" rx="10" fill="#FFFFFF" stroke="#9B3D6A" stroke-width="2.4"/>
+<rect x="28.0" y="108.0" width="780.0" height="58" rx="10" fill="#72264C"/>
+<rect x="28.0" y="128.0" width="780.0" height="38" fill="#72264C"/>
+<circle cx="56.0" cy="137.0" r="16" fill="#FFFFFF"/>
+<text x="56.0" y="143.0" text-anchor="middle" font-size="16" font-weight="750" fill="#72264C">9</text>
+<text x="78.0" y="132.0" font-size="16" font-weight="750" fill="#FFFFFF">Define evaluation and hallucination controls</text>
+<rect x="29.2" y="166.0" width="777.6" height="127.9" fill="#FFFFFF"/>
+<text x="42.0" y="182.0" font-size="11" font-weight="750" fill="#9B3D6A" letter-spacing="0.08em">SAY</text>
+<text x="42.0" y="200.0" font-size="16" font-weight="500" fill="#1A1918">Evals ship with the agent: drift fixtures plus correct-usage checks (allowed tools and args). Fail closed.</text>
+<text x="42.0" y="221.0" font-size="16" font-weight="500" fill="#1A1918">Hallucination control is cite or ground, or abstain. It is not a nicer prompt.</text>
+<rect x="29.2" y="293.9" width="777.6" height="220.7" fill="#FBEAF2"/>
+<text x="42.0" y="309.9" font-size="11" font-weight="750" fill="#72264C" letter-spacing="0.08em">ASK</text>
+<text x="42.0" y="327.9" font-size="16" font-weight="500" fill="#1A1918">1. What fixture set proves the agent still uses only allowed tools and arguments?</text>
+<text x="42.0" y="348.9" font-size="16" font-weight="500" fill="#1A1918">2. What is the abstain behavior when retrieval is empty, untagged, or cross-tenant?</text>
+<text x="42.0" y="369.9" font-size="16" font-weight="500" fill="#1A1918">3. Who owns the eval gate in CI, and what exact failure blocks a release?</text>
+<rect x="29.2" y="514.6" width="777.6" height="172.8" fill="#F4F8FC"/>
+<text x="42.0" y="530.6" font-size="11" font-weight="750" fill="#0C447C" letter-spacing="0.08em">PLATFORM BOX</text>
+<text x="42.0" y="548.6" font-size="16" font-weight="500" fill="#1A1918">Eval suite (drift plus correct-usage), fail-closed gate before side effects, grounding/citation rule, board for</text>
+<text x="42.0" y="569.6" font-size="16" font-weight="500" fill="#1A1918">eval failures.</text>
+<rect x="29.2" y="687.4" width="777.6" height="142.8" fill="#FCEBEB"/>
+<text x="42.0" y="703.4" font-size="11" font-weight="750" fill="#791F1F" letter-spacing="0.08em">FAIL IF SKIPPED</text>
+<text x="42.0" y="721.4" font-size="16" font-weight="500" fill="#1A1918">You find hallucinations in production. Side effects already happened. Trust is gone.</text>
+<rect x="29.2" y="830.2" width="777.6" height="133.8" fill="#FAFAF7"/>
+<text x="42.0" y="846.2" font-size="11" font-weight="750" fill="#2C2C2A" letter-spacing="0.08em">DETERMINISTIC BIAS</text>
+<text x="42.0" y="864.2" font-size="16" font-weight="500" fill="#1A1918">Schema validation, allowlist tests, and fail-closed gates are rules. Do not ask the model if it is sure.</text>
+<rect x="28.0" y="964.0" width="780.0" height="44" fill="#72264C"/>
+<rect x="28.0" y="964.0" width="780.0" height="12" fill="#72264C"/>
+<text x="42.0" y="982.0" font-size="12" font-weight="750" fill="#FFFFFF">THEME: Evals travel with the agent. Fail closed. Cite or abstain.</text>
+<line x1="810.0" y1="558.0" x2="822.0" y2="558.0" stroke="#2C2C2A" stroke-width="2.5"/>
+<rect x="824.0" y="108.0" width="780.0" height="900.0" rx="10" fill="#FFFFFF" stroke="#534AB7" stroke-width="2.4"/>
+<rect x="824.0" y="108.0" width="780.0" height="58" rx="10" fill="#3C3489"/>
+<rect x="824.0" y="128.0" width="780.0" height="38" fill="#3C3489"/>
+<circle cx="852.0" cy="137.0" r="16" fill="#FFFFFF"/>
+<text x="852.0" y="143.0" text-anchor="middle" font-size="16" font-weight="750" fill="#3C3489">10</text>
+<text x="874.0" y="132.0" font-size="16" font-weight="750" fill="#FFFFFF">Define monitoring, latency, cost, reliability, and operations</text>
+<rect x="825.2" y="166.0" width="777.6" height="127.9" fill="#FFFFFF"/>
+<text x="838.0" y="182.0" font-size="11" font-weight="750" fill="#534AB7" letter-spacing="0.08em">SAY</text>
+<text x="838.0" y="200.0" font-size="16" font-weight="500" fill="#1A1918">SLOs cover availability, freshness, and error budget. SLAs if contracted. Business outcomes (tickets</text>
+<text x="838.0" y="221.0" font-size="16" font-weight="500" fill="#1A1918">closed, hours saved, conversion) sit next to p95. Latency alone is not ops.</text>
+<rect x="825.2" y="293.9" width="777.6" height="220.7" fill="#EFEDF8"/>
+<text x="838.0" y="309.9" font-size="11" font-weight="750" fill="#3C3489" letter-spacing="0.08em">ASK</text>
+<text x="838.0" y="327.9" font-size="16" font-weight="500" fill="#1A1918">1. What is the error budget, and what freezes the agent when it burns?</text>
+<text x="838.0" y="348.9" font-size="16" font-weight="500" fill="#1A1918">2. Which business metric proves the job moved, not just that calls succeeded?</text>
+<text x="838.0" y="369.9" font-size="16" font-weight="500" fill="#1A1918">3. What is the cost per completed job versus the SLA floor, and who sees that board?</text>
+<rect x="825.2" y="514.6" width="777.6" height="172.8" fill="#F4F8FC"/>
+<text x="838.0" y="530.6" font-size="11" font-weight="750" fill="#0C447C" letter-spacing="0.08em">PLATFORM BOX</text>
+<text x="838.0" y="548.6" font-size="16" font-weight="500" fill="#1A1918">SLO/SLA card, outcome dashboard (tickets, hours, conversion), cost and latency boards, freshness SLO,</text>
+<text x="838.0" y="569.6" font-size="16" font-weight="500" fill="#1A1918">freeze runbook.</text>
+<rect x="825.2" y="687.4" width="777.6" height="142.8" fill="#FCEBEB"/>
+<text x="838.0" y="703.4" font-size="11" font-weight="750" fill="#791F1F" letter-spacing="0.08em">FAIL IF SKIPPED</text>
+<text x="838.0" y="721.4" font-size="16" font-weight="500" fill="#1A1918">A fast, cheap, wrong agent. Or a correct agent nobody can operate when retrieval goes stale.</text>
+<rect x="825.2" y="830.2" width="777.6" height="133.8" fill="#FAFAF7"/>
+<text x="838.0" y="846.2" font-size="11" font-weight="750" fill="#2C2C2A" letter-spacing="0.08em">DETERMINISTIC BIAS</text>
+<text x="838.0" y="864.2" font-size="16" font-weight="500" fill="#1A1918">Freeze, budget burn, and page routing are rules. The model does not decide whether it is healthy.</text>
+<rect x="824.0" y="964.0" width="780.0" height="44" fill="#3C3489"/>
+<rect x="824.0" y="964.0" width="780.0" height="12" fill="#3C3489"/>
+<text x="838.0" y="982.0" font-size="12" font-weight="750" fill="#FFFFFF">THEME: SLO plus SLA plus business outcomes. Not latency alone.</text>
+<text x="816" y="1038" text-anchor="middle" font-size="13" fill="#5F5E5A">agents.html · Ship agent story stays separate · dense reference, not a slogan poster</text>
 </svg>
