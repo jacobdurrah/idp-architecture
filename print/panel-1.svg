@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 850" width="11in" height="8.5in">
+<rect width="1100" height="850" fill="#FFFFFF"/>
+<rect x="0" y="0" width="1100" height="72" fill="#72264C"/>
+<text x="40" y="34" font-size="22" font-weight="750" fill="#FFFFFF">FDE enterprise agent path · panel 1 of 4</text>
+<text x="40" y="58" font-size="16" font-weight="500" fill="#F3D6E4">Problem → requirements · 14-step interview spine</text>
+<text x="40" y="100" font-size="14" fill="#5F5E5A">START · step 1</text>
+<text x="1060" y="100" font-size="14" fill="#5F5E5A" text-anchor="end">to panel 2 →</text>
+<rect x="36" y="120" width="239" height="580" rx="14" fill="#EAF2FA" stroke="#185FA5" stroke-width="2.2"/>
+<circle cx="70" cy="156" r="20" fill="#185FA5"/>
+<text x="70" y="162" text-anchor="middle" font-size="18" font-weight="750" fill="#FFFFFF">1</text>
+<text x="56" y="198" font-size="17" font-weight="750" fill="#185FA5">Clarify the customer</text>
+<text x="56" y="222" font-size="17" font-weight="750" fill="#185FA5">problem.</text>
+<text x="56" y="256" font-size="15" font-weight="500" fill="#2C2C2A">Start with the customer's</text>
+<text x="56" y="278" font-size="15" font-weight="500" fill="#2C2C2A">pain in their words. Name</text>
+<text x="56" y="300" font-size="15" font-weight="500" fill="#2C2C2A">who hurts, what breaks,</text>
+<text x="56" y="322" font-size="15" font-weight="500" fill="#2C2C2A">and why now. Do not jump</text>
+<text x="56" y="344" font-size="15" font-weight="500" fill="#2C2C2A">to models.</text>
+<line x1="277" y1="410" x2="297" y2="410" stroke="#2C2C2A" stroke-width="3"/>
+<polygon points="297,410 286,403 286,417" fill="#2C2C2A"/>
+<rect x="299" y="120" width="239" height="580" rx="14" fill="#F1F0EB" stroke="#5F5E5A" stroke-width="2.2"/>
+<circle cx="333" cy="156" r="20" fill="#5F5E5A"/>
+<text x="333" y="162" text-anchor="middle" font-size="18" font-weight="750" fill="#FFFFFF">2</text>
+<text x="319" y="198" font-size="17" font-weight="750" fill="#5F5E5A">Identify stakeholders</text>
+<text x="319" y="222" font-size="17" font-weight="750" fill="#5F5E5A">and success criteria.</text>
+<text x="319" y="256" font-size="15" font-weight="500" fill="#2C2C2A">Map buyers, users,</text>
+<text x="319" y="278" font-size="15" font-weight="500" fill="#2C2C2A">security, ops, and who</text>
+<text x="319" y="300" font-size="15" font-weight="500" fill="#2C2C2A">can say no. Write success</text>
+<text x="319" y="322" font-size="15" font-weight="500" fill="#2C2C2A">criteria that are</text>
+<text x="319" y="344" font-size="15" font-weight="500" fill="#2C2C2A">observable.</text>
+<line x1="540" y1="410" x2="560" y2="410" stroke="#2C2C2A" stroke-width="3"/>
+<polygon points="560,410 549,403 549,417" fill="#2C2C2A"/>
+<rect x="562" y="120" width="239" height="580" rx="14" fill="#F1F0EB" stroke="#5F5E5A" stroke-width="2.2"/>
+<circle cx="596" cy="156" r="20" fill="#5F5E5A"/>
+<text x="596" y="162" text-anchor="middle" font-size="18" font-weight="750" fill="#FFFFFF">3</text>
+<text x="582" y="198" font-size="17" font-weight="750" fill="#5F5E5A">Ask focused discovery</text>
+<text x="582" y="222" font-size="17" font-weight="750" fill="#5F5E5A">questions.</text>
+<text x="582" y="256" font-size="15" font-weight="500" fill="#2C2C2A">Probe systems of record,</text>
+<text x="582" y="278" font-size="15" font-weight="500" fill="#2C2C2A">data ownership, latency</text>
+<text x="582" y="300" font-size="15" font-weight="500" fill="#2C2C2A">budgets, compliance, and</text>
+<text x="582" y="322" font-size="15" font-weight="500" fill="#2C2C2A">which workflows are</text>
+<text x="582" y="344" font-size="15" font-weight="500" fill="#2C2C2A">already deterministic.</text>
+<line x1="803" y1="410" x2="823" y2="410" stroke="#2C2C2A" stroke-width="3"/>
+<polygon points="823,410 812,403 812,417" fill="#2C2C2A"/>
+<rect x="825" y="120" width="239" height="580" rx="14" fill="#EAF2FA" stroke="#185FA5" stroke-width="2.2"/>
+<circle cx="859" cy="156" r="20" fill="#185FA5"/>
+<text x="859" y="162" text-anchor="middle" font-size="18" font-weight="750" fill="#FFFFFF">4</text>
+<text x="845" y="198" font-size="17" font-weight="750" fill="#185FA5">Define functional and</text>
+<text x="845" y="222" font-size="17" font-weight="750" fill="#185FA5">non-functional</text>
+<text x="845" y="246" font-size="17" font-weight="750" fill="#185FA5">requirements.</text>
+<text x="845" y="280" font-size="15" font-weight="500" fill="#2C2C2A">Functional: jobs the</text>
+<text x="845" y="302" font-size="15" font-weight="500" fill="#2C2C2A">agent must complete.</text>
+<text x="845" y="324" font-size="15" font-weight="500" fill="#2C2C2A">Non-functional: latency,</text>
+<text x="845" y="346" font-size="15" font-weight="500" fill="#2C2C2A">cost, availability,</text>
+<text x="845" y="368" font-size="15" font-weight="500" fill="#2C2C2A">privacy, audit,</text>
+<text x="845" y="390" font-size="15" font-weight="500" fill="#2C2C2A">retention.</text>
+<text x="550" y="820" text-anchor="middle" font-size="14" fill="#5F5E5A">jacobdurrah.github.io/idp-architecture/agents.html</text>
+</svg>
