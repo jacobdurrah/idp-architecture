@@ -1,57 +1,115 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 850" width="11in" height="8.5in">
-<rect width="1100" height="850" fill="#FFFFFF"/>
-<rect x="0" y="0" width="1100" height="72" fill="#72264C"/>
-<text x="40" y="34" font-size="22" font-weight="750" fill="#FFFFFF">FDE enterprise agent path · panel 1 of 4</text>
-<text x="40" y="58" font-size="16" font-weight="500" fill="#F3D6E4">Problem → requirements · 14-step interview spine</text>
-<text x="40" y="100" font-size="14" fill="#5F5E5A">START · step 1</text>
-<text x="1060" y="100" font-size="14" fill="#5F5E5A" text-anchor="end">to panel 2 →</text>
-<rect x="36" y="120" width="239" height="580" rx="14" fill="#EAF2FA" stroke="#185FA5" stroke-width="2.2"/>
-<circle cx="70" cy="156" r="20" fill="#185FA5"/>
-<text x="70" y="162" text-anchor="middle" font-size="18" font-weight="750" fill="#FFFFFF">1</text>
-<text x="56" y="198" font-size="17" font-weight="750" fill="#185FA5">Clarify the customer</text>
-<text x="56" y="222" font-size="17" font-weight="750" fill="#185FA5">problem.</text>
-<text x="56" y="256" font-size="15" font-weight="500" fill="#2C2C2A">Start with the customer's</text>
-<text x="56" y="278" font-size="15" font-weight="500" fill="#2C2C2A">pain in their words. Name</text>
-<text x="56" y="300" font-size="15" font-weight="500" fill="#2C2C2A">who hurts, what breaks,</text>
-<text x="56" y="322" font-size="15" font-weight="500" fill="#2C2C2A">and why now. Do not jump</text>
-<text x="56" y="344" font-size="15" font-weight="500" fill="#2C2C2A">to models.</text>
-<line x1="277" y1="410" x2="297" y2="410" stroke="#2C2C2A" stroke-width="3"/>
-<polygon points="297,410 286,403 286,417" fill="#2C2C2A"/>
-<rect x="299" y="120" width="239" height="580" rx="14" fill="#F1F0EB" stroke="#5F5E5A" stroke-width="2.2"/>
-<circle cx="333" cy="156" r="20" fill="#5F5E5A"/>
-<text x="333" y="162" text-anchor="middle" font-size="18" font-weight="750" fill="#FFFFFF">2</text>
-<text x="319" y="198" font-size="17" font-weight="750" fill="#5F5E5A">Identify stakeholders</text>
-<text x="319" y="222" font-size="17" font-weight="750" fill="#5F5E5A">and success criteria.</text>
-<text x="319" y="256" font-size="15" font-weight="500" fill="#2C2C2A">Map buyers, users,</text>
-<text x="319" y="278" font-size="15" font-weight="500" fill="#2C2C2A">security, ops, and who</text>
-<text x="319" y="300" font-size="15" font-weight="500" fill="#2C2C2A">can say no. Write success</text>
-<text x="319" y="322" font-size="15" font-weight="500" fill="#2C2C2A">criteria that are</text>
-<text x="319" y="344" font-size="15" font-weight="500" fill="#2C2C2A">observable.</text>
-<line x1="540" y1="410" x2="560" y2="410" stroke="#2C2C2A" stroke-width="3"/>
-<polygon points="560,410 549,403 549,417" fill="#2C2C2A"/>
-<rect x="562" y="120" width="239" height="580" rx="14" fill="#F1F0EB" stroke="#5F5E5A" stroke-width="2.2"/>
-<circle cx="596" cy="156" r="20" fill="#5F5E5A"/>
-<text x="596" y="162" text-anchor="middle" font-size="18" font-weight="750" fill="#FFFFFF">3</text>
-<text x="582" y="198" font-size="17" font-weight="750" fill="#5F5E5A">Ask focused discovery</text>
-<text x="582" y="222" font-size="17" font-weight="750" fill="#5F5E5A">questions.</text>
-<text x="582" y="256" font-size="15" font-weight="500" fill="#2C2C2A">Probe systems of record,</text>
-<text x="582" y="278" font-size="15" font-weight="500" fill="#2C2C2A">data ownership, latency</text>
-<text x="582" y="300" font-size="15" font-weight="500" fill="#2C2C2A">budgets, compliance, and</text>
-<text x="582" y="322" font-size="15" font-weight="500" fill="#2C2C2A">which workflows are</text>
-<text x="582" y="344" font-size="15" font-weight="500" fill="#2C2C2A">already deterministic.</text>
-<line x1="803" y1="410" x2="823" y2="410" stroke="#2C2C2A" stroke-width="3"/>
-<polygon points="823,410 812,403 812,417" fill="#2C2C2A"/>
-<rect x="825" y="120" width="239" height="580" rx="14" fill="#EAF2FA" stroke="#185FA5" stroke-width="2.2"/>
-<circle cx="859" cy="156" r="20" fill="#185FA5"/>
-<text x="859" y="162" text-anchor="middle" font-size="18" font-weight="750" fill="#FFFFFF">4</text>
-<text x="845" y="198" font-size="17" font-weight="750" fill="#185FA5">Define functional and</text>
-<text x="845" y="222" font-size="17" font-weight="750" fill="#185FA5">non-functional</text>
-<text x="845" y="246" font-size="17" font-weight="750" fill="#185FA5">requirements.</text>
-<text x="845" y="280" font-size="15" font-weight="500" fill="#2C2C2A">Functional: jobs the</text>
-<text x="845" y="302" font-size="15" font-weight="500" fill="#2C2C2A">agent must complete.</text>
-<text x="845" y="324" font-size="15" font-weight="500" fill="#2C2C2A">Non-functional: latency,</text>
-<text x="845" y="346" font-size="15" font-weight="500" fill="#2C2C2A">cost, availability,</text>
-<text x="845" y="368" font-size="15" font-weight="500" fill="#2C2C2A">privacy, audit,</text>
-<text x="845" y="390" font-size="15" font-weight="500" fill="#2C2C2A">retention.</text>
-<text x="550" y="820" text-anchor="middle" font-size="14" fill="#5F5E5A">jacobdurrah.github.io/idp-architecture/agents.html</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1632 1056" width="17in" height="11in"><style>text{font-family:Helvetica,Arial,sans-serif}</style>
+<rect width="1632" height="1056" fill="#FFFFFF"/>
+<rect x="0" y="0" width="1632" height="64" fill="#72264C"/>
+<text x="32" y="28" font-size="20" font-weight="750" fill="#FFFFFF">FDE platform engineering · enterprise agent · panel 1 of 6</text>
+<text x="32" y="50" font-size="14" font-weight="500" fill="#F3D6E4">Steps 1-3 · problem to discovery · SAY · ASK · PLATFORM BOX · FAIL IF SKIPPED · DETERMINISTIC BIAS</text>
+<text x="32" y="88" font-size="13" fill="#5F5E5A">START · step 1</text>
+<text x="1600" y="88" font-size="13" fill="#5F5E5A" text-anchor="end">to panel 2</text>
+<rect x="28.0" y="108.0" width="514.7" height="900.0" rx="10" fill="#FFFFFF" stroke="#185FA5" stroke-width="2.4"/>
+<rect x="28.0" y="108.0" width="514.7" height="58" rx="10" fill="#0C447C"/>
+<rect x="28.0" y="128.0" width="514.7" height="38" fill="#0C447C"/>
+<circle cx="56.0" cy="137.0" r="16" fill="#FFFFFF"/>
+<text x="56.0" y="143.0" text-anchor="middle" font-size="16" font-weight="750" fill="#0C447C">1</text>
+<text x="78.0" y="132.0" font-size="16" font-weight="750" fill="#FFFFFF">Clarify the customer problem</text>
+<rect x="29.2" y="166.0" width="512.3" height="130.2" fill="#FFFFFF"/>
+<text x="42.0" y="182.0" font-size="11" font-weight="750" fill="#185FA5" letter-spacing="0.08em">SAY</text>
+<text x="42.0" y="200.0" font-size="15" font-weight="500" fill="#1A1918">Restate the pain and the constraint in their nouns: who is blocked, what</text>
+<text x="42.0" y="220.0" font-size="15" font-weight="500" fill="#1A1918">work stalls, and what they already tried. If you cannot say that without</text>
+<text x="42.0" y="240.0" font-size="15" font-weight="500" fill="#1A1918">saying agent, you do not have a problem yet.</text>
+<rect x="29.2" y="296.2" width="512.3" height="221.0" fill="#EAF2FA"/>
+<text x="42.0" y="312.2" font-size="11" font-weight="750" fill="#0C447C" letter-spacing="0.08em">ASK</text>
+<text x="42.0" y="330.2" font-size="15" font-weight="500" fill="#1A1918">1. What is broken today with no agent in the loop, named as a ticket,</text>
+<text x="42.0" y="350.2" font-size="15" font-weight="500" fill="#1A1918">queue, or handoff?</text>
+<text x="42.0" y="370.2" font-size="15" font-weight="500" fill="#1A1918">2. Which constraint (tenant, data class, SLA, allowed tools) would make a</text>
+<text x="42.0" y="390.2" font-size="15" font-weight="500" fill="#1A1918">clever demo useless in production?</text>
+<text x="42.0" y="410.2" font-size="15" font-weight="500" fill="#1A1918">3. What did they already automate, and why did that path stall?</text>
+<rect x="29.2" y="517.2" width="512.3" height="162.0" fill="#F4F8FC"/>
+<text x="42.0" y="533.2" font-size="11" font-weight="750" fill="#0C447C" letter-spacing="0.08em">PLATFORM BOX</text>
+<text x="42.0" y="551.2" font-size="15" font-weight="500" fill="#1A1918">Problem brief on a shared board: actor, pain in their words, constraint,</text>
+<text x="42.0" y="571.2" font-size="15" font-weight="500" fill="#1A1918">why-now, non-goals. Tag the tenant and data class on the brief from day</text>
+<text x="42.0" y="591.2" font-size="15" font-weight="500" fill="#1A1918">one.</text>
+<rect x="29.2" y="679.2" width="512.3" height="135.6" fill="#FCEBEB"/>
+<text x="42.0" y="695.2" font-size="11" font-weight="750" fill="#791F1F" letter-spacing="0.08em">FAIL IF SKIPPED</text>
+<text x="42.0" y="713.2" font-size="15" font-weight="500" fill="#1A1918">Demo chasing. You sell a model instead of a job. Security and ops kill it</text>
+<text x="42.0" y="733.2" font-size="15" font-weight="500" fill="#1A1918">after the room applauds.</text>
+<rect x="29.2" y="814.8" width="512.3" height="149.2" fill="#FAFAF7"/>
+<text x="42.0" y="830.8" font-size="11" font-weight="750" fill="#2C2C2A" letter-spacing="0.08em">DETERMINISTIC BIAS</text>
+<text x="42.0" y="848.8" font-size="15" font-weight="500" fill="#1A1918">N/A for wording the problem. Bias discovery toward existing</text>
+<text x="42.0" y="868.8" font-size="15" font-weight="500" fill="#1A1918">deterministic workflows that already almost work. Do not assume a</text>
+<text x="42.0" y="888.8" font-size="15" font-weight="500" fill="#1A1918">model is the fix.</text>
+<rect x="28.0" y="964.0" width="514.7" height="44" fill="#0C447C"/>
+<rect x="28.0" y="964.0" width="514.7" height="12" fill="#0C447C"/>
+<text x="42.0" y="982.0" font-size="12" font-weight="750" fill="#FFFFFF">THEME: Tenant, data class, and SLA show up here as constraints, not as later extras.</text>
+<line x1="544.7" y1="558.0" x2="556.7" y2="558.0" stroke="#2C2C2A" stroke-width="2.5"/>
+<rect x="558.7" y="108.0" width="514.7" height="900.0" rx="10" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="2.4"/>
+<rect x="558.7" y="108.0" width="514.7" height="58" rx="10" fill="#3F3E3A"/>
+<rect x="558.7" y="128.0" width="514.7" height="38" fill="#3F3E3A"/>
+<circle cx="586.7" cy="137.0" r="16" fill="#FFFFFF"/>
+<text x="586.7" y="143.0" text-anchor="middle" font-size="16" font-weight="750" fill="#3F3E3A">2</text>
+<text x="608.7" y="132.0" font-size="16" font-weight="750" fill="#FFFFFF">Identify stakeholders and success criteria</text>
+<rect x="559.9" y="166.0" width="512.3" height="130.2" fill="#FFFFFF"/>
+<text x="572.7" y="182.0" font-size="11" font-weight="750" fill="#5F5E5A" letter-spacing="0.08em">SAY</text>
+<text x="572.7" y="200.0" font-size="15" font-weight="500" fill="#1A1918">Success is a measurable: time-to-X, error rate, dollars, tickets closed.</text>
+<text x="572.7" y="220.0" font-size="15" font-weight="500" fill="#1A1918">Name the people who can block: security, identity, ops, and the data</text>
+<text x="572.7" y="240.0" font-size="15" font-weight="500" fill="#1A1918">owner, not only the excited buyer.</text>
+<rect x="559.9" y="296.2" width="512.3" height="241.0" fill="#F1F0EB"/>
+<text x="572.7" y="312.2" font-size="11" font-weight="750" fill="#3F3E3A" letter-spacing="0.08em">ASK</text>
+<text x="572.7" y="330.2" font-size="15" font-weight="500" fill="#1A1918">1. Who signs the SLO, and who can stop a tool allowlist or a production</text>
+<text x="572.7" y="350.2" font-size="15" font-weight="500" fill="#1A1918">token?</text>
+<text x="572.7" y="370.2" font-size="15" font-weight="500" fill="#1A1918">2. What metric moves if this works, who already owns that dashboard,</text>
+<text x="572.7" y="390.2" font-size="15" font-weight="500" fill="#1A1918">and what is the baseline?</text>
+<text x="572.7" y="410.2" font-size="15" font-weight="500" fill="#1A1918">3. Which tenant or business unit is in scope for the first 30 days, and who</text>
+<text x="572.7" y="430.2" font-size="15" font-weight="500" fill="#1A1918">speaks for isolation?</text>
+<rect x="559.9" y="537.2" width="512.3" height="162.0" fill="#F4F8FC"/>
+<text x="572.7" y="553.2" font-size="11" font-weight="750" fill="#0C447C" letter-spacing="0.08em">PLATFORM BOX</text>
+<text x="572.7" y="571.2" font-size="15" font-weight="500" fill="#1A1918">Stakeholder map plus a success card: metric, baseline, target, owner,</text>
+<text x="572.7" y="591.2" font-size="15" font-weight="500" fill="#1A1918">review date. Include security, ops, and the data owner as named rows,</text>
+<text x="572.7" y="611.2" font-size="15" font-weight="500" fill="#1A1918">not footnotes.</text>
+<rect x="559.9" y="699.2" width="512.3" height="135.6" fill="#FCEBEB"/>
+<text x="572.7" y="715.2" font-size="11" font-weight="750" fill="#791F1F" letter-spacing="0.08em">FAIL IF SKIPPED</text>
+<text x="572.7" y="733.2" font-size="15" font-weight="500" fill="#1A1918">A champion loves the demo. Security and ops were never in the room.</text>
+<text x="572.7" y="753.2" font-size="15" font-weight="500" fill="#1A1918">The project dies at procurement or production access.</text>
+<rect x="559.9" y="834.8" width="512.3" height="129.2" fill="#FAFAF7"/>
+<text x="572.7" y="850.8" font-size="11" font-weight="750" fill="#2C2C2A" letter-spacing="0.08em">DETERMINISTIC BIAS</text>
+<text x="572.7" y="868.8" font-size="15" font-weight="500" fill="#1A1918">Success criteria themselves are rules (thresholds, SLAs, error budgets).</text>
+<text x="572.7" y="888.8" font-size="15" font-weight="500" fill="#1A1918">Do not let a qualitative feels smarter replace a measurable outcome.</text>
+<rect x="558.7" y="964.0" width="514.7" height="44" fill="#3F3E3A"/>
+<rect x="558.7" y="964.0" width="514.7" height="12" fill="#3F3E3A"/>
+<text x="572.7" y="982.0" font-size="12" font-weight="750" fill="#FFFFFF">THEME: Security and ops can block. Success is a number tied to a business outcome.</text>
+<line x1="1075.3" y1="558.0" x2="1087.3" y2="558.0" stroke="#2C2C2A" stroke-width="2.5"/>
+<rect x="1089.3" y="108.0" width="514.7" height="900.0" rx="10" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="2.4"/>
+<rect x="1089.3" y="108.0" width="514.7" height="58" rx="10" fill="#3F3E3A"/>
+<rect x="1089.3" y="128.0" width="514.7" height="38" fill="#3F3E3A"/>
+<circle cx="1117.3" cy="137.0" r="16" fill="#FFFFFF"/>
+<text x="1117.3" y="143.0" text-anchor="middle" font-size="16" font-weight="750" fill="#3F3E3A">3</text>
+<text x="1139.3" y="132.0" font-size="16" font-weight="750" fill="#FFFFFF">Ask focused discovery questions</text>
+<rect x="1090.5" y="166.0" width="512.3" height="132.6" fill="#FFFFFF"/>
+<text x="1103.3" y="182.0" font-size="11" font-weight="750" fill="#5F5E5A" letter-spacing="0.08em">SAY</text>
+<text x="1103.3" y="200.0" font-size="15" font-weight="500" fill="#1A1918">Ask where truth lives, who owns PII, and which automations must stay</text>
+<text x="1103.3" y="220.0" font-size="15" font-weight="500" fill="#1A1918">deterministic. Tag every source you hear: system, tenant, classification,</text>
+<text x="1103.3" y="240.0" font-size="15" font-weight="500" fill="#1A1918">owner, lineage.</text>
+<rect x="1090.5" y="298.6" width="512.3" height="246.6" fill="#F1F0EB"/>
+<text x="1103.3" y="314.6" font-size="11" font-weight="750" fill="#3F3E3A" letter-spacing="0.08em">ASK</text>
+<text x="1103.3" y="332.6" font-size="15" font-weight="500" fill="#1A1918">1. What is the system of record for the job, and what is only a copy or an</text>
+<text x="1103.3" y="352.6" font-size="15" font-weight="500" fill="#1A1918">export?</text>
+<text x="1103.3" y="372.6" font-size="15" font-weight="500" fill="#1A1918">2. Who owns PII, and how does it get tagged at ingest rather than in the</text>
+<text x="1103.3" y="392.6" font-size="15" font-weight="500" fill="#1A1918">prompt?</text>
+<text x="1103.3" y="412.6" font-size="15" font-weight="500" fill="#1A1918">3. Which existing runbooks, RPA, or workflows must not become</text>
+<text x="1103.3" y="432.6" font-size="15" font-weight="500" fill="#1A1918">free-form model steps?</text>
+<rect x="1090.5" y="545.2" width="512.3" height="146.4" fill="#F4F8FC"/>
+<text x="1103.3" y="561.2" font-size="11" font-weight="750" fill="#0C447C" letter-spacing="0.08em">PLATFORM BOX</text>
+<text x="1103.3" y="579.2" font-size="15" font-weight="500" fill="#1A1918">Discovery log: sources with tags (tenant, system, classification, lineage),</text>
+<text x="1103.3" y="599.2" font-size="15" font-weight="500" fill="#1A1918">PII owner, existing automations to keep, credential paths already in use.</text>
+<rect x="1090.5" y="691.6" width="512.3" height="139.6" fill="#FCEBEB"/>
+<text x="1103.3" y="707.6" font-size="11" font-weight="750" fill="#791F1F" letter-spacing="0.08em">FAIL IF SKIPPED</text>
+<text x="1103.3" y="725.6" font-size="15" font-weight="500" fill="#1A1918">You design retrieval against a wiki copy, miss the system of record, and</text>
+<text x="1103.3" y="745.6" font-size="15" font-weight="500" fill="#1A1918">leak PII across tenants because nobody named the tags.</text>
+<rect x="1090.5" y="831.2" width="512.3" height="132.8" fill="#FAFAF7"/>
+<text x="1103.3" y="847.2" font-size="11" font-weight="750" fill="#2C2C2A" letter-spacing="0.08em">DETERMINISTIC BIAS</text>
+<text x="1103.3" y="865.2" font-size="15" font-weight="500" fill="#1A1918">Prefer existing workflow and allowlisted integrations over a new agent</text>
+<text x="1103.3" y="885.2" font-size="15" font-weight="500" fill="#1A1918">skill whenever the step is already mechanical.</text>
+<rect x="1089.3" y="964.0" width="514.7" height="44" fill="#3F3E3A"/>
+<rect x="1089.3" y="964.0" width="514.7" height="12" fill="#3F3E3A"/>
+<text x="1103.3" y="982.0" font-size="12" font-weight="750" fill="#FFFFFF">THEME: Tag data from all sources now. Keep deterministic automations deterministic.</text>
+<text x="816" y="1038" text-anchor="middle" font-size="13" fill="#5F5E5A">agents.html · Ship agent story stays separate · dense reference, not a slogan poster</text>
 </svg>
