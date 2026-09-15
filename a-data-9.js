@@ -2,11 +2,11 @@ window.IDP_DATA = Object.assign(window.IDP_DATA || {}, {
   "fde": {
     "n": "FDE enterprise (14-step spine)",
     "p": "story",
-    "w": "Forward Deployed Engineer interview spine: clarify the customer problem through convert field pain into product feedback. Fourteen steps. RBAC, tenant isolation, credentials under 6+8; deterministic workflow and tools under 7; evals under 9; SLO/SLA and business metrics under 10; toil to pave under 14.",
-    "y": "Ship agent shows delivery. This story is how an FDE designs and runs a tenant-safe enterprise agent.",
+    "w": "Forward Deployed Engineer interview spine: clarify the customer problem through convert field pain into product feedback. Fourteen dense cards. Every step carries Say, Ask, Platform box, Fail if skipped, and Deterministic bias. RBAC, tenant isolation, tagged sources, scoped short-lived tokens, deterministic workflow, SLO/SLA plus business outcomes, and toil-to-board feedback run the whole spine, not only steps 6-10.",
+    "y": "Ship agent shows delivery. This story is how an FDE designs and runs a tenant-safe enterprise agent, and how field toil becomes a paved road.",
     "d": [
-      "Story bar: Ship agent vs FDE enterprise.",
-      "Print wall: print.html · panels 1-4 left to right.",
+      "Story bar: Ship agent vs FDE enterprise. Ship agent story stays separate.",
+      "Print wall: print.html \u00b7 6 tabloid panels left to right. Dense reference, not a slogan poster.",
       "Stigmergy: boards hold traces; agents do not replace the board with chat."
     ],
     "story": "fde"
@@ -14,61 +14,66 @@ window.IDP_DATA = Object.assign(window.IDP_DATA || {}, {
   "fde-s1": {
     "n": "1. Clarify the customer problem",
     "p": "ctrl",
-    "w": "Start with the customer's pain in their words. Name who hurts, what breaks, and why now. Do not jump to models.",
-    "y": "A vague problem produces a vague agent. FDE clarity is the first trust boundary.",
+    "say": "Restate the pain and the constraint in their nouns: who is blocked, what work stalls, and what they already tried. If you cannot say that without saying agent, you do not have a problem yet.",
+    "ask": [
+      "What is broken today with no agent in the loop, named as a ticket, queue, or handoff?",
+      "Which constraint (tenant, data class, SLA, allowed tools) would make a clever demo useless in production?",
+      "What did they already automate, and why did that path stall?"
+    ],
+    "box": "Problem brief on a shared board: actor, pain in their words, constraint, why-now, non-goals. Tag the tenant and data class on the brief from day one.",
+    "fail": "Demo chasing. You sell a model instead of a job. Security and ops kill it after the room applauds.",
+    "bias": "N/A for wording the problem. Bias discovery toward existing deterministic workflows that already almost work. Do not assume a model is the fix.",
+    "w": "Restate the pain and the constraint in their nouns: who is blocked, what work stalls, and what they already tried. If you cannot say that without saying agent, you do not have a problem yet.",
+    "y": "Demo chasing. You sell a model instead of a job. Security and ops kill it after the room applauds.",
     "d": [
-      "Spine step 1 of 14 from the FDE interview sheet."
+      "Ask: (1) What is broken today with no agent in the loop, named as a ticket, queue, or handoff? (2) Which constraint (tenant, data class, SLA, allowed tools) would make a clever demo useless in production? (3) What did they already automate, and why did that path stall?",
+      "Platform box: Problem brief on a shared board: actor, pain in their words, constraint, why-now, non-goals. Tag the tenant and data class on the brief from day one.",
+      "Deterministic bias: N/A for wording the problem. Bias discovery toward existing deterministic workflows that already almost work. Do not assume a model is the fix.",
+      "Theme: Tenant, data class, and SLA show up here as constraints, not as later extras."
     ],
     "story": "fde"
   },
   "fde-s2": {
     "n": "2. Identify stakeholders and success criteria",
     "p": "ppl",
-    "w": "Map buyers, users, security, ops, and who can say no. Write success criteria that are observable, not slogan-level.",
-    "y": "Without named stakeholders and success, you cannot defend RBAC, SLO, or a recommendation.",
+    "say": "Success is a measurable: time-to-X, error rate, dollars, tickets closed. Name the people who can block: security, identity, ops, and the data owner, not only the excited buyer.",
+    "ask": [
+      "Who signs the SLO, and who can stop a tool allowlist or a production token?",
+      "What metric moves if this works, who already owns that dashboard, and what is the baseline?",
+      "Which tenant or business unit is in scope for the first 30 days, and who speaks for isolation?"
+    ],
+    "box": "Stakeholder map plus a success card: metric, baseline, target, owner, review date. Include security, ops, and the data owner as named rows, not footnotes.",
+    "fail": "A champion loves the demo. Security and ops were never in the room. The project dies at procurement or production access.",
+    "bias": "Success criteria themselves are rules (thresholds, SLAs, error budgets). Do not let a qualitative feels smarter replace a measurable outcome.",
+    "w": "Success is a measurable: time-to-X, error rate, dollars, tickets closed. Name the people who can block: security, identity, ops, and the data owner, not only the excited buyer.",
+    "y": "A champion loves the demo. Security and ops were never in the room. The project dies at procurement or production access.",
     "d": [
-      "Spine step 2 of 14 from the FDE interview sheet."
+      "Ask: (1) Who signs the SLO, and who can stop a tool allowlist or a production token? (2) What metric moves if this works, who already owns that dashboard, and what is the baseline? (3) Which tenant or business unit is in scope for the first 30 days, and who speaks for isolation?",
+      "Platform box: Stakeholder map plus a success card: metric, baseline, target, owner, review date. Include security, ops, and the data owner as named rows, not footnotes.",
+      "Deterministic bias: Success criteria themselves are rules (thresholds, SLAs, error budgets). Do not let a qualitative feels smarter replace a measurable outcome.",
+      "Theme: Security and ops can block. Success is a number tied to a business outcome."
     ],
     "story": "fde"
   },
   "fde-s3": {
     "n": "3. Ask focused discovery questions",
     "p": "ppl",
-    "w": "Probe systems of record, data ownership, latency budgets, compliance, and which workflows are already deterministic.",
-    "y": "Focused questions surface tenant boundaries and tool allowlists before you invent architecture.",
-    "d": [
-      "Spine step 3 of 14 from the FDE interview sheet."
+    "say": "Ask where truth lives, who owns PII, and which automations must stay deterministic. Tag every source you hear: system, tenant, classification, owner, lineage.",
+    "ask": [
+      "What is the system of record for the job, and what is only a copy or an export?",
+      "Who owns PII, and how does it get tagged at ingest rather than in the prompt?",
+      "Which existing runbooks, RPA, or workflows must not become free-form model steps?"
     ],
-    "story": "fde"
-  },
-  "fde-s4": {
-    "n": "4. Define functional and non-functional requirements",
-    "p": "ctrl",
-    "w": "Functional: jobs the agent must complete. Non-functional: latency, cost, availability, privacy, audit, retention.",
-    "y": "Requirements are the contract. Evals, SLO, and SLA hang from them later.",
+    "box": "Discovery log: sources with tags (tenant, system, classification, lineage), PII owner, existing automations to keep, credential paths already in use.",
+    "fail": "You design retrieval against a wiki copy, miss the system of record, and leak PII across tenants because nobody named the tags.",
+    "bias": "Prefer existing workflow and allowlisted integrations over a new agent skill whenever the step is already mechanical.",
+    "w": "Ask where truth lives, who owns PII, and which automations must stay deterministic. Tag every source you hear: system, tenant, classification, owner, lineage.",
+    "y": "You design retrieval against a wiki copy, miss the system of record, and leak PII across tenants because nobody named the tags.",
     "d": [
-      "Spine step 4 of 14 from the FDE interview sheet."
-    ],
-    "story": "fde"
-  },
-  "fde-s5": {
-    "n": "5. Propose the initial architecture",
-    "p": "ctrl",
-    "w": "Sketch planes: identity, policy, workflow, retrieval, model, tools, boards, observe. Prefer category names (IdP, policy engine, workflow engine, secrets broker, warehouse).",
-    "y": "Architecture is a customer-facing story, not a vendor dump.",
-    "d": [
-      "Spine step 5 of 14 from the FDE interview sheet."
-    ],
-    "story": "fde"
-  },
-  "fde-s6": {
-    "n": "6. Explain data flow, control flow, and trust boundaries",
-    "p": "ctrl",
-    "w": "Show where data moves, who decides, and where trust stops. RBAC (role-based access control), tenant isolation, and scoped credential handoff live here.",
-    "y": "If trust boundaries are fuzzy, the agent is a second control plane.",
-    "d": [
-      "Spine step 6 of 14 from the FDE interview sheet.",
-      "Trust boundaries include RBAC, tenant isolation, and scoped credential handoff."
+      "Ask: (1) What is the system of record for the job, and what is only a copy or an export? (2) Who owns PII, and how does it get tagged at ingest rather than in the prompt? (3) Which existing runbooks, RPA, or workflows must not become free-form model steps?",
+      "Platform box: Discovery log: sources with tags (tenant, system, classification, lineage), PII owner, existing automations to keep, credential paths already in use.",
+      "Deterministic bias: Prefer existing workflow and allowlisted integrations over a new agent skill whenever the step is already mechanical.",
+      "Theme: Tag data from all sources now. Keep deterministic automations deterministic."
     ],
     "story": "fde"
   }
