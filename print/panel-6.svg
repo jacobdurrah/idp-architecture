@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1632 1056" width="17in" height="11in">
+<rect width="1632" height="1056" fill="#FFFFFF"/>
+<rect x="0" y="0" width="1632" height="64" fill="#72264C"/>
+<text x="32" y="28" font-size="20" font-weight="750" fill="#FFFFFF" font-family="Helvetica,Arial,sans-serif">FDE platform engineering · enterprise agent · panel 6 of 6</text>
+<text x="32" y="50" font-size="14" font-weight="500" fill="#F3D6E4" font-family="Helvetica,Arial,sans-serif">Steps 13-14 · recommend and pave · SAY · ASK · PLATFORM BOX · FAIL IF SKIPPED · DETERMINISTIC BIAS</text>
+<text x="32" y="88" font-size="13" fill="#5F5E5A" font-family="Helvetica,Arial,sans-serif">from panel 5</text>
+<text x="1600" y="88" font-size="13" fill="#5F5E5A" text-anchor="end" font-family="Helvetica,Arial,sans-serif">END · step 14 · pave</text>
+<rect x="28.0" y="108.0" width="780.0" height="900.0" rx="10" fill="#FFFFFF" stroke="#0C447C" stroke-width="2.4"/>
+<rect x="28.0" y="108.0" width="780.0" height="58" rx="10" fill="#06325C"/>
+<rect x="28.0" y="128.0" width="780.0" height="38" fill="#06325C"/>
+<circle cx="56.0" cy="137.0" r="16" fill="#FFFFFF"/>
+<text x="56.0" y="143.0" text-anchor="middle" font-size="16" font-weight="750" fill="#06325C" font-family="Helvetica,Arial,sans-serif">13</text>
+<text x="78.0" y="132.0" font-size="16" font-weight="750" fill="#FFFFFF" font-family="Helvetica,Arial,sans-serif">Make a concrete customer-facing recommendation</text>
+<rect x="29.2" y="166.0" width="777.6" height="125.4" fill="#FFFFFF"/>
+<text x="42.0" y="182.0" font-size="11" font-weight="750" fill="#0C447C" font-family="Helvetica,Arial,sans-serif" letter-spacing="0.08em">SAY</text>
+<text x="42.0" y="200.0" font-size="16" font-weight="500" fill="#1A1918" font-family="Helvetica,Arial,sans-serif">One path. What ships in 30 days, what in 90, what is out of scope, and who owns IdP, workflow, allowlist,</text>
+<text x="42.0" y="221.0" font-size="16" font-weight="500" fill="#1A1918" font-family="Helvetica,Arial,sans-serif">evals, and the outcome dashboard.</text>
+<rect x="29.2" y="291.4" width="777.6" height="214.8" fill="#E4F0FA"/>
+<text x="42.0" y="307.4" font-size="11" font-weight="750" fill="#06325C" font-family="Helvetica,Arial,sans-serif" letter-spacing="0.08em">ASK</text>
+<text x="42.0" y="325.4" font-size="16" font-weight="500" fill="#1A1918" font-family="Helvetica,Arial,sans-serif">1. Who owns the token broker and the tool gateway on day one, named as a team?</text>
+<text x="42.0" y="346.4" font-size="16" font-weight="500" fill="#1A1918" font-family="Helvetica,Arial,sans-serif">2. What is explicitly out of scope for 90 days, including data classes and write tools?</text>
+<text x="42.0" y="367.4" font-size="16" font-weight="500" fill="#1A1918" font-family="Helvetica,Arial,sans-serif">3. What 30-day metric proves the recommendation, not the demo?</text>
+<rect x="29.2" y="506.2" width="777.6" height="168.2" fill="#F4F8FC"/>
+<text x="42.0" y="522.2" font-size="11" font-weight="750" fill="#0C447C" font-family="Helvetica,Arial,sans-serif" letter-spacing="0.08em">PLATFORM BOX</text>
+<text x="42.0" y="540.2" font-size="16" font-weight="500" fill="#1A1918" font-family="Helvetica,Arial,sans-serif">30/90 recommendation: in-scope jobs, out-of-scope list, owners (IdP, workflow, allowlist, evals,</text>
+<text x="42.0" y="561.2" font-size="16" font-weight="500" fill="#1A1918" font-family="Helvetica,Arial,sans-serif">dashboard), success metrics, freeze rules.</text>
+<rect x="29.2" y="674.4" width="777.6" height="138.6" fill="#FCEBEB"/>
+<text x="42.0" y="690.4" font-size="11" font-weight="750" fill="#791F1F" font-family="Helvetica,Arial,sans-serif" letter-spacing="0.08em">FAIL IF SKIPPED</text>
+<text x="42.0" y="708.4" font-size="16" font-weight="500" fill="#1A1918" font-family="Helvetica,Arial,sans-serif">A menu. The customer cannot act. Six weeks later they are still choosing models.</text>
+<rect x="29.2" y="813.0" width="777.6" height="151.0" fill="#FAFAF7"/>
+<text x="42.0" y="829.0" font-size="11" font-weight="750" fill="#2C2C2A" font-family="Helvetica,Arial,sans-serif" letter-spacing="0.08em">DETERMINISTIC BIAS</text>
+<text x="42.0" y="847.0" font-size="16" font-weight="500" fill="#1A1918" font-family="Helvetica,Arial,sans-serif">The 30-day slice should be mostly workflow, tags, RBAC, and evals. Model judgment only where the job</text>
+<text x="42.0" y="868.0" font-size="16" font-weight="500" fill="#1A1918" font-family="Helvetica,Arial,sans-serif">needs it.</text>
+<rect x="28.0" y="964.0" width="780.0" height="44" fill="#06325C"/>
+<rect x="28.0" y="964.0" width="780.0" height="12" fill="#06325C"/>
+<text x="42.0" y="982.0" font-size="12" font-weight="750" fill="#FFFFFF" font-family="Helvetica,Arial,sans-serif">THEME: Scoped 30/90. Named owners. Out of scope is part of the recommendation.</text>
+<line x1="810.0" y1="558.0" x2="822.0" y2="558.0" stroke="#2C2C2A" stroke-width="2.5"/>
+<rect x="824.0" y="108.0" width="780.0" height="900.0" rx="10" fill="#FFFFFF" stroke="#C45B78" stroke-width="2.4"/>
+<rect x="824.0" y="108.0" width="780.0" height="58" rx="10" fill="#9B3D6A"/>
+<rect x="824.0" y="128.0" width="780.0" height="38" fill="#9B3D6A"/>
+<circle cx="852.0" cy="137.0" r="16" fill="#FFFFFF"/>
+<text x="852.0" y="143.0" text-anchor="middle" font-size="16" font-weight="750" fill="#9B3D6A" font-family="Helvetica,Arial,sans-serif">14</text>
+<text x="874.0" y="132.0" font-size="16" font-weight="750" fill="#FFFFFF" font-family="Helvetica,Arial,sans-serif">Convert field pain into product feedback</text>
+<rect x="825.2" y="166.0" width="777.6" height="127.9" fill="#FFFFFF"/>
+<text x="838.0" y="182.0" font-size="11" font-weight="750" fill="#C45B78" font-family="Helvetica,Arial,sans-serif" letter-spacing="0.08em">SAY</text>
+<text x="838.0" y="200.0" font-size="16" font-weight="500" fill="#1A1918" font-family="Helvetica,Arial,sans-serif">Field toil becomes a paved road: a new allowlist, schema, eval, or runbook. Stigmergy: write the pain on a</text>
+<text x="838.0" y="221.0" font-size="16" font-weight="500" fill="#1A1918" font-family="Helvetica,Arial,sans-serif">board the product can read. Do not file a prompt tip and walk away.</text>
+<rect x="825.2" y="293.9" width="777.6" height="220.7" fill="#FCEEF2"/>
+<text x="838.0" y="309.9" font-size="11" font-weight="750" fill="#9B3D6A" font-family="Helvetica,Arial,sans-serif" letter-spacing="0.08em">ASK</text>
+<text x="838.0" y="327.9" font-size="16" font-weight="500" fill="#1A1918" font-family="Helvetica,Arial,sans-serif">1. What broke for this tenant that the next tenant will also hit?</text>
+<text x="838.0" y="348.9" font-size="16" font-weight="500" fill="#1A1918" font-family="Helvetica,Arial,sans-serif">2. Which artifact (allowlist, tag, eval, runbook) would have prevented it?</text>
+<text x="838.0" y="369.9" font-size="16" font-weight="500" fill="#1A1918" font-family="Helvetica,Arial,sans-serif">3. Who reads that board inside product, and on what cadence?</text>
+<rect x="825.2" y="514.6" width="777.6" height="172.8" fill="#F4F8FC"/>
+<text x="838.0" y="530.6" font-size="11" font-weight="750" fill="#0C447C" font-family="Helvetica,Arial,sans-serif" letter-spacing="0.08em">PLATFORM BOX</text>
+<text x="838.0" y="548.6" font-size="16" font-weight="500" fill="#1A1918" font-family="Helvetica,Arial,sans-serif">Feedback board: tenant, toil, proposed paved-road artifact (allowlist, schema, eval, runbook), owner,</text>
+<text x="838.0" y="569.6" font-size="16" font-weight="500" fill="#1A1918" font-family="Helvetica,Arial,sans-serif">review cadence.</text>
+<rect x="825.2" y="687.4" width="777.6" height="142.8" fill="#FCEBEB"/>
+<text x="838.0" y="703.4" font-size="11" font-weight="750" fill="#791F1F" font-family="Helvetica,Arial,sans-serif" letter-spacing="0.08em">FAIL IF SKIPPED</text>
+<text x="838.0" y="721.4" font-size="16" font-weight="500" fill="#1A1918" font-family="Helvetica,Arial,sans-serif">Every FDE re-solves the same gap. The product never learns. Toil stays tribal.</text>
+<rect x="825.2" y="830.2" width="777.6" height="133.8" fill="#FAFAF7"/>
+<text x="838.0" y="846.2" font-size="11" font-weight="750" fill="#2C2C2A" font-family="Helvetica,Arial,sans-serif" letter-spacing="0.08em">DETERMINISTIC BIAS</text>
+<text x="838.0" y="864.2" font-size="16" font-weight="500" fill="#1A1918" font-family="Helvetica,Arial,sans-serif">Prefer a new rule, schema, allowlist, or eval over another instruction to the model. Pain becomes policy.</text>
+<rect x="824.0" y="964.0" width="780.0" height="44" fill="#9B3D6A"/>
+<rect x="824.0" y="964.0" width="780.0" height="12" fill="#9B3D6A"/>
+<text x="838.0" y="982.0" font-size="12" font-weight="750" fill="#FFFFFF" font-family="Helvetica,Arial,sans-serif">THEME: Toil to system: write the pain on a board the product can read.</text>
+<text x="816" y="1038" text-anchor="middle" font-size="13" fill="#5F5E5A" font-family="Helvetica,Arial,sans-serif">agents.html · Ship agent story stays separate · dense reference, not a slogan poster</text>
+</svg>
