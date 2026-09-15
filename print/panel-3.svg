@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 850" width="11in" height="8.5in">
+<rect width="1100" height="850" fill="#FFFFFF"/>
+<rect x="0" y="0" width="1100" height="72" fill="#72264C"/>
+<text x="40" y="34" font-size="22" font-weight="750" fill="#FFFFFF">FDE enterprise agent path · panel 3 of 4</text>
+<text x="40" y="58" font-size="16" font-weight="500" fill="#F3D6E4">Evals → ops → troubleshoot · 14-step interview spine</text>
+<text x="40" y="100" font-size="14" fill="#5F5E5A">← from panel 2</text>
+<text x="1060" y="100" font-size="14" fill="#5F5E5A" text-anchor="end">to panel 4 →</text>
+</svg>

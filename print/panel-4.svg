@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 850" width="11in" height="8.5in">
+<rect width="1100" height="850" fill="#FFFFFF"/>
+<rect x="0" y="0" width="1100" height="72" fill="#72264C"/>
+<text x="40" y="34" font-size="22" font-weight="750" fill="#FFFFFF">FDE enterprise agent path · panel 4 of 4</text>
+<text x="40" y="58" font-size="16" font-weight="500" fill="#F3D6E4">Tradeoffs → recommend → pave · 14-step interview spine</text>
+<text x="40" y="100" font-size="14" fill="#5F5E5A">← from panel 3</text>
+<text x="1060" y="100" font-size="14" fill="#5F5E5A" text-anchor="end">END · step 14 · pave</text>
+<rect x="36" y="120" width="326.7" height="580" rx="14" fill="#E4F0FA" stroke="#0C447C" stroke-width="2.2"/>
+<circle cx="70" cy="156" r="20" fill="#0C447C"/>
+<text x="70" y="162" text-anchor="middle" font-size="18" font-weight="750" fill="#FFFFFF">12</text>
+<text x="56" y="198" font-size="17" font-weight="750" fill="#0C447C">Compare alternatives and</text>
+<text x="56" y="222" font-size="17" font-weight="750" fill="#0C447C">tradeoffs.</text>
+<text x="56" y="256" font-size="15" font-weight="500" fill="#2C2C2A">Deterministic vs free-form agent,</text>
+<text x="56" y="278" font-size="15" font-weight="500" fill="#2C2C2A">managed vs self-host, build vs</text>
+<text x="56" y="300" font-size="15" font-weight="500" fill="#2C2C2A">buy. Name cost, risk,</text>
+<text x="56" y="322" font-size="15" font-weight="500" fill="#2C2C2A">time-to-value.</text>
+<line x1="364.7" y1="410" x2="384.7" y2="410" stroke="#2C2C2A" stroke-width="3"/>
+<polygon points="384.7,410 373.7,403 373.7,417" fill="#2C2C2A"/>
+<rect x="386.7" y="120" width="326.7" height="580" rx="14" fill="#E4F0FA" stroke="#0C447C" stroke-width="2.2"/>
+<circle cx="420.7" cy="156" r="20" fill="#0C447C"/>
+<text x="420.7" y="162" text-anchor="middle" font-size="18" font-weight="750" fill="#FFFFFF">13</text>
+<text x="406.7" y="198" font-size="17" font-weight="750" fill="#0C447C">Make a concrete customer-facing</text>
+<text x="406.7" y="222" font-size="17" font-weight="750" fill="#0C447C">recommendation.</text>
+<text x="406.7" y="256" font-size="15" font-weight="500" fill="#2C2C2A">One clear path: what to ship</text>
+<text x="406.7" y="278" font-size="15" font-weight="500" fill="#2C2C2A">first, what to defer, owners, and</text>
+<text x="406.7" y="300" font-size="15" font-weight="500" fill="#2C2C2A">30/90 day success measures.</text>
+<line x1="715.3" y1="410" x2="735.3" y2="410" stroke="#2C2C2A" stroke-width="3"/>
+<polygon points="735.3,410 724.3,403 724.3,417" fill="#2C2C2A"/>
+<rect x="737.3" y="120" width="326.7" height="580" rx="14" fill="#FCEEF2" stroke="#C45B78" stroke-width="2.2" stroke-dasharray="8 5"/>
+<circle cx="771.3" cy="156" r="20" fill="#C45B78"/>
+<text x="771.3" y="162" text-anchor="middle" font-size="18" font-weight="750" fill="#FFFFFF">14</text>
+<text x="757.3" y="198" font-size="17" font-weight="750" fill="#C45B78">Convert field pain into product</text>
+<text x="757.3" y="222" font-size="17" font-weight="750" fill="#C45B78">feedback.</text>
+<text x="757.3" y="256" font-size="15" font-weight="500" fill="#2C2C2A">Stigmergy: write toil to boards.</text>
+<text x="757.3" y="278" font-size="15" font-weight="500" fill="#2C2C2A">Pain becomes paved road</text>
+<text x="757.3" y="300" font-size="15" font-weight="500" fill="#2C2C2A">(allowlist, workflow, eval,</text>
+<text x="757.3" y="322" font-size="15" font-weight="500" fill="#2C2C2A">template).</text>
+<text x="550" y="820" text-anchor="middle" font-size="14" fill="#5F5E5A">jacobdurrah.github.io/idp-architecture/agents.html</text>
+</svg>
