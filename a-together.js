@@ -22,4 +22,13 @@ put(T("OpenTelemetry + Prometheus + Grafana","One SDK, scrape or remote-write, o
 put(T("HPA + Cluster Autoscaler","HPA adds pods. CA adds nodes a few minutes later. One without the other stalls.",[hpa,ca]),["hpa","ca"]);
 put(T("Docker Build + Harbor or ECR","Image is the artifact. Registry is where Argo pulls from.",[db,hbr,ecr]),["registry","image-v1827","build","step6"]);
 put(T("Prometheus + Alertmanager + PagerDuty","Fire, route, wake a human. Datadog is the sold all-in-one swap.",[prom,am,pd]),["alerts","outage-board"]);
+
+var idp=L("Okta","https://www.okta.com/"),ent=L("Microsoft Entra ID","https://learn.microsoft.com/en-us/entra/identity/");
+var opa2=L("Open Policy Agent","https://www.openpolicyagent.org/"),ced=L("Cedar","https://www.cedarpolicy.com/");
+var vlt=L("HashiCorp Vault","https://developer.hashicorp.com/vault"),sts=L("AWS STS","https://docs.aws.amazon.com/STS/latest/APIReference/welcome.html");
+var tmp=L("Temporal","https://temporal.io/"),sfn=L("AWS Step Functions","https://aws.amazon.com/step-functions/");
+put(T("IdP + tenant mapping","Who and which tenant. Groups map to tenant roles.",[idp,ent]),["fde-tenant","fde"]);
+put(T("Policy engine + MCP allowlist","RBAC and tool/verb allowlists. Deny default.",[opa2,ced]),["fde-rbac"]);
+put(T("Secrets broker + scoped tokens","Short-lived delegation. No passwords in chat.",[vlt,sts]),["fde-creds"]);
+put(T("Workflow engine first","Deterministic orchestration; model only for judgment.",[tmp,sfn]),["fde-workflow","fde-gates","fde-pave"]);
 })(window.IDP_DATA);
