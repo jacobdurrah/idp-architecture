@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "eb9df57fef33",
+  "version": "0682f9d37515",
   "records": [
     {
       "id": "admission",
@@ -317,6 +317,81 @@
       "href": "/idp-architecture/agents.html#fde-s1"
     },
     {
+      "id": "fde-s10",
+      "tab": "agents",
+      "name": "10. Define monitoring, latency, cost, reliability, and operations",
+      "plane": "obs",
+      "what": "SLOs cover availability, freshness, and error budget. SLAs if contracted. Business outcomes (tickets closed, hours saved, conversion) sit next to p95. Latency alone is not ops.",
+      "why": "A fast, cheap, wrong agent. Or a correct agent nobody can operate when retrieval goes stale.",
+      "notes": [
+        "Ask: (1) What is the error budget, and what freezes the agent when it burns? (2) Which business metric proves the job moved, not just that calls succeeded? (3) What is the cost per completed job versus the SLA floor, and who sees that board?",
+        "Platform box: SLO/SLA card, outcome dashboard (tickets, hours, conversion), cost and latency boards, freshness SLO, freeze runbook.",
+        "Deterministic bias: Freeze, budget burn, and page routing are rules. The model does not decide whether it is healthy.",
+        "Theme: SLO plus SLA plus business outcomes. Not latency alone."
+      ],
+      "href": "/idp-architecture/agents.html#fde-s10"
+    },
+    {
+      "id": "fde-s11",
+      "tab": "agents",
+      "name": "11. Troubleshoot failures systematically",
+      "plane": "alert",
+      "what": "Trace which tenant, which tool, which retrieval set, and which policy denied. Read boards, not chat archaeology. If observe is dark, freeze autonomous loops.",
+      "why": "People grep chat. The next incident is slower. You cannot tell a policy deny from a model miss.",
+      "notes": [
+        "Ask: (1) Which tenant and which token scope was active on the failing hop? (2) Which retrieval tags fired, and which policy denied the tool or the document? (3) What board should already show this, and why is it empty?",
+        "Platform box: Incident board: tenant, tool, retrieval set, policy decision, trace ids. Freeze switch. Runbook that starts at the board, not at Slack.",
+        "Deterministic bias: Triage order and freeze conditions are a runbook. Do not let the agent try something else while observe is dark.",
+        "Theme: Boards over chat archaeology. Tenant, tool, retrieval, policy on one trace."
+      ],
+      "href": "/idp-architecture/agents.html#fde-s11"
+    },
+    {
+      "id": "fde-s12",
+      "tab": "agents",
+      "name": "12. Compare alternatives and tradeoffs",
+      "plane": "step",
+      "what": "Name the real forks: more model versus more workflow; shared index versus per-tenant; sync versus async tools. Cost, isolation, and time-to-value have to be on the same slide.",
+      "why": "The customer hears a stack, not a choice. They cannot defend isolation or cost to their CISO or CFO.",
+      "notes": [
+        "Ask: (1) What isolation do you lose with a shared index, and is that acceptable for this data class? (2) Which tools must be async because of SLA or human-in-the-loop, and which must be sync? (3) What is the 90-day cost and risk of the model-heavy path versus the workflow-heavy path?",
+        "Platform box: Tradeoff matrix: model vs workflow, index shape (shared vs per-tenant), sync vs async tools, cost, isolation, time-to-value.",
+        "Deterministic bias: When isolation, audit, or SLA is the binding constraint, pick workflow and per-tenant index over a larger model.",
+        "Theme: More model vs more workflow. Shared vs per-tenant index. Sync vs async tools."
+      ],
+      "href": "/idp-architecture/agents.html#fde-s12"
+    },
+    {
+      "id": "fde-s13",
+      "tab": "agents",
+      "name": "13. Make a concrete customer-facing recommendation",
+      "plane": "step",
+      "what": "One path. What ships in 30 days, what in 90, what is out of scope, and who owns IdP, workflow, allowlist, evals, and the outcome dashboard.",
+      "why": "A menu. The customer cannot act. Six weeks later they are still choosing models.",
+      "notes": [
+        "Ask: (1) Who owns the token broker and the tool gateway on day one, named as a team? (2) What is explicitly out of scope for 90 days, including data classes and write tools? (3) What 30-day metric proves the recommendation, not the demo?",
+        "Platform box: 30/90 recommendation: in-scope jobs, out-of-scope list, owners (IdP, workflow, allowlist, evals, dashboard), success metrics, freeze rules.",
+        "Deterministic bias: The 30-day slice should be mostly workflow, tags, RBAC, and evals. Model judgment only where the job needs it.",
+        "Theme: Scoped 30/90. Named owners. Out of scope is part of the recommendation."
+      ],
+      "href": "/idp-architecture/agents.html#fde-s13"
+    },
+    {
+      "id": "fde-s14",
+      "tab": "agents",
+      "name": "14. Convert field pain into product feedback",
+      "plane": "stig",
+      "what": "Field toil becomes a paved road: a new allowlist, schema, eval, or runbook. Stigmergy: write the pain on a board the product can read. Do not file a prompt tip and walk away.",
+      "why": "Every FDE re-solves the same gap. The product never learns. Toil stays tribal.",
+      "notes": [
+        "Ask: (1) What broke for this tenant that the next tenant will also hit? (2) Which artifact (allowlist, tag, eval, runbook) would have prevented it? (3) Who reads that board inside product, and on what cadence?",
+        "Platform box: Feedback board: tenant, toil, proposed paved-road artifact (allowlist, schema, eval, runbook), owner, review cadence.",
+        "Deterministic bias: Prefer a new rule, schema, allowlist, or eval over another instruction to the model. Pain becomes policy.",
+        "Theme: Toil to system: write the pain on a board the product can read."
+      ],
+      "href": "/idp-architecture/agents.html#fde-s14"
+    },
+    {
       "id": "fde-s2",
       "tab": "agents",
       "name": "2. Identify stakeholders and success criteria",
@@ -390,6 +465,51 @@
         "Theme: Scoped short-lived tokens ride the workflow. Agent never holds the user password."
       ],
       "href": "/idp-architecture/agents.html#fde-s6"
+    },
+    {
+      "id": "fde-s7",
+      "tab": "agents",
+      "name": "7. Discuss retrieval, grounding, model interaction, and tools",
+      "plane": "agent",
+      "what": "Retrieval is tagged (tenant, system, classification, lineage) or it is not retrieval. Tools are allowlisted MCP verbs behind the gateway. The model judges; mechanical steps stay workflow and rules.",
+      "why": "Ungrounded generation plus open tools. The demo answers fluently and writes to the wrong tenant.",
+      "notes": [
+        "Ask: (1) Which tags are mandatory on every hit, and what happens on a miss or an untagged chunk? (2) What is the allowlist of tools and arguments for this job, including writes vs reads? (3) Which steps are mechanical and must not call the model at all?",
+        "Platform box: Retrieval schema (required tags), tool allowlist (MCP verbs and args), grounding policy (cite or abstain), workflow vs judgment split.",
+        "Deterministic bias: Mechanical work is workflow and rules. Model only on judgment steps. Tools fail closed outside the allowlist.",
+        "Theme: Tagged retrieval. Allowlisted tools. Model for judgment, not orchestration."
+      ],
+      "href": "/idp-architecture/agents.html#fde-s7"
+    },
+    {
+      "id": "fde-s8",
+      "tab": "agents",
+      "name": "8. Address privacy, identity, tenant isolation, and auditability",
+      "plane": "ctrl",
+      "what": "RBAC on tools and on data. Tenant isolation at query and at index. Every tool call and every retrieval hit is audited with actor, tenant, and token scope. Identity is human plus agent, never a shared bot password.",
+      "why": "Cross-tenant retrieval or an unaudited write. That is an incident, not a product gap.",
+      "notes": [
+        "Ask: (1) Is isolation enforced at index and query, or only as a sentence in the prompt? (2) Who is the actor on the audit line: user, agent, or both, and which token scope? (3) What PII classes are forbidden in prompts, traces, and eval fixtures?",
+        "Platform box: Isolation policy, RBAC matrix (role x tool x data class), audit schema (actor, tenant, tool, retrieval ids, token), delegation standard.",
+        "Deterministic bias: Isolation, RBAC, and audit are policy. No model override. Deny by default.",
+        "Theme: RBAC on tools and data. Isolation at query and index. Audit every hop."
+      ],
+      "href": "/idp-architecture/agents.html#fde-s8"
+    },
+    {
+      "id": "fde-s9",
+      "tab": "agents",
+      "name": "9. Define evaluation and hallucination controls",
+      "plane": "agent",
+      "what": "Evals ship with the agent: drift fixtures plus correct-usage checks (allowed tools and args). Fail closed. Hallucination control is cite or ground, or abstain. It is not a nicer prompt.",
+      "why": "You find hallucinations in production. Side effects already happened. Trust is gone.",
+      "notes": [
+        "Ask: (1) What fixture set proves the agent still uses only allowed tools and arguments? (2) What is the abstain behavior when retrieval is empty, untagged, or cross-tenant? (3) Who owns the eval gate in CI, and what exact failure blocks a release?",
+        "Platform box: Eval suite (drift plus correct-usage), fail-closed gate before side effects, grounding/citation rule, board for eval failures.",
+        "Deterministic bias: Schema validation, allowlist tests, and fail-closed gates are rules. Do not ask the model if it is sure.",
+        "Theme: Evals travel with the agent. Fail closed. Cite or abstain."
+      ],
+      "href": "/idp-architecture/agents.html#fde-s9"
     },
     {
       "id": "gate-compile",
