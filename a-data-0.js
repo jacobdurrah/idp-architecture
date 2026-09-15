@@ -2,7 +2,7 @@ window.IDP_DATA = Object.assign(window.IDP_DATA || {}, {
 "overview": {
 "n": "How to read this map (agents)",
 "p": "step",
-"w": "Two stories. Ship agent: navy badges 1-12 (commit through observe). FDE enterprise: the 14-step interview spine (clarify problem through field pain to product feedback). RBAC, tenant isolation, and credentials sit in steps 6 and 8; deterministic tools in 7; evals in 9; SLO/SLA and business metrics in 10; toil to pave in 14. Stigmergy means coordination through shared boards, not agent chat.",
+"w": "Two stories. Ship agent: navy badges 1-12 (commit through observe). FDE enterprise: the 14-step interview spine (clarify problem through field pain to product feedback). RBAC, tenant isolation, tagged sources, scoped tokens, deterministic workflow, SLO/SLA plus outcomes, and toil-to-board feedback run the whole spine, not only steps 6-10. Stigmergy means coordination through shared boards, not agent chat.",
 "y": "Staff review needs both pictures: how an agent ships like a colleague, and how an FDE designs a tenant-safe enterprise agent for a customer.",
 "d": [
 "Dashed rose boxes are stigmergic spaces. Switch Ship agent vs FDE enterprise in the story bar. Print wall panels via print.html.",
