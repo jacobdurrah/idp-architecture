@@ -76,6 +76,14 @@ if (i < 0) i = dir > 0 ? -1 : 0;
 const n = Math.max(0, Math.min(s.steps.length - 1, i + dir));
 render(s.steps[n]);
 }
+function fdeHtml(item){
+if(!item.say)return"";
+var h="<h3>Say</h3><p>"+escapeHtml(item.say)+"</p>";
+if(item.ask&&item.ask.length){h+="<h3>Ask</h3><ul>";for(var i=0;i<item.ask.length;i++)h+="<li>"+escapeHtml(item.ask[i])+"</li>";h+="</ul>";}
+if(item.box)h+="<h3>Platform box</h3><p>"+escapeHtml(item.box)+"</p>";
+if(item.fail)h+="<h3>Fail if skipped</h3><p>"+escapeHtml(item.fail)+"</p>";
+if(item.bias)h+="<h3>Deterministic bias</h3><p>"+escapeHtml(item.bias)+"</p>";
+return h;}
 function render(id) {
 const item = DATA[id] || DATA.overview;
 current = DATA[id] ? id : "overview";
@@ -92,10 +100,9 @@ if (item.story) {
 const sn = findStory(item.story);
 chips += ' <span class="chip story">' + escapeHtml(sn ? sn.n : item.story) + "</span>";
 }
+var fde=fdeHtml(item);
 panelBody.innerHTML = chips + "<h2>" + escapeHtml(item.n) + "</h2>" +
-"<h3>What it does</h3><p>" + escapeHtml(item.w) + "</p>" +
-"<h3>Why it's needed</h3><p>" + escapeHtml(item.y) + "</p>" +
-(notes ? "<h3>Design notes</h3><ul>" + notes + "</ul>" : "") + extra +
+(fde||("<h3>What it does</h3><p>"+escapeHtml(item.w)+"</p>"+"<h3>Why it's needed</h3><p>"+escapeHtml(item.y)+"</p>"+(notes?"<h3>Design notes</h3><ul>"+notes+"</ul>":""))) + extra +
 (window.IDP_productLinks ? window.IDP_productLinks(item, escapeHtml) : "");
 highlight(current);
 paintStepn();
