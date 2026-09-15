@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "version": "74a36c213943",
+  "version": "65a1dc8492ad",
   "records": [
     {
       "id": "admission",
@@ -302,48 +302,6 @@
       "href": "/idp-architecture/agents.html#fde"
     },
     {
-      "id": "fde-boards",
-      "tab": "agents",
-      "name": "7. Boards (stigmergy)",
-      "plane": "stig",
-      "what": "Stigmergy: coordination through traces in a shared environment, not agent-to-agent chat. Toil, incidents, drift, denials, and eval fails write to shared boards humans and agents both read.",
-      "why": "Private agent memory does not improve the platform. A board write is how the next run and the next engineer learn.",
-      "notes": [
-        "Toil tickets, incident pages, drift, deny, eval fail.",
-        "Agents never replace the board with a DM.",
-        "Same idea as PR / checks / canary on the Ship path."
-      ],
-      "href": "/idp-architecture/agents.html#fde-boards"
-    },
-    {
-      "id": "fde-gates",
-      "tab": "agents",
-      "name": "6. Agent loop + gates",
-      "plane": "agent",
-      "what": "Where judgment is needed, the agent loops under mechanical gates: schema validation, evals, score thresholds, fail-closed. A failed gate writes a board trace; it does not silently continue.",
-      "why": "Ungated generation ships confident wrongness. Gates make the loop safe enough for a tenant.",
-      "notes": [
-        "Evals and schemas before side effects.",
-        "Fail closed: no tool call on invalid plan.",
-        "Same through-line as Ship: boards hold the verdict."
-      ],
-      "href": "/idp-architecture/agents.html#fde-gates"
-    },
-    {
-      "id": "fde-pave",
-      "tab": "agents",
-      "name": "8. Feedback to pave",
-      "plane": "step",
-      "what": "Ops pain on a board becomes a paved road: a new allowlist entry, a workflow step, a test, or a template. Agent or human fixes once; the platform reuses forever.",
-      "why": "Toil that only lives in a hero's head never compounds. The FDE bias is: every repeated pain becomes product.",
-      "notes": [
-        "Toil ticket -> board -> fix PR -> paved road.",
-        "Prefer a rule or eval over another prompt tip.",
-        "Ship path still delivers the change via Git and gates."
-      ],
-      "href": "/idp-architecture/agents.html#fde-pave"
-    },
-    {
       "id": "fde-s1",
       "tab": "agents",
       "name": "1. Clarify the customer problem",
@@ -354,6 +312,68 @@
         "Spine step 1 of 14 from the FDE interview sheet."
       ],
       "href": "/idp-architecture/agents.html#fde-s1"
+    },
+    {
+      "id": "fde-s10",
+      "tab": "agents",
+      "name": "10. Define monitoring, latency, cost, reliability, and operations",
+      "plane": "obs",
+      "what": "SLO (service level objective) and SLA (service level agreement) plus business outcome metrics (TTR, tickets avoided), not only latency. Cost and error budgets are first-class.",
+      "why": "Ops is how the platform stays honest after the demo.",
+      "notes": [
+        "Spine step 10 of 14 from the FDE interview sheet.",
+        "SLO/SLA plus business outcomes, not only latency."
+      ],
+      "href": "/idp-architecture/agents.html#fde-s10"
+    },
+    {
+      "id": "fde-s11",
+      "tab": "agents",
+      "name": "11. Troubleshoot failures systematically",
+      "plane": "alert",
+      "what": "Reproduce, isolate plane (data, control, model, tool), read stigmergic boards (shared traces), freeze autonomous loops if observe is dark.",
+      "why": "Systematic triage beats improvisation when a tenant is on fire.",
+      "notes": [
+        "Spine step 11 of 14 from the FDE interview sheet."
+      ],
+      "href": "/idp-architecture/agents.html#fde-s11"
+    },
+    {
+      "id": "fde-s12",
+      "tab": "agents",
+      "name": "12. Compare alternatives and tradeoffs",
+      "plane": "step",
+      "what": "Compare deterministic workflow vs free-form agent, managed vs self-host, build vs buy. Name cost, risk, time-to-value.",
+      "why": "Tradeoffs prove you heard the customer constraints.",
+      "notes": [
+        "Spine step 12 of 14 from the FDE interview sheet."
+      ],
+      "href": "/idp-architecture/agents.html#fde-s12"
+    },
+    {
+      "id": "fde-s13",
+      "tab": "agents",
+      "name": "13. Make a concrete customer-facing recommendation",
+      "plane": "step",
+      "what": "One clear path: what to ship first, what to defer, who owns what, and how success will be measured in 30/90 days.",
+      "why": "FDE ends in a decision the customer can act on, not a menu of options.",
+      "notes": [
+        "Spine step 13 of 14 from the FDE interview sheet."
+      ],
+      "href": "/idp-architecture/agents.html#fde-s13"
+    },
+    {
+      "id": "fde-s14",
+      "tab": "agents",
+      "name": "14. Convert field pain into product feedback",
+      "plane": "stig",
+      "what": "Stigmergy: write toil, incidents, and gaps to boards. Field pain becomes paved road (allowlist, workflow, eval, template). Prefer a rule over another prompt tip.",
+      "why": "The loop closes when ops pain improves the product for the next tenant.",
+      "notes": [
+        "Spine step 14 of 14 from the FDE interview sheet.",
+        "Field pain on a board becomes a paved road: allowlist, workflow, eval, template."
+      ],
+      "href": "/idp-architecture/agents.html#fde-s14"
     },
     {
       "id": "fde-s2",
@@ -417,18 +437,43 @@
       "href": "/idp-architecture/agents.html#fde-s6"
     },
     {
-      "id": "fde-slo",
+      "id": "fde-s7",
       "tab": "agents",
-      "name": "9. Serve + SLO / outcomes",
-      "plane": "obs",
-      "what": "Serve under SLO (service level objective: target reliability) and SLA (service level agreement: contracted floor). Track business outcome metrics (time-to-resolution, tickets avoided, revenue tasks completed), not only latency.",
-      "why": "A fast wrong answer is not success. FDE platforms prove value with outcomes and hold the line with SLO/SLA.",
+      "name": "7. Discuss retrieval, grounding, model interaction, and tools",
+      "plane": "agent",
+      "what": "Ground answers in tagged retrieval. Prefer deterministic workflow and tool allowlists for mechanical work. Model only where judgment is required. MCP (Model Context Protocol) tools stay behind policy.",
+      "why": "Ungrounded generation and open tools are how demos become incidents.",
       "notes": [
-        "SLO dashboards + error budgets; SLA is the contract.",
-        "Business metrics beside golden signals.",
-        "If observe is dark, freeze autonomous improve loops (same as Ship step 12)."
+        "Spine step 7 of 14 from the FDE interview sheet.",
+        "Bias to deterministic workflow and allowlisted tools; model for judgment only."
       ],
-      "href": "/idp-architecture/agents.html#fde-slo"
+      "href": "/idp-architecture/agents.html#fde-s7"
+    },
+    {
+      "id": "fde-s8",
+      "tab": "agents",
+      "name": "8. Address privacy, identity, tenant isolation, and auditability",
+      "plane": "ctrl",
+      "what": "Tenant = customer boundary. Identity for human and agent. Short-lived scoped tokens (delegation), never passwords in chat. Every sensitive action is auditable.",
+      "why": "Enterprise buyers buy isolation and audit as much as they buy accuracy.",
+      "notes": [
+        "Spine step 8 of 14 from the FDE interview sheet.",
+        "Privacy, identity, tenant isolation, audit: same trust story as step 6, customer-facing."
+      ],
+      "href": "/idp-architecture/agents.html#fde-s8"
+    },
+    {
+      "id": "fde-s9",
+      "tab": "agents",
+      "name": "9. Define evaluation and hallucination controls",
+      "plane": "agent",
+      "what": "Evals, schema validation, grounding checks, fail-closed gates before side effects. A failed gate writes a board; it does not silently continue.",
+      "why": "Hallucination control is a product requirement, not a prompt tip.",
+      "notes": [
+        "Spine step 9 of 14 from the FDE interview sheet.",
+        "Evals and fail-closed gates before side effects."
+      ],
+      "href": "/idp-architecture/agents.html#fde-s9"
     },
     {
       "id": "gate-compile",
