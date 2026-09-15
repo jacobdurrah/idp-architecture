@@ -5,4 +5,37 @@
 <text x="40" y="58" font-size="16" font-weight="500" fill="#F3D6E4">Evals → ops → troubleshoot · 14-step interview spine</text>
 <text x="40" y="100" font-size="14" fill="#5F5E5A">← from panel 2</text>
 <text x="1060" y="100" font-size="14" fill="#5F5E5A" text-anchor="end">to panel 4 →</text>
+<rect x="36" y="120" width="326.7" height="580" rx="14" fill="#FBEAF2" stroke="#9B3D6A" stroke-width="2.2"/>
+<circle cx="70" cy="156" r="20" fill="#9B3D6A"/>
+<text x="70" y="162" text-anchor="middle" font-size="18" font-weight="750" fill="#FFFFFF">9</text>
+<text x="56" y="198" font-size="17" font-weight="750" fill="#9B3D6A">Define evaluation and</text>
+<text x="56" y="222" font-size="17" font-weight="750" fill="#9B3D6A">hallucination controls.</text>
+<text x="56" y="256" font-size="15" font-weight="500" fill="#2C2C2A">Evals, schema validation,</text>
+<text x="56" y="278" font-size="15" font-weight="500" fill="#2C2C2A">grounding checks, fail-closed</text>
+<text x="56" y="300" font-size="15" font-weight="500" fill="#2C2C2A">gates before side effects. Failed</text>
+<text x="56" y="322" font-size="15" font-weight="500" fill="#2C2C2A">gates write boards.</text>
+<line x1="364.7" y1="410" x2="384.7" y2="410" stroke="#2C2C2A" stroke-width="3"/>
+<polygon points="384.7,410 373.7,403 373.7,417" fill="#2C2C2A"/>
+<rect x="386.7" y="120" width="326.7" height="580" rx="14" fill="#EFEDF8" stroke="#534AB7" stroke-width="2.2"/>
+<circle cx="420.7" cy="156" r="20" fill="#534AB7"/>
+<text x="420.7" y="162" text-anchor="middle" font-size="18" font-weight="750" fill="#FFFFFF">10</text>
+<text x="406.7" y="198" font-size="17" font-weight="750" fill="#534AB7">Define monitoring, latency,</text>
+<text x="406.7" y="222" font-size="17" font-weight="750" fill="#534AB7">cost, reliability, and</text>
+<text x="406.7" y="246" font-size="17" font-weight="750" fill="#534AB7">operations.</text>
+<text x="406.7" y="280" font-size="15" font-weight="500" fill="#2C2C2A">SLO (reliability target) and SLA</text>
+<text x="406.7" y="302" font-size="15" font-weight="500" fill="#2C2C2A">(contracted floor) plus business</text>
+<text x="406.7" y="324" font-size="15" font-weight="500" fill="#2C2C2A">outcomes (TTR, tickets avoided),</text>
+<text x="406.7" y="346" font-size="15" font-weight="500" fill="#2C2C2A">not only latency.</text>
+<line x1="715.3" y1="410" x2="735.3" y2="410" stroke="#2C2C2A" stroke-width="3"/>
+<polygon points="735.3,410 724.3,403 724.3,417" fill="#2C2C2A"/>
+<rect x="737.3" y="120" width="326.7" height="580" rx="14" fill="#FCEBEB" stroke="#A32D2D" stroke-width="2.2"/>
+<circle cx="771.3" cy="156" r="20" fill="#A32D2D"/>
+<text x="771.3" y="162" text-anchor="middle" font-size="18" font-weight="750" fill="#FFFFFF">11</text>
+<text x="757.3" y="198" font-size="17" font-weight="750" fill="#A32D2D">Troubleshoot failures</text>
+<text x="757.3" y="222" font-size="17" font-weight="750" fill="#A32D2D">systematically.</text>
+<text x="757.3" y="256" font-size="15" font-weight="500" fill="#2C2C2A">Reproduce, isolate plane, read</text>
+<text x="757.3" y="278" font-size="15" font-weight="500" fill="#2C2C2A">stigmergic boards. Freeze</text>
+<text x="757.3" y="300" font-size="15" font-weight="500" fill="#2C2C2A">autonomous loops if observe is</text>
+<text x="757.3" y="322" font-size="15" font-weight="500" fill="#2C2C2A">dark.</text>
+<text x="550" y="820" text-anchor="middle" font-size="14" fill="#5F5E5A">jacobdurrah.github.io/idp-architecture/agents.html</text>
 </svg>
